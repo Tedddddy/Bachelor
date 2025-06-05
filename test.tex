@@ -60,7 +60,12 @@ at the point x in M is defined inductively as follows :$M,x \models \Box \phi$ i
 \newline
 $M,x \models \Box \phi$ iff $,\exists U \in \tau$ s.t $x \in U$ and $\forall u \in U : M,u \models \phi$
 \newline
-$M,x \models \Diamond \phi$ iff $,\forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$ penis
+$M,x \models \Diamond \phi$ iff $,\forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$
+
+\section{Defintion}
+Let $A = (X, \chi)$ and B =(Y, $\upsilon$) be topological spaces. The standard product topology $\tau$ is the set of subsets of 
+$X \times Y$ such that $X \in \chi$ and $Y \in \upsilon$.
+Let $N \subseteq X \times Y $. We call $N$ horizontally open if $\forall (x,y) \in N $ $\exists U \in \chi : x \in U $ and $ U \times \{ y \} \subseteq N$
 
 
 
