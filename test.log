@@ -1,0 +1,240 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  5 JUN 2025 21:15
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**/home/maik/studiumtud/Bachelor/test.tex
+(/home/maik/studiumtud/Bachelor/test.tex
+LaTeX2e <2021-11-15> patch level 1
+L3 programming layer <2022-01-21> (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrreprt.cls
+Document Class: scrreprt 2021/11/13 v3.35 KOMA-Script document class (report)
+(/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2021/11/13 v3.35 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2021/11/13 v3.35 KOMA-Script package (file load hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2021/11/13 v3.35 KOMA-Script package (using LaTeX hooks)
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrlogo.sty
+Package: scrlogo 2021/11/13 v3.35 KOMA-Script package (logo)
+))) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line 368.
+)) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Package: tocbasic 2021/11/13 v3.35 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numbox=\box50
+)
+Package tocbasic Info: babel extension for `toc' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 137.
+Package scrreprt Info: You've used standard option `12pt'.
+(scrreprt)             This is correct!
+(scrreprt)             Internally I'm using `fontsize=12pt'.
+(scrreprt)             If you'd like to set the option with \KOMAoptions,
+(scrreprt)             you'd have to use `fontsize=12pt' there
+(scrreprt)             instead of `12pt', too.
+Class scrreprt Info: File `scrsize12pt.clo' used to setup font sizes on input line 2487.
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+File: scrsize12pt.clo 2021/11/13 v3.35 KOMA-Script font size class option (12pt)
+) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
+Package: typearea 2021/11/13 v3.35 KOMA-Script package (type area)
+\ta@bcor=\skip48
+\ta@div=\count185
+Package typearea Info: You've used standard option `a4paper'.
+(typearea)             This is correct!
+(typearea)             Internally I'm using `paper=a4'.
+(typearea)             If you'd like to set the option with \KOMAoptions,
+(typearea)             you'd have to use `paper=a4' there
+(typearea)             instead of `a4paper', too.
+\ta@hblk=\skip49
+\ta@vblk=\skip50
+\ta@temp=\skip51
+\footheight=\skip52
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 12
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 448.13095pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 2.4185pt
+(typearea)              \oddsidemargin  = 2.4185pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
+(typearea)              \headheight     = 18.125pt
+(typearea)              \headsep        = 21.75pt
+(typearea)              \topskip        = 12.0pt
+(typearea)              \footskip       = 50.75pt
+(typearea)              \baselineskip   = 14.5pt
+(typearea)              on input line 1743.
+)
+\c@part=\count186
+\c@chapter=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\scr@dte@chapter@maxnumwidth=\skip53
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\chapter on input line 5717.
+\scr@dte@section@maxnumwidth=\skip54
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\section on input line 5728.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\section on input line 5728.
+\scr@dte@part@maxnumwidth=\skip55
+Class scrreprt Info: using compatibility default `afterindent=true'
+(scrreprt)           for `\part on input line 5737.
+\scr@dte@subsection@maxnumwidth=\skip56
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\subsection on input line 5747.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\subsection on input line 5747.
+\scr@dte@subsubsection@maxnumwidth=\skip57
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\subsubsection on input line 5757.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\subsubsection on input line 5757.
+\scr@dte@paragraph@maxnumwidth=\skip58
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\paragraph on input line 5768.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\paragraph on input line 5768.
+\scr@dte@subparagraph@maxnumwidth=\skip59
+Class scrreprt Info: using compatibility default `runin=bysign'
+(scrreprt)           for `\subparagraph on input line 5778.
+Class scrreprt Info: using compatibility default `afterindent=bysign'
+(scrreprt)           for `\subparagraph on input line 5778.
+\abovecaptionskip=\skip60
+\belowcaptionskip=\skip61
+\c@pti@nb@sid@b@x=\box51
+Package tocbasic Info: babel extension for `lof' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6958.
+\scr@dte@figure@maxnumwidth=\skip62
+\c@figure=\count193
+Package tocbasic Info: babel extension for `lot' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6974.
+\scr@dte@table@maxnumwidth=\skip63
+\c@table=\count194
+Class scrreprt Info: Redefining `\numberline' on input line 7142.
+\bibindent=\dimen138
+) (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip64
+\enit@outerparindent=\dimen139
+\enit@toks=\toks17
+\enit@inbox=\box52
+\enit@count@id=\count195
+\enitdp@description=\count196
+) (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty
+Package: stmaryrd 1994/03/03 St Mary's Road symbol package
+\symstmry=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
+(Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks18
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks19
+\thm@bodyfont=\toks20
+\thm@headfont=\toks21
+\thm@notefont=\toks22
+\thm@headpunct=\toks23
+\thm@preskip=\skip65
+\thm@postskip=\skip66
+\thm@headsep=\skip67
+\dth@everypar=\toks24
+) (/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2022-01-21 L3 programming layer (loader) 
+ (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count197
+\l__pdf_internal_box=\box53
+))
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+ (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2022-01-12 L3 Experimental document command parser
+) (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count198
+))
+Class scrreprt Info: amsthm's \deferred@thm@head patched.
+ (./test.aux)
+\openout1 = `test.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+Package scrbase Info: activating english \contentsname on input line 6.
+Package scrbase Info: activating english \listfigurename on input line 6.
+Package scrbase Info: activating english \listtablename on input line 6.
+
+chapter 1.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 11.
+(/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
+
+
+
+
+pdfTeX warning: pdflatex (file pdftex.map): cannot open font map file
+]
+chapter 2.
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--56
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--56
+
+ []
+
+[2
+
+] (./test.aux) ) 
+Here is how much of TeX's memory you used:
+ 4839 strings out of 480247
+ 103362 string characters out of 5896152
+ 520666 words of memory out of 5000000
+ 22778 multiletter control sequences out of 15000+600000
+ 475705 words of font info for 53 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 108i,7n,106p,10651b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr6.pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msam10.480pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy8.600pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi6.600pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi8.600pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msam10.720pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy10.720pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi12.600pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmssbx10.1037pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmssbx10.1493pk>
+Output written on test.pdf (2 pages, 42590 bytes).
+PDF statistics:
+ 177 PDF objects out of 1000 (max. 8388607)
+ 54 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,67 @@
+\documentclass[12pt, a4paper]{scrreprt}
+\usepackage{enumitem}
+\usepackage{stmaryrd} 
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\begin{document}
+
+\chapter{Definition}
+
+\section{Defintion }
+Let Prop be a set of variables. Then a formula $\phi$ is defined as follows :
+$$\phi ::= p \mid \bot \mid \phi \mid \phi \rightarrow \phi \mid \Box_i \phi$$
+where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expressed through $\bot$ and $\rightarrow$ and 
+dual modal operators $\diamond_i$ as $\diamond_i \phi = \neg \Box_i \neg \phi$
+
+\section{Defintion }
+A normal modal logic is a set of modal formulas containing all propositional tautologies,
+closed under Substitution ($\frac{\phi(p_i)}{\phi(\psi)}$), Modus Ponens 
+$(\frac{\phi, \phi \rightarrow \psi}{\psi})$, Generalization rules $(\frac{\phi}{\Box_i \phi})$
+and the following axioms 
+$$ \Box_i (p \rightarrow q) \rightarrow (\Box_i p \rightarrow \Box_i q)$$
+
+$K_n$ denotes the minimal normal modal logic with n modalities and $K = K_1$
+Let L be a logic and let $\Gamma$ be a set of formulas. Then L+$\Gamma$ denotes 
+the minimal logic containing L and $\Gamma$
+
+\section{Definition}
+Let L1 and L2 be two modal logic with one modality $\Box$. Then the fusion of these 
+logics are defined as follows :
+$$ L1 \otimes L2 = K2 + L_{1(\Box \rightarrow \Box_1)} L_{2(\Box \rightarrow \Box_2)} $$
+
+The follow logics may be important 
+
+$$D = K + \Box p \rightarrow \Diamond p$$
+$$T = K + \Box p \rightarrow p$$
+$$D4 = D + \Box p \rightarrow \Box \Box p$$
+$$S4 = T + \Box p \rightarrow \Box \Box p$$
+
+
+\chapter{Topological Space Defintion}
+
+\section{Defintion}
+
+A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
+\newline
+\newline
+1. the empty set $\emptyset $ and X are open
+\newline
+2. the union of an arbitrary collection of open sets is open
+\newline
+3. the intersection of finite collection of open sets is open
+\newline
+\newline
+A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
+and v is a valuation assigining subsets of X to propositional variables.
+
+\section{Defintion}
+Let M = (X,$\tau$,v) a topological model and $x \in X$. The satisfaction of a formula
+at the point x in M is defined inductively as follows :$M,x \models \Box \phi$ iff $,\exists U \in \tau$ s.t $x \in U$ and $\forall u \in U : M,u \models \phi$
+\newline
+$M,x \models \Box \phi$ iff $,\exists U \in \tau$ s.t $x \in U$ and $\forall u \in U : M,u \models \phi$
+\newline
+$M,x \models \Diamond \phi$ iff $,\forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$
+
+
+
+\end{document}
