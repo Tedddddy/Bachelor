@@ -74,19 +74,37 @@ We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$
 \chapter{Neighbourhood} 
 
 \section{Defintion} 
-Let X be a non-empty set. A function  $N : X \rightarrow 2^{2^X}$ is called a neighbourhood function. A pair 
-F = (X,$N$) is called a neighbourhood frame (or n-frame). A model based on F is a tuple (X,$N$,v), where v assigns a subset of X to a variable
+Let X be a non-empty set. A function  $\tau : X \rightarrow 2^{2^X}$ is called a neighbourhood function. A pair 
+F = (X,$\tau$) is called a neighbourhood frame (or n-frame). A model based on F is a tuple (X,$\tau$,v), where v assigns a subset of X to a variable
 
 \section{Defintion}
 
-Let $M$ =(X,$N$,v) be a neighourhood model and x $\in$ X. The truth of a formula is defined inductively as follows :
+Let $M$ =(X,$\tau$,v) be a neighourhood model and x $\in$ X. The truth of a formula is defined inductively as follows :
 $$M,x \models \Box \phi \mbox{ iff } \exists V \in N(x) \forall y \in V : M,y \models \phi$$ 
 A formula is valid in a n-model M if it is valid at all points of $M$ ($M \models \phi$). Formula is valid in a n-frame $F$ if it is valid in
 all models based on $F$ (notation $F \models \phi$). For Logic L we write $ F \models L, \mbox{ if for any }\phi \in L, F \models \phi$. 
-$\mbox{We define nV(L) =  } \{ N \mid N \mbox{ is an n-frame and } N \models \phi \}$.
+$\mbox{We define nV(L) =  } \{ F \mid F \mbox{ is an n-frame and } F \models \phi \}$.
 
 \section{Defintion}
-Let F = (W,R) be a Kripke frame.
+Let F = (W,R) be a Kripke frame. We define an n-frame $N$(F) = (W, $\tau$) as follows.
+For any $w\in W$ we have :
+$$\tau(w) = \{ U \mid R(w) \subseteq U \subseteq W \}$$
+
+\section{Defintion}
+Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames. Then the function f:
+$X \rightarrow Y$ is called bounded morphism if \newline \newline
+1. f is surjective \newline
+2. $\forall x\in X \, \forall U \in \tau_i(x) : f(U) \in \sigma_i (f(x))$ \newline
+3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$
+
+\section {Defintion}
+
+
+
+
+
+
+
 
 
 
