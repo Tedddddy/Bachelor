@@ -64,8 +64,27 @@ $M,x \models \Diamond \phi$ iff $,\forall U \in \tau$ s.t $x \in U$ and $\exists
 
 \section{Defintion}
 Let $A = (X, \chi)$ and B =(Y, $\upsilon$) be topological spaces. The standard product topology $\tau$ is the set of subsets of 
-$X \times Y$ such that $X \in \chi$ and $Y \in \upsilon$.
-Let $N \subseteq X \times Y $. We call $N$ horizontally open if $\forall (x,y) \in N $ $\exists U \in \chi : x \in U $ and $ U \times \{ y \} \subseteq N$
+$X \times Y$ such that $X \in \chi$ and $Y \in \upsilon$. \newline
+Let $N \subseteq X \times Y $. We call $N$ horizontally open if $\forall (x,y) \in N $ $\exists U \in \chi : x \in U $ and $ U \times \{ y \} \subseteq N$. \newline We call $N$ 
+vertically open if $\forall (x,y) \in N$ $\exists V \in \upsilon : y \in V$ and  $ \{ x \} \times V \subseteq N$ \newline
+If $N$ is H-open and V-open, then we call it HV-open. \newline
+We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$
+
+
+\chapter{Neighbourhood} 
+
+\section{Defintion} 
+Let X be a non-empty set. A function  $N : X \rightarrow 2^{2^X}$ is called a neighbourhood function. A pair 
+F = (X,N) is called a neighbourhood frame (or n-frame). A model based on F is a tuple (X,N,v), where v assigns a subset of X to a variable
+
+\section{Defintion}
+
+Let M =(X,N,v) be a neighourhood model and x $\in$ X. The truth of a formula is defined inductively as follows :
+$$M,x \models \Box \phi \mbox{ iff } \exists V \in N(x) \forall y \in V : M,y \models \phi$$ 
+A formula is valid in a n-model M if it is vali at all points of M ($M \models \phi$). Formula is valid in a n-frame F if it is valid in
+all models based on F (notation $F \models \phi$)
+
+
 
 
 
