@@ -70,6 +70,16 @@ vertically open if $\forall (x,y) \in N$ $\exists V \in \upsilon : y \in V$ and 
 If $N$ is H-open and V-open, then we call it HV-open. \newline
 We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$
 
+\section{Defintion}
+Let X and Y be topological spaces and $f : X \rightarrow Y$ a function.
+We call f continuous if for each open set $U \subseteq Y$ the set $f^{-1}(U)$ is open in X. We say f 
+is open if for each open set $V \subseteq X$ the set f[V] is open in Y.
+
+\section{Remark}
+There is an alternative defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
+U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
+the union of open sets is an open set.
+
 
 \chapter{Neighbourhood} 
 
@@ -98,6 +108,19 @@ $X \rightarrow Y$ is called bounded morphism if \newline \newline
 3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$
 
 \section {Defintion}
+Let $X$ = (X, $\tau_1$) and $Y$ = (Y, $\tau_2$) be two n-frames. Then the product of these two frames
+is an n-2-frame and is defined as follows : \newline
+
+$$ X \times Y = (\mbox{X} \times \mbox{Y}, \tau_1', \tau_2')$$   
+$$ \tau_1'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \tau_1(x) : V \times  \{ y \} \subseteq U \}$$
+$$ \tau_2'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \tau_2(y) : \{ x \} \times V \subseteq U \}$$
+
+\section {Defintion}
+
+For two unimodal logics $L_1$ and $L_2$ we define the n-product of them as follows :
+$$ L_1 \times_n L_2 = Log(\{ X \times Y \mid X \in nV(L_1) \mbox{ and } Y \in nV(L_2) \})$$
+
+
 
 
 
@@ -111,3 +134,4 @@ $X \rightarrow Y$ is called bounded morphism if \newline \newline
 
 
 \end{document}
+
