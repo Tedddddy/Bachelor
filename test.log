@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  6 JUN 2025 15:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  6 JUN 2025 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -235,9 +235,9 @@ Here is how much of TeX's memory you used:
  14 hyphenation exceptions out of 8191
  108i,7n,106p,10651b,270s stack positions out of 5000i,500n,10000p,200000b,80000s
  </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr6.pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msam10.480pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy8.600pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi6.600pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr8.pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi8.600pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msam10.720pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy10.720pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi12.600pk> </usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmssbx10.1037pk> </home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmssbx10.1493pk>
-Output written on test.pdf (3 pages, 54608 bytes).
+Output written on test.pdf (3 pages, 55648 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
+ 211 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
