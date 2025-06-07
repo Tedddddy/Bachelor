@@ -1,8 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1749241354 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1749241354
+["pdflatex"] 1749255443 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1749255444
   "/etc/texmf/web2c/texmf.cnf" 1749038783 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msam10.480pk" 1749141915 10056 1c5cf52459aab35c51f43095f4ea52c6 ""
   "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msam10.720pk" 1749137192 14888 569fd45883131a8c96a485515ea3680e ""
+  "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/amsfonts/symbols/msbm10.720pk" 1749247714 21892 cf3cded8f3e48da62654432800822d01 ""
   "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi12.600pk" 1749136262 17936 941421e2346fb2c38708aa1d0bf7c80c ""
   "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi6.600pk" 1749141538 8336 4f81dea9cbc7fabf701d1a246462e147 ""
   "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmmi8.600pk" 1749136861 11680 2f8ae18cfc569354c41aadbf21a6cdb7 ""
@@ -11,7 +12,7 @@
   "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy10.720pk" 1749136596 16448 98d9f0532a5af44537c349123f1a5c04 ""
   "/home/maik/.texlive2021/texmf-var/fonts/pk/ljfour/public/cm/cmsy8.600pk" 1749141685 11344 a6326ceafb5cc7e0c5a604909777af9c ""
   "/home/maik/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1749077117 1405644 8beec9f80219283946f97b1e8cc91499 ""
-  "/home/maik/studiumtud/Bachelor/test.tex" 1749241354 6112 c81117ef06cd46b68c4f181d5f623e26 ""
+  "/home/maik/studiumtud/Bachelor/test.tex" 1749255443 8692 1ef5e56919fcc0988d7f4a2b7bb14470 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr12.pk" 1136849718 13144 0235be32b099c919a01c28a385c0ff86 ""
   "/usr/share/texlive/texmf-dist/fonts/pk/ljfour/public/cm/dpi600/cmr6.pk" 1136849718 6912 5186bb5c879a613d13dd75addf1aeb47 ""
@@ -41,6 +42,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
   "/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd" 1359763108 961 d02606146ba5601b5645f987c92e6193 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd" 1622581934 2469 ed49302eacbaebdd899d39dedcd25393 ""
   "/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
   "/usr/share/texlive/texmf-dist/tex/latex/footmisc/footmisc.sty" 1312311212 25776 d28bd6d82f168f8cb2268584b67a2a98 ""
@@ -62,8 +64,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xpatch/xpatch.sty" 1585258158 8314 7803f78066c4f9d008405191a4b43073 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "test.aux" 1749241354 1994 e21a502d86597c93c0472e604f4cf9e2 "pdflatex"
-  "test.tex" 1749241354 6112 c81117ef06cd46b68c4f181d5f623e26 ""
+  "test.aux" 1749255444 2192 1caa3490fc40cfa269f615c051f03823 "pdflatex"
+  "test.tex" 1749255443 8692 1ef5e56919fcc0988d7f4a2b7bb14470 ""
   (generated)
   "test.aux"
   "test.log"

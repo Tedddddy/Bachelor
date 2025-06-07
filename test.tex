@@ -51,8 +51,9 @@ A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subset
 3. the intersection of finite collection of open sets is open
 \newline
 \newline
+The space is called Alexandroff, if we allow the intersection of infinite collection.
 A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
-and v is a valuation assigining subsets of X to propositional variables.
+and v is a valuation assigining subsets of X to propositional variables. 
 
 \section{Defintion}
 Let M = (X,$\tau$,v) a topological model and $x \in X$. The satisfaction of a formula
@@ -79,6 +80,25 @@ is open if for each open set $V \subseteq X$ the set f[V] is open in Y.
 There is an alternative defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
 U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
 the union of open sets is an open set.
+\newline
+\newline
+
+Now we define some Kripke frames, which we will use through this chapter.
+
+\section{Defintion}
+Let $T_2$ be the infinite binary tree with reflexive and transitive descendant relation. \newline Formally it is defined as follows :
+$T_2 = (W,R)$ where W = \{0,1\}* and sRt iff $\exists u\in W : s*u = t$. \newline
+The $T_ {6,2,2}$ tree is the infinite six branching tree, where all nodes of $T_ {6,2,2}$ is R-related, the first two R1-related 
+and the last two R2-related. Formally we can define this tree as follows : $T_ {6,2,2} = (W,R,R_1,R_2)$,
+where W = \{{0,1,2,3,4,5}\}*, $$sRt \mbox{ iff } \exists u \in \mbox{\{0,1,2,3,4,5\}*} : s*t = u $$
+$$ sR_1t  \mbox{ iff } \exists u \in \mbox{\{0,1\}*} : s*t = u$$
+$$ sR_2t  \mbox{ iff } \exists u \in \mbox{\{5,6\}*} : s*t = u$$
+
+where s and t are elements of the set where the element u can come from, w.r.t to the relation. For example in the case sRt,
+s and t are elements of \{0,1,2,3,4,5\}*.
+
+
+
 
 
 \chapter{Neighbourhood} 
@@ -119,6 +139,25 @@ $$ \tau_2'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \ta
 
 For two unimodal logics $L_1$ and $L_2$ we define the n-product of them as follows :
 $$ L_1 \times_n L_2 = Log(\{ X \times Y \mid X \in nV(L_1) \mbox{ and } Y \in nV(L_2) \})$$
+
+Now we define some Kripke frames we need for this chapter.
+
+
+\section{Defintion}
+Let $T_{\omega [in]}$ (i = irreflexiv, n = non-transitiv) denote the infinite branching and infinite depth tree, which is irreflexiv and non-transitive.
+Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
+The $T_{\omega,\omega,\omega [in]}$ is similar defined as the $T_{6,2,2}$ tree but with infinite branching and infinite depth. Before defining it, we say
+$\mathbb{N}_{R1}$* is the set of finite number combinations which has a subscript $R_1$ to denote that these numbers relate to $R_1$ (examples : $0_{R1}, 0123_{R1}$).
+$\mathbb{N}^+_{R_1}$ is the set $\mathbb{N}_{R_1}$* - \{$\epsilon$\}. $\mathbb{N}_{R}$, $\mathbb{N}_{R_2}$ are defined similar. \newline
+Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = \mathbb{N}^+_{R} \cup \mathbb{N}^+_{R_1} \cup \mathbb{N}^+_{R_2} \cup \{ \epsilon\}$, 
+$$sRt \mbox{ iff } \exists u \in \mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2} : s*u = t$$
+$$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{R_1} : s * u = t$$
+$$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{R_2} : s * u = t$$
+where s,t are elements of the positive closure set where the element u can come from (additionally s can be $\epsilon$), w.r.t to the relation. For example
+if we consider $sR_1t$, then $s,t \in \mathbb{N}^+_{R_1}$ but also $s = \epsilon$.
+
+
+
 
 
 
