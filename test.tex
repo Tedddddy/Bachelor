@@ -146,15 +146,16 @@ Now we define some Kripke frames we need for this chapter.
 \section{Defintion}
 Let $T_{\omega [in]}$ (i = irreflexiv, n = non-transitiv) denote the infinite branching and infinite depth tree, which is irreflexiv and non-transitive.
 Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
-The $T_{\omega,\omega,\omega [in]}$ is similar defined as the $T_{6,2,2}$ tree but with infinite branching and infinite depth. Before defining it, we say
-$\mathbb{N}_{R1}$* is the set of finite number combinations which has a subscript $R_1$ to denote that these numbers relate to $R_1$ (examples : $0_{R1}, 0123_{R1}$).
-$\mathbb{N}^+_{R_1}$ is the set $\mathbb{N}_{R_1}$* - \{$\epsilon$\}. $\mathbb{N}_{R}$, $\mathbb{N}_{R_2}$ are defined similar. \newline
+The $T_{\omega,\omega,\omega [in]}$ tree is similary defined as the $T_{6,2,2}$ tree but with infinite branching and infinite depth. Before characterizing it, we say
+$\mathbb{N}_{R1}$* is the set of finite number combinations which has a subscript $R_1$ to denote that these numbers relate to $R_1$  \newline 
+(examples : $0_{R1}, 0123_{R1}$).
+$\mathbb{N}^+_{R_1}$ is the set $\mathbb{N}_{R_1}$*- \{$\epsilon$\}. $\mathbb{N}^+_{R}$, $\mathbb{N}^+_{R_2}$ are defined similar. \newline \newline
 Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = \mathbb{N}^+_{R} \cup \mathbb{N}^+_{R_1} \cup \mathbb{N}^+_{R_2} \cup \{ \epsilon\}$, 
 $$sRt \mbox{ iff } \exists u \in \mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2} : s*u = t$$
 $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{R_1} : s * u = t$$
 $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{R_2} : s * u = t$$
 where s,t are elements of the positive closure set where the element u can come from (additionally s can be $\epsilon$), w.r.t to the relation. For example
-if we consider $sR_1t$, then $s,t \in \mathbb{N}^+_{R_1}$ but also $s = \epsilon$.
+if we consider $sR_1t$, then $s,t \in \mathbb{N}^+_{R_1}$ but also $s = \epsilon$. Of course the '*' operator acts here again as a concatenation operator.
 
 
 
