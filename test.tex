@@ -3,12 +3,13 @@
 \usepackage{stmaryrd} 
 \usepackage{amsfonts}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \begin{document}
 
 \chapter{Definition}
 
 \section{Defintion }
-Let Prop be a set of variables. Then a formula $\phi$ is defined as follows :
+Let prop be a set of variables. Then a formula $\phi$ is defined as follows :
 $$\phi ::= p \mid \bot \mid \phi \mid \phi \rightarrow \phi \mid \Box_i \phi$$
 where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expressed through $\bot$ and $\rightarrow$ and 
 dual modal operators $\diamond_i$ as $\diamond_i \phi = \neg \Box_i \neg \phi$
@@ -36,6 +37,84 @@ $$T = K + \Box p \rightarrow p$$
 $$D4 = D + \Box p \rightarrow \Box \Box p$$
 $$S4 = T + \Box p \rightarrow \Box \Box p$$
 
+\chapter{Kripke Definition}
+To show D $\otimes$ D $\otimes$ D + $\Box p \rightarrow \Box_1 p \land \Box_2 p$ has the finite model property, we need some important defintions.
+
+\section{Defintion}
+
+Let $M = (W,R,V)$ be a model and $w \in W$ a state in $M$. The notion of a formula being true at w is inductively defined as follows :
+$$M, w \Vdash \Box \phi \mbox{ iff } \forall v \in W : wRv \rightarrow M,v \Vdash \phi$$
+\newline
+This defintion can be extended to a multimodal version, where the modal operators are interpreted the same way but with the respective relation.
+
+\section{Defintion}
+A set $\Sigma$ is closed under subformulas, if for all formulas $\phi$ and $\phi'$ the following holds :
+\newline \newline
+1. if $\neg \phi \in \Sigma$ then $\phi \in \Sigma$
+\newline
+2. if $\phi \lor \phi' \in \Sigma$ then $\phi, \phi' \in \Sigma$
+\newline
+3. if $\Box \phi \in \Sigma$ then $\phi \in \Sigma$
+\newline
+\newline
+We can define it similary for a multimodal logic. For every modal operator $\Box_n$, we extend this definition by adding a new condition similar to the third.
+Example : Suppose we have a multimodal logic with $\Box, \Box_1$ called $L_{\Box, \Box_1}$ and $\phi = \Box p \rightarrow \Box_1 q$ and $\phi \in \Sigma$. Then $\Sigma = \{ \phi, \neg\Box p, \Box_1 q, \Box p, p, q\}$ is closed under
+subformulas.
+
+\section{Defintion}
+Let $M = (W,R,V)$ be a model and suppose $\Sigma$ is a set of formulas. We define a relation $\equiv$ on W as follows : \newline 
+$$w \equiv v \mbox{ iff } \forall \phi \in \Sigma : M,w \Vdash \phi \Leftrightarrow M,v \Vdash \phi$$ 
+It is well known that the $\equiv$-relation is an equivalence relation. We denote the equivalence class of a state $w\in W$ as $[w]_\Sigma = \{v \mid v \equiv w\}$. Furthermore $W_\Sigma$ is the set of all equivalence classes, i.e
+$W_\Sigma = \{[w]_\Sigma \mid w \in W\}$.
+
+\section{Defintion}
+
+Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$.
+A model $M^f_\Sigma = (W^f, R^f, V^f)$ is called filtration of M through $\Sigma$ if the following holds : \newline \newline
+1. $W^f = W_\Sigma$ \newline
+2. If $(w,v) \in R$ then $([w],[v]) \in R^f$ \newline
+3. If $([w], [v]) \in R^f$ then for any $\Box \phi \in \Sigma$ : if $M,w \Vdash \Box \phi$ then $M,v \Vdash \phi$  \newline 
+4. $V^f = \{[w] \mid M,w \Vdash p\}$, for all propositional variables $p \in \Sigma$  
+\newline \newline
+In our case, we are in a multimodal logic with three modal operators $\Box, \Box_1,\Box_2$. We need to extend this defintion for  $L_{\Box,\Box_1,\Box_2}$. This means our model looks like:
+$M = (W, R,R_1, R_2,V)$. We extend the conditions as follows : \newline \newline
+If $ (w,v) \in R_i$ then $([w], [v]) \in R^f_i$ \newline
+If $ ([w], [v]) \in R^f_i$ then for any $\Box_i \phi \in \Sigma : \mbox{ if } M,w \Vdash \Box_i$ then $M,v \Vdash \phi$ ,  where $i \in \{1,2\}$
+
+\section{Filtration Theorem}
+Consider $L_{\Box, \Box_1, \Box_2}$. Let $M^f =(W_\Sigma, R^f, R^f_1, R^f_2, V)$ be a filtration of M through a subformula closed set $\Sigma$.
+Then for all formulas $\phi \in \Sigma$, and all nodes $w \in M$, we have $$M,w \Vdash \phi \mbox{ iff } M^f,[w] \Vdash \phi$$
+
+\begin{proof}
+By induction on $\phi$. We will only show non-trivial and, for our purposes, necessary cases. \newline
+
+Case $\phi = p$: Left to right follows immediately from filtration defintion. Conversely, suppose
+$M^f, [w] \Vdash p$. This means $ [w] \in V^f(p)$. But this means V(p) can not be empty. Pick any $v\in V(p)$. Obviously, $w\equiv v$ and
+$M,v\Vdash p$. Hence, $M,w \Vdash p$. \newline
+
+Case $\phi = \neg \psi$: Suppose $\psi$ holds. Then we have : $M,w \Vdash \phi \mbox{ iff } M,w \nvDash \psi$. Applying 
+induction hypothesis, we get : $M^f, [w] \nvDash \psi$. But then, we have $M^f, [w] \Vdash \phi$. Right to left is the same. \newline
+
+Case $\phi = \phi_1 \land \phi_2$: Suppose $\phi_1, \phi_2$ holds. Let $M,w \Vdash \phi$. That means $M,w \Vdash \phi_1$ and $M,w \Vdash \phi_2$. Applying
+induction hypothesis, we get $M^f,[w] \Vdash \phi_1$ and $M^f,[w] \Vdash \phi_2$. But then, $M^f,[w] \Vdash \phi_1 \land \phi_2 = \phi$. Right to left is similar. \newline
+
+Case $\phi = \Box_i\psi$ ($i \in \{1,2,\epsilon\}, \Box_\epsilon = \Box$): Left to right. Suppose $\psi$ holds and  $M,w \Vdash \Box_i \psi$. 
+We need to show $M^f,[w] \Vdash \Box_i \psi$, this means $\forall [v] \in W_\Sigma : [w]R_i[v] \rightarrow M^f,[v] \Vdash \Box_i \psi$. Pick any $[v] \in W_\Sigma$ s.t 
+$[w]R_i[v]$. By condition 3, w.r.t to the modal operator, we have $M,v \Vdash \psi$. By induction hypothesis, we get $M^f,[v] \Vdash \psi$. Because [v] was arbitrary it follows that $M^f,[w] \Vdash \Box_i \psi$. \newline \newline
+Right to left. Suppose $\psi$ holds and $M^f,[w] \Vdash \Box_i \psi$. Pick $v \in W$ s.t $wR_iv$. By condition 2, w.r.t to the modal operator, we have
+$[w]R^f_i[v]$. So, $M^f, [v] \Vdash \psi$. By induction hypothesis, we get $M,v \Vdash \psi$. Because v was arbitrary, we have $M,w \Vdash \Box_i \psi$.
+
+\end{proof} 
+
+Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this is a filter. We denote this as $R^s$.
+
+\section{Defintion}
+ Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
+$$R^s = {[w],[v] \mid }$$
+
+
+
+
 
 \chapter{Topological Space Defintion}
 
@@ -51,17 +130,17 @@ A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subset
 3. the intersection of finite collection of open sets is open
 \newline
 \newline
-The space is called Alexandroff, if we allow the intersection of infinite collection.
+The space is called Alexandroff, if we allow the intersection of infinite collection of open sets.
 A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
 and v is a valuation assigining subsets of X to propositional variables. 
 
 \section{Defintion}
 Let M = (X,$\tau$,v) a topological model and $x \in X$. The satisfaction of a formula
-at the point x in M is defined inductively as follows :$M,x \models \Box \phi$ iff $,\exists U \in \tau$ s.t $x \in U$ and $\forall u \in U : M,u \models \phi$
+at the point x in M is defined inductively as follows :
 \newline
-$M,x \models \Box \phi$ iff $,\exists U \in \tau$ s.t $x \in U$ and $\forall u \in U : M,u \models \phi$
+$M,x \models \Box \phi$ iff $\, \exists U \in \tau$ s.t $x \in U$ and $\forall u \in U : M,u \models \phi$
 \newline
-$M,x \models \Diamond \phi$ iff $,\forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$
+$M,x \models \Diamond \phi$ iff $\, \forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$
 
 \section{Defintion}
 Let $A = (X, \chi)$ and B =(Y, $\upsilon$) be topological spaces. The standard product topology $\tau$ is the set of subsets of 
