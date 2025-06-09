@@ -110,7 +110,41 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
 
 \section{Defintion}
  Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
-$$R^s = {[w],[v] \mid }$$
+$$R^s = \{[w],[v] \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$
+where $i \in \{1,2,\epsilon\}$.         
+
+\section{Lemma}
+Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformlas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$ and $V^f$ the standard valuation on $W_\Sigma$. Then $(W_\Sigma, R^s,R^s_1,R^s_2,V^f)$ is 
+a filtration of M through $\Sigma$.
+\begin{proof}
+
+It suffices to show $R^s_i$ fullfills the condition 2 and 3 w.r.t to the corresponding modal operator $\Box_i$. But $R^s_i$ already satisfies condition 2.
+Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$ where $i \in \{1,2, \epsilon\}$. Because of $[w]R^s_i[v]$ we pick a $w' \in [w]$
+and $v' \in [v]$. By defintion, we have $w'R_i v'$. Because $w' \equiv w$, we get $M,w' \Vdash \Box_i \phi$. Hence, $M,v' \Vdash \phi$ and by $v' \equiv v$, we get $M,v \Vdash \phi$.
+
+
+\end{proof}
+
+\section{Proposition}
+
+Let $\Sigma$ be a finite subformula closed set of $L_{\Box,\Box_1,\Box_2}$. For any model M, if $M^f$ is a filtration through $\Sigma$, then $M^f$ contains at most $2^n$ nodes (where n denotes the size of $\Sigma$).
+
+\begin{proof}
+The states of $M^f$ are the equivalence classes in $W_\Sigma$. Let $g : W_\Sigma \rightarrow P(\Sigma)$ defined by $g([w]) = \{ \phi \in \Sigma \mid M,w \Vdash \phi\}$.
+g is well defined. Pick any u and v s.t $u\equiv v$. But then by defintion of $\equiv$, they fullfill the same subformulas. This means g([v]) = g([u]). \newline
+g is also injective. Pick any $[u],[v] \in W_\Sigma$ s.t g([u]) = g([v]). We show $[u]\subseteq[v]$. The other inclusion is similar.
+By assumption we have $u \equiv v$. Pick any $u' \in [u]$. Then we have $u' \equiv u \equiv v$. Hence, $u' \in [v]$. At the end, this means $M^f$ contains at most $2^n$ nodes.
+\end{proof} 
+
+\section{Finite Model Property - via Filtrations}
+Let $\phi$ be a formula of $L_{\Box,\Box_1,\Box_2}$. If $\phi$ is satisfiable, then it is satisfiable on a finite model containing at most $2^n$ nodes, where n is the number of subformulas in $\phi$.
+
+\begin{proof}
+Assume that $\phi$ is satisfiable on a model on M. Take any filtration of M through the set of subformulas of $\phi$. 
+By Filtration Theorem, we get that $\phi$ is satisfied in the filtration model $M^f$. Furthermore, it is bounded by $2^n$.
+
+\end{proof}
+
 
 
 
