@@ -145,7 +145,29 @@ By Filtration Theorem, we get that $\phi$ is satisfied in the filtration model $
 
 \end{proof}
 
+Now we define Sahlqvist formulas for our purposes.
+\section{Defintion}
 
+A modal formula $\phi$ is positive if all variables occurs without negation. In the other hand, a formula is negative, if all variables occurs with negation.
+A boxed atom is a modal formula of the form $\Box^n p$ for some $n \in \mathbb{N}$, where p is a propositional variable and $\Box^n p$ is defined as follows :
+$\Box^0 p = p$, $\Box^1 p = \Box p$, $\Box^{n+1} p = \Box(\Box^n p)$. \newline \newline
+Furthermore, a Sahlqvist antecedent is built from $\bot, \top$, negative formulas and boxed atoms by applying $\Diamond$ and $\land$. A Sahlqvist implication is a modal formula of the form
+$\phi \rightarrow \psi$, where $\phi$ is a Sahlqvist antecedent and $\psi$ a positive formula. \newline
+Now, a Sahlqvist formula is built from Sahlqvist implications by applying $\Box$ and $\lor$. \newline
+
+Examples for Sahlqvist formulas: 
+$$\Box \Box p \rightarrow \Box p$$
+$$ \Diamond \neg p\rightarrow p$$
+$$ \Diamond \Box \Box \Box \Box \Box p\rightarrow \Box \Diamond \Box \Diamond p$$
+$$ \Box\Box\Box\Box(\Diamond \Box p\rightarrow p) \lor \Box \Box p \rightarrow \Box p $$
+
+Non Sahlqvist Formulas :
+$$\Box \Diamond p \rightarrow \Diamond \Box p$$
+$$\Diamond \Box p \rightarrow \Box \neg p$$ \newline
+
+We can extend this defintion for our logic. We say a boxed atom can also be $\Box^n_1 p$ and $\Box^n_2 p$. A Sahlqvist antecedent
+can also be build by applying $\Diamond_1$ and $\Diamond_2$. A Sahlqvist formula can be build by
+Sahlqvist implications by applying additionally $\Box_1$ and $\Box_2$.  
 
 
 
