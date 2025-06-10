@@ -165,11 +165,31 @@ Non Sahlqvist Formulas :
 $$\Box \Diamond p \rightarrow \Diamond \Box p$$
 $$\Diamond \Box p \rightarrow \Box \neg p$$ \newline
 
-We can extend this defintion for our logic. We say a boxed atom can also be $\Box^n_1 p$ and $\Box^n_2 p$. A Sahlqvist antecedent
+We can extend this defintion for our logic. We say a boxed atom can be $\Box^n_1 p$ and $\Box^n_2 p$. A Sahlqvist antecedent
 can also be build by applying $\Diamond_1$ and $\Diamond_2$. A Sahlqvist formula can be build by
-Sahlqvist implications by applying additionally $\Box_1$ and $\Box_2$.  
+Sahlqvist implications by applying additionally $\Box_1$ and $\Box_2$.  \newline
+
+Sahlqvist formulas possess important properties, which are guaranteed by the Sahlqvist Theorem. It says that, when given a normal modal logic K and a set of Sahlqvist formulas, the resulting logic is complete w.r.t 
+to the class of frames, which satisfies the corresponding first-order formula of the Sahlqvist formulas. This also holds for multimodal logic. We will not prove it here, but we will use this
+for our logic to show completeness w.r.t to a suitable class of frames.
+\newline
+
+\section{Defintion}
+We say for a modal logic $\Lambda$ has the finite model property (FMP) if for every formula $\phi$ that is not provable in $\Lambda$,
+is falsifiable in a finite model.
+
+\section{Proposition}
+The logic $D \otimes D \otimes D + \Box p \rightarrow \Box_1 p \land \Box_2 p$ has FMP.
+\begin{proof}
+The idea is to pick a class of frame $\mathcal{F}$, where DPL is sound and complete with respect to and then show by filtration the FMP. \newline \newline
+Let $\mathcal{C} = \{F \mid F \Vdash DPL\}$. Obviously,  DPL is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
+We remember D = K + $\Box_i p \rightarrow \Diamond_i p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
+By Sahlqvist, we have that DPL is complete w.r.t $\{F \mid F \Vdash \forall x \exists y \, R_i(x,y) \mbox{ and } F \Vdash \forall x \exists y (R_1(x,y) \land R_2(x,y)) \rightarrow R(x,y)\}$.
+Now assume a formula $\phi$ is not derivable from DPL. By completeness we get $\phi$ is falsifiable in a model M and a world w.
 
 
+
+\end{proof}
 
 
 \chapter{Topological Space Defintion}
