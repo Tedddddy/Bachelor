@@ -184,12 +184,61 @@ The logic $D \otimes D \otimes D + \Box p \rightarrow \Box_1 p \land \Box_2 p$ h
 The idea is to pick a class of frame $\mathcal{F}$, where DPL is sound and complete with respect to and then show by filtration the FMP. \newline \newline
 Let $\mathcal{C} = \{F \mid F \Vdash DPL\}$. Obviously,  DPL is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
 We remember D = K + $\Box_i p \rightarrow \Diamond_i p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
-By Sahlqvist, we have that DPL is complete w.r.t $\{F \mid F \Vdash \forall x \exists y \, R_i(x,y) \mbox{ and } F \Vdash \forall x \exists y (R_1(x,y) \land R_2(x,y)) \rightarrow R(x,y)\}$.
-Now assume a formula $\phi$ is not derivable from DPL. By completeness we get $\phi$ is falsifiable in a model M and a world w.
-
-
+By Sahlqvist, we have that DPL is complete w.r.t $\{F \mid F \Vdash \forall x \exists y \, R_i(x,y) \mbox{ and } F \Vdash \forall x \exists y (R_1(x,y) \land R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
+Now assume a formula $\phi$ is not derivable from DPL. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
+Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By filtration Theorem, they preserve truth.
+It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have at least one successor in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for R because the rest is similar.
+Pick $[w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, there is a point v s.t wRv. By the defintion of smallest filtration, we have that $[w]R^s[v]$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
+Pick [w],[v] s.t $[w]R^s_1[v]$. By defintion of smallest filtration there are points $w' \in [w]$ and $v' \in [v]$ s.t $w'R_1v'$. Furthermore, it holds $R_1 \subseteq R$, so $w'Rv'$.
+By smallest filtration, we get $[w']R^s[v']$. Because $w' \equiv w \mbox{ and } v' \equiv v$, we have $[w'] = [w] \mbox{ and } [v'] = [v]$. It follows $[w]R^s[v]$.
 
 \end{proof}
+
+\section{Defintion}
+Let $T_{\omega [in]}$ (i = irreflexiv, n = non-transitiv) denote the infinite branching and infinite depth tree, which is irreflexiv and non-transitive.
+Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
+The $T_{\omega,\omega,\omega [in]}$ tree is similary defined as the $T_{6,2,2}$ tree but with infinite branching and infinite depth. Before characterizing it, we say
+$\mathbb{N}_{R1}$* is the set of finite number combinations which has a subscript $R_1$ to denote that these numbers relate to $R_1$  \newline 
+(examples : $0_{R1}, 0123_{R1}$).
+$\mathbb{N}^+_{R_1}$ is the set $\mathbb{N}_{R_1}$*- \{$\epsilon$\}. $\mathbb{N}^+_{R}$, $\mathbb{N}^+_{R_2}$ are defined similar. \newline \newline
+Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = \mathbb{N}^+_{R} \cup \mathbb{N}^+_{R_1} \cup \mathbb{N}^+_{R_2} \cup \{ \epsilon\}$, 
+$$sRt \mbox{ iff } \exists u \in \mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2} : s*u = t$$
+$$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{R_1} : s * u = t$$
+$$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{R_2} : s * u = t$$
+where s,t are elements of the positive closure set where the element u can come from (additionally s can be $\epsilon$), w.r.t to the relation. For example
+if we consider $sR_1t$, then $s,t \in \mathbb{N}^+_{R_1}$ but also $s = \epsilon$. Of course the '*' operator acts here again as a concatenation operator.
+
+\section{Defintion} 
+Let $F = (W,R_1, R_2, ...)$ and $F' = (W', R'_1, R'_2, ...)$ be two frames. A bounded morphism from $F \mbox{ to } F'$ is a function
+$f : W \rightarrow W'$ satisfying the following conitions: 
+
+$$ \mbox{ If } (u,v) \in R_i  \mbox{ then }(f(u), f(v)) \in R'_i $$
+$$ \mbox{ If } (f(w), v') \in R'_i \mbox{ then } \exists v \in W \mbox{ s.t } (w,v) \in R'_i \mbox{ and } f(v) = v'$$
+We say that $F'$ is a bounded morphic image of F, if there is a surjective bounded morphism from $F \mbox{ to } F'$.
+
+\section {Proposition}
+Let $\phi$ be a formula in $L_{\Box, \Box_1, \Box_2}$ , $F = (W, R, R_1, R_2)$ and $F' = (W', R', R'_1, R'_2)$ be two frames and $F \mbox{ to } F'$ a surjective bounded morphism. Then the following holds :
+$$ \mbox{ If }F \Vdash \phi \mbox{ then } F' \Vdash \phi$$
+This can be shown by structural induction on the length of the formula.
+
+\section{Corollary}
+If $F'$ is a bounded morphic image of $F$, then we have $Log(F) \subseteq Log(F')$
+
+\section{Proposition}
+D is sound and complete w.r.t $T_\omega$.
+
+\begin{proof}
+Sound is clear. For completeness, we use the well known fact that D has FMP. This means, $D = Log\{F \mid F \Vdash D\}$ where $F$ is a finite frame.
+We can pick such a finite frame $F$ and it suffices to find a surjective bounded morphism f from $T_w$ to $F$. This would imply $Log(T_w) \subseteq D$. \newline
+Now, let $F$ be such a finite rooted frame with root w.(We can pick such because $F,w \Vdash D$ and then generate a subframe by w). We define 
+inductively an assignment of nodes of $F$ to the nodes of $T_\omega$. For the base case, we assign w to the root of $T_\omega$. The induction step looks like the following : 
+Assume a point $x \in T_\omega$ has been assigned to a point $u \in F$ but the successors of x has no assignment. 
+
+\end{proof}
+
+
+
+
 
 
 \chapter{Topological Space Defintion}
