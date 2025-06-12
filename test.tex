@@ -230,11 +230,17 @@ D is sound and complete w.r.t $T_\omega$.
 \begin{proof}
 Sound is clear. For completeness, we use the well known fact that D has FMP. This means, $D = Log\{F \mid F \Vdash D\}$ where $F$ is a finite frame.
 We can pick such a finite frame $F$ and it suffices to find a surjective bounded morphism f from $T_w$ to $F$. This would imply $Log(T_w) \subseteq D$. \newline
-Now, let $F$ be such a finite rooted frame with root w.(We can pick such because $F,w \Vdash D$ and then generate a subframe by w). We define 
+Now, let $F = (W', R')$ be such a finite rooted frame with root w.(We can pick such because $F,w \Vdash D$ and then generate a subframe by w). We define 
 inductively an assignment of nodes of $F$ to the nodes of $T_\omega$. For the base case, we assign w to the root of $T_\omega$. The induction step looks like the following : 
 Assume a point $x \in T_\omega$ has been assigned to a point $u \in F$ but the successors of x has no assignment. 
+Let $s_1, s_2, ..., s_k$ be successors of u (k denotes amount of successors and $k\geq 1$ because seriality guarantees us at least one successor).
+For $n \geq 1, n \in \mathbb{N}$ we assign $s_i$ to the ($n * i$)th-successor of x. This means we are assigining the successors alternatingly. \newline
+Now we check for f the conditions of bounded morphism. First condition : Let x,y $\in T_\omega$ s.t xRy and f(x) = s. But then, y will be assigned to a successor point of s. 
+Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $f(x) = s$. Since t is a successor of s and f(x) = s, then a successor of x, say y, gets the assignment t. 
 
 \end{proof}
+
+
 
 
 
