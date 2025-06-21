@@ -5,6 +5,32 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \begin{document}
+\chapter{Introduction}
+The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [?]. The idea was to generalize Kripke frames using tools from topology.
+ Neighbourhood semantics [?] as a generalization of Kripke semantics for modal logic were invented independently by Dana Scott [?] and Richard Montague [?].
+Neighborhood semantics is more general than Kripke semantics and in the case of normal reflexive and transitive logics coincides with topological semantics.
+The original motivation for introducing was to provide a semantics for non-normal modal logics. But in
+recent years, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. \newline
+Oftentimes, it is necessary to combine frames for different modal logics into a complex
+frame. The natural way of doing that is a product construction. For Kripke frames,
+the resulting product is the Cartesian product of the two frames with two accessibility
+relations. For topological semantics, the product of topogical spaces as bi-topological
+spaces with so-called horizontal and vertical topologies have been considered. In a similar
+fashion, the product of neighborhood frames was introduced by Sano in [?]. \newline
+Now, let $L_1$ and $L_2$ be two modal logics. We say $L_1\otimes L_2$ (called fusion) is the 
+minimal modal logic containing $L_1$ and $L'_2$, where $L'_2$ is the logic $L_2$ after renaming all modalities.
+Furthermore, we say $L_1 \times_n L_2$ is the logic (i.e the set of all valid formulas) of the class 
+products of neighbourhood frames $N_1 \times_n N_2$ such that $L_i$ is valid in $N_i$ for i = 1,2.
+It was proven in [?] that for any two logics $L_1, L_2 \in \{D4,D,T,S4\}: $  $L_1\times_n L_2 = L_1 \otimes L_2$.
+In [?], the authors studied a product of two spaces with three topologies : horizontal, vertical and
+classic product topology. They proved that the logic of such spaces is $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$
+where $\Box$ corresponds to the product topology. \newline
+The following work will present a detailed proof of the shown results. Additionally, we will show that $D\otimes D\otimes D + \Box p \rightarrow \Box_1 p \land \Box_2p$ 
+ (we abbreviate it with DNL) = $D \,x^+_n \, D$. The proof ideas here are inspired by the shown results.
+
+
+
+
 
 \chapter{Definition}
 
@@ -38,7 +64,7 @@ $$D4 = D + \Box p \rightarrow \Box \Box p$$
 $$S4 = T + \Box p \rightarrow \Box \Box p$$
 
 \chapter{Kripke Definition}
-To show D $\otimes$ D $\otimes$ D + $\Box p \rightarrow \Box_1 p \land \Box_2 p$ has the finite model property, we need some important defintions.
+To show DNL has finite model property, we need some important defintions.
 
 \section{Defintion}
 
@@ -111,7 +137,7 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
 \section{Defintion}
  Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
 $$R^s = \{[w],[v] \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$
-where $i \in \{1,2,\epsilon\}$.         
+where $i \in \{1,2,\epsilon\}$.         Now, let L1 and L2 be two modal logics then the fusion of these logics 
 
 \section{Lemma}
 Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformlas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$ and $V^f$ the standard valuation on $W_\Sigma$. Then $(W_\Sigma, R^s,R^s_1,R^s_2,V^f)$ is 
@@ -181,11 +207,11 @@ is falsifiable in a finite model.
 \section{Proposition}
 The logic $D \otimes D \otimes D + \Box p \rightarrow \Box_1 p \land \Box_2 p$ has FMP.
 \begin{proof}
-The idea is to pick a class of frame $\mathcal{F}$, where DPL is sound and complete with respect to and then show by filtration the FMP. \newline \newline
-Let $\mathcal{C} = \{F \mid F \Vdash DPL\}$. Obviously,  DPL is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
+The idea is to pick a class of frame $\mathcal{F}$, where DNL is sound and complete with respect to and then show by filtration the FMP. \newline \newline
+Let $\mathcal{C} = \{F \mid F \Vdash DNL\}$. Obviously,  DNL is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
 We remember D = K + $\Box_i p \rightarrow \Diamond_i p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
-By Sahlqvist, we have that DPL is complete w.r.t $\{F \mid F \Vdash \forall x \exists y \, R_i(x,y) \mbox{ and } F \Vdash \forall x \exists y (R_1(x,y) \land R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
-Now assume a formula $\phi$ is not derivable from DPL. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
+By Sahlqvist, we have that DNL is complete w.r.t $\{F \mid F \Vdash \forall x \exists y \, R_i(x,y) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
+Now assume a formula $\phi$ is not derivable from DNL. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
 Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By filtration Theorem, they preserve truth.
 It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have at least one successor in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for R because the rest is similar.
 Pick $[w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, there is a point v s.t wRv. By the defintion of smallest filtration, we have that $[w]R^s[v]$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
@@ -225,7 +251,7 @@ This can be shown by structural induction on the length of the formula.
 If $F'$ is a bounded morphic image of $F$, then we have $Log(F) \subseteq Log(F')$
 
 \section{Proposition}
-D is sound and complete w.r.t $T_\omega$.
+D is sound and complete w.r.t $T_{\omega[in]}$.
 
 \begin{proof}
 Sound is clear. For completeness, we use the well known fact that D has FMP. This means, $D = Log\{F \mid F \Vdash D\}$ where $F$ is a finite frame.
@@ -240,8 +266,20 @@ Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $f(x) = s$. Since
 
 \end{proof}
 
+\section{Proposition}
+DNL is sound and complete w.r.t $T_{\omega,\omega,\omega[in]}$.
 
-
+\begin{proof}
+For soundness, we have that $T_{\omega,\omega,\omega[in]} \Vdash \Box p \rightarrow \Box_1 p \land \Box_2p$, because by defintion we have $R_1,R_2 \subseteq R$. The rest is clear.
+For completeness, we use the fact that DNL has FMP. Let $F = (W',R', R'_1, R'_2)$ be a finite rooted frame with root w and $F \Vdash DNL$. We define inductively an
+assignment similar to 2.17. We assign w to the root of $T_{\omega,\omega,\omega[in]}$. For induction step we start by only assigining points from $R_1$ to $R'_1$ and $R_2$ to $R'_2$. After that, the remaining points will be assigned to $R'$.
+The procedure works similar as described previously. \newline
+Now we check the conditions for $R_1 \mbox{ and } R'_1$. Let $xR_1y$ and $f(x) = s$. We assigned y to a successor of s. So, $f(x) R'_1f(y)$. For the second condition, the same argument holds as before.
+It works the same for $R_2 \mbox{ and } R'_2$. For $R$ and $R'$ we pick any $xRy$ with $f(x) = s$. 
+If we also have $xR_1y$, then it follows $f(x)Rf(y)$, because we showed that condtion for $R_1 \mbox{ and } R'_1$. The same argument holds if $xR_2y$. Else, the successor of s was assigned to y, so $f(x)R'f(y)$. 
+Let $f(x)R't$ and $f(x) = s$. If we have $f(x) R'_1 t$  and $x$ a point in $R_1$, then the second condition follows. The same holds for $f(x)R'_2t$ and $x$ in $R_2$.
+Else, we have that t is a successor of f(x) = s, and a successor of x was assigned to t.
+\end{proof}
 
 
 
