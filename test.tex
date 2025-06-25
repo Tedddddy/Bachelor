@@ -89,8 +89,23 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
 \end{definition}
 
 \begin{definition}
-    Let A be a nonempty set. We define an infinite frame 
+    Let A be a nonempty set. We define an infinite frame $F_{in}[A] = (A^*, R)$ s.t for $\vec{a}, \vec{b} \in A^*$ 
+    $$\vec{a}R\vec{b} \Leftrightarrow \exists x \in A \, (\vec{b} = \vec{a} \cdot x)$$
+    Furthermore we define : 
+    $$F_{rn}[A] = (A^*,R^r), \mbox{ where } R^r = R \cup Id \mbox{ (reflexive closure)}$$
+    $$F_{it}[A] = (A^*,R^*), \mbox{ where } R^* = \bigcup_{i=1}^{\infty}R^i \mbox{ (transitive closure)}$$
+    $$F_{rt}[A] = (A^*, R^{r*})$$ \newline
+    where "$t$" stands for transtive, "$n$" for non-tarnsitive, "$r$" for reflexive and "$i$" for irreflexive. \newline
+    For now, we will use the following notion to generalize : $F_{\xi \eta}$ where $\xi \in \{i,r\}$ and $\eta \in \{t,n\}$ \newline
 \end{definition}
+
+\begin{proposition}
+    Let $F =F_{\xi \eta}[A] = (A^*, R)$ then $$\vec{a}R(\vec{a} \cdot \vec{c}) \Leftrightarrow \Lambda R \vec{c}$$ 
+\end{proposition}
+
+
+
+
 
 \section{Completeness result for DNL}
 
