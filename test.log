@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  26 JUN 2025 01:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  27 JUN 2025 00:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -404,157 +404,177 @@ Underfull \hbox (badness 10000) in paragraph at lines 97--100
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 126--138
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 126--138
-
- []
+LaTeX Warning: Citation `ref6' on page 3 undefined on input line 114.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
+LaTeX Warning: Citation `ref4' on page 3 undefined on input line 114.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--121
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 148--159
+Underfull \hbox (badness 10000) in paragraph at lines 147--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--159
+Underfull \hbox (badness 10000) in paragraph at lines 147--159
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--159
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--167
+Underfull \hbox (badness 10000) in paragraph at lines 169--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--171
+Underfull \hbox (badness 10000) in paragraph at lines 169--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--174
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 175--177
+Underfull \hbox (badness 10000) in paragraph at lines 169--180
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 178--183
+Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--204
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 235--241
+Underfull \hbox (badness 10000) in paragraph at lines 256--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--241
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 252--255
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--260
+Underfull \hbox (badness 10000) in paragraph at lines 256--262
 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 272--282
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--282
+Underfull \hbox (badness 10000) in paragraph at lines 273--276
 
  []
 
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 293.
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+
+Underfull \hbox (badness 10000) in paragraph at lines 277--281
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--303
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--303
+
+ []
+
+[7]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 314.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 293.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 314.
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--295
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 288--295
-
- []
-
-[7] [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 368--381
+Underfull \hbox (badness 10000) in paragraph at lines 309--316
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--381
+Underfull \hbox (badness 10000) in paragraph at lines 309--316
+
+ []
+
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 389--402
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--418
+Underfull \hbox (badness 10000) in paragraph at lines 389--402
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 435--439
 
  []
 
 [10
 
 ] [11]
-Underfull \hbox (badness 10000) in paragraph at lines 464--469
+Underfull \hbox (badness 10000) in paragraph at lines 485--490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 472--474
+Underfull \hbox (badness 10000) in paragraph at lines 493--495
 
  []
 
 [12
 
 ] (./test.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12891 strings out of 480247
- 225479 string characters out of 5896152
- 652731 words of memory out of 5000000
- 30635 multiletter control sequences out of 15000+600000
+ 12895 strings out of 480247
+ 225538 string characters out of 5896152
+ 650731 words of memory out of 5000000
+ 30636 multiletter control sequences out of 15000+600000
  476359 words of font info for 55 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 108i,8n,106p,10651b,481s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 108i,8n,106p,10651b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on test.pdf (12 pages, 212483 bytes).
+Output written on test.pdf (12 pages, 214620 bytes).
 PDF statistics:
- 203 PDF objects out of 1000 (max. 8388607)
- 159 compressed objects within 2 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 206 PDF objects out of 1000 (max. 8388607)
+ 162 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 
