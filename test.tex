@@ -128,6 +128,8 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
 
 
 
+
+
 \section{Completeness result for DNL}
 
 We introduce a frame called $T_{\omega, \omega, \omega[in]}$. We will show that DNL is sound and complete w.r.t $T_{\omega, \omega, \omega[in]}$
@@ -458,21 +460,33 @@ Now we define some Kripke frames, which we will use through this chapter.
 
 \clearpage
 \section{Neighborhood}
+\subsection{Neighborhood frames}
 
 \begin{definition}
-    Let X be a non-empty set. A function  $\tau : X \rightarrow 2^{2^X}$ is called a neighbourhood function. A pair 
+    Let $X$ be a non-empty set. A function  $\tau : X \rightarrow 2^{2^X}$ is called a neighbourhood function. A pair 
     F = (X,$\tau$) is called a neighbourhood frame (or n-frame). A model based on F is a tuple (X,$\tau$,v), where v assigns a subset of X to a variable
         
 \end{definition}
 
+\vspace{0.5cm}
+
 \begin{definition}
-    Let $M$ =(X,$\tau$,v) be a neighourhood model and x $\in$ X. The truth of a formula is defined inductively as follows :
+    Let $M$ =($X$,$\tau$,v) be a neighourhood model and $x$ $\in$ $X$. The truth of a formula is defined inductively as follows :
     $$M,x \models \Box \phi \mbox{ iff } \exists V \in N(x) \forall y \in V : M,y \models \phi$$ 
     A formula is valid in a n-model M if it is valid at all points of $M$ ($M \models \phi$). Formula is valid in a n-frame $F$ if it is valid in
     all models based on $F$ (notation $F \models \phi$). For Logic L we write $ F \models L, \mbox{ if for any }\phi \in L, F \models \phi$. 
     $\mbox{We define nV(L) =  } \{ F \mid F \mbox{ is an n-frame and } F \models \phi \}$.
-        
 \end{definition}
+
+\begin{definition}
+    Let $X$ be a non-empty set and $\tau$ neighborhood function. We call $\tau$ is a filter if for each $x\in X$ the collection $\tau(x)$
+    satisfies the following conditions : \newline \newline
+    1. $\emptyset \notin \tau(x)$ \newline
+    2. $\forall U \in \tau(x) : x \in U$ \newline
+    3. $\mbox{If }U \in \tau(x)$ and $U \subseteq V$ then $V \in \tau(x)$ (upward closed) \newline
+    4. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$
+\end{definition}
+
 
 \begin{definition}
     Let F = (W,R) be a Kripke frame. We define an n-frame $N$(F) = (W, $\tau$) as follows.
@@ -481,6 +495,15 @@ Now we define some Kripke frames, which we will use through this chapter.
         
 \end{definition}
 
+\vspace{0.5cm}
+\begin{lemma}
+
+    Let $F = (W,R)$ be a Kripke frame. Then $$Log(F) = Log(N(F))$$ 
+    The proof is by structural induction.
+\end{lemma}
+
+\vspace{0.5cm}
+
 \begin{definition}
     Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames. Then the function f:
     $X \rightarrow Y$ is called bounded morphism if \newline \newline
@@ -488,6 +511,8 @@ Now we define some Kripke frames, which we will use through this chapter.
     2. $\forall x\in X \, \forall U \in \tau_i(x) : f(U) \in \sigma_i (f(x))$ \newline
     3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$        
 \end{definition}
+
+\vspace{0.5cm}
 
 \begin{definition}
     Let $X$ = (X, $\tau_1$) and $Y$ = (Y, $\tau_2$) be two n-frames. Then the product of these two frames
@@ -504,6 +529,17 @@ Now we define some Kripke frames, which we will use through this chapter.
 \begin{definition}
     For two unimodal logics $L_1$ and $L_2$ we define the n-product of them as follows :
     $$ L_1 \times_n L_2 = Log(\{ X \times Y \mid X \in nV(L_1) \mbox{ and } Y \in nV(L_2) \})$$        
+\end{definition}
+
+
+
+\subsection{Main Construction}
+In the following, we will construct a useful neighborhood frame called $N_\omega[F]$ based on a frame F.
+We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$.
+
+\begin{definition}
+    Let $F = (A^*, R) = F_{\xi \eta}[A]$ and $0 \notin A$. We define "pseudo-infinite" sequences 
+    $$X = $$
 \end{definition}
 
 \end{document}
