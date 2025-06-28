@@ -535,12 +535,37 @@ Now we define some Kripke frames, which we will use through this chapter.
 
 \subsection{Main Construction}
 In the following, we will construct a useful neighborhood frame called $N_\omega[F]$ based on a frame F.
-We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$.
+We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_2 \in \{D,S4,D4,T\}$
 
 \begin{definition}
     Let $F = (A^*, R) = F_{\xi \eta}[A]$ and $0 \notin A$. We define "pseudo-infinite" sequences 
-    $$X = $$
+    $$X = \{a_1a_2a_3... \mid a_i \in A \cup \{0\} \mbox{ and } \exists N \forall k \geq N : a_k = 0\}$$
+    Furthermore, we define $f_F : X \rightarrow A^*$ to be the function, that deletes all zeros. \newline \newline
+    Example : Say $12034002340^\omega \in X$ ($0^\omega$ denotes infinitely many zeros). Then $f_F(12034002340^\omega) = 1234234$
+
 \end{definition}
+
+\begin{definition}
+    Let $F = (A^*, R) = F_{\xi \eta}[A]$ and $0 \notin A$. Assume the function $f_F$ and the set $X$ as defined before.
+    For $\alpha \in X$ such that $\alpha = a_1a_2...$ we define 
+    
+    \begin{align*}
+            st(a) &= min\{N \mid \forall k \geq N : a_k = 0\} \\
+            a \mid_{k} &= a_1a_2...a_k \\
+            U_k(\alpha) &= \{ \beta \mid f_F(\alpha)Rf_F(\beta) \mbox{ and } \alpha \mid_m = \beta \mid_m,  \mbox{ where } m = max((k, st(\alpha)))\} 
+    \end{align*} \newline 
+
+\end{definition}
+
+\begin{lemma}
+    $U_k(\alpha) \subseteq U_m(\alpha)$, whenever $k \geq m$.
+    
+    \begin{proof}
+        Let $\beta \in U_k(\alpha)$. Since $\alpha \mid_k = \beta \mid_k$ and $k \geq m$, we have $\alpha \mid_m = \beta \mid_m$. It follows, $\beta \in U_m(\alpha)$.
+    \end{proof}
+\end{lemma}
+
+
 
 \end{document}
 
