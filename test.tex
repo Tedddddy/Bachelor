@@ -482,9 +482,8 @@ Now we define some Kripke frames, which we will use through this chapter.
     Let $X$ be a non-empty set and $\tau$ neighborhood function. We call $\tau$ is a filter if for each $x\in X$ the collection $\tau(x)$
     satisfies the following conditions : \newline \newline
     1. $\emptyset \notin \tau(x)$ \newline
-    2. $\forall U \in \tau(x) : x \in U$ \newline
-    3. $\mbox{If }U \in \tau(x)$ and $U \subseteq V$ then $V \in \tau(x)$ (upward closed) \newline
-    4. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$
+    2. $\mbox{If }U \in \tau(x)$ and $U \subseteq V$ then $V \in \tau(x)$ (upward closed) \newline
+    3. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$
 \end{definition}
 
 
@@ -552,8 +551,9 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \begin{align*}
             st(a) &= min\{N \mid \forall k \geq N : a_k = 0\} \\
             a \mid_{k} &= a_1a_2...a_k \\
-            U_k(\alpha) &= \{ \beta \mid f_F(\alpha)Rf_F(\beta) \mbox{ and } \alpha \mid_m = \beta \mid_m,  \mbox{ where } m = max((k, st(\alpha)))\} 
-    \end{align*} \newline 
+            U_k(\alpha) &= \{ \beta \mid f_F(\alpha)Rf_F(\beta) \mbox{ and } \alpha \mid_m = \beta \mid_m,  \mbox{ where } m = max((k, st(\alpha))\} 
+    \end{align*} 
+    Remark : Let $\alpha \in X \mbox{ with } st(\alpha) = n$. Then we have that $U_n(\alpha) = U_j(\alpha)$ for any $j \leq n$
 
 \end{definition}
 
@@ -565,7 +565,39 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \end{proof}
 \end{lemma}
 
+\begin{definition}
+    Due to Lemma 5.2.3 the sets $U_n(\alpha)$ forms a filter base. So we can define :
+    $$\tau(\alpha) \mbox{ is a filter with base } \{U_n(\alpha) \mid n \in \mathbb{N} \}$$
+    $$N_\omega = (X, \tau) \mbox{ is the n-frame based on } F$$
 
+\end{definition}
+
+\begin{lemma}
+    Let $F = (A^*, R) = F_{\xi \eta}[A]$. Based on that, let $N_\omega(F) = (X,\tau)$, $N(F) = (A^*, \sigma)$ and $f_F : N\omega(F) \rightarrow N(F)$.
+    Then for any $m \in \mathbb{N}$ and $x\in X$ we have $$f_F(U_m(x)) = R(f_F(x))$$
+
+    \begin{proof}
+            $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. By defintion of $U_m(x)$,
+            we get $f_F(\alpha) \in R(f_F(x))$. \newline \newline
+            For the other direction, we pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$.
+            We construct $\beta = x \mid_m \cdot \, \vec{c}\, 0^\omega$ where $\vec{c} = \vec{a} - f_F(x)$ and it is the path from $f_F(x) \mbox{ to } \vec{a}$ in R.
+            Then we get 
+            
+            
+            
+    \end{proof}
+\end{lemma}
+
+\begin{lemma}
+    Let $F =(A^*,R) = F_{\xi \eta}[A]$. Then $f_F : N_\omega(F) \rightarrow N(F)$ is a bounded morphism.
+
+    \begin{proof}
+        From now on this proof we will omit the subindex in $f_F$.
+        Let $N_\omega(F) = (X, \tau)$ and $N(F) =(A^*, \sigma)$. \newline For surjectivity, we pick any $\vec{x} \in A^*$. But then, $\vec{x}\,0^\omega \in X$. Hence, $f(\vec{x}\, 0^\omega) = \vec{x}$. \newline 
+        For the next condition, assume that $x \in X \mbox{ and } U \in \tau(x)$. We need to prove that $f(U) \in \sigma(f(x))$. That means $R(f(x)) \subseteq f(U)$.
+
+    \end{proof} 
+\end{lemma}
 
 \end{document}
 
