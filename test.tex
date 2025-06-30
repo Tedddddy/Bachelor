@@ -95,7 +95,7 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
     $$F_{rn}[A] = (A^*,R^r), \mbox{ where } R^r = R \cup Id \mbox{ (reflexive closure)}$$
     $$F_{it}[A] = (A^*,R^*), \mbox{ where } R^* = \bigcup_{i=1}^{\infty}R^i \mbox{ (transitive closure)}$$
     $$F_{rt}[A] = (A^*, R^{r*})$$ \newline
-    where "$t$" stands for transtive, "$n$" for non-tarnsitive, "$r$" for reflexive and "$i$" for irreflexive. \newline
+    where "$t$" stands for transtive, "$n$" for non-transitive, "$r$" for reflexive and "$i$" for irreflexive. \newline
     For now, we will use the following notion to generalize : $F_{\xi \eta}$ where $\xi \in \{i,r\}$ and $\eta \in \{t,n\}$ \newline
 \end{definition}
 
@@ -511,6 +511,12 @@ Now we define some Kripke frames, which we will use through this chapter.
     3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$        
 \end{definition}
 
+\begin{corollary}
+     Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames and $f : X \rightarrow Y$ a bounded morphism. Then 
+     $$Log(X) \subseteq Log(Y)$$. \newline
+     The proof is by structural induction.
+\end{corollary}
+
 \vspace{0.5cm}
 
 \begin{definition}
@@ -574,15 +580,15 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
 
 \begin{lemma}
     Let $F = (A^*, R) = F_{\xi \eta}[A]$. Based on that, let $N_\omega(F) = (X,\tau)$, $N(F) = (A^*, \sigma)$ and $f_F : N\omega(F) \rightarrow N(F)$.
-    Then for any $m \in \mathbb{N}$ and $x\in X$ we have $$f_F(U_m(x)) = R(f_F(x))$$
-
+    Then for any $m \in \mathbb{N}$ and $x\in X$ with $x = a_1a_2...$ \newline we have $$f_F(U_m(x)) = R(f_F(x))$$
+    \vspace{0.01cm}
     \begin{proof}
             $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. By defintion of $U_m(x)$,
             we get $f_F(\alpha) \in R(f_F(x))$. \newline \newline
-            For the other direction, we pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$.
-            We construct $\beta = x \mid_m \cdot \, \vec{c}\, 0^\omega$ where $\vec{c} = \vec{a} - f_F(x)$ and it is the path from $f_F(x) \mbox{ to } \vec{a}$ in R.
-            Then we get 
-            
+            For the other direction, we pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexiv and non-transitive.
+            The other cases are similar. \newline
+            Because $\vec{a} \in R(f_F(x))$, there must exists $c \in A$ such that $ \vec{a} = f_F(x) * c $.
+            We construct $\beta = x \mid_m \cdot \, c\, 0^\omega$. Hence, $f(\beta) = f_F(x \mid_m) * f_F(c)$ and because $ 0 \notin A$ we get $f_F(x \mid_m) * c = \vec{a}$.
             
             
     \end{proof}
@@ -594,10 +600,52 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \begin{proof}
         From now on this proof we will omit the subindex in $f_F$.
         Let $N_\omega(F) = (X, \tau)$ and $N(F) =(A^*, \sigma)$. \newline For surjectivity, we pick any $\vec{x} \in A^*$. But then, $\vec{x}\,0^\omega \in X$. Hence, $f(\vec{x}\, 0^\omega) = \vec{x}$. \newline 
-        For the next condition, assume that $x \in X \mbox{ and } U \in \tau(x)$. We need to prove that $f(U) \in \sigma(f(x))$. That means $R(f(x)) \subseteq f(U)$.
+        For the next condition, assume that $x \in X \mbox{ and } U \in \tau(x)$. We need to prove that $f(U) \in \sigma(f(x))$. That means $R(f(x)) \subseteq f(U)$. Because $U \in \tau(x)$, there is a $m$ such that
+        $U_m(x) \subseteq U$. By Lemma 5.2.5 we have $f(U_m(x)) = R(f(x))$. It follows, 
+        $$R(f(x)) = f(U_m(x)) \subseteq f(U)$$ 
+        \newline
+        Assume $x\in X$ and $V$ is a neighborhood of x, i.e $R(f(x)) \subseteq V$. We need to prove that there exists $U \in \tau(x)$, such that $f(U)\subseteq V$.
+        As $U$ we $U_m(x)$ for any $m \in \mathbb{N}$. By Lemma 5.2.5 we get $f(U_m(x)) = R(f(x))$. Hence, 
+        $$f(U_m(x)) = R(f(x)) \subseteq V$$
 
     \end{proof} 
 \end{lemma}
+
+\begin{corollary}
+    For frame $F = F_{\xi \eta}[A]$ we have $Log(N_\omega(F)) \subseteq Log(F)$.
+    \begin{proof}
+        It follows from Lemma 5.1.5, Corollary 5.1.7 and Lemma 5.2.6 
+        $$Log(N_\omega(F)) \subseteq Log(N(F)) = Log(F)$$
+    \end{proof}
+
+\end{corollary}
+
+\begin{proposition}
+    Let $F_{in} = F_{in}[\mathbb{N}], F_{rn} = F_{rn}[\mathbb{N}], F_{it} = F_{it}[\mathbb{N}] \mbox{ and } F_{rt} = F_{rt}[\mathbb{N}]$. Then
+    $$Log(N_\omega(F_{in})) = D$$
+    $$Log(N_\omega(F_{rn})) = T$$
+    $$Log(N_\omega(F_{it})) = D4$$
+    $$Log(N_\omega(F_{rt})) = S4$$
+
+    \begin{proof}
+        In all these cases, the inclusion from left to right follows from Proposition 2.0.9 and Corollary 5.2.7.
+        Now the converse direction. Assume $X =(X,\tau)$. \newline
+        It is easy to check that $X \vDash D$ iff for each $x \in X : \emptyset \notin \tau(x)$. For $N_\omega(F_{in})$ and $N_\omega(F_{it})$ this holds. \newline
+        It is easy to check that $X \vDash T$ iff we have $x\in U \in \tau(x)$ for any $x$ and $U$. For $N_\omega(F_{rn})$ and $N_\omega(F_{rt})$ this holds. \newline
+        Now we check $X \vDash 4$ iff for each $U \in \tau(x) : \{y \mid U \in \tau(y)\} \in \tau(x)$. \newline
+        $\supseteq : $ Let $x \in X$ and assume $X,x \vDash \Box p$. That means there exists $U \in \tau(x)$ s.t $U\subseteq V(p)$.
+        By assumption we have $S = \{y \mid U \in \tau(y)\} \in \tau(x)$. But then $X,x \vDash \Box\Box p$ because we can just pick the set S. \newline
+        $\subseteq :$ By contradiction, assume there exists a $U$ s.t $\{y \mid U \in \tau(y)\} \notin \tau(x)$. Let $X,x \vDash \Box p$ where $V(p) = U$.
+        If $X,x \vDash \Box\Box p$ then it must be the case that  \newline 
+        $S =\{y \in X \mid X,y \vDash \Box p\} \in \tau(x)$. $X,y \vDash \Box p$ means $U \in \tau(y)$. That means $S = \{y \in X \mid U \in \tau(y)\}$. But by assumption $S \notin \tau(x)$. 
+        Hence, $X,x \not\vDash \Box\Box p$. But thats a contradiction.
+        
+        
+
+    \end{proof}
+\end{proposition}
+
+
 
 \end{document}
 
