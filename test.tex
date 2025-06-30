@@ -660,7 +660,33 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
 \end{lemma}
 
 Assume $F_1 = (A^*,R_1) = F_{\eta_1 \xi_1}[A]$ and $F_2 = (B^*,R_2) = F_{\eta_2 \xi_2}[B]$ 
-with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$.
+with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$. 
+Consider the product of n-frames $F'_1 = (X_1, \tau_1) = N_\omega(F_1)$ and $F'_2 = (X_2, \tau_2) = N_\omega(F_2)$ is 
+$$X = (X_1 \times X_2, \tau'_1, \tau'_2) = N_\omega(F_1) \times_n N_\omega(F_2)$$ \newline
+Furthermore, we have $F_1 \otimes F_2 = ((A \cup B)^*, R_1', R_2')$ as defined in Defintion 2.0.7.
+We consider the neighborhood version $$N(F_1 \otimes F_2) = ((A \cup B)^*, \sigma_1', \sigma_2')$$ \newline
+Now we define $g : X_1 \times X_2 \rightarrow (A \cup B)^*$ as follows. For $(\alpha, \beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$
+we define $g(\alpha,\beta)$ to be the finite sequence which we get after eliminating all zeros from the infinite sequence
+$a_1b_1a_2b_2...$ \newline \newline
+Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\alpha, \beta) = 1a2b34e$.
+
+\begin{lemma}
+    Let $X$ and $N(F_1 \otimes F_2)$ be as defined before and $(\alpha,\beta) \in X_1 \times X_2$. Then for any $m >$ max$\{st(\alpha), st(\beta)\}$ we have 
+    $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\})$$.
+
+    \begin{proof}
+        We will show both direction by assuming $F_1 = F_{in}[A]$. For $F_{it}[A],F_{rt}[A]$ and $F_{rn}[A]$ is it similar. \newline
+        $\supseteq$ : 
+
+    \end{proof}
+
+
+\end{lemma}
+
+\begin{lemma}
+    Function $g : X \rightarrow N(F_1 \otimes F_2)$ is a bounded morphism
+\end{lemma}
+
 
 
 \end{document}
