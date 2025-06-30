@@ -36,8 +36,8 @@ It was proven in [?] that for any two logics $L_1, L_2 \in \{D4,D,T,S4\}: $  $L_
 In [?], the authors studied a product of two spaces with three topologies : horizontal, vertical and
 classic product topology. They proved that the logic of such spaces is $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$
 where $\Box$ corresponds to the product topology. \newline
-The following work will present a detailed proof of the shown results. Additionally, we will show that $D\otimes D\otimes D + \Box p \rightarrow \Box_1 p \land \Box_2p$ 
- (we abbreviate it with DNL) = $D \,x^+_n \, D$. The proof ideas here are inspired by the shown results.
+The following work will present a detailed proof of the shown results. Additionally, we will show that $T\otimes T\otimes T + \Box p \rightarrow \Box_1 p \land \Box_2p$ 
+ (we abbreviate it with TNL) = $T \,x^+_n \, T$. The proof ideas here are inspired by the shown results.
  \clearpage
 
 
@@ -130,10 +130,10 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
 
 
 
-\section{Completeness result for DNL}
+\section{Completeness result for TNL}
 
-We introduce a frame called $T_{\omega, \omega, \omega[in]}$. We will show that DNL is sound and complete w.r.t $T_{\omega, \omega, \omega[in]}$
-The idea is to pick a class of frame $C$ s.t $Log(C) = Log(T_{\omega, \omega, \omega[in]})$ and then show that the class has FMP.
+We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show that TNL is sound and complete w.r.t $T_{\omega, \omega, \omega[in]}$
+The idea is to pick a class of frame $C$ s.t $Log(C) = Log(T_{\omega, \omega, \omega[rn]})$ and then show that the class has FMP.
 In the end, we will use an unravelling technique to show completeness. 
 
 \subsection{Filtration and Sahlqvist for multimodal logic}
@@ -255,7 +255,7 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
 \end{theorem}
 
 \begin{definition}
-    A modal formula $\phi$ is positive if all variables occurs without negation. In the other hand, a formula is negative, if all variables occurs with negation.
+    A modal formula $\phi$ is positive if all variables occurs in the scope of an even number of negations. In the other hand, a formula is negative, if all variables occurs in the scope of an odd number of negations.
     A boxed atom is a modal formula of the form $\Box^n p$ for some $n \in \mathbb{N}$, where p is a propositional variable and $\Box^n p$ is defined as follows :
     $\Box^0 p = p$, $\Box^1 p = \Box p$, $\Box^{n+1} p = \Box(\Box^n p)$. \newline \newline
     Furthermore, a Sahlqvist antecedent is built from $\bot, \top$, negative formulas and boxed atoms by applying $\Diamond$ and $\land$. A Sahlqvist implication is a modal formula of the form
@@ -307,19 +307,20 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
         
 \end{proposition}
 
+\subsection{Completeness w.r.t $T_{\omega,\omega,\omega[rn]}$}
+
 \begin{definition}
-    Let $T_{\omega [in]}$ (i = irreflexiv, n = non-transitiv) denote the infinite branching and infinite depth tree, which is irreflexiv and non-transitive.
-    Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
-    The $T_{\omega,\omega,\omega [in]}$ tree is similary defined as the $T_{6,2,2}$ tree but with infinite branching and infinite depth. Before characterizing it, we say
+    Let $T_{\omega [in]}$ (r = reflexive, n = non-transitiv) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
+    Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} \cup \{\epsilon\} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
+    The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching and infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
     $\mathbb{N}_{R1}$* is the set of finite number combinations which has a subscript $R_1$ to denote that these numbers relate to $R_1$  \newline 
-    (examples : $0_{R1}, 0123_{R1}$).
+    (examples : $2_{R1}, 4231123_{R1}$).
     $\mathbb{N}^+_{R_1}$ is the set $\mathbb{N}_{R_1}$*- \{$\epsilon$\}. $\mathbb{N}^+_{R}$, $\mathbb{N}^+_{R_2}$ are defined similar. \newline \newline
-    Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = \mathbb{N}^+_{R} \cup \mathbb{N}^+_{R_1} \cup \mathbb{N}^+_{R_2} \cup \{ \epsilon\}$, 
-    $$sRt \mbox{ iff } \exists u \in \mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2} : s*u = t$$
-    $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{R_1} : s * u = t$$
-    $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{R_2} : s * u = t$$
-    where s,t are elements of the positive closure set where the element u can come from (additionally s can be $\epsilon$), w.r.t to the relation. For example
-    if we consider $sR_1t$, then $s,t \in \mathbb{N}^+_{R_1}$ but also $s = \epsilon$. Of course the '*' operator acts here again as a concatenation operator.
+    Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2})^+ \cup \{ \epsilon\}$, 
+    $$sRt \mbox{ iff } \exists u \in \mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2} \cup \{\epsilon\} : s*u = t$$
+    $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{R_1} \cup \{\epsilon\} : s * u = t$$
+    $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{R_2} \cup \{\epsilon\} : s * u = t$$
+    where $s,t \in W$. Again, the '*' operator acts here as a concatenation operator.
         
 \end{definition}
 
@@ -585,7 +586,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \begin{proof}
             $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. By defintion of $U_m(x)$,
             we get $f_F(\alpha) \in R(f_F(x))$. \newline \newline
-            For the other direction, we pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexiv and non-transitive.
+            For the other direction, we pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexive and non-transitive.
             The other cases are similar. \newline
             Because $\vec{a} \in R(f_F(x))$, there must exists $c \in A$ such that $ \vec{a} = f_F(x) * c $.
             We construct $\beta = x \mid_m \cdot \, c\, 0^\omega$. Hence, $f(\beta) = f_F(x \mid_m) * f_F(c)$ and because $ 0 \notin A$ we get $f_F(x \mid_m) * c = \vec{a}$.
@@ -641,10 +642,25 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
         Hence, $X,x \not\vDash \Box\Box p$. But thats a contradiction. This also holds for $N_\omega(F_{it})$ and $N_\omega(F_{rt})$ because we have for any $y \in U_m(x)$ and 
         $k \geq m : U_k(y) \subseteq U_m(x)$.
             
-
     \end{proof}
 \end{proposition}
 
+\begin{definition}
+    to be continued...
+\end{definition}
+
+\subsection{Completness results}
+
+\begin{lemma}
+    Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.2.1. Then 
+    $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$ \newline
+    The proof is by structural induction.
+
+    
+\end{lemma}
+
+Assume $F_1 = (A^*,R_1) = F_{\eta_1 \xi_1}[A]$ and $F_2 = (B^*,R_2) = F_{\eta_2 \xi_2}[B]$ 
+with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$.
 
 
 \end{document}
