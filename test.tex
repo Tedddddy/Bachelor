@@ -676,7 +676,18 @@ Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\a
 
     \begin{proof}
         We will show both direction by assuming $F_1 = F_{in}[A]$. For $F_{it}[A],F_{rt}[A]$ and $F_{rn}[A]$ is it similar. \newline
-        $\supseteq$ : 
+        $\subseteq$ : Let $\vec{w} \in R'_1(g(\alpha,\beta))$. By definition we get, there exists $\vec{c} \in A^*$ where $\vec{w} = g(\alpha,\beta) \cdot \vec{c}$ and $\Lambda R_1 \vec{c}$.
+        Because $R_1$ is irreflexive and non-transitive, we get $\vec{c} \in A$. We construct $(\zeta,\beta)$ where $\zeta \in U_m(\alpha)$ and $g(\zeta,\beta) = \vec{w}$. For that, we can take $\zeta = \alpha \mid_m \cdot \vec{c}\, 0^\omega$. Obviously, $\zeta \in U_m(\alpha)$.
+        Because $m \in max\{st(\alpha), st(\beta)\}$, we have $g(\alpha \mid_m, \beta \mid_m) = g(\alpha, \beta)$. Hence, $g(\zeta, \beta) = g(\alpha \mid_m, \beta \mid_m) \cdot g(\vec{c} \,0^\omega, 0^\omega) = g(\alpha \mid_m, \beta \mid_m) \cdot \vec{c} = \vec{w}$.
+        \newline \newline
+        $\supseteq$ : Assume $\zeta \in U_m(\alpha)$. We have to show $g(\zeta, \beta) \in R_1'(g(\alpha, \beta))$. Because $R_1$ is irreflexive and non-transitive, it suffices to find a $\vec{c} \in A$ s.t. $g(\alpha,\beta) \cdot \vec{c} = g(\zeta, \beta)$.
+        By choosing $m$ is maximal and $\zeta \mid_m = \alpha \mid_m$, we have $g(\zeta_m, \beta_m) = g(\alpha,\beta)$. We also know $f_F(\alpha)R_1 f_F(\zeta)$, that means there exists a $\vec{d} \in A$ s.t. $f_F(\alpha) \cdot \vec{c} = f_F(\zeta)$. This $\vec{d}$ must appear at a point after $\zeta_m$.
+        We can follow $g(\zeta, \beta) = g(\alpha, \beta) \cdot \vec{d}$. Hence, $g(\zeta, \beta) \in R_1'(g(\alpha,\beta))$.
+        \newline \newline
+        Remark : If $m \leq max\{st(\alpha), st(\beta)\}$, then we cannot gurantee the equality. Assume $R_1$ as before and $\alpha = 123000^\omega$ and $\beta = d0b0a0^\omega$.
+        Lets pick $m = 3$ and $\zeta = 123100^\omega$. Then we have $(\alpha, \beta) = 1d23ba$ and $(\zeta, \beta) = 1d23b1a$.
+        
+        
 
     \end{proof}
 
