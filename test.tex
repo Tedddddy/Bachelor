@@ -685,17 +685,44 @@ Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\a
         We can follow $g(\zeta, \beta) = g(\alpha, \beta) \cdot \vec{d}$. Hence, $g(\zeta, \beta) \in R_1'(g(\alpha,\beta))$.
         \newline \newline
         Remark : If $m \leq max\{st(\alpha), st(\beta)\}$, then we cannot gurantee the equality. Assume $R_1$ as before and $\alpha = 123000^\omega$ and $\beta = d0b0a0^\omega$.
-        Lets pick $m = 3$ and $\zeta = 123100^\omega$. Then we have $(\alpha, \beta) = 1d23ba$ and $(\zeta, \beta) = 1d23b1a$.
+        Lets pick $m = 3$ and $\zeta = 123100^\omega$. Then we have $g(\alpha, \beta) = 1d23ba$ and $g(\zeta, \beta) = 1d23b1a$. Obviously, we don't have $g(\zeta, \beta) \in R_1'(g(\alpha,\beta))$. \newline
+        Furthermore, we can show $R'_2(g(\alpha,\beta)) = g(\alpha \times U_m(\beta))$ similar as above. 
         
-        
-
     \end{proof}
 
 
 \end{lemma}
 
 \begin{lemma}
-    Function $g : X \rightarrow N(F_1 \otimes F_2)$ is a bounded morphism
+    Function $g : X \rightarrow N(F_1 \otimes F_2)$ is a bounded morphism.
+
+    \begin{proof}
+        Let $\vec{z} = z_1z_2...z_n \in (A \cup B)^*$. Define for $i \leq n$ :
+        \[
+            x_i = 
+            \begin{cases}
+            z_i, & \text{if } z_i \in A; \\
+            0, & \text{if } z_i \notin A.
+            \end{cases}
+            \qquad
+            y_i = 
+            \begin{cases}
+            z_i, & \text{if } z_i \in B; \\
+            0, & \text{if } z_i \notin B.
+            \end{cases}
+        \] \newline
+        Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\beta = y_1y_2...y_n \, 0^\omega$. Then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective. \newline \newline
+        For the next conditions we check only for $\tau_1'$ and $\sigma_1$. The other case is similar.
+        Assume $(\alpha,\beta) \in X_1 \times X_2$ and $U \in \tau_1'(\alpha, \beta)$. We have to show $g(U) \in \sigma_1(g(\alpha,\beta))$. That means $R_1'(g(\alpha,\beta)) \subseteq g(U)$.
+        Pick a $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can pick such m, because $U \in \tau_1'(\alpha,\beta)$. So there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} = U$.
+        If $k > max\{st(\alpha), st(\beta)\}$ then we are done. Else, by Lemma 5.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ til we reach $m$. Then we use Lemma 5.3.2 to get the following :
+        $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\}) \subseteq g(U)$$
+        \newline
+        For the last condition we assume $(\alpha, \beta) \in X_1 \times X_2$ and $V \in \sigma_1(g(\alpha,\beta))$ (or rather $R_1'(g(\alpha,\beta)) \subseteq V$).
+        We need to prove there exists $U \in \tau_1'(\alpha,\beta)$, such that $g(U) \subseteq V$. As $U$ we take $U_m(\alpha) \times \{\beta\}$ for some $m > max\{st(\alpha), st(\beta)\}$. Hence, by Lemma 5.3.2 we get :
+        $$g(U_m(\alpha) \times \{\beta\}) = R_1'(g(\alpha,\beta)) \subseteq V$$
+
+    \end{proof}
 \end{lemma}
 
 
