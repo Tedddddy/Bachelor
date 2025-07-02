@@ -313,13 +313,13 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
     Let $T_{\omega [in]}$ (r = reflexive, n = non-transitiv) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
     Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} \cup \{\epsilon\} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
     The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching and infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
-    $\mathbb{N}_{R1}$* is the set of finite number combinations which has a subscript $R_1$ to denote that these numbers relate to $R_1$  \newline 
-    (examples : $2_{R1}, 4231123_{R1}$).
-    $\mathbb{N}^+_{R_1}$ is the set $\mathbb{N}_{R_1}$*- \{$\epsilon$\}. $\mathbb{N}^+_{R}$, $\mathbb{N}^+_{R_2}$ are defined similar. \newline \newline
-    Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2})^+ \cup \{ \epsilon\}$, 
-    $$sRt \mbox{ iff } \exists u \in \mathbb{N}_{R} \cup \mathbb{N}_{R_1} \cup \mathbb{N}_{R_2} \cup \{\epsilon\} : s*u = t$$
-    $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{R_1} \cup \{\epsilon\} : s * u = t$$
-    $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{R_2} \cup \{\epsilon\} : s * u = t$$
+    $\mathbb{N}_{1}$* is the set of finite number combinations which has a subscript $"1"$ to denote that these numbers relate to $R_1$  \newline 
+    (examples : $2_{1}, 4231123_{1}$).
+    $\mathbb{N}^+_{1}$ is the set $\mathbb{N}_{1}$*- \{$\epsilon$\}. $\mathbb{N}$, $\mathbb{N}^+_{2}$ are defined similar. \newline \newline
+    Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N}_{R} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^+ \cup \{ \epsilon\}$, 
+    $$sRt \mbox{ iff } \exists u \in \mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2} \cup \{\epsilon\} : s*u = t$$
+    $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{1} \cup \{\epsilon\} : s * u = t$$
+    $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{2} \cup \{\epsilon\} : s * u = t$$
     where $s,t \in W$. Again, the '*' operator acts here as a concatenation operator.
         
 \end{definition}
@@ -649,8 +649,6 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     to be continued...
 \end{definition}
 
-\subsection{Completness results}
-
 \begin{lemma}
     Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.2.1. Then 
     $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$ \newline
@@ -659,16 +657,16 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     
 \end{lemma}
 
-Assume $F_1 = (A^*,R_1) = F_{\eta_1 \xi_1}[A]$ and $F_2 = (B^*,R_2) = F_{\eta_2 \xi_2}[B]$ 
-with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$. 
-Consider the product of n-frames $F'_1 = (X_1, \tau_1) = N_\omega(F_1)$ and $F'_2 = (X_2, \tau_2) = N_\omega(F_2)$ is 
-$$X = (X_1 \times X_2, \tau'_1, \tau'_2) = N_\omega(F_1) \times_n N_\omega(F_2)$$ \newline
-Furthermore, we have $F_1 \otimes F_2 = ((A \cup B)^*, R_1', R_2')$ as defined in Defintion 2.0.7.
-We consider the neighborhood version $$N(F_1 \otimes F_2) = ((A \cup B)^*, \sigma_1', \sigma_2')$$ \newline
-Now we define $g : X_1 \times X_2 \rightarrow (A \cup B)^*$ as follows. For $(\alpha, \beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$
-we define $g(\alpha,\beta)$ to be the finite sequence which we get after eliminating all zeros from the infinite sequence
-$a_1b_1a_2b_2...$ \newline \newline
-Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\alpha, \beta) = 1a2b34e$.
+    Assume $F_1 = (A^*,R_1) = F_{\eta_1 \xi_1}[A]$ and $F_2 = (B^*,R_2) = F_{\eta_2 \xi_2}[B]$ 
+    with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$. 
+    Consider the product of n-frames $F'_1 = (X_1, \tau_1) = N_\omega(F_1)$ and $F'_2 = (X_2, \tau_2) = N_\omega(F_2)$ is 
+    $$X = (X_1 \times X_2, \tau'_1, \tau'_2) = N_\omega(F_1) \times_n N_\omega(F_2)$$ \newline
+    Furthermore, we have $F_1 \otimes F_2 = ((A \cup B)^*, R_1', R_2')$ as defined in Defintion 2.0.7.
+    We consider the neighborhood version $$N(F_1 \otimes F_2) = ((A \cup B)^*, \sigma_1', \sigma_2')$$ \newline
+    Now we define $g : X_1 \times X_2 \rightarrow (A \cup B)^*$ as follows. For $(\alpha, \beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$
+    we define $g(\alpha,\beta)$ to be the finite sequence which we get after eliminating all zeros from the infinite sequence
+    $a_1b_1a_2b_2...$ \newline \newline
+    Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\alpha, \beta) = 1a2b34e$.
 
 \begin{lemma}
     Let $X$ and $N(F_1 \otimes F_2)$ be as defined before and $(\alpha,\beta) \in X_1 \times X_2$. Then for any $m >$ max$\{st(\alpha), st(\beta)\}$ we have 
@@ -715,15 +713,34 @@ Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\a
         For the next conditions we check only for $\tau_1'$ and $\sigma_1$. The other case is similar.
         Assume $(\alpha,\beta) \in X_1 \times X_2$ and $U \in \tau_1'(\alpha, \beta)$. We have to show $g(U) \in \sigma_1(g(\alpha,\beta))$. That means $R_1'(g(\alpha,\beta)) \subseteq g(U)$.
         Pick a $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can pick such m, because $U \in \tau_1'(\alpha,\beta)$. So there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} = U$.
-        If $k > max\{st(\alpha), st(\beta)\}$ then we are done. Else, by Lemma 5.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ til we reach $m$. Then we use Lemma 5.3.2 to get the following :
+        If $k > max\{st(\alpha), st(\beta)\}$ then we are done. Else, by Lemma 5.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ til we reach $m$. Then we use Lemma 5.2.11 to get the following :
         $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\}) \subseteq g(U)$$
         \newline
         For the last condition we assume $(\alpha, \beta) \in X_1 \times X_2$ and $V \in \sigma_1(g(\alpha,\beta))$ (or rather $R_1'(g(\alpha,\beta)) \subseteq V$).
-        We need to prove there exists $U \in \tau_1'(\alpha,\beta)$, such that $g(U) \subseteq V$. As $U$ we take $U_m(\alpha) \times \{\beta\}$ for some $m > max\{st(\alpha), st(\beta)\}$. Hence, by Lemma 5.3.2 we get :
-        $$g(U_m(\alpha) \times \{\beta\}) = R_1'(g(\alpha,\beta)) \subseteq V$$
-
+        We need to prove there exists $U \in \tau_1'(\alpha,\beta)$, such that $g(U) \subseteq V$. As $U$ we take $U_m(\alpha) \times \{\beta\}$ for some $m > max\{st(\alpha), st(\beta)\}$. Hence, by Lemma 5.2.11 we get :
+        $$g(U_m(\alpha) \times \{\beta\}) = R_1'(g(\alpha,\beta)) \subseteq V$$ 
     \end{proof}
-\end{lemma}
+    
+\end{lemma} 
+
+    Now we will show $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism.
+    Let $(T_{\omega[rn]})_1 = (\mathbb{N}_{1}, R_1)$ and $(T_{\omega[rn]})_2 = (\mathbb{N}_{2}, R_2)$ as defined in Defintion 3.2.1.
+    Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline
+    Let's consider the full product of the n-frames :
+    $$N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) = (X_1 \times X_2, \tau'_1, \tau'_2, \tau)$$
+    In order to define the bounded morphism, we have to fix a bijection first. Let $h : \mathbb{N}_1 \times \mathbb{N}_2 \rightarrow \mathbb{N}$ be a bijection. \newline
+    Next, we define function $k :(\mathbb{N}_1 \cup \{0\}) \times \mathbb{N}_2 \cup \{0\} \rightarrow \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{0\}$ as follows :
+    \[
+        f(a, b) =
+        \begin{cases}
+        a, & \text{if } b = 0; \\
+        b, & \text{if } a = 0; \\
+        h(a, b), & \text{otherwise}.
+        \end{cases}
+    \]
+
+
+    
 
 
 
