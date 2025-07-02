@@ -314,9 +314,8 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
     Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} \cup \{\epsilon\} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
     The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching and infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
     $\mathbb{N}_{1}$* is the set of finite number combinations which has a subscript $"1"$ to denote that these numbers relate to $R_1$  \newline 
-    (examples : $2_{1}, 4231123_{1}$).
-    $\mathbb{N}^+_{1}$ is the set $\mathbb{N}_{1}$*- \{$\epsilon$\}. $\mathbb{N}$, $\mathbb{N}^+_{2}$ are defined similar. \newline \newline
-    Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N}_{R} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^+ \cup \{ \epsilon\}$, 
+    (examples : $2_{1}, 4231123_{1}$, $32_{1} \epsilon 45_{1} \epsilon 9_{1} = 32459_{1}$). \newline \newline
+    Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^*$, 
     $$sRt \mbox{ iff } \exists u \in \mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2} \cup \{\epsilon\} : s*u = t$$
     $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{1} \cup \{\epsilon\} : s * u = t$$
     $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{2} \cup \{\epsilon\} : s * u = t$$
@@ -723,13 +722,14 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     
 \end{lemma} 
 
-    Now we will show $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism.
+    Now we will show $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism. \newline 
     Let $(T_{\omega[rn]})_1 = (\mathbb{N}_{1}, R_1)$ and $(T_{\omega[rn]})_2 = (\mathbb{N}_{2}, R_2)$ as defined in Defintion 3.2.1.
     Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline
     Let's consider the full product of the n-frames :
     $$N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) = (X_1 \times X_2, \tau'_1, \tau'_2, \tau)$$
+    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree is as defined in Def.3.2.1\newline \newline
     In order to define the bounded morphism, we have to fix a bijection first. Let $h : \mathbb{N}_1 \times \mathbb{N}_2 \rightarrow \mathbb{N}$ be a bijection. \newline
-    Next, we define function $k :(\mathbb{N}_1 \cup \{0\}) \times \mathbb{N}_2 \cup \{0\} \rightarrow \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{0\}$ as follows :
+    Next, we define function $k :(\mathbb{N}_1 \cup \{0\}) \times (\mathbb{N}_2 \cup \{0\}) \rightarrow \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{0\}$ as follows :
     \[
         f(a, b) =
         \begin{cases}
@@ -738,6 +738,44 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
         h(a, b), & \text{otherwise}.
         \end{cases}
     \]
+
+    Let $(\alpha,\beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$. We define 
+    $$g'(\alpha,\beta) = f(a_1,b_1)f(a_2,b_2)...$$
+    At last, we define $g(\alpha,\beta)$ as $g'(\alpha,\beta)$ but removing all zeros.
+    \clearpage
+    \begin{lemma}
+        Function $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism.
+        
+        \begin{proof}
+            Let $\vec{z} = z_1z_2...z_n \in (\mathbb{N}_{1} \cup \mathbb{N}_{2} \cup \mathbb{N})^*$. We define for $i \leq n $
+        \[
+            x_i = 
+            \begin{cases}
+            z_i, & \text{if } z_i \in \mathbb{N}_{1}; \\
+            a_1, & \text{if } z_i = h(a_1,b_2); \\
+            0,   & \text{other}
+            \end{cases}
+            \qquad
+            y_i = 
+            \begin{cases}
+            z_i, & \text{if } z_i \in \mathbb{N}_{2}; \\
+            b_2, & \text{if } z_i = h(a_1,b_2); \\
+            0,   & \text{other } 
+            \end{cases}
+        \] 
+        \newline
+        Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\alpha = y_1y_2...y_n \, 0^\omega$. But then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective.
+        For the next conditions we do it for $\tau$ and $\sigma$. \newline
+        First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$.
+        The proof is similar as in Lemma 5.2.1. \newline
+        $\subseteq$ : 
+
+
+
+
+        \end{proof}
+    \end{lemma}
+
 
 
     
