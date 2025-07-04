@@ -765,12 +765,13 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
         \] 
         \newline
         Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\alpha = y_1y_2...y_n \, 0^\omega$. But then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective.
-        For the next conditions we do it for $\tau$ and $\sigma$. \newline
+        For the next conditions we show it for $\tau$ and $\sigma$. For $\tau_1', \sigma_1$ and $\tau_2', \sigma_2$ we can argue similar as in Lemma 5.2.11 and 5.2.12.\newline
         First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$.
         The proof is similar as in Lemma 5.2.1. \newline
-        $\subseteq$ : Pick $\zeta \in U_m(\alpha), \upsilon \in U_m(\beta)$. Show $g(\zeta, \upsilon) \in R(g(\alpha,\beta))$. By definition, we need to find a $\vec{c} \in \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{\epsilon\}$ s.t. $g(\alpha,\beta) \cdot \vec{c} = g(\zeta, \upsilon)$.
-
-
+        $\supseteq$ : Pick $\zeta \in U_m(\alpha), \upsilon \in U_m(\beta)$. Show $g(\zeta, \upsilon) \in R(g(\alpha,\beta))$. By definition, we need to find a $\vec{c} \in \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{\epsilon\}$ s.t. $g(\alpha,\beta) \cdot \vec{c} = g(\zeta, \upsilon)$.
+        By choosing $m> max\{st(\alpha),st(\beta)\}$, $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, we get $g(\alpha,\beta) = g(\zeta_m, \upsilon_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1$ and $\exists \vec{e} \in \mathbb{N}_2$ s.t.
+        $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$ and $f_F(\beta) \cdot \vec{e} = f_F(\upsilon)$. 
+ 
 
 
         \end{proof}
