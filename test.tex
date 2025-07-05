@@ -536,6 +536,11 @@ Now we define some Kripke frames, which we will use through this chapter.
     $$ L_1 \times_n L_2 = Log(\{ X \times Y \mid X \in nV(L_1) \mbox{ and } Y \in nV(L_2) \})$$        
 \end{definition}
 
+\begin{proposition}(\cite{?}).
+    For two unimodal logics $L_1$ and $L_2$ it holds : 
+    $$L_1 \otimes L_2 \subseteq L_1 \times_n L_2$$
+\end{proposition}
+
 
 
 \subsection{Main Construction}
@@ -644,10 +649,6 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \end{proof}
 \end{proposition}
 
-\begin{definition}
-    to be continued...
-\end{definition}
-
 \begin{lemma}
     Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.2.1. Then 
     $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$ \newline
@@ -742,7 +743,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     Let $(\alpha,\beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$. We define 
     $$g'(\alpha,\beta) = f(a_1,b_1)f(a_2,b_2)...$$
     At last, we define $g(\alpha,\beta)$ as $g'(\alpha,\beta)$ but removing all zeros.
-    \clearpage
+
     \begin{lemma}
         Function $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism.
         
@@ -793,7 +794,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
             \end{cases}
         \] 
         \newline
-        We have $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$. Furthermore, because of $g(\zeta \mid_m, \upsilon \mid_m) = g(\alpha,\beta)$ it holds that $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e}) = g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. \newline \newline \clearpage
+        We have $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$. Furthermore, because of $g(\zeta \mid_m, \upsilon \mid_m) = g(\alpha,\beta)$ it holds that $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e}) = g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. \newline \newline 
         Now to check the conditions, we assume $x \in X_1$ and $y \in X_2$ and $U \in \tau(x,y)$. We need to prove $g(U) \in \sigma(g(x,y))$ In other words, show $R(g(x,y)) \subseteq g(U)$. We pick a $m> max\{st(x),st(y)\}$ s.t. $U_m(x) \times U_m(y) \subseteq U$. But then we get 
         $$R(g(x,y)) = g(U_m(x) \times U_m(y)) \subseteq g(U)$$
         \newline
@@ -817,10 +818,52 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
 
         \begin{proof}
             The left to right inclusion follows from Corollary 5.3.1 \newline \newline
-            To prove left ro right, we know due to Proposition 2.0.9 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
+            To prove right to left, we know due to Proposition 2.0.9 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
+            Due to Proposition 5.1.10 we get $Log(N_\omega(F_1)) \otimes Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2))$. 
+            Because $N_\omega(F_1)\times_n N_\omega(F_2)$ is a frame in the n-product, we get
+            $Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)\times_n N_\omega(F_2))$.
+
         \end{proof}
 
     \end{corollary}
+
+    \begin{corollary}
+        Let $N_\omega(T_{\omega[rn]})_1 = F_1$ and $N_\omega(T_{\omega[rn]})_2 = F_2$ as defined before. Then 
+        $$T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$$
+        It follows from Corollary 5.1.7, Proposition 5.2.8, Lemma 5.2.9, Lemma 5.2.12
+
+        \begin{proof}
+            First, it is the case that $Log(F_1) \times^+_n Log(F_2) \subseteq Log(F_1 \times^+_n F_2)$. We can argue as before.
+            By Lemma 5.2.12 it holds $Log(F_1) \times^+_n Log(F_2) \subseteq Log(N(T_{\omega,\omega,\omega[rn]})) = Log(T_{\omega,\omega,\omega[rn]})$.
+            But by Proposition 5.2.8 we have $Log(F_1) = Log(F_2) = T$. Hence, $Log(F_1) \times^+_n Log(F_2) = T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$.
+        \end{proof}
+
+    \end{corollary}
+
+    \clearpage
+
+    \begin{theorem}
+        Let $L_1, L_2 \in \{S4, D4, D, T\}$. Then 
+        $$L_1 \times_n L_2 = L_1 \otimes L_2$$
+
+        \begin{proof}
+            Right to left is by Proposition 5.1.10. \newline
+            For left to right, assume $L_1 = Log(F_1)$ and $L_2 = Log(F_2)$ for some $F_1, F_2 \in \{F_{in}, F_{rn}, F_{it}, F_{rt}\}$.
+            It follows from Corollary 5.3.2 \newline
+            $L_1 \times_n L_2 = Log(N_\omega(F_1)) \times^+_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1) \times^+_n N_\omega(F_2)) = Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2) = L_1 \otimes L_2$
+        \end{proof}
+    \end{theorem}
+
+    \begin{theorem}
+        Let $N_\omega(T_{\omega[rn]})_1 = F_1$ and $N_\omega(T_{\omega[rn]})_2 = F_2$ as defined before. Then 
+        $$T \times^+_n T = T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$$
+
+        \begin{proof}
+            For left to right it is easy to check the axioms. We pick any frame $F_1$ and $F_2$ s.t.
+            $F_1 \vDash T$ and $F_2 \vDash T$. We consider $F_1 \times^+_n F_2$.
+        \end{proof}
+        
+    \end{theorem}
 
 
     
