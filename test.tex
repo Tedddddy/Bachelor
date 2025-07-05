@@ -855,7 +855,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \end{theorem}
 
     \begin{theorem}
-        Let $N_\omega(T_{\omega[rn]})_1 = F_1$ and $N_\omega(T_{\omega[rn]})_2 = F_2$ as defined before. Then 
+        Let $N_\omega(T_{\omega[rn]})_1 = F_1'$ and $N_\omega(T_{\omega[rn]})_2 = F_2'$ as defined before. Then 
         $$T \times^+_n T = T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$$
 
         \begin{proof}
@@ -866,7 +866,10 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
             Assume $F_1 \times^+_n F_2,(x,y) \vDash \Box p$. By definition there exists a $U \in \tau(x,y)$ s.t. $U \subseteq V(p)$. But $U \supseteq V \times W$ for some $V \in \tau_1(x)$ and $W \in \tau_2(y)$.
             Because of the assumption, we must have $x \in V$ and $y \in W$. Hence, $(x,y) \in V(p)$. It follows $F_1 \times^+_n F_2,(x,y) \vDash p$. \newline
             Now we check the extra axiom.  Assume $F_1 \times^+_n F_2,(x,y) \Vdash \Box p$. By definition, there exists a $U \subseteq V(p)$, where $U \supseteq V \times W$ with $V \in \tau_1(x)$ and $W \in \tau_2(y)$. By assumption, we get $y \in W$. That means $U \in \tau_1'(x,y)$ 
-            because $U \supseteq V \times \{y\}$. The same argument we can apply to $\tau_2'(x,y)$. Hence, $F_1 \times^+_n F_2,(x,y) \vDash \Box_1 p \land \Box_2 p$. The rest is clear.
+            because $U \supseteq V \times \{y\}$. The same argument we can apply to $\tau_2'(x,y)$. Hence, $F_1 \times^+_n F_2,(x,y) \vDash \Box_1 p \land \Box_2 p$. The rest is clear. \newline
+            Now for the other direction, we apply Corollary 5.3.3 to get $T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$. By Proposition 3.2.6 we have
+            $Log(T_{\omega,\omega,\omega[rn]}) = TNL$. Hence, 
+            $$T \times^+_n T \subseteq T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$$.
             
 
         \end{proof}
