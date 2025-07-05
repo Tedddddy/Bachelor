@@ -727,7 +727,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline
     Let's consider the full product of the n-frames :
     $$N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) = (X_1 \times X_2, \tau'_1, \tau'_2, \tau)$$
-    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree is as defined in Def.3.2.1\newline \newline
+    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Def.3.2.1\newline \newline
     In order to define the bounded morphism, we have to fix a bijection first. Let $h : \mathbb{N}_1 \times \mathbb{N}_2 \rightarrow \mathbb{N}$ be a bijection. \newline
     Next, we define function $k :(\mathbb{N}_1 \cup \{0\}) \times (\mathbb{N}_2 \cup \{0\}) \rightarrow \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{0\}$ as follows :
     \[
@@ -769,14 +769,58 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
         First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$.
         The proof is similar as in Lemma 5.2.1. \newline
         $\supseteq$ : Pick $\zeta \in U_m(\alpha), \upsilon \in U_m(\beta)$. Show $g(\zeta, \upsilon) \in R(g(\alpha,\beta))$. By definition, we need to find a $\vec{c} \in \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{\epsilon\}$ s.t. $g(\alpha,\beta) \cdot \vec{c} = g(\zeta, \upsilon)$.
-        By choosing $m> max\{st(\alpha),st(\beta)\}$, $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, we get $g(\alpha,\beta) = g(\zeta_m, \upsilon_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1$ and $\exists \vec{e} \in \mathbb{N}_2$ s.t.
-        $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$ and $f_F(\beta) \cdot \vec{e} = f_F(\upsilon)$. 
- 
+        By choosing $m> max\{st(\alpha),st(\beta)\}$, $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, we get $g(\alpha,\beta) = g(\zeta_m, \upsilon_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1 \cup \{\epsilon\}$ and $\exists \vec{e} \in \mathbb{N}_2 \cup \{\epsilon\}$ s.t.
+        $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$ and $f_F(\beta) \cdot \vec{e} = f_F(\upsilon)$. So, $\vec{d}$ must appear at a point after $\zeta \mid_m$. The same holds for $\vec{e}$ in $\upsilon$. But then we have $g(\zeta, \upsilon) = g(\alpha,\beta) * g(\vec{d}, \vec{e})$. Now there are four cases :
+        \[
+            \begin{cases}
+            g(\vec{d}, \vec{e}) \in \mathbb{N}_1, & \text{if } \vec{d} \in \mathbb{N}_1 \text{ \&\ } \vec{e} = \epsilon \\
+            g(\vec{d}, \vec{e}) \in \mathbb{N}_2, & \text{if } \vec{d} = \epsilon \text{ \&\ } \vec{e} \in \mathbb{N}_2\\
+            g(\vec{d}, \vec{e}) \in \{\epsilon\}, & \text{if } \vec{d} =\vec{e} = \epsilon \\
+            g(\vec{d}, \vec{e}) \in \mathbb{N}, & \text{other }
+            \end{cases}
+        \]
+            Hence, $g(\zeta, \upsilon) \in R(g(\alpha,\beta))$. \newline \newline
+            $\subseteq$ :  Pick $\vec{w} \in R(g(\alpha,\beta))$. We will construct $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$ s.t. $g(\zeta,\upsilon) = \vec{w}$.
+            By definition there exists a $\vec{c} \in \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{\epsilon\}$ s.t. $g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. Depending on the $\vec{c}$,
+            we build $\zeta = \alpha \mid_m \cdot \vec{d} \, 0^\omega$ and $\upsilon = \beta \mid_m \cdot \vec{e} \, 0^\omega$ where 
 
+        \[
+            \begin{cases}
+            \vec{d} = \vec{c}, \vec{e} = 0, & \text{if }  \vec{c }\in \mathbb{N}_{1}; \\
+            \vec{d} = 0, \vec{e} = \vec{c}, & \text{if }  \vec{c }\in \mathbb{N}_{2}; \\
+            \vec{d} = \vec{e} = 0& \text{if } \vec{c }\in \{\epsilon\} \\
+            \vec{d} = \vec{\alpha}, \vec{e} = \vec{b} \text{    where }h(\vec{\alpha},\vec{\beta}) = \vec{c} & \text{if } \vec{c } \in \mathbb{N} \, (\vec{\alpha} \in \mathbb{N}_1, \vec{\beta} \in \mathbb{N}_2);
+            \end{cases}
+        \] 
+        \newline
+        We have $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$. Furthermore, because of $g(\zeta \mid_m, \upsilon \mid_m) = g(\alpha,\beta)$ it holds that $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e}) = g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. \newline \newline \clearpage
+        Now to check the conditions, we assume $x \in X_1$ and $y \in X_2$ and $U \in \tau(x,y)$. We need to prove $g(U) \in \sigma(g(x,y))$ In other words, show $R(g(x,y)) \subseteq g(U)$. We pick a $m> max\{st(x),st(y)\}$ s.t. $U_m(x) \times U_m(y) \subseteq U$. But then we get 
+        $$R(g(x,y)) = g(U_m(x) \times U_m(y)) \subseteq g(U)$$
+        \newline
+        Assume  $x \in X_1$ and $x \in X_2$ and $R(g(x,y)) \subseteq V$. We need to find a $U \in \tau(x,y)$, s.t. $f(U) \subseteq V$.
+        For $U$ we pick $U_m(x) \times U_m(y)$ for some $m > \{st(x), st(y)\}$. But then 
+        $$g(U_m(x) \times U_m(y)) = R(g(x,y)) \subseteq V$$
 
         \end{proof}
     \end{lemma}
 
+    \subsection{Completeness Results}
+    \begin{corollary}
+        Let $F_1 = (A^*,R_1) = F_{\xi_1, \eta_1}[A]$ and $F_2 = (B^*,R_2) = F_{\xi_2, \eta_2}[B]$. Then 
+        $$Log(N_\omega(F_1) \times_n N_\omega(F_2))  \subseteq Log(F_1) \otimes Log(F_2)$$.
+        It follows from Proposition 2.0.8, Lemma 5.1.5, Corollary 5.1.7 and Lemma 5.1.12.
+    \end{corollary}
+
+    \begin{corollary}
+        Let $F_1, F_2 \in \{F_{in}, F_{rn}, F_{it}, F_{rt}\}$. Then 
+        $$Log(N_\omega(F_1) \times_nN_\omega(F_2)) = Log(F_1) \otimes Log(F_2)$$
+
+        \begin{proof}
+            The left to right inclusion follows from Corollary 5.3.1 \newline \newline
+            To prove left ro right, we know due to Proposition 2.0.9 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
+        \end{proof}
+
+    \end{corollary}
 
 
     
