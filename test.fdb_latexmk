@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1751815234 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1751815235
+["pdflatex"] 1751817854 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1751817855
   "/etc/texmf/web2c/texmf.cnf" 1749038783 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/maik/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1749077117 1405644 8beec9f80219283946f97b1e8cc91499 ""
-  "/home/maik/studiumtud/Bachelor/test.tex" 1751815234 56205 494119557fc63703375351076e6aaacd ""
+  "/home/maik/studiumtud/Bachelor/test.tex" 1751817854 56040 a3642f5e29d25d4ab1718c181e888b2b ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -16,6 +16,7 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1136768653 1288 655e228510b4c2a1abe905c368440826 ""
+  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm" 1136768653 1300 b62933e007d01cfd073f79b963c01526 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm" 1136768653 1292 21c1c5bfeaebccffdb478fd231a0997d ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss12.tfm" 1136768653 1324 37b971caf729d7edd9cbb9f9b0ea76eb ""
@@ -109,9 +110,9 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750194027 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "test.aux" 1751815235 5137 1fb3041bf32b8357d85c8acf5670a6e8 "pdflatex"
-  "test.out" 1751815235 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "test.tex" 1751815234 56205 494119557fc63703375351076e6aaacd ""
+  "test.aux" 1751817855 5139 f54df3447fcab4a7188d4b156c94f8a8 "pdflatex"
+  "test.out" 1751817855 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "test.tex" 1751817854 56040 a3642f5e29d25d4ab1718c181e888b2b ""
   (generated)
   "test.aux"
   "test.log"

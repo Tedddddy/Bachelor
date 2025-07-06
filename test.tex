@@ -37,7 +37,7 @@ In [?], the authors studied a product of two spaces with three topologies : hori
 classic product topology. They proved that the logic of such spaces is $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$
 where $\Box$ corresponds to the product topology. \newline
 The following work will present a detailed proof of the shown results. Additionally, we will show that $T\otimes T\otimes T + \Box p \rightarrow \Box_1 p \land \Box_2p$ 
- (we abbreviate it with TNL) = $T \,x^+_n \, T$. The proof ideas here are inspired by the shown results.
+ (we abbreviate it with $TNL$) = $T \,x^+_n \, T$. The proof ideas here are inspired by the shown results.
  \clearpage
 
 
@@ -130,9 +130,9 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
 
 
 
-\section{Completeness result for TNL}
+\section{Completeness result for $TNL$}
 
-We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show TNL is sound and complete w.r.t $T_{\omega, \omega, \omega[in]}$.
+We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show $TNL$ is sound and complete w.r.t $T_{\omega, \omega, \omega[rn]}$.
 The idea is to pick a class of frame $C$ s.t $Log(C) = Log(T_{\omega, \omega, \omega[rn]})$ and then show the class has FMP.
 In the end, we will use an unravelling technique to show completeness. 
 
@@ -288,11 +288,11 @@ In the end, we will use an unravelling technique to show completeness.
 \begin{proposition}
     The logic $T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$ has FMP.
     \begin{proof}
-    The idea is to pick a class of frame $\mathcal{F}$, where TNL is sound and complete with respect to and then show by filtration the FMP. \newline \newline
-    Let $\mathcal{C} = \{F \mid F \Vdash TNL\}$. Obviously,  TNL is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
+    The idea is to pick a class of frame $\mathcal{F}$, where $TNL$ is sound and complete with respect to and then show by filtration the FMP. \newline \newline
+    Let $\mathcal{C} = \{F \mid F \Vdash $TNL$\}$. Obviously,  $TNL$ is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
     We remember T = K + $\Box_i p \rightarrow p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
-    By Sahlqvist, we have TNL is complete w.r.t $\{F \mid F \Vdash \forall x \, R_i(x,x) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
-    Now assume a formula $\phi$ is not derivable from TNL. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
+    By Sahlqvist, we have $TNL$ is complete w.r.t $\{F \mid F \Vdash \forall x \, R_i(x,x) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
+    Now assume a formula $\phi$ is not derivable from $TNL$. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
     Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By filtration Theorem, they preserve truth.
     It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have an edge to itself in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for $R^s$ because the rest is similar.
     Pick $w' \in [w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, we have $w'Rw'$. By the defintion of smallest filtration, we have that $[w']R^s[w']$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
@@ -360,18 +360,17 @@ In the end, we will use an unravelling technique to show completeness.
 \end{proposition}
 
 \begin{proposition}
-    TNL is sound and complete w.r.t $T_{\omega,\omega,\omega[rn]}$.
+    $TNL$ is sound and complete w.r.t $T_{\omega,\omega,\omega[rn]}$.
 
     \begin{proof}
-    For soundness, we have that $T_{\omega,\omega,\omega[in]} \Vdash \Box p \rightarrow \Box_1 p \land \Box_2p$, because by defintion we have $R_1,R_2 \subseteq R$. The rest is clear.
-    For completeness, we use the fact that DNL has FMP. Let $F = (W',R', R'_1, R'_2)$ be a finite rooted frame with root w and $F \Vdash DNL$. We define inductively an
-    assignment similar to 2.17. We assign w to the root of $T_{\omega,\omega,\omega[in]}$. For induction step we start by only assigining points from $R_1$ to $R'_1$ and $R_2$ to $R'_2$. After that, the remaining points will be assigned to $R'$.
+    For soundness, we have that $T_{\omega,\omega,\omega[rn]} \Vdash \Box p \rightarrow \Box_1 p \land \Box_2p$, because by defintion we have $R_1,R_2 \subseteq R$. The rest is clear.
+    For completeness, we use the fact $TNL$ has FMP. Let $F = (W',R', R'_1, R'_2)$ be a finite rooted frame with root w and $F \Vdash TNL$. We define inductively an
+    assignment similar to 2.17. We assign $w$ to the root of $T_{\omega,\omega,\omega[rn]}$. For induction step we start by only assigining points from $R_1$ to $R'_1$ and $R_2$ to $R'_2$. After that, the remaining points will be assigned to the points in $R'$.
     The procedure works similar as described previously. \newline
-    Now we check the conditions for $R_1 \mbox{ and } R'_1$. Let $xR_1y$ and $f(x) = s$. We assigned y to a successor of s. So, $f(x) R'_1f(y)$. For the second condition, the same argument holds as before.
-    It works the same for $R_2 \mbox{ and } R'_2$. For $R$ and $R'$ we pick any $xRy$ with $f(x) = s$. 
-    If we also have $xR_1y$, then it follows $f(x)Rf(y)$, because we showed that condtion for $R_1 \mbox{ and } R'_1$. The same argument holds if $xR_2y$. Else, the successor of s was assigned to y, so $f(x)R'f(y)$. 
-    Let $f(x)R't$ and $f(x) = s$. If we have $f(x) R'_1 t$  and $x$ a point in $R_1$, then the second condition follows. The same holds for $f(x)R'_2t$ and $x$ in $R_2$.
-    Else, we have that t is a successor of f(x) = s, and a successor of x was assigned to t.
+    We will only check the conditions for $R$ and $R'$. For $R_1, R_1'$ and $R_2, R_2'$, we can argue as before. We pick any $xRy$ with $f(x) = s$. 
+    If we also have $xR_1y$ or $xR_2y$, then it follows $f(x)R' f(y)$ because $R_1, R_2 \subseteq R$ and $R_1', R_2' \subseteq R'$. Else, the successor of s was assigned to y, so $f(x)R'f(y)$. \newline
+    Let $f(x)R't$ and $f(x) = s$. If we have $f(x) R'_1 t$ or $f(x) R'_2 t$, then the second condition follows because $R_1,R_2 \subseteq R$.
+    Else, we have that $t$ is a successor of $f(x) = s$, and a successor of $x$ was assigned to $t$.
     \end{proof}
         
 \end{proposition}
