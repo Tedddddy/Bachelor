@@ -132,17 +132,22 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
 
 \section{Completeness result for TNL}
 
-We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show that TNL is sound and complete w.r.t $T_{\omega, \omega, \omega[in]}$
-The idea is to pick a class of frame $C$ s.t $Log(C) = Log(T_{\omega, \omega, \omega[rn]})$ and then show that the class has FMP.
+We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show TNL is sound and complete w.r.t $T_{\omega, \omega, \omega[in]}$.
+The idea is to pick a class of frame $C$ s.t $Log(C) = Log(T_{\omega, \omega, \omega[rn]})$ and then show the class has FMP.
 In the end, we will use an unravelling technique to show completeness. 
 
 \subsection{Filtration and Sahlqvist for multimodal logic}
 
 \begin{definition}
-    Let $M = (W,R,V)$ be a model and $w \in W$ a state in $M$. The notion of a formula being true at w is inductively defined as follows :
-    $$M, w \Vdash \Box \phi \mbox{ iff } \forall v \in W : wRv \rightarrow M,v \Vdash \phi$$
-    \newline
-    This defintion can be extended to a multimodal version, where the modal operators are interpreted the same way but with the respective relation.   
+    Let $M = (W,R_1...,R_n,V)$ be a model and $w \in W$ a state in $M$. The notion of a formula being true at $w$ is inductively defined as follows :
+    \begin{align*}
+        M, w &\Vdash p \mbox{ iff } w \in V(p) \\
+        M, w &\Vdash \bot  \mbox{ never } \\
+        M, w &\Vdash \neg \phi \mbox{ iff not } M, w \Vdash \phi \\ 
+        M, w &\Vdash \phi \lor \psi \mbox{ iff } M,w \Vdash \phi \lor M,w \Vdash \psi \\
+        M, w &\Vdash \Box_i \phi \mbox{ iff } \forall v \in W : wRv \rightarrow M, v \Vdash \phi
+    \end{align*}
+
 \end{definition}
 
 \begin{definition}
@@ -152,37 +157,31 @@ In the end, we will use an unravelling technique to show completeness.
     \newline
     2. if $\phi \lor \phi' \in \Sigma$ then $\phi, \phi' \in \Sigma$
     \newline
-    3. if $\Box \phi \in \Sigma$ then $\phi \in \Sigma$
+    3. if $\Box_i \phi \in \Sigma$ then $\phi \in \Sigma$
     \newline
     \newline
-    We can define it similary for a multimodal logic. For every modal operator $\Box_n$, we extend this definition by adding a new condition similar to the third.
-    Example : Suppose we have a multimodal logic with $\Box, \Box_1$ called $L_{\Box, \Box_1}$ and $\phi = \Box p \rightarrow \Box_1 q$ and $\phi \in \Sigma$. Then $\Sigma = \{ \phi, \neg\Box p, \Box_1 q, \Box p, p, q\}$ is closed under
+    Example : Suppose we have a multimodal logic with $\Box, \Box_1$ called $L_{\Box, \Box_1}$ where $\phi = \Box p \rightarrow \Box_1 q$ and $\phi \in \Sigma$. Then $\Sigma = \{ \phi, \neg\Box p, \Box_1 q, \Box p, p, q\}$ is closed under
     subformulas.
 \end{definition}
 
 \begin{definition}
-    Let $M = (W,R,V)$ be a model and suppose $\Sigma$ is a set of formulas. We define a relation $\equiv$ on W as follows : \newline 
+    Let $M = (W,R_1,...,R_n,V)$ be a model and suppose $\Sigma$ is a set of formulas. We define a relation $\equiv$ on W as follows : \newline 
     $$w \equiv v \mbox{ iff } \forall \phi \in \Sigma : M,w \Vdash \phi \Leftrightarrow M,v \Vdash \phi$$ 
     It is well known that the $\equiv$-relation is an equivalence relation. We denote the equivalence class of a state $w\in W$ as $[w]_\Sigma = \{v \mid v \equiv w\}$. Furthermore $W_\Sigma$ is the set of all equivalence classes, i.e
     $W_\Sigma = \{[w]_\Sigma \mid w \in W\}$.    
 \end{definition}
 
 \begin{definition}
-    Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$.
-    A model $M^f_\Sigma = (W^f, R^f, V^f)$ is called filtration of M through $\Sigma$ if the following holds : \newline \newline
+    Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$.
+    A model $M^f_\Sigma = (W^f, R_1^f,...,R_n^f, V^f)$ is called filtration of M through $\Sigma$ if the following holds : \newline \newline
     1. $W^f = W_\Sigma$ \newline
-    2. If $(w,v) \in R$ then $([w],[v]) \in R^f$ \newline
-    3. If $([w], [v]) \in R^f$ then for any $\Box \phi \in \Sigma$ : if $M,w \Vdash \Box \phi$ then $M,v \Vdash \phi$  \newline 
-    4. $V^f = \{[w] \mid M,w \Vdash p\}$, for all propositional variables $p \in \Sigma$  
-    \newline \newline
-    In our case, we are in a multimodal logic with three modal operators $\Box, \Box_1,\Box_2$. We need to extend this defintion for  $L_{\Box,\Box_1,\Box_2}$. This means our model looks like:
-    $M = (W, R,R_1, R_2,V)$. We extend the conditions as follows : \newline \newline
-    If $ (w,v) \in R_i$ then $([w], [v]) \in R^f_i$ \newline
-    If $ ([w], [v]) \in R^f_i$ then for any $\Box_i \phi \in \Sigma : \mbox{ if } M,w \Vdash \Box_i$ then $M,v \Vdash \phi$ ,  where $i \in \{1,2\}$    
+    2. If $(w,v) \in R_i$ then $([w],[v]) \in R^f_i$ \newline
+    3. If $([w], [v]) \in R^f_i$ then for any $\Box_i \phi \in \Sigma$ : if $M,w \Vdash \Box_i \phi$ then $M,v \Vdash \phi$  \newline 
+    4. $V^f = \{[w] \mid M,w \Vdash p\}$, for all propositional variables $p \in \Sigma$      
 \end{definition}
 
 \begin{theorem}
-    Consider $L_{\Box, \Box_1, \Box_2}$. Let $M^f =(W_\Sigma, R^f, R^f_1, R^f_2, V)$ be a filtration of M through a subformula closed set $\Sigma$.
+    Consider $L_{\Box_1...\Box_n}$. Let $M^f =(W_\Sigma, R^f_1,...,R^f_n, V)$ be a filtration of M through a subformula closed set $\Sigma$.
     Then for all formulas $\phi \in \Sigma$, and all nodes $w \in M$, we have $$M,w \Vdash \phi \mbox{ iff } M^f,[w] \Vdash \phi$$
     
     \begin{proof}
@@ -198,38 +197,35 @@ In the end, we will use an unravelling technique to show completeness.
         Case $\phi = \phi_1 \land \phi_2$: Suppose $\phi_1, \phi_2$ holds. Let $M,w \Vdash \phi$. That means $M,w \Vdash \phi_1$ and $M,w \Vdash \phi_2$. Applying
         induction hypothesis, we get $M^f,[w] \Vdash \phi_1$ and $M^f,[w] \Vdash \phi_2$. But then, $M^f,[w] \Vdash \phi_1 \land \phi_2 = \phi$. Right to left is similar. \newline
         
-        Case $\phi = \Box_i\psi$ ($i \in \{1,2,\epsilon\}, \Box_\epsilon = \Box$): Left to right. Suppose $\psi$ holds and  $M,w \Vdash \Box_i \psi$. 
+        Case $\phi = \Box_i\psi$ : Left to right. Suppose $\psi$ holds and  $M,w \Vdash \Box_i \psi$. 
         We need to show $M^f,[w] \Vdash \Box_i \psi$, this means $\forall [v] \in W_\Sigma : [w]R_i[v] \rightarrow M^f,[v] \Vdash \Box_i \psi$. Pick any $[v] \in W_\Sigma$ s.t 
         $[w]R_i[v]$. By condition 3, w.r.t to the modal operator, we have $M,v \Vdash \psi$. By induction hypothesis, we get $M^f,[v] \Vdash \psi$. Because [v] was arbitrary it follows that $M^f,[w] \Vdash \Box_i \psi$. \newline \newline
         Right to left. Suppose $\psi$ holds and $M^f,[w] \Vdash \Box_i \psi$. Pick $v \in W$ s.t $wR_iv$. By condition 2, w.r.t to the modal operator, we have
         $[w]R^f_i[v]$. So, $M^f, [v] \Vdash \psi$. By induction hypothesis, we get $M,v \Vdash \psi$. Because v was arbitrary, we have $M,w \Vdash \Box_i \psi$.
+
     
     \end{proof}     
 \end{theorem}
 
-
-Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this is a filter. We denote this as $R^s$.
-
 \begin{definition}
-    Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
-    $$R^s = \{[w],[v] \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$
-    where $i \in \{1,2,\epsilon\}$.    
+    Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
+    $$R^s = \{[w],[v] \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$ 
 \end{definition}
 
 \begin{lemma}
-    Let $M = (W,R,V)$ be a model, $\Sigma$ is closed under subformlas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$ and $V^f$ the standard valuation on $W_\Sigma$. Then $(W_\Sigma, R^s,R^s_1,R^s_2,V^f)$ is 
+    Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformlas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$ and $V^f$ the standard valuation on $W_\Sigma$. Then $(W_\Sigma, R_1^s,...,R_n^s,V^f)$ is 
     a filtration of M through $\Sigma$.
     \begin{proof}
     
     It suffices to show $R^s_i$ fullfills the condition 2 and 3 w.r.t to the corresponding modal operator $\Box_i$. But $R^s_i$ already satisfies condition 2.
-    Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$ where $i \in \{1,2, \epsilon\}$. Because of $[w]R^s_i[v]$ we pick a $w' \in [w]$
+    Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$. Because of $[w]R^s_i[v]$ we pick a $w' \in [w]$
     and $v' \in [v]$. By defintion, we have $w'R_i v'$. Because $w' \equiv w$, we get $M,w' \Vdash \Box_i \phi$. Hence, $M,v' \Vdash \phi$ and by $v' \equiv v$, we get $M,v \Vdash \phi$.
     
     \end{proof}    
 \end{lemma}
 
 \begin{proposition}
-    Let $\Sigma$ be a finite subformula closed set of $L_{\Box,\Box_1,\Box_2}$. For any model M, if $M^f$ is a filtration through $\Sigma$, then $M^f$ contains at most $2^n$ nodes (where n denotes the size of $\Sigma$).
+    Let $\Sigma$ be a finite subformula closed set of $L_{\Box_1,...,\Box_n}$. For any model M, if $M^f$ is a filtration through $\Sigma$, then $M^f$ contains at most $2^n$ nodes (where n denotes the size of $\Sigma$).
 
     \begin{proof}
     The states of $M^f$ are the equivalence classes in $W_\Sigma$. Let $g : W_\Sigma \rightarrow P(\Sigma)$ defined by $g([w]) = \{ \phi \in \Sigma \mid M,w \Vdash \phi\}$.
@@ -242,11 +238,11 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
 
 
 \begin{theorem}
-    Let $\phi$ be a formula of $L_{\Box,\Box_1,\Box_2}$. If $\phi$ is satisfiable, then it is satisfiable on a finite model containing at most $2^n$ nodes, where n is the number of subformulas in $\phi$.
+    Let $\phi$ be a formula of $L_{\Box_1,...,\Box_n}$. If $\phi$ is satisfiable, then it is satisfiable on a finite model containing at most $2^v$ nodes, where $v$ is the number of subformulas of $\phi$.
 
     \begin{proof}
     Assume that $\phi$ is satisfiable on a model on M. Take any filtration of M through the set of subformulas of $\phi$. 
-    By Filtration Theorem, we get that $\phi$ is satisfied in the filtration model $M^f$. Furthermore, it is bounded by $2^n$.
+    By Filtration Theorem, we get that $\phi$ is satisfied in the filtration model $M^f$. Furthermore, it is bounded by $2^v$.
     
     \end{proof}
     
@@ -272,9 +268,9 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
     $$\Box \Diamond p \rightarrow \Diamond \Box p$$
     $$\Diamond \Box p \rightarrow \Box \neg p$$ \newline
     
-    We can extend this defintion for our logic. We say a boxed atom can be $\Box^n_1 p$ and $\Box^n_2 p$. A Sahlqvist antecedent
-    can also be build by applying $\Diamond_1$ and $\Diamond_2$. A Sahlqvist formula can be build by
-    Sahlqvist implications by applying additionally $\Box_1$ and $\Box_2$.  \newline
+    We can extend this defintion for multimodal logics. We say a boxed atom can be $\Box^n_i p$. A Sahlqvist antecedent
+    can also be build by applying $\Diamond_i$. A Sahlqvist formula can be build by
+    Sahlqvist implications by applying additionally $\Box_i$.  \newline
     
     Sahlqvist formulas possess important properties, which are guaranteed by the Sahlqvist Theorem. It says that, when given a normal modal logic K and a set of Sahlqvist formulas, the resulting logic is complete w.r.t 
     to the class of frames, which satisfies the corresponding first-order formula of the Sahlqvist formulas. This also holds for multimodal logic. We will not prove it here, but we will use this
@@ -290,16 +286,16 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
 \end{definition}
 
 \begin{proposition}
-    The logic $D \otimes D \otimes D + \Box p \rightarrow \Box_1 p \land \Box_2 p$ has FMP.
+    The logic $T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$ has FMP.
     \begin{proof}
-    The idea is to pick a class of frame $\mathcal{F}$, where DNL is sound and complete with respect to and then show by filtration the FMP. \newline \newline
-    Let $\mathcal{C} = \{F \mid F \Vdash DNL\}$. Obviously,  DNL is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
-    We remember D = K + $\Box_i p \rightarrow \Diamond_i p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
-    By Sahlqvist, we have that DNL is complete w.r.t $\{F \mid F \Vdash \forall x \exists y \, R_i(x,y) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
-    Now assume a formula $\phi$ is not derivable from DNL. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
+    The idea is to pick a class of frame $\mathcal{F}$, where TNL is sound and complete with respect to and then show by filtration the FMP. \newline \newline
+    Let $\mathcal{C} = \{F \mid F \Vdash TNL\}$. Obviously,  TNL is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
+    We remember T = K + $\Box_i p \rightarrow p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
+    By Sahlqvist, we have TNL is complete w.r.t $\{F \mid F \Vdash \forall x \, R_i(x,x) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
+    Now assume a formula $\phi$ is not derivable from TNL. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
     Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By filtration Theorem, they preserve truth.
-    It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have at least one successor in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for R because the rest is similar.
-    Pick $[w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, there is a point v s.t wRv. By the defintion of smallest filtration, we have that $[w]R^s[v]$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
+    It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have an edge to itself in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for $R^s$ because the rest is similar.
+    Pick $w' \in [w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, we have $w'Rw'$. By the defintion of smallest filtration, we have that $[w']R^s[w']$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
     Pick [w],[v] s.t $[w]R^s_1[v]$. By defintion of smallest filtration there are points $w' \in [w]$ and $v' \in [v]$ s.t $w'R_1v'$. Furthermore, it holds $R_1 \subseteq R$, so $w'Rv'$.
     By smallest filtration, we get $[w']R^s[v']$. Because $w' \equiv w \mbox{ and } v' \equiv v$, we have $[w'] = [w] \mbox{ and } [v'] = [v]$. It follows $[w]R^s[v]$.
     
@@ -310,16 +306,16 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
 \subsection{Completeness w.r.t $T_{\omega,\omega,\omega[rn]}$}
 
 \begin{definition}
-    Let $T_{\omega [in]}$ (r = reflexive, n = non-transitiv) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
-    Formally the tree can be defined as : $T_{\omega [in]} = (W, R)$ where $W = \mathbb{N}$* and sRt iff $\exists u \in \mathbb{N} \cup \{\epsilon\} : s*u = t$ (the '*' is the concatenation operator) \newline \newline
+    Let $T_{\omega [rn]}$ (r = reflexive, n = non-transitiv) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
+    Formally the tree can be defined as : $T_{\omega [rn]} = (W, R)$ where $W = \mathbb{N}^*$ and sRt iff $\exists u \in \mathbb{N} \cup \{\epsilon\} : s \cdot u = t$ ("$\cdot$" is the concatenation operator) \newline \newline
     The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching and infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
-    $\mathbb{N}_{1}$* is the set of finite number combinations which has a subscript $"1"$ to denote that these numbers relate to $R_1$  \newline 
+    $\mathbb{N}_{1}*$ is the set of finite number combinations which has a subscript $"1"$ to denote that these numbers relate to $R_1$  \newline 
     (examples : $2_{1}, 4231123_{1}$, $32_{1} \epsilon 45_{1} \epsilon 9_{1} = 32459_{1}$). \newline \newline
-    Now let $T_{\omega,\omega,\omega [in]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^*$, 
-    $$sRt \mbox{ iff } \exists u \in \mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2} \cup \{\epsilon\} : s*u = t$$
-    $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{1} \cup \{\epsilon\} : s * u = t$$
-    $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{2} \cup \{\epsilon\} : s * u = t$$
-    where $s,t \in W$. Again, the '*' operator acts here as a concatenation operator.
+    Now let $T_{\omega,\omega,\omega [rn]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^*$, 
+    $$sRt \mbox{ iff } \exists u \in \mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2} \cup \{\epsilon\} : s \cdot u = t$$
+    $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{1} \cup \{\epsilon\} : s \cdot u = t$$
+    $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{2} \cup \{\epsilon\} : s \cdot u = t$$
+    where $s,t \in W$. Again, the "$\cdot$" operator acts here as a concatenation operator.
         
 \end{definition}
 
@@ -329,12 +325,12 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
     
     $$ \mbox{ If } (u,v) \in R_i  \mbox{ then }(f(u), f(v)) \in R'_i $$
     $$ \mbox{ If } (f(w), v') \in R'_i \mbox{ then } \exists v \in W \mbox{ s.t } (w,v) \in R'_i \mbox{ and } f(v) = v'$$
-    We say that $F'$ is a bounded morphic image of F, if there is a surjective bounded morphism from $F \mbox{ to } F'$.
+    We say $F'$ is a bounded morphic image of F, if there is a surjective bounded morphism from $F \mbox{ to } F'$.
         
 \end{definition}
 
 \begin{proposition}
-    Let $\phi$ be a formula in $L_{\Box, \Box_1, \Box_2}$ , $F = (W, R, R_1, R_2)$ and $F' = (W', R', R'_1, R'_2)$ be two frames and $F \mbox{ to } F'$ a surjective bounded morphism. Then the following holds :
+    Let $\phi$ be a formula in $L_{\Box_1,...,\Box_n}$ , $F = (W, R_1,...,R_n)$ and $F' = (W', R'_1,...,R'_n)$ be two frames and $F \mbox{ to } F'$ a surjective bounded morphism. Then the following holds :
     $$ \mbox{ If }F \Vdash \phi \mbox{ then } F' \Vdash \phi$$
     This can be shown by structural induction on the length of the formula.
         
@@ -346,25 +342,25 @@ Now define the smallest filter for $L_{\Box,\Box_1,\Box_2}$ and show that this i
 \end{corollary}
 
 \begin{proposition}
-    D is sound and complete w.r.t $T_{\omega[in]}$.
+    T is sound and complete w.r.t $T_{\omega[rn]}$.
 
     \begin{proof}
-    Sound is clear. For completeness, we use the well known fact that D has FMP. This means, $D = Log\{F \mid F \Vdash D\}$ where $F$ is a finite frame.
-    We can pick such a finite frame $F$ and it suffices to find a surjective bounded morphism f from $T_w$ to $F$. This would imply $Log(T_w) \subseteq D$. \newline
-    Now, let $F = (W', R')$ be such a finite rooted frame with root w.(We can pick such because $F,w \Vdash D$ and then generate a subframe by w). We define 
-    inductively an assignment of nodes of $F$ to the nodes of $T_\omega$. For the base case, we assign w to the root of $T_\omega$. The induction step looks like the following : 
-    Assume a point $x \in T_\omega$ has been assigned to a point $u \in F$ but the successors of x has no assignment. 
-    Let $s_1, s_2, ..., s_k$ be successors of u (k denotes amount of successors and $k\geq 1$ because seriality guarantees us at least one successor).
-    For $n \geq 1, n \in \mathbb{N}$ we assign $s_i$ to the ($n * i$)th-successor of x. This means we are assigining the successors alternatingly. \newline
-    Now we check for f the conditions of bounded morphism. First condition : Let x,y $\in T_\omega$ s.t xRy and f(x) = s. But then, y will be assigned to a successor point of s. 
-    Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $f(x) = s$. Since t is a successor of s and f(x) = s, then a successor of x, say y, gets the assignment t. 
+    Sound is clear. For completeness, we use the well known fact that T has FMP. This means, $T = Log\{F \mid F \Vdash T\}$ where $F$ is a finite frame.
+    We can pick such a finite frame $F$ and it suffices to find a surjective bounded morphism $f$ from $T_w$ to $F$. This would imply $Log(T_{w[rn]}) \subseteq T$. \newline
+    Now, let $F = (W', R')$ be such a finite rooted frame with root $w$. We define 
+    inductively an assignment of nodes of $F$ to the nodes of $T_\omega$. For the base case, we assign $w$ to the root of $T_\omega$. The induction step looks like the following : 
+    Assume a point $x \in T_\omega$ has been assigned to a point $u \in F$ but the successors of $x$ has no assignment. 
+    Let $s_1, s_2, ..., s_k$ be successors of $u$ ($k$ denotes amount of successors and $k\geq 1$ because reflexivity guarantees us at least one successor).
+    For $n \geq 1, n \in \mathbb{N}, i \in\{1,...,k\}$ we assign $s_i$ to the ($n * i$)th-successor of $x$. This means we are assigining the successors alternatingly. \newline
+    Now we check for $f$ the conditions of bounded morphism. First condition : Let $x,y \in T_\omega$ s.t $xRy$ and $f(x) = s$. But then, y will be assigned to a successor point of $s$. 
+    Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $f(x) = s$. Since $t$ is a successor of $s$ and $f(x) = s$, then a successor of $x$, say $y$, gets the assignment $t$. 
     
     \end{proof}
         
 \end{proposition}
 
 \begin{proposition}
-    DNL is sound and complete w.r.t $T_{\omega,\omega,\omega[in]}$.
+    TNL is sound and complete w.r.t $T_{\omega,\omega,\omega[rn]}$.
 
     \begin{proof}
     For soundness, we have that $T_{\omega,\omega,\omega[in]} \Vdash \Box p \rightarrow \Box_1 p \land \Box_2p$, because by defintion we have $R_1,R_2 \subseteq R$. The rest is clear.
