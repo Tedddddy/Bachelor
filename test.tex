@@ -467,9 +467,14 @@ Now we define some Kripke frames, which we will use through this chapter.
 
 \begin{definition}
     Let $M$ =($X$,$\tau$,v) be a neighourhood model and $x$ $\in$ $X$. The truth of a formula is defined inductively as follows :
-    $$M,x \models \Box \phi \mbox{ iff } \exists V \in N(x) \forall y \in V : M,y \models \phi$$ 
-    A formula is valid in a n-model M if it is valid at all points of $M$ ($M \models \phi$). Formula is valid in a n-frame $F$ if it is valid in
-    all models based on $F$ (notation $F \models \phi$). For Logic L we write $ F \models L, \mbox{ if for any }\phi \in L, F \models \phi$. 
+    \begin{align*}
+        M,x &\Vdash p \mbox{ iff } x \in V(p)\\
+        M,x &\Vdash \neg \phi \mbox{ iff } M,x \nVdash \phi\\
+        M,x &\Vdash \phi \lor \psi \mbox{ iff } M,x \vDash \phi \lor M,x \vDash \psi\\
+        M,x &\Vdash \Box \phi \mbox{ iff } \exists V \in N(x) \forall y \in V : M,y \models \phi
+    \end{align*}
+    A formula is valid in a n-model $M$ if it is valid at all points of $M$ ($M \vDash \phi$). Formula is valid in a n-frame $F$ if it is valid in
+    all models based on $F$ (notation $F \vDash \phi$). We write $F \vDash L$ if for any $\phi \in L, F \vDash \phi$. Logic of a class of n-frames $C$ as $Log(C) = \{\phi \mid F \vDash \phi \mbox{ for some } F \in C\}$
     $\mbox{We define nV(L) =  } \{ F \mid F \mbox{ is an n-frame and } F \models \phi \}$.
 \end{definition}
 
@@ -483,7 +488,7 @@ Now we define some Kripke frames, which we will use through this chapter.
 
 
 \begin{definition}
-    Let F = (W,R) be a Kripke frame. We define an n-frame $N$(F) = (W, $\tau$) as follows.
+    Let $F = (W,R)$ be a Kripke frame. We define an n-frame $N(F) = (W, \tau)$ as follows.
     For any $w\in W$ we have :
     $$\tau(w) = \{ U \mid R(w) \subseteq U \subseteq W \}$$
         
@@ -499,9 +504,9 @@ Now we define some Kripke frames, which we will use through this chapter.
 \vspace{0.5cm}
 
 \begin{definition}
-    Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames. Then the function f:
+    Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames. Then the function $f$:
     $X \rightarrow Y$ is called bounded morphism if \newline \newline
-    1. f is surjective \newline
+    1. $f$ is surjective \newline
     2. $\forall x\in X \, \forall U \in \tau_i(x) : f(U) \in \sigma_i (f(x))$ \newline
     3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$        
 \end{definition}
@@ -539,7 +544,7 @@ Now we define some Kripke frames, which we will use through this chapter.
 
 
 \subsection{Main Construction}
-In the following, we will construct a useful neighborhood frame called $N_\omega[F]$ based on a frame F.
+In the following, we will construct a useful neighborhood frame called $N_\omega[F]$ based on a frame $F$.
 We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_2 \in \{D,S4,D4,T\}$
 
 \begin{definition}
