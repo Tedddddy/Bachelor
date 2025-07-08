@@ -42,8 +42,9 @@ The following work will present a detailed proof of the shown results. Additiona
 
 
 
- \section{Preliminaries}
- 
+\section{Preliminaries}
+
+\subsection{Kripke }
 
 \begin{definition}
 Let prop be a set of variables. Then a formula $\phi$ is defined as follows:
@@ -112,7 +113,7 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
 \end{definition}
 
 \begin{proposition} [\cite{ref6}, \cite{ref4}]
-    Let $F_1$ and $F_2$ be as in Defintion 2.0.7. Then 
+    Let $F_1$ and $F_2$ be as in Defintion 2.1.7. Then 
     $$Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2)$$
 \end{proposition}
 
@@ -125,6 +126,92 @@ Now we introduce some sepcial kind of frames, which we will use through this wor
 
 \end{proposition}
 
+\subsection{Topological Space}
+
+\begin{definition}
+    A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
+    \newline
+    \newline
+    1. the empty set $\emptyset $ and X are open
+    \newline
+    2. the union of an arbitrary collection of open sets is open
+    \newline
+    3. the intersection of finite collection of open sets is open
+    \newline
+    \newline
+    The space is called Alexandroff, if we allow the intersection of infinite collection of open sets.
+    A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
+    and v is a valuation assigining subsets of X to propositional variables. 
+        
+\end{definition}
+
+\begin{definition}
+    Let $p \in Prop$. We build formulas as follows :
+    $$\phi :: = p \mid \bot \mid \neg \phi \mid \phi \lor \phi \mid \Box \phi$$
+\end{definition}
+
+
+\begin{definition}
+    Let $M = (X,\tau,v)$ a topological model and $x \in X$. The satisfaction of a formula
+    at the point $x$ in $M$ is defined inductively as follows :
+        
+    %$$
+    %\newline
+    %$M,x \models \Diamond \phi$ iff $\, \forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$
+\begin{align*}
+    M, x &\vDash p &&\text{iff } x \in V(p) \\
+    M, x &\vDash \bot &&\text{never} \\
+    M, x &\vDash \neg \phi &&\text{iff } M, x \nvDash \phi \\
+    M, x &\vDash \phi \lor \psi &&\text{iff } M, x \vDash \phi \text{ or } M, x \vDash \psi \\
+    M, x &\vDash \Box \phi &&\text{iff there exists } U \in \tau \text{ such that } x \in U \text{ and } \forall u \in U: M, u \vDash \phi
+\end{align*}
+\end{definition}
+
+\begin{definition}
+    Let $A = (X, \chi)$ and $B =(Y, \upsilon)$ be topological spaces and $N \subseteq X \times Y $. \newline \newline
+    $N$ is horizontally open iff  $\forall (x,y) \in N $ $\exists U \in \chi : x \in U $ and $ U \times \{ y \} \subseteq N$. \newline
+    $N$ vertically open iff $\forall (x,y) \in N$ $\exists V \in \upsilon : y \in V$ and  $ \{ x \} \times V \subseteq N$. \newline \newline
+    If $N$ is H-open and V-open, then we call it HV-open. \newline
+    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the standard product of subsets $X \times Y$ s.t. $X \in \chi$ and $Y \in \upsilon$.
+        
+\end{definition}
+
+\begin{definition}
+    Let $A = (X, \chi)$ and $B =(Y, \upsilon)$ be topological spaces and $(x,y) \in X \times Y$. The truth in $M = (X\times Y, \tau_1,\tau_2,\tau, \upsilon)$ is similar as in Definition 2.2.3.
+    For $\Box$, $\Box_1$ and $\Box_2$ we interpret this as follows : 
+    
+    \begin{align*}
+        M,(x,y) &\vDash \Box_1 \phi \mbox{ iff } \exists U \in \tau_1 : (x,y) \in U \mbox{ and } \forall(x',y') \in U : (x',y') \vDash \phi \\
+        M,(x,y) &\vDash \Box_2 \phi \mbox{ iff } \exists V \in \tau_2 : (x,y) \in V \mbox{ and } \forall(x',y') \in V : (x',y') \vDash \phi \\
+        M,(x,y) &\vDash \Box \phi \mbox{ iff } \exists U \in \chi \, \exists V \in \upsilon: (x,y) \in U \times V \mbox{ and } \forall(x',y') \in U \times V : (x',y') \vDash \phi
+    \end{align*}
+
+\end{definition}
+
+\begin{definition}
+    A topo-bisimulation between two topological models $M = (X,\tau, \upsilon)$ and $M' = (X', \tau', \upsilon')$ is a nonempty relation $\leftrightarroweq \subseteq X \times X'$ s.t. if $x \leftrightarroweq x'$ then \newline 
+    \newline
+    1. Base: $x \in V(p) \mbox{ iff } x' \in v'(p)$ for any propositional variable p \newline
+    2. Forth: $x \in U \in tau$ implies that there exists $U' \in \tau'$ s.t. $x' \in U'$ and for every $y' \in U'$ there is $y \in U$ with $y \leftrightarroweq y'$ \newline
+    3. Back: $x' \in U' \in tau'$ implies that there exists $U \in \tau$ s.t. $x' \in U'$ and for every $y' \in U'$ there is $y \in U$ with $y \leftrightarroweq y'$
+
+\end{definition}
+
+
+\begin{definition}
+    Let X and Y be topological spaces and $f : X \rightarrow Y$ a function.
+    We call f continuous if for each open set $U \subseteq Y$ the set $f^{-1}(U)$ is open in X. We say f 
+    is open if for each open set $V \subseteq X$ the set f[V] is open in Y.
+        
+\end{definition}
+
+\begin{remark}
+
+    There is an alternative defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
+    U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
+    the union of open sets is an open set.
+    
+\end{remark}
 
 
 
@@ -380,64 +467,7 @@ In the end, we will use an unravelling technique to show completeness.
 
 \clearpage
 
-\section{Topological Space Defintion}
-
-\begin{definition}
-    A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
-    \newline
-    \newline
-    1. the empty set $\emptyset $ and X are open
-    \newline
-    2. the union of an arbitrary collection of open sets is open
-    \newline
-    3. the intersection of finite collection of open sets is open
-    \newline
-    \newline
-    The space is called Alexandroff, if we allow the intersection of infinite collection of open sets.
-    A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
-    and v is a valuation assigining subsets of X to propositional variables. 
-        
-\end{definition}
-
-
-\begin{definition}
-    Let M = (X,$\tau$,v) a topological model and $x \in X$. The satisfaction of a formula
-    at the point x in M is defined inductively as follows :
-    \newline
-    $M,x \models \Box \phi$ iff $\, \exists U \in \tau$ s.t $x \in U$ and $\forall u \in U : M,u \models \phi$
-    \newline
-    $M,x \models \Diamond \phi$ iff $\, \forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$
-        
-\end{definition}
-
-\begin{definition}
-    Let $A = (X, \chi)$ and B =(Y, $\upsilon$) be topological spaces. The standard product topology $\tau$ is the set of subsets of 
-    $X \times Y$ such that $X \in \chi$ and $Y \in \upsilon$. \newline
-    Let $N \subseteq X \times Y $. We call $N$ horizontally open if $\forall (x,y) \in N $ $\exists U \in \chi : x \in U $ and $ U \times \{ y \} \subseteq N$. \newline We call $N$ 
-    vertically open if $\forall (x,y) \in N$ $\exists V \in \upsilon : y \in V$ and  $ \{ x \} \times V \subseteq N$ \newline
-    If $N$ is H-open and V-open, then we call it HV-open. \newline
-    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$
-        
-\end{definition}
-
-
-\begin{definition}
-    Let X and Y be topological spaces and $f : X \rightarrow Y$ a function.
-    We call f continuous if for each open set $U \subseteq Y$ the set $f^{-1}(U)$ is open in X. We say f 
-    is open if for each open set $V \subseteq X$ the set f[V] is open in Y.
-        
-\end{definition}
-
-\begin{remark}
-    There is an alternative defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
-    U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
-    the union of open sets is an open set.
-    \newline
-    
-    
-\end{remark}
-    
-Now we define some Kripke frames, which we will use through this chapter.
+\section{Topological Space - Completeness}
 
 \begin{definition}
     Let $T_2$ be the infinite binary tree with reflexive and transitive descendant relation. \newline Formally it is defined as follows :
@@ -633,7 +663,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     $$Log(N_\omega(F_{rt})) = S4$$
 
     \begin{proof}
-        In all these cases, the inclusion from left to right follows from Proposition 2.0.9 and Corollary 5.2.7.
+        In all these cases, the inclusion from left to right follows from Proposition 2.1.9 and Corollary 5.2.7.
         Now the converse direction. Assume $X =(X,\tau)$. \newline
         It is easy to check that $X \vDash D$ iff for each $x \in X : \emptyset \notin \tau(x)$. For $N_\omega(F_{in})$ and $N_\omega(F_{it})$ this holds. \newline
         It is easy to check that $X \vDash T$ iff we have $x\in U \in \tau(x)$ for any $x$ and $U$. For $N_\omega(F_{rn})$ and $N_\omega(F_{rt})$ this holds. \newline
@@ -809,7 +839,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \begin{corollary}
         Let $F_1 = (A^*,R_1) = F_{\xi_1, \eta_1}[A]$ and $F_2 = (B^*,R_2) = F_{\xi_2, \eta_2}[B]$. Then 
         $$Log(N_\omega(F_1) \times_n N_\omega(F_2))  \subseteq Log(F_1) \otimes Log(F_2)$$.
-        It follows from Proposition 2.0.8, Lemma 5.1.5, Corollary 5.1.7 and Lemma 5.1.12.
+        It follows from Proposition 2.1.8, Lemma 5.1.5, Corollary 5.1.7 and Lemma 5.1.12.
     \end{corollary}
 
     \begin{corollary}
@@ -818,7 +848,7 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
 
         \begin{proof}
             The left to right inclusion follows from Corollary 5.3.1 \newline \newline
-            To prove right to left, we know due to Proposition 2.0.9 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
+            To prove right to left, we know due to Proposition 2.1.9 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
             Due to Proposition 5.1.10 we get $Log(N_\omega(F_1)) \otimes Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2))$. 
             Because $N_\omega(F_1)\times_n N_\omega(F_2)$ is a frame in the n-product, we get
             $Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)\times_n N_\omega(F_2))$.
