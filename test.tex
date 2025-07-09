@@ -467,20 +467,46 @@ In the end, we will use an unravelling technique to show completeness.
 
 \clearpage
 
-\section{Topological Space - Completeness}
+\section{Logic of product of topological spaces with three topologies}
+In this section, we will prove the logic of the product of two topological spaces with horizontal, vertical and classic product topology is 
+$S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$ (we abbreviate the logic $S4 \otimes S4 \otimes ...$ as TPL). First we will show a version for one modality
+because it is easier to understand and the proof idea is based on this version.
 
 \begin{definition}
     Let $T_2$ be the infinite binary tree with reflexive and transitive descendant relation. \newline Formally it is defined as follows :
-    $T_2 = (W,R)$ where W = \{0,1\}* and sRt iff $\exists u\in W : s*u = t$. \newline
-    The $T_ {6,2,2}$ tree is the infinite six branching tree, where all nodes of $T_ {6,2,2}$ is R-related, the first two R1-related 
-    and the last two R2-related. Formally we can define this tree as follows : $T_ {6,2,2} = (W,R,R_1,R_2)$,
-    where W = \{{0,1,2,3,4,5}\}*, $$sRt \mbox{ iff } \exists u \in \mbox{\{0,1,2,3,4,5\}*} : s*t = u $$
-    $$ sR_1t  \mbox{ iff } \exists u \in \mbox{\{0,1\}*} : s*t = u$$
-    $$ sR_2t  \mbox{ iff } \exists u \in \mbox{\{5,6\}*} : s*t = u$$
+    $T_2 = (W,R)$ where $W = \{0,1\}^*$ and $sRt$ iff $\exists u\in W : s \cdot u = t$. \newline
+    The $T_ {6,2,2}$ tree is the infinite six branching tree, where all nodes of $T_ {6,2,2}$ is $R$-related, the first two $R_1$-related 
+    and the last two $R_2$-related. Formally we can define this tree as follows : $T_ {6,2,2} = (W,R,R_1,R_2)$,
+    where $W = \{{0,1,2,3,4,5}\}^*$, $$sRt \mbox{ iff } \exists u \in \mbox{\{0,1,2,3,4,5\}*} : s \cdot t = u $$
+    $$ sR_1t  \mbox{ iff } \exists u \in \mbox{\{0,1\}*} : s \cdot t = u$$
+    $$ sR_2t  \mbox{ iff } \exists u \in \mbox{\{5,6\}*} : s \cdot t = u$$
     
-    where s and t are elements of the set where the element u can come from, w.r.t to the relation. For example in the case sRt,
-    s and t are elements of \{0,1,2,3,4,5\}*.        
+    where $s,t \in W$ and "$\cdot$" is the concatenation-operator.        
 \end{definition}
+
+\begin{theorem}
+    S4 is complete with respect to $T_2$.
+
+    \begin{proof}
+        The idea is to use the fact that S4 has finite model property. By that we can pick a finite rooted S4-frame and then show that this frame is the bounded morphic image of $T_2$.
+        For details see [Goldblatt].
+    \end{proof}
+\end{theorem}
+
+\begin{theorem}
+
+    (Cantor) Every countable dense linear ordering without endpoints is isomorphic to $\mathbb{Q}$.
+    \begin{proof}
+        For a proof see e.g [?, Page 217, Theorem 2].   
+    \end{proof}
+
+\end{theorem}
+
+Our strategy is as follows. We use completeness of $S4$ w.r.t. $T_2$, view $T_2$ as an Alexandroff space, define a dense subset $X$ of $\mathbb{Q}$ without endpoints,
+and then establish a topo-bisimulation between $X$ and $T_2$. This will allow us to transfer counterexamples from $T_2$ to $X$, which by Cantor's theorem
+is order-isomorphic and hence homeomorphic to $\mathbb{Q}$.
+
+
 
 
 \clearpage
