@@ -504,7 +504,18 @@ because it is easier to understand and the proof idea is based on this version.
 
 Our strategy is as follows. We use completeness of $S4$ w.r.t. $T_2$, view $T_2$ as an Alexandroff space, define a dense subset $X$ of $\mathbb{Q}$ without endpoints,
 and then establish a topo-bisimulation between $X$ and $T_2$. This will allow us to transfer counterexamples from $T_2$ to $X$, which by Cantor's theorem
-is order-isomorphic and hence homeomorphic to $\mathbb{Q}$.
+is order-isomorphic and hence homeomorphic to $\mathbb{Q}$. \newline 
+Now let us define $X$ as $X = \bigcup_{n \in \mathbb{N}} X_n$ where $X_0 = \{0\}$ and 
+$$X_{n+1} = X_n \cup \{x - \frac{1}{3^n}, x + \frac{1}{3^n} \mid x \in X_n\}$$
+
+\begin{lemma}
+    For $n>0$ and $x,y \in X_n, x \neq y$ we have : $\left| x - y \right| \geq \frac{1}{3^{n-1}}$
+
+    \begin{proof}
+        Proof is by induction on $n$. For the base case, if $n=1$, then $X = {0,1,-1}$. For induction step, assume $u,v \in X_{n-1}$ with $u \neq v$. By induction hypothesis, it holds 
+        $|u-v| \geq \frac{1}{3^{n-2}}$. Suppose we pick $x = u + \frac{1}{3^{n-1}}$ and $y = v - \frac{1}{3^{n-1}}$. That means, $x,y \in X_n$.
+    \end{proof}
+\end{lemma}
 
 
 
