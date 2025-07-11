@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  10 JUL 2025 00:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  11 JUL 2025 23:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -577,87 +577,87 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 480.
  [11
 
+] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 556--561
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--586
+
+ []
+
+[13
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 549--554
+Underfull \hbox (badness 10000) in paragraph at lines 597--599
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 574--579
+LaTeX Warning: Citation `?' on page 14 undefined on input line 613.
 
- []
 
-[12
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 590--592
+Underfull \hbox (badness 10000) in paragraph at lines 626--629
 
  []
 
 
-LaTeX Warning: Citation `?' on page 13 undefined on input line 606.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 619--622
-
- []
-
-
-Overfull \hbox (40.04713pt too wide) in paragraph at lines 619--622
+Overfull \hbox (40.04713pt too wide) in paragraph at lines 626--629
 \OT1/cmr/m/it/12 Example : Say $\OT1/cmr/m/n/12 12034002340[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X$ \OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 0[]$ \OT1/cmr/m/it/12 de-notes in-finitely many ze-ros). Then $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (12034002340[]) =
  []
 
-[13]
-Underfull \hbox (badness 10000) in paragraph at lines 658--664
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 665--671
 
  []
 
-[14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 732--737
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 743--755
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 739--744
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 743--755
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 778--784
+Underfull \hbox (badness 10000) in paragraph at lines 750--762
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 797--801
+Underfull \hbox (badness 10000) in paragraph at lines 750--762
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 849--854
+Underfull \hbox (badness 10000) in paragraph at lines 785--791
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 862--866
+Underfull \hbox (badness 10000) in paragraph at lines 804--808
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 887--892
+Underfull \hbox (badness 10000) in paragraph at lines 856--861
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 869--873
 
  []
 
 [19]
-Overfull \hbox (23.37872pt too wide) in paragraph at lines 917--921
+Underfull \hbox (badness 10000) in paragraph at lines 894--899
+
+ []
+
+[20]
+Overfull \hbox (23.37872pt too wide) in paragraph at lines 924--928
 \OT1/cmr/m/n/12 For left to right, as-sume $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ for some $\OML/cmm/m/it/12 F[]; F[] \OMS/cmsy/m/n/12 2 f\OML/cmm/m/it/12 F[]; F[]; F[]; F[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
  []
 
-[20
+[21
 
 ] (./test.aux)
 
@@ -667,18 +667,18 @@ Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 12969 strings out of 480247
- 226507 string characters out of 5896152
+ 12970 strings out of 480247
+ 226514 string characters out of 5896152
  657731 words of memory out of 5000000
  30665 multiletter control sequences out of 15000+600000
  482021 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  108i,13n,106p,10651b,483s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on test.pdf (20 pages, 282534 bytes).
+Output written on test.pdf (21 pages, 285672 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 259 compressed objects within 3 object streams
- 99 named destinations out of 1000 (max. 500000)
+ 324 PDF objects out of 1000 (max. 8388607)
+ 262 compressed objects within 3 object streams
+ 100 named destinations out of 1000 (max. 500000)
  97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
