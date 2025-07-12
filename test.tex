@@ -79,7 +79,7 @@ $$D4 = D + \Box p \rightarrow \Box \Box p$$
 $$S4 = T + \Box p \rightarrow \Box \Box p$$   
 \end{definition}
 
-Now we introduce some sepcial kind of frames, which we will use through this work.
+Now we introduce some special kind of frames, which we will use through this work.
 \begin{definition}
     Let A be a nonempty set.
     $$A^* = \{a_1...a_k \mid a_i \in A\}$$ 
@@ -474,7 +474,7 @@ because it is easier to understand and the proof idea is based on this version.
 
 \begin{definition}
     Let $T_2$ be the infinite binary tree with reflexive and transitive descendant relation. \newline Formally it is defined as follows :
-    $T_2 = (W,R)$ where $W = \{0,1\}^*$ and $sRt$ iff $\exists u\in W : s \cdot u = t$. \newline
+    $T_2 = (W,R)$ where $W = \{0,1\}^*$ and $sRt$ iff $\exists u\in W^* : s \cdot u = t$. \newline
     The $T_ {6,2,2}$ tree is the infinite six branching tree, where all nodes of $T_ {6,2,2}$ is $R$-related, the first two $R_1$-related 
     and the last two $R_2$-related. Formally we can define this tree as follows : $T_ {6,2,2} = (W,R,R_1,R_2)$,
     where $W = \{{0,1,2,3,4,5}\}^*$, $$sRt \mbox{ iff } \exists u \in \mbox{\{0,1,2,3,4,5\}*} : s \cdot t = u $$
@@ -522,7 +522,37 @@ $$X_{n+1} = X_n \cup \{x - \frac{1}{3^n}, x + \frac{1}{3^n} \mid x \in X_n\}$$
 
 It follows from Lemma 4.0.4 that $(X, <)$ is a countable, dense, and linear ordered without endpoints. By Cantor's Theorem, X is homeomorphic to $\mathbb{Q}$.
 It also follows that for each $x \in X$ with $x \neq 0$ there exists an index $n_x$ with $x \in X_{n_x}$ but $x \notin X_{n_{x}-1}$. But also, we can find a unique $y \in X_{{n_x}-1}$ with $x = y - \frac{1}{3^{n_x -1}}$ or $x = y + \frac{1}{3^{n_x -1}}$.
-Furthermore, the basis for the open intervals for any $x \in X$ will be $(x- \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$.
+Furthermore, the basis for the open intervals for any $x \in X$ will be $(x- \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ where $n_x$ is the index where $x$ gets produced. \newline
+
+Now we define f from $X$ onto $T_2$ by recursion. If $x = 0$, then we let $f(0)$ be the root $r$ of $T_2$. If $x \neq 0$, then 
+$x \in X_{n_x} - X_{n_x -1}$ and we let 
+\[
+            f(x) = 
+            \begin{cases}
+                \mbox{the left successor of f(y)} \qquad &\mbox{if } x = y - \frac{1}{3^{n_x -1}} \\
+                \mbox{the right successor of f(y)} \qquad & \mbox{if } x = y + \frac{1}{3^{n_x -1}}
+            \end{cases}
+\]
+
+\begin{proposition}
+    We claim, f is open and continuous.
+
+    \begin{proof}
+        We define the basis for the Alexandroff topology on $T_2$ as $\{B_t\}_{t \in T_2}$ where $B_t = \{s \in T_2 \mid tRs\}$.
+        To show f is open, we pick an $X$-interval $(x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ and show 
+        $f((x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})) = B_{f(x)}$. \newline
+        $\subseteq$ : If we pick $x \in ((x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}))$, then obviously $f(x)Rf(x)$. Assume we pick a point 
+        $y \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ but $y \neq x$. Then we have $n_y > n_x$ and hence $f(x) R f(y)$.
+        $\supseteq$ : Assume $f(x)Rt$. We will show by induction on the length $k$ between $f(x)$ and $t$ s.t there exists $y \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ s.t $f(y) = t$.
+        Base case : If $k = 0$, then we have $t = f(x)$ and we can pick $y = x$. For induction step, assume it holds for $f(x)Rt'$ with length $n$, $f(y) = t'$ and $t'Rt$.
+        For $y$, there must exists an index $n_y > n_x$ s.t. $y \in X_{n_y} - X_{n_y -1}$. 
+        Now let $y' = y - \frac{1}{3^{n_y}}$ or $y' = y + \frac{1}{3^{n_y}}$. It holds that, $n_y' > n_y > n_x$, so $y' \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$.
+        By defintion of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open
+        
+
+    \end{proof}
+
+\end{proposition}
 
 
 
