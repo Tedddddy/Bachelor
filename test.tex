@@ -197,6 +197,14 @@ Now we introduce some special kind of frames, which we will use through this wor
 
 \end{definition}
 
+\begin{proposition}
+    Let $M = (X,\tau, \upsilon)$ and $M' = (X', \tau', \upsilon')$. Assume $w \in M'$ and $w' \in M'$ are topo-bisimilar points.
+    Then for each formula $\phi$ we have 
+    $$M,w \vDash \phi \mbox{ iff } M', w' \vDash \phi$$
+    The proof is by induction.
+
+\end{proposition}
+
 
 \begin{definition}
     Let X and Y be topological spaces and $f : X \rightarrow Y$ a function.
@@ -212,9 +220,6 @@ Now we introduce some special kind of frames, which we will use through this wor
     the union of open sets is an open set.
     
 \end{remark}
-
-
-
 
 
 \section{Completeness result for $TNL$}
@@ -549,12 +554,15 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
         Now let $y' = y - \frac{1}{3^{n_y}}$ or $y' = y + \frac{1}{3^{n_y}}$. It holds that, $n_y' > n_y > n_x$, so $y' \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$.
         By defintion of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open. \newline
         To show $f$ is continuous, it suffices to show that for each $t \in T_2$, the $f$-inverse image of $B_t$ is open. Let $x \in f^{-1}(B_t)$. Then $tRf(x)$. As argued before, we can find an open interval in $X$ s.t.
-        $f (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}) = B_{f(x)}$. By $tRf(x)$, we get $B_{f(x)} \subseteq B_t$.
-        
+        $f (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}) = B_{f(x)}$.  By $tRf(x)$, we get $B_{f(x)} \subseteq B_t$. Hence, we found an open interval
+        $I = (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$, s.t. $I = f^{-1}(B_{f(x)}) \subseteq f^{-1}(B_t)$. This holds because we can pick $y \in I$. By applying $f$, we get $f(y) \in B_{f(x)} \subseteq B_t$. But then $y \in f^{-1}(B_t)$.
+        By that fact, we can follow with Remark 2.2.8, that $f^{-1}(B_t)$ is open and hence $f$ is continuous.
 
     \end{proof}
 
 \end{proposition}
+
+To complete the proof, if $S4 \nvdash$
 
 
 
