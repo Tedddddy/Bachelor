@@ -547,7 +547,9 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
         Base case : If $k = 0$, then we have $t = f(x)$ and we can pick $y = x$. For induction step, assume it holds for $f(x)Rt'$ with length $n$, $f(y) = t'$ and $t'Rt$.
         For $y$, there must exists an index $n_y > n_x$ s.t. $y \in X_{n_y} - X_{n_y -1}$. 
         Now let $y' = y - \frac{1}{3^{n_y}}$ or $y' = y + \frac{1}{3^{n_y}}$. It holds that, $n_y' > n_y > n_x$, so $y' \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$.
-        By defintion of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open
+        By defintion of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open. \newline
+        To show $f$ is continuous, it suffices to show that for each $t \in T_2$, the $f$-inverse image of $B_t$ is open. Let $x \in f^{-1}(B_t)$. Then $tRf(x)$. As argued before, we can find an open interval in $X$ s.t.
+        $f (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}) = B_{f(x)}$. By $tRf(x)$, we get $B_{f(x)} \subseteq B_t$.
         
 
     \end{proof}
