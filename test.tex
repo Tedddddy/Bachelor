@@ -252,7 +252,7 @@ In the end, we will use an unravelling technique to show completeness.
     3. if $\Box_i \phi \in \Sigma$ then $\phi \in \Sigma$
     \newline
     \newline
-    Example : Suppose we have a multimodal logic with $\Box, \Box_1$ called $L_{\Box, \Box_1}$ where $\phi = \Box p \rightarrow \Box_1 q$ and $\phi \in \Sigma$. Then $\Sigma = \{ \phi, \neg\Box p, \Box_1 q, \Box p, p, q\}$ is closed under
+    Example : Suppose we have a multimodal logic with $\Box, \Box_1$ called $\mathcal{L}_{\Box, \Box_1}$ where $\phi = \Box p \rightarrow \Box_1 q$ and $\phi \in \Sigma$. Then $\Sigma = \{ \phi, \neg\Box p, \Box_1 q, \Box p, p, q\}$ is closed under
     subformulas.
 \end{definition}
 
@@ -564,6 +564,20 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
 \clearpage
 To complete the proof, if $S4 \nvdash \phi$, then by Theorem 4.0.2, there is a valuation $v$ on $T_2$ s.t. $(T_2, v), r \nVDash \phi$. We define a valuation $\xi$ on $X$ by $\xi(p) = f^{-1}(v(p))$. Since $f$ is continuous and open, $f(0) = r$ and by the choice 
 of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 2.2.7 it follows $(X, \xi), 0 \nVDash \phi$. Because $X$ is homeomorphic to $\mathbb{Q}$, we obtain $\phi$ refutable on $\mathbb{Q}$.
+
+
+\begin{definition}
+    Let $\mathcal{L}_{\Box,\Box_1,\Box_2}$ be a modal language with three modal operators $\Box, \Box_1$ and $\Box_2$.
+    We define the topological product logic $TPL$ as the least set of formulas in $\mathcal{L}_{\Box,\Box_1,\Box_2}$ containing all axioms
+    $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$, and closed under modus ponens, substitution and $\Box$-, $\Box_1$- and $\Box_2$-neccessitation.  
+\end{definition}
+
+\begin{theorem}
+    $TPL$ is complete w.r.t. $T_{6,2,2}$.
+    \begin{proof}
+        A generalization of Theorem 4.0.2 can be seen on [?].
+    \end{proof}
+\end{theorem}
 
 
 
