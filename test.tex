@@ -589,9 +589,32 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
     \begin{proof}
         We define $h$ from $X \times X$ onto $T_{6,2,2}$ by recursion following the inducitve definition of $X$.
         If $(x,y) = (0,0)$, then $h(0,0)$ is the root $r$ of $T_{6,2,2}$. If $(x,y) \neq (0,0)$, then as argued in Lemma 4.0.4, there exists
-        $n_{(x,y)}$ with $(x,y) \in X'_{n_(x,y)}$
+        $n_{(x,y)}$ with $(x,y) \in X'_{n_{(x,y)}} - X'_{n_{(x,y)}-1}$ and that there exists a unique $(u,v) \in X'_{n_{(x,y)}-1}$ such that 
         $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v)$ or $(x,y) =  (u, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$
-        or $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$. 
+        or $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$. \newline %Insert Picture
+
+        Then we let 
+        \[
+            h(x,y) = 
+            \begin{cases}
+                \mbox{The left } R_1 \mbox{-successor of } h(u,v)  &\mbox{if } (x,y) = (u- \frac{1}{3^{n_{(x,y)}-1}},v) \\
+                \mbox{The right } R_1 \mbox{-successor of } h(u,v)  &\mbox{if } (x,y) = (u+ \frac{1}{3^{n_{(x,y)}-1}},v) \\
+                \mbox{The left } R_2 \mbox{-successor of } h(u,v)  &\mbox{if } (x,y) = (u, v - \frac{1}{3^{n_{(x,y)}-1}}) \\
+                \mbox{The right } R_2 \mbox{-successor of } h(u,v)  &\mbox{if } (x,y) = (u, v + \frac{1}{3^{n_{(x,y)}-1}}) \\
+                \mbox{The first remaining successor of } h(u,v)  &\mbox{if } (x,y) = (u+ \frac{1}{3^{n_{(x,y)}-1}}, v+ \frac{1}{3^{n_{(x,y)}-1}}) \\
+                \quad &\text{or } (x, y) = (u - \frac{1}{3^{(x,y)^{-1}}}, v - \frac{1}{3^{(x,y)^{-1}}}) \\
+                \mbox{The last remaining successor of } h(u,v)  &\mbox{if } (x,y) = (u+ \frac{1}{3^{n_{(x,y)}-1}}, v- \frac{1}{3^{n_{(x,y)}-1}}) \\
+                \quad &\text{or } (x, y) = (u - \frac{1}{3^{(x,y)^{-1}}}, v + \frac{1}{3^{(x,y)^{-1}}}) 
+                
+
+            \end{cases}
+        \]
+        \clearpage
+        It is still left to prove, that $h$ is open and continuous w.r.t. all three topologies. We will show it for $\tau_1$ and $\tau$. For $\tau_2$ it is similar as for $\tau_1$.\newline \newline
+        First we observe the basis for $\tau_1$ is 
+        $$\{(x - \frac{1}{3^{n_{(x,y)}}}, x +\frac{1}{3^{n_{(x,y)}}}) \times \{y\} \mid (x,y) \in X \times X\}$$
+        and for $\tau$ is 
+        $$\{(x - \frac{1}{3^{n_{(x,y)}}}, x +\frac{1}{3^{n_{(x,y)}}}) \times (y - \frac{1}{3^{n_{(x,y)}}}, y +\frac{1}{3^{n_{(x,y)}}}) \mid (x,y) \in X \times X\}$$
     \end{proof}
 
 \end{theorem}
