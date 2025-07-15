@@ -42,7 +42,7 @@ In [?], the authors studied a product of two spaces with three topologies : hori
 classic product topology. They proved that the logic of such spaces is $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$
 where $\Box$ corresponds to the product topology. \newline
 The following work will present a detailed proof of the shown results. Additionally, we will show that $T\otimes T\otimes T + \Box p \rightarrow \Box_1 p \land \Box_2p$ 
- (we abbreviate it with $TNL$) = $T \,x^+_n \, T$. The proof ideas here are inspired by the shown results.
+ (we abbreviate it with $\mathit{TNL}$) = $T \,x^+_n \, T$. The proof ideas here are inspired by the shown results.
  \clearpage
 
 
@@ -227,9 +227,9 @@ Now we introduce some special kind of frames, which we will use through this wor
 \end{remark}
 
 
-\section{Completeness result for $TNL$}
+\section{Completeness result for $\mathit{TNL}$}
 
-We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show $TNL$ is sound and complete w.r.t $T_{\omega, \omega, \omega[rn]}$.
+We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show $\mathit{TNL}$ is sound and complete w.r.t $T_{\omega, \omega, \omega[rn]}$.
 The idea is to pick a class of frame $C$ s.t $Log(C) = Log(T_{\omega, \omega, \omega[rn]})$ and then show the class has FMP.
 In the end, we will use an unravelling technique to show completeness. 
 
@@ -385,11 +385,11 @@ In the end, we will use an unravelling technique to show completeness.
 \begin{proposition}
     The logic $T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$ has FMP.
     \begin{proof}
-    The idea is to pick a class of frame $\mathcal{F}$, where $TNL$ is sound and complete with respect to and then show by filtration the FMP. \newline \newline
-    Let $\mathcal{C} = \{F \mid F \Vdash $TNL$\}$. Obviously,  $TNL$ is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
+    The idea is to pick a class of frame $\mathcal{F}$, where $\mathit{TNL}$ is sound and complete with respect to and then show by filtration the FMP. \newline \newline
+    Let $\mathcal{C} = \{F \mid F \Vdash \mathit{TNL}\}$. Obviously,  $\mathit{TNL}$ is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
     We remember T = K + $\Box_i p \rightarrow p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
-    By Sahlqvist, we have $TNL$ is complete w.r.t $\{F \mid F \Vdash \forall x \, R_i(x,x) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
-    Now assume a formula $\phi$ is not derivable from $TNL$. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
+    By Sahlqvist, we have $\mathit{TNL}$ is complete w.r.t $\{F \mid F \Vdash \forall x \, R_i(x,x) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
+    Now assume a formula $\phi$ is not derivable from $\mathit{TNL}$. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
     Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By filtration Theorem, they preserve truth.
     It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have an edge to itself in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for $R^s$ because the rest is similar.
     Pick $w' \in [w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, we have $w'Rw'$. By the defintion of smallest filtration, we have that $[w']R^s[w']$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
@@ -457,11 +457,11 @@ In the end, we will use an unravelling technique to show completeness.
 \end{proposition}
 
 \begin{proposition}
-    $TNL$ is sound and complete w.r.t $T_{\omega,\omega,\omega[rn]}$.
+    $\mathit{TNL}$ is sound and complete w.r.t $T_{\omega,\omega,\omega[rn]}$.
 
     \begin{proof}
     For soundness, we have that $T_{\omega,\omega,\omega[rn]} \Vdash \Box p \rightarrow \Box_1 p \land \Box_2p$, because by defintion we have $R_1,R_2 \subseteq R$. The rest is clear.
-    For completeness, we use the fact $TNL$ has FMP. Let $F = (W',R', R'_1, R'_2)$ be a finite rooted frame with root w and $F \Vdash TNL$. We define inductively an
+    For completeness, we use the fact $\mathit{TNL}$ has FMP. Let $F = (W',R', R'_1, R'_2)$ be a finite rooted frame with root w and $F \Vdash TNL$. We define inductively an
     assignment similar to 2.17. We assign $w$ to the root of $T_{\omega,\omega,\omega[rn]}$. For induction step we start by only assigining points from $R_1$ to $R'_1$ and $R_2$ to $R'_2$. After that, the remaining points will be assigned to the points in $R'$.
     The procedure works similar as described previously. \newline
     We will only check the conditions for $R$ and $R'$. For $R_1, R_1'$ and $R_2, R_2'$, we can argue as before. We pick any $xRy$ with $f(x) = s$. 
@@ -552,7 +552,7 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
         To show f is open, we pick an $X$-interval $(x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ and show 
         $f((x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})) = B_{f(x)}$. \newline
         $\subseteq$ : If we pick $x \in ((x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}))$, then obviously $f(x)Rf(x)$. Assume we pick a point 
-        $y \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ but $y \neq x$. Then we have $n_y > n_x$ and hence $f(x) R f(y)$.
+        $y \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ but $y \neq x$. Then we have $n_y > n_x$ and hence $f(x) R f(y)$. \newline
         $\supseteq$ : Assume $f(x)Rt$. We will show by induction on the length $k$ between $f(x)$ and $t$ s.t there exists $y \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ s.t $f(y) = t$.
         Base case : If $k = 0$, then we have $t = f(x)$ and we can pick $y = x$. For induction step, assume it holds for $f(x)Rt'$ with length $n$, $f(y) = t'$ and $t'Rt$.
         For $y$, there must exists an index $n_y > n_x$ s.t. $y \in X_{n_y} - X_{n_y -1}$. 
@@ -596,302 +596,12 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
         If $(x,y) = (0,0)$, then $h(0,0)$ is the root $r$ of $T_{6,2,2}$. If $(x,y) \neq (0,0)$, then as argued in Lemma 4.0.4, there exists
         $n_{(x,y)}$ with $(x,y) \in X'_{n_{(x,y)}} - X'_{n_{(x,y)}-1}$ and that there exists a unique $(u,v) \in X'_{n_{(x,y)}-1}$ such that 
         $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v)$ or $(x,y) =  (u, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$
-        or $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$. As visiualized in the picture, we can see 
-        as an example $X'_0,X'_1$ and an excerpt of $X'_2$. For clarity, we illustrated some points of $X'_1$ as a line. We cleary can see, 
-        that any point has his own "square", where the points within it, can be build from his center point.
-
-
-
-        \clearpage
-        \centering
-        \begin{tikzpicture}[scale=0.73]
-  % Draw grid
-  \draw[step=1cm,gray,very thin] (-5,-5) grid (5,5);
-
-  % Draw axes
-  \draw[->,thick] (-5,0) -- (5,0) node[right] {$x$};
-  \draw[->,thick] (0,-5) -- (0,5) node[above] {$y$};
-
-\draw (-3,0.1) -- (-3,-0.1) node[below] {$-1$};
-\draw (-2,0.1) -- (-2,-0.1) node[below] {$-\frac{2}{3}$};
-\draw (-1,0.1) -- (-1,-0.1) node[below] {$-\frac{1}{3}$};
-\draw (1,0.1) -- (1,-0.1) node[below] {$\frac{1}{3}$};
-\draw (2,0.1) -- (2,-0.1) node[below] {$\frac{2}{3}$};
-\draw (3,0.1) -- (3,-0.1) node[below] {$1$};
-\draw (-0.1, 3) -- (0.1, 3) node [left] {$1$};
-\draw (-0.1, 2) -- (0.1, 2) node [left] {$\frac{2}{3}$};
-\draw (-0.1, 1) -- (0.1, 1) node [left] {$\frac{1}{3}$};
-\draw (-0.1, -1) -- (0.1, -1) node [left] {$-\frac{1}{3}$};
-\draw (-0.1, -2) -- (0.1, -2) node [left] {$-\frac{2}{3}$};
-\draw (-0.1, -3) -- (0.1, -3) node [left] {$-1$};
-
-  \node[below left] at (0,0) {0};
-
-  % (-1,0)
-  \fill[mydarkgreen, line width =1.5pt] (-3,0) circle (0.08cm);
-  \draw [blue, line width=1.5pt] (-3.2, 1) -- (-2.8, 1); 
-
-  \draw [blue, line width=1.5pt] (-2.2,1) -- (-2,1);
-  \draw [blue, line width=1.5pt](-2, 1) -- (-2, 0.8);
-   (-2,1) circle (0.08cm);
-
-  \draw [blue, line width=1.5pt] (-2, 0.2) -- (-2,-0.2);
-   (-2,0) circle (0.08cm);
-
-  \draw [blue, line width=1.5pt] (-2, -0.8) -- (-2, -1);
-  \draw [blue, line width=1.5pt] (-2.2, -1) -- (-2,-1);
-   (-2,-1) circle (0.08cm);
-
-  \draw [blue, line width=1.5pt] (-3.2, -1) -- (-2.8, -1);
-   (-3,-1) circle (0.08cm);
-
-  \draw [blue, line width=1.5pt] (-4,-1) -- (-3.8,-1);
-  \draw [blue, line width=1.5pt] (-4, -1) -- (-4, -0.8);
-   (-4,-1) circle (0.08cm);
-
-  \draw [blue, line width=1.5pt] (-4, -0.2) -- (-4, 0.2);
-   (-4,0) circle (0.08cm);
-
-  \draw [blue, line width=1.5pt] (-4, 0.8) -- (-4, 1);
-  \draw [blue, line width=1.5pt] (-4, 1) -- (-3.8, 1);
-   (-4,1) circle (0.08cm);
-
-  %(0,0)
-\draw [blue, line width=1.5pt](-0.2, 1) -- (0.2,1);
- (0,1) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (0.8,1) -- (1,1);
-\draw [blue, line width=1.5pt] (1, 1) -- (1, 0.8);
- (1,1) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (1, 0.2) -- (1,-0.2);
- (1,0) circle (0.08cm);
-
-
-\draw [blue, line width=1.5pt] (1, -0.8) -- (1, -1);
-\draw [blue, line width=1.5pt] (0.8, -1) -- (1, -1);
- (1,-1) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (-0.2, -1) -- (0.2, -1);
- (0,-1) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (-1, -1) -- (-0.8, -1);
-\draw [blue, line width=1.5pt] (-1, -1) -- (-1, -0.8);
- (-1,-1) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (-1, -0.2) -- (-1, 0.2);
- (-1,0) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (-1, 0.8) -- (-1, 1);
-\draw [blue, line width=1.5pt] (-1, 1) -- (-0.8, 1);
- (-1,1) circle (0.08cm);
-
-%(1,0)
-\fill [mydarkgreen, line width=1.5pt] (3,0) circle (0.1cm);
-
-\draw [blue, line width=1.5pt] (2.8,1) -- (3.2,1);
- (3,1) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (3.8,1) -- (4,1);
-\draw [blue, line width=1.5pt] (4, 1) -- (4, 0.8);
- (4,1) circle (0.08cm);
-
-\draw [blue, line width=1.5pt] (4, 0.2) -- (4,-0.2);
-
-\draw [blue, line width=1.5pt] (4, -0.8) -- (4, -1);
-\draw [blue, line width=1.5pt] (3.8, -1) -- (4, -1);
-
-\draw [blue, line width=1.5pt] (2.8, -1) -- (3.2, -1);
-
-\draw [blue, line width=1.5pt] (2, -1) -- (2.2, -1);
-\draw [blue, line width=1.5pt](2, -1) -- (2, -0.8);
-
-\draw [blue, line width=1.5pt](2, -0.2) -- (2, 0.2);
-
-\draw [blue, line width=1.5pt](2, 0.8) -- (2, 1);
-\draw [blue, line width=1.5pt](2, 1) -- (2.2, 1);
-
-%(-1,1)
-\fill[darkbrown] (-3,3) circle (0.1cm);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fill [orange, line width=1.2pt] (-3.2, 3) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-3.2, 3.2) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-3, 3.2) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-2.8, 3.2) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-2.8, 3) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-2.8, 2.8) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-3, 2.8) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-3.2, 2.8) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-3.2, 3) circle (0.06cm);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\draw [blue, line width=1.5pt](-3.2, 4) -- (-2.8, 4); 
-
-\draw [blue, line width=1.5pt](-2.2, 4) -- (-2, 4);
-\draw [blue, line width=1.5pt](-2, 4) -- (-2, 3.8);
-
-\fill [blue, line width=1.5pt] (-2,3) circle (0.08cm);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\fill [red, line width=1.2pt] (-2.24, 3) circle (0.06cm);
-\fill [red, line width=1.2pt] (-2.24, 3.2) circle (0.06cm);
-\fill [red, line width=1.2pt] (-2, 3.2) circle (0.06cm);
-\fill [red, line width=1.2pt] (-1.76, 3.2) circle (0.06cm);
-\fill [red, line width=1.2pt] (-2.24, 3) circle (0.06cm);
-\fill [red, line width=1.2pt] (-1.76, 3) circle (0.06cm);
-\fill [red, line width=1.2pt] (-1.76, 2.8) circle (0.06cm);
-\fill [red, line width=1.2pt] (-2, 2.8) circle (0.06cm);
-\fill [red, line width=1.2pt] (-2.24, 2.8) circle (0.06cm);
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\draw [blue, line width=1.5pt](-2, 2.2) -- (-2, 2);
-\draw [blue, line width=1.5pt](-2.2, 2) -- (-2, 2);
-
-\draw [blue, line width=1.5pt](-3.2, 2) -- (-2.8, 2);
-
-\draw [blue, line width=1.5pt](-4, 2) -- (-3.8, 2);
-\draw [blue, line width=1.5pt](-4, 2) -- (-4, 2.2);
-
-\draw [blue, line width=1.5pt](-4, 2.8) -- (-4, 3.2);
-
-\draw [blue, line width=1.5pt](-4, 3.8) -- (-4, 4);
-\draw [blue, line width=1.5pt](-4, 4) -- (-3.8, 4);
-
-%(-1,-1)
-\fill [darkbrown, line width=1.5pt] (-3,-3) circle (0.1cm);
-
-\draw [blue, line width=1.5pt](-3.2, -2) -- (-2.8, -2); 
-
-\draw [blue, line width=1.5pt](-2.2, -2) -- (-2, -2);
-\draw [blue, line width=1.5pt](-2, -2) -- (-2, -2.2);
-
-\draw [blue, line width=1.5pt](-2, -2.8) -- (-2, -3.2);
-
-\draw [blue, line width=1.5pt](-2, -3.8) -- (-2, -4);
-\draw [blue, line width=1.5pt](-2.2, -4) -- (-2, -4);
-
-\draw [blue, line width=1.5pt](-3.2, -4) -- (-2.8, -4);
-
-\draw [blue, line width=1.5pt](-4, -4) -- (-3.8, -4);
-\draw [blue, line width=1.5pt](-4, -4) -- (-4, -3.8);
-
-\draw [blue, line width=1.5pt](-4, -3.2) -- (-4, -2.8);
-
-\draw [blue, line width=1.5pt](-4, -2.2) -- (-4, -2);
-\draw [blue, line width=1.5pt](-4, -2) -- (-3.8, -2);
-
-%(1,1)
-\fill [darkbrown, line width=1.5pt] (3,3) circle (0.1cm);
-
-\draw [blue, line width=1.5pt](2.8,4) -- (3.2,4);
-
-\draw [blue, line width=1.5pt](3.8,4) -- (4,4);
-\draw [blue, line width=1.5pt](4, 4) -- (4, 3.8);
-
-\draw [blue, line width=1.5pt](4, 3.2) -- (4, 2.8);
-
-\draw [blue, line width=1.5pt](4, 2.2) -- (4, 2);
-\draw [blue, line width=1.5pt](3.8, 2) -- (4, 2);
-
-\draw [blue, line width=1.5pt](2.8, 2) -- (3.2, 2);
-
-\draw [blue, line width=1.5pt](2, 2) -- (2.2, 2);
-\draw [blue, line width=1.5pt](2, 2) -- (2, 2.2);
-
-\draw [blue, line width=1.5pt](2, 2.8) -- (2, 3.2);
-
-\draw [blue, line width=1.5pt](2, 3.8) -- (2, 4);
-\draw [blue, line width=1.5pt](2, 4) -- (2.2, 4);
-
-%(0,1)
-\fill [strongyellow, line width=1.5pt](0,3) circle (0.1cm);
-
-\draw [blue, line width=1.5pt](-0.2, 4) -- (0.2, 4);
-
-\draw [blue, line width=1.5pt](0.8, 4) -- (1, 4);
-\draw [blue, line width=1.5pt](1, 4) -- (1, 3.8);
-
-\draw [blue, line width=1.5pt](1, 3.2) -- (1, 2.8);
-
-\draw [blue, line width=1.5pt](1, 2.2) -- (1, 2);
-\draw [blue, line width=1.5pt](0.8, 2) -- (1, 2);
-
-\draw [blue, line width=1.5pt](-0.2, 2) -- (0.2, 2);
-
-\draw [blue, line width=1.5pt](-1, 2) -- (-0.8, 2);
-\draw [blue, line width=1.5pt](-1, 2) -- (-1, 2.2);
-
-\fill [blue, line width= 1.5pt] (-1,3) circle (0.08cm);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\fill [orange, line width=1.2pt] (-1.24, 3) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-1.24, 3.2) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-1, 3.2) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-0.76, 3.2) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-0.76, 3) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-0.76, 2.8) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-1, 2.8) circle (0.06cm);
-\fill [orange, line width=1.2pt] (-1.24, 2.8) circle (0.06cm);
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\draw [blue, line width=1.5pt](-1, 3.8) -- (-1, 4);
-\draw [blue, line width=1.5pt](-1, 4) -- (-0.8, 4);
-
-%(0,-1)
-\fill [strongyellow, line width=1.5pt](0,-3) circle (0.1cm);
-\draw [blue, line width=1.5pt](-0.2, -2) -- (0.2, -2);
-
-\draw [blue, line width=1.5pt](0.8, -2) -- (1, -2);
-\draw [blue, line width=1.5pt](1, -2) -- (1, -2.2);
-
-\draw [blue, line width=1.5pt](1, -2.8) -- (1, -3.2);
-
-\draw [blue, line width=1.5pt](1, -3.8) -- (1, -4);
-\draw [blue, line width=1.5pt](0.8, -4) -- (1, -4);
-
-\draw [blue, line width=1.5pt](-0.2, -4) -- (0.2, -4);
-
-\draw [blue, line width=1.5pt](-1, -4) -- (-0.8, -4);
-\draw [blue, line width=1.5pt](-1, -4) -- (-1, -3.8);
-
-\draw [blue, line width=1.5pt](-1, -3.2) -- (-1, -2.8);
-
-\draw [blue, line width=1.5pt](-1, -2.2) -- (-1, -2);
-\draw [blue, line width=1.5pt](-1, -2) -- (-0.8, -2);
-
-%(1,-1)
-\fill[darkbrown, line width =1.5pt] (3,-3)circle (0.1cm);
-\draw [blue, line width=1.5pt](2.8, -2) -- (3.2, -2);
-
-\draw [blue, line width=1.5pt](3.8, -2) -- (4, -2);
-\draw [blue, line width=1.5pt](4, -2) -- (4, -2.2);
-
-\draw [blue, line width=1.5pt](4, -2.8) -- (4, -3.2);
-
-\draw [blue, line width=1.5pt](4, -3.8) -- (4, -4);
-\draw [blue, line width=1.5pt](3.8, -4) -- (4, -4);
-
-\draw [blue, line width=1.5pt](2.8, -4) -- (3.2, -4);
-
-\draw [blue, line width=1.5pt](2, -4) -- (2.2, -4);
-\draw [blue, line width=1.5pt](2, -4) -- (2, -3.8);
-
-\draw [blue, line width=1.5pt](2, -3.2) -- (2, -2.8);
-
-\draw [blue, line width=1.5pt](2, -2.2) -- (2, -2);
-\draw [blue, line width=1.5pt](2, -2) -- (2.2, -2);
-
-\end{tikzpicture}
-
-%DESCRIPTION
-
-
-
-
-        Then we let 
+        or $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$. \newline 
+        As visiualized in the picture, we can see  as an example $X'_0,X'_1$ and an excerpt of $X'_2$. For clarity, we illustrated some points of $X'_1$ as a line. We cleary can see, 
+        that any point has his own "square", where the points within it can be only build from his center point. This is because, the square size gets exponentially smaller with each iteration, due to its construction.
+        That means, in each iteration they can not intersect.
+
+        Now we define $h$ as 
         \[
             h(x,y) = 
             \begin{cases}
@@ -907,12 +617,308 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
 
             \end{cases}
         \]
-        \clearpage
-        It is still left to prove, that $h$ is open and continuous w.r.t. all three topologies. We will show it for $\tau_1$ and $\tau$. For $\tau_2$ it is similar as for $\tau_1$.\newline \newline
-        First we observe the basis for $\tau_1$ is 
-        $$\{(x - \frac{1}{3^{n_{(x,y)}}}, x +\frac{1}{3^{n_{(x,y)}}}) \times \{y\} \mid (x,y) \in X \times X\}$$
-        and for $\tau$ is 
-        $$\{(x - \frac{1}{3^{n_{(x,y)}}}, x +\frac{1}{3^{n_{(x,y)}}}) \times (y - \frac{1}{3^{n_{(x,y)}}}, y +\frac{1}{3^{n_{(x,y)}}}) \mid (x,y) \in X \times X\}$$
+    \begin{figure}[ht]        
+    \begin{center}
+            
+        \begin{tikzpicture}[scale=0.73]
+  % Draw grid
+            \draw[step=1cm,gray,very thin] (-5,-5) grid (5,5);
+
+            % Draw axes
+            \draw[->,thick] (-5,0) -- (5,0) node[right] {$x$};
+            \draw[->,thick] (0,-5) -- (0,5) node[above] {$y$};
+
+            \draw (-3,0.1) -- (-3,-0.1) node[below] {$-1$};
+            \draw (-2,0.1) -- (-2,-0.1) node[below] {$-\frac{2}{3}$};
+            \draw (-1,0.1) -- (-1,-0.1) node[below] {$-\frac{1}{3}$};
+            \draw (1,0.1) -- (1,-0.1) node[below] {$\frac{1}{3}$};
+            \draw (2,0.1) -- (2,-0.1) node[below] {$\frac{2}{3}$};
+            \draw (3,0.1) -- (3,-0.1) node[below] {$1$};
+            \draw (-0.1, 3) -- (0.1, 3) node [left] {$1$};
+            \draw (-0.1, 2) -- (0.1, 2) node [left] {$\frac{2}{3}$};
+            \draw (-0.1, 1) -- (0.1, 1) node [left] {$\frac{1}{3}$};
+            \draw (-0.1, -1) -- (0.1, -1) node [left] {$-\frac{1}{3}$};
+            \draw (-0.1, -2) -- (0.1, -2) node [left] {$-\frac{2}{3}$};
+            \draw (-0.1, -3) -- (0.1, -3) node [left] {$-1$};
+
+            \node[below left] at (0,0) {0};
+
+            % (-1,0)
+            \fill[mydarkgreen, line width =1.5pt] (-3,0) circle (0.08cm);
+            \draw [blue, line width=1.5pt] (-3.2, 1) -- (-2.8, 1); 
+
+            \draw [blue, line width=1.5pt] (-2.2,1) -- (-2,1);
+            \draw [blue, line width=1.5pt](-2, 1) -- (-2, 0.8);
+            (-2,1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-2, 0.2) -- (-2,-0.2);
+            (-2,0) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-2, -0.8) -- (-2, -1);
+            \draw [blue, line width=1.5pt] (-2.2, -1) -- (-2,-1);
+            (-2,-1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-3.2, -1) -- (-2.8, -1);
+            (-3,-1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-4,-1) -- (-3.8,-1);
+            \draw [blue, line width=1.5pt] (-4, -1) -- (-4, -0.8);
+            (-4,-1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-4, -0.2) -- (-4, 0.2);
+            (-4,0) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-4, 0.8) -- (-4, 1);
+            \draw [blue, line width=1.5pt] (-4, 1) -- (-3.8, 1);
+            (-4,1) circle (0.08cm);
+
+            %(0,0)
+            \draw [blue, line width=1.5pt](-0.2, 1) -- (0.2,1);
+            (0,1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (0.8,1) -- (1,1);
+            \draw [blue, line width=1.5pt] (1, 1) -- (1, 0.8);
+            (1,1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (1, 0.2) -- (1,-0.2);
+            (1,0) circle (0.08cm);
+
+
+            \draw [blue, line width=1.5pt] (1, -0.8) -- (1, -1);
+            \draw [blue, line width=1.5pt] (0.8, -1) -- (1, -1);
+            (1,-1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-0.2, -1) -- (0.2, -1);
+            (0,-1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-1, -1) -- (-0.8, -1);
+            \draw [blue, line width=1.5pt] (-1, -1) -- (-1, -0.8);
+            (-1,-1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-1, -0.2) -- (-1, 0.2);
+            (-1,0) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (-1, 0.8) -- (-1, 1);
+            \draw [blue, line width=1.5pt] (-1, 1) -- (-0.8, 1);
+            (-1,1) circle (0.08cm);
+
+            %(1,0)
+            \fill [mydarkgreen, line width=1.5pt] (3,0) circle (0.1cm);
+
+            \draw [blue, line width=1.5pt] (2.8,1) -- (3.2,1);
+            (3,1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (3.8,1) -- (4,1);
+            \draw [blue, line width=1.5pt] (4, 1) -- (4, 0.8);
+            (4,1) circle (0.08cm);
+
+            \draw [blue, line width=1.5pt] (4, 0.2) -- (4,-0.2);
+
+            \draw [blue, line width=1.5pt] (4, -0.8) -- (4, -1);
+            \draw [blue, line width=1.5pt] (3.8, -1) -- (4, -1);
+
+            \draw [blue, line width=1.5pt] (2.8, -1) -- (3.2, -1);
+
+            \draw [blue, line width=1.5pt] (2, -1) -- (2.2, -1);
+            \draw [blue, line width=1.5pt](2, -1) -- (2, -0.8);
+
+            \draw [blue, line width=1.5pt](2, -0.2) -- (2, 0.2);
+
+            \draw [blue, line width=1.5pt](2, 0.8) -- (2, 1);
+            \draw [blue, line width=1.5pt](2, 1) -- (2.2, 1);
+
+            %(-1,1)
+            \fill[darkbrown] (-3,3) circle (0.1cm);
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \fill [orange, line width=1.2pt] (-3.2, 3) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-3.2, 3.2) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-3, 3.2) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-2.8, 3.2) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-2.8, 3) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-2.8, 2.8) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-3, 2.8) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-3.2, 2.8) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-3.2, 3) circle (0.06cm);
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw [blue, line width=1.5pt](-3.2, 4) -- (-2.8, 4); 
+
+            \draw [blue, line width=1.5pt](-2.2, 4) -- (-2, 4);
+            \draw [blue, line width=1.5pt](-2, 4) -- (-2, 3.8);
+
+            \fill [blue, line width=1.5pt] (-2,3) circle (0.08cm);
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \fill [red, line width=1.2pt] (-2.24, 3) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-2.24, 3.2) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-2, 3.2) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-1.76, 3.2) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-2.24, 3) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-1.76, 3) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-1.76, 2.8) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-2, 2.8) circle (0.06cm);
+            \fill [red, line width=1.2pt] (-2.24, 2.8) circle (0.06cm);
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw [blue, line width=1.5pt](-2, 2.2) -- (-2, 2);
+            \draw [blue, line width=1.5pt](-2.2, 2) -- (-2, 2);
+
+            \draw [blue, line width=1.5pt](-3.2, 2) -- (-2.8, 2);
+
+            \draw [blue, line width=1.5pt](-4, 2) -- (-3.8, 2);
+            \draw [blue, line width=1.5pt](-4, 2) -- (-4, 2.2);
+
+            \draw [blue, line width=1.5pt](-4, 2.8) -- (-4, 3.2);
+
+            \draw [blue, line width=1.5pt](-4, 3.8) -- (-4, 4);
+            \draw [blue, line width=1.5pt](-4, 4) -- (-3.8, 4);
+
+            %(-1,-1)
+            \fill [darkbrown, line width=1.5pt] (-3,-3) circle (0.1cm);
+
+            \draw [blue, line width=1.5pt](-3.2, -2) -- (-2.8, -2); 
+
+            \draw [blue, line width=1.5pt](-2.2, -2) -- (-2, -2);
+            \draw [blue, line width=1.5pt](-2, -2) -- (-2, -2.2);
+
+            \draw [blue, line width=1.5pt](-2, -2.8) -- (-2, -3.2);
+
+            \draw [blue, line width=1.5pt](-2, -3.8) -- (-2, -4);
+            \draw [blue, line width=1.5pt](-2.2, -4) -- (-2, -4);
+
+            \draw [blue, line width=1.5pt](-3.2, -4) -- (-2.8, -4);
+
+            \draw [blue, line width=1.5pt](-4, -4) -- (-3.8, -4);
+            \draw [blue, line width=1.5pt](-4, -4) -- (-4, -3.8);
+
+            \draw [blue, line width=1.5pt](-4, -3.2) -- (-4, -2.8);
+
+            \draw [blue, line width=1.5pt](-4, -2.2) -- (-4, -2);
+            \draw [blue, line width=1.5pt](-4, -2) -- (-3.8, -2);
+
+            %(1,1)
+            \fill [darkbrown, line width=1.5pt] (3,3) circle (0.1cm);
+
+            \draw [blue, line width=1.5pt](2.8,4) -- (3.2,4);
+
+            \draw [blue, line width=1.5pt](3.8,4) -- (4,4);
+            \draw [blue, line width=1.5pt](4, 4) -- (4, 3.8);
+
+            \draw [blue, line width=1.5pt](4, 3.2) -- (4, 2.8);
+
+            \draw [blue, line width=1.5pt](4, 2.2) -- (4, 2);
+            \draw [blue, line width=1.5pt](3.8, 2) -- (4, 2);
+
+            \draw [blue, line width=1.5pt](2.8, 2) -- (3.2, 2);
+
+            \draw [blue, line width=1.5pt](2, 2) -- (2.2, 2);
+            \draw [blue, line width=1.5pt](2, 2) -- (2, 2.2);
+
+            \draw [blue, line width=1.5pt](2, 2.8) -- (2, 3.2);
+
+            \draw [blue, line width=1.5pt](2, 3.8) -- (2, 4);
+            \draw [blue, line width=1.5pt](2, 4) -- (2.2, 4);
+
+            %(0,1)
+            \fill [strongyellow, line width=1.5pt](0,3) circle (0.1cm);
+
+            \draw [blue, line width=1.5pt](-0.2, 4) -- (0.2, 4);
+
+            \draw [blue, line width=1.5pt](0.8, 4) -- (1, 4);
+            \draw [blue, line width=1.5pt](1, 4) -- (1, 3.8);
+
+            \draw [blue, line width=1.5pt](1, 3.2) -- (1, 2.8);
+
+            \draw [blue, line width=1.5pt](1, 2.2) -- (1, 2);
+            \draw [blue, line width=1.5pt](0.8, 2) -- (1, 2);
+
+            \draw [blue, line width=1.5pt](-0.2, 2) -- (0.2, 2);
+
+            \draw [blue, line width=1.5pt](-1, 2) -- (-0.8, 2);
+            \draw [blue, line width=1.5pt](-1, 2) -- (-1, 2.2);
+
+            \fill [blue, line width= 1.5pt] (-1,3) circle (0.08cm);
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \fill [orange, line width=1.2pt] (-1.24, 3) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-1.24, 3.2) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-1, 3.2) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-0.76, 3.2) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-0.76, 3) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-0.76, 2.8) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-1, 2.8) circle (0.06cm);
+            \fill [orange, line width=1.2pt] (-1.24, 2.8) circle (0.06cm);
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw [blue, line width=1.5pt](-1, 3.8) -- (-1, 4);
+            \draw [blue, line width=1.5pt](-1, 4) -- (-0.8, 4);
+
+            %(0,-1)
+            \fill [strongyellow, line width=1.5pt](0,-3) circle (0.1cm);
+            \draw [blue, line width=1.5pt](-0.2, -2) -- (0.2, -2);
+
+            \draw [blue, line width=1.5pt](0.8, -2) -- (1, -2);
+            \draw [blue, line width=1.5pt](1, -2) -- (1, -2.2);
+
+            \draw [blue, line width=1.5pt](1, -2.8) -- (1, -3.2);
+
+            \draw [blue, line width=1.5pt](1, -3.8) -- (1, -4);
+            \draw [blue, line width=1.5pt](0.8, -4) -- (1, -4);
+
+            \draw [blue, line width=1.5pt](-0.2, -4) -- (0.2, -4);
+
+            \draw [blue, line width=1.5pt](-1, -4) -- (-0.8, -4);
+            \draw [blue, line width=1.5pt](-1, -4) -- (-1, -3.8);
+
+            \draw [blue, line width=1.5pt](-1, -3.2) -- (-1, -2.8);
+
+            \draw [blue, line width=1.5pt](-1, -2.2) -- (-1, -2);
+            \draw [blue, line width=1.5pt](-1, -2) -- (-0.8, -2);
+
+            %(1,-1)
+            \fill[darkbrown, line width =1.5pt] (3,-3)circle (0.1cm);
+            \draw [blue, line width=1.5pt](2.8, -2) -- (3.2, -2);
+
+            \draw [blue, line width=1.5pt](3.8, -2) -- (4, -2);
+            \draw [blue, line width=1.5pt](4, -2) -- (4, -2.2);
+
+            \draw [blue, line width=1.5pt](4, -2.8) -- (4, -3.2);
+
+            \draw [blue, line width=1.5pt](4, -3.8) -- (4, -4);
+            \draw [blue, line width=1.5pt](3.8, -4) -- (4, -4);
+
+            \draw [blue, line width=1.5pt](2.8, -4) -- (3.2, -4);
+
+            \draw [blue, line width=1.5pt](2, -4) -- (2.2, -4);
+            \draw [blue, line width=1.5pt](2, -4) -- (2, -3.8);
+
+            \draw [blue, line width=1.5pt](2, -3.2) -- (2, -2.8);
+
+            \draw [blue, line width=1.5pt](2, -2.2) -- (2, -2);
+            \draw [blue, line width=1.5pt](2, -2) -- (2.2, -2);
+
+    \end{tikzpicture}
+    \caption{}
+\end{center}
+\end{figure}    
+    It is still left to prove, that $h$ is open and continuous w.r.t. all three topologies. We will show it for $\tau_1$ and $\tau$. For $\tau_2$ it is similar as for $\tau_1$.\newline \newline
+    First we observe the basis for $\tau_1$ is 
+    $$\{(x - \frac{1}{3^{n_{(x,y)}}}, x +\frac{1}{3^{n_{(x,y)}}}) \times \{y\} \mid (x,y) \in X \times X\}$$
+    and for $\tau$ is 
+    $$\{(x - \frac{1}{3^{n_{(x,y)}}}, x +\frac{1}{3^{n_{(x,y)}}}) \times (y - \frac{1}{3^{n_{(x,y)}}}, y +\frac{1}{3^{n_{(x,y)}}}) \mid (x,y) \in X \times X\}$$
+    We also observe that a basis for the topology on $T_{6,2,2}$ from $R_1$ is \{$B^1_t\}_{t \in T_{6,2,2}}$ where $B^1_t = \{s \in T_{6,2,2} \mid t R_1 s\}$ 
+    and from $R$ is $\{B_t\}_{t \in T_{6,2,2}}$ where $B_t = \{s \in T_{6,2,2} \mid t R s\}$. The following arguments are carried over from Proposition 4.0.5. \newline
+    Now, to see that $g$ is open w.r.t. $\tau_1$, we pick an open set $(x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\} \in \tau_1$. 
+    In similar way, we can show $g((x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\}) = B^1_{g(x,y)}$. Thus $g$ is open.
+    To show $g$ is continuous, it suffices to show that for each $t \in T_{6,2,2}$, the $g$-inverse image of $B^1_t$ belongs to $\tau_1$. Let $(x,y) \in g^{-1}(B^1_t)$. 
+    Then $tR_1g(x,y)$. Hence, it holds for $(x,y)$ that $g((x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\}) = B^1_{g(x,y)}$. By $t R_1g(x,y)$, we get
+    $B^1_{g(x,y)} \subseteq B^1_t$. Thus, we found a neighborhood U of $(x,y)$ s.t. $U = ((x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\}) \subseteq g^{-1}(B^1_t)$, implying $g$ is continuous.  
+
+    
+
     \end{proof}
 
 \end{theorem}
