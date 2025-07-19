@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  17 JUL 2025 21:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  19 JUL 2025 20:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -622,194 +622,247 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--83
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--99
+
+ []
+
+[2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 103--106
+Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 117--118
+Underfull \hbox (badness 10000) in paragraph at lines 108--111
 
  []
 
 
-LaTeX Warning: Citation `ref6' on page 3 undefined on input line 120.
-
-
-LaTeX Warning: Citation `ref4' on page 3 undefined on input line 120.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--150
+Underfull \hbox (badness 10000) in paragraph at lines 115--117
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--150
+Underfull \hbox (badness 10000) in paragraph at lines 118--123
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 176--181
+Underfull \hbox (badness 10000) in paragraph at lines 173--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--181
+Underfull \hbox (badness 10000) in paragraph at lines 173--179
+
+ []
+
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 259--262
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 197--202
-
- []
-
-[4]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 230.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 230.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 251--262
+Underfull \hbox (badness 10000) in paragraph at lines 273--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--262
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 265--266
-
- []
+LaTeX Warning: Citation `ref6' on page 6 undefined on input line 276.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 272--278
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 287--290
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 291--293
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 294--296
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 297--302
-
- []
+LaTeX Warning: Citation `ref4' on page 6 undefined on input line 276.
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 351--357
+Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--357
+Underfull \hbox (badness 10000) in paragraph at lines 293--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 293--306
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--337
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 332--337
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+Underfull \hbox (badness 10000) in paragraph at lines 353--358
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 368--371
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 372--376
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 386.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 388--398
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 388--398
-
- []
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 386.
 
 [8]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 403.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 403.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 403.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 403.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\omega' on input line 403.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 403.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 406--412
+Underfull \hbox (badness 10000) in paragraph at lines 407--418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 406--412
+Underfull \hbox (badness 10000) in paragraph at lines 407--418
 
  []
 
-[9] [10] [11]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 490.
+
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--434
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 441--442
+
+ []
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 443--446
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 450--452
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--458
+
+ []
+
+[10]
+Underfull \hbox (badness 10000) in paragraph at lines 507--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--523
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 524--527
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 528--532
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 544--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 544--554
+
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 559.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `subscript' on input line 559.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\omega' on input line 559.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\omega' on input line 559.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\omega' on input line 559.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 559.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--568
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 562--568
+
+ []
+
+[12] [13] [14]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 646.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 490.
- [12
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 646.
+ [15
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 533--536
+Underfull \hbox (badness 10000) in paragraph at lines 689--692
 
  []
 
-[13]
-Overfull \hbox (12.3967pt too wide) detected at line 619
+[16]
+Overfull \hbox (12.3967pt too wide) detected at line 775
 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) = []
  []
 
@@ -1170,94 +1223,94 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 619--909
+Underfull \hbox (badness 10000) in paragraph at lines 775--1065
 
  []
 
-[14
+[17
 
 ]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 912.
- [15]
-Underfull \hbox (badness 10000) in paragraph at lines 957--962
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1068.
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 1113--1118
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 982--987
+Underfull \hbox (badness 10000) in paragraph at lines 1138--1143
 
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 998--1000
-
- []
-
-
-LaTeX Warning: Citation `?' on page 17 undefined on input line 1014.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1027--1030
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 1154--1156
 
  []
 
 
-Overfull \hbox (40.04713pt too wide) in paragraph at lines 1027--1030
+LaTeX Warning: Citation `?' on page 20 undefined on input line 1170.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1183--1186
+
+ []
+
+
+Overfull \hbox (40.04713pt too wide) in paragraph at lines 1183--1186
 \OT1/cmr/m/it/12 Example : Say $\OT1/cmr/m/n/12 12034002340[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X$ \OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 0[]$ \OT1/cmr/m/it/12 de-notes in-finitely many ze-ros). Then $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (12034002340[]) =
  []
 
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 1066--1072
-
- []
-
-[18] [19]
-Underfull \hbox (badness 10000) in paragraph at lines 1140--1145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1163
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1151--1163
-
- []
-
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1186--1192
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1205--1209
+Underfull \hbox (badness 10000) in paragraph at lines 1222--1228
 
  []
 
 [21] [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1257--1262
+Underfull \hbox (badness 10000) in paragraph at lines 1296--1301
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1270--1274
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1319
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1295--1300
+Underfull \hbox (badness 10000) in paragraph at lines 1307--1319
 
  []
 
 [23]
-Overfull \hbox (23.37872pt too wide) in paragraph at lines 1323--1327
+Underfull \hbox (badness 10000) in paragraph at lines 1342--1348
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1361--1365
+
+ []
+
+[24] [25]
+Underfull \hbox (badness 10000) in paragraph at lines 1413--1418
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1426--1430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1451--1456
+
+ []
+
+[26]
+Overfull \hbox (23.37872pt too wide) in paragraph at lines 1479--1483
 \OT1/cmr/m/n/12 For left to right, as-sume $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ for some $\OML/cmm/m/it/12 F[]; F[] \OMS/cmsy/m/n/12 2 f\OML/cmm/m/it/12 F[]; F[]; F[]; F[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
  []
 
-[24] [25] (./test.aux)
+[27] [28] (./test.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1265,18 +1318,18 @@ Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24321 strings out of 480247
- 466065 string characters out of 5896152
- 860856 words of memory out of 5000000
+ 24336 strings out of 480247
+ 466283 string characters out of 5896152
+ 861856 words of memory out of 5000000
  41762 multiletter control sequences out of 15000+600000
  483410 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  110i,13n,106p,10651b,897s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on test.pdf (25 pages, 306431 bytes).
+Output written on test.pdf (28 pages, 319781 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 287 compressed objects within 3 object streams
- 110 named destinations out of 1000 (max. 500000)
+ 380 PDF objects out of 1000 (max. 8388607)
+ 310 compressed objects within 4 object streams
+ 125 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 

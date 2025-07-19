@@ -49,13 +49,156 @@ The following work will present a detailed proof of the shown results. Additiona
 
 \section{Preliminaries}
 
-\subsection{Kripke }
-
 \begin{definition}
 Let prop be a set of variables. Then a formula $\phi$ is defined as follows:
-$$\phi ::= p \mid \bot \mid \phi \mid \phi \rightarrow \phi \mid \Box_i \phi$$
+$$\phi ::= p \mid \bot \mid \neg \phi \mid \phi \lor \phi \mid \Box_i \phi$$
 where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expressed through $\bot$ and $\rightarrow$ and 
 dual modal operators $\diamond_i$ as $\diamond_i \phi = \neg \Box_i \neg \phi$
+\end{definition}
+
+\begin{definition}
+    Let $M = (W,R_1...,R_n,V)$ be a model and $w \in W$ a state in $M$. The notion of a formula being true at $w$ is inductively defined as follows :
+    \begin{align*}
+        M, w &\Vdash p \mbox{ iff } w \in V(p) \\
+        M, w &\Vdash \bot  \mbox{ never } \\
+        M, w &\Vdash \neg \phi \mbox{ iff not } M, w \Vdash \phi \\ 
+        M, w &\Vdash \phi \lor \psi \mbox{ iff } M,w \Vdash \phi \lor M,w \Vdash \psi \\
+        M, w &\Vdash \Box_i \phi \mbox{ iff } \forall v \in W : wRv \rightarrow M, v \Vdash \phi
+    \end{align*}
+
+\end{definition}
+
+\begin{definition}
+    A set $\Sigma$ is closed under subformulas, if for all formulas $\phi$ and $\phi'$ the following holds :
+    \newline \newline
+    1. if $\neg \phi \in \Sigma$ then $\phi \in \Sigma$
+    \newline
+    2. if $\phi \lor \phi' \in \Sigma$ then $\phi, \phi' \in \Sigma$
+    \newline
+    3. if $\Box_i \phi \in \Sigma$ then $\phi \in \Sigma$
+    \newline
+    \newline
+    Example : Suppose we have a multimodal logic with $\Box, \Box_1$ called $\mathcal{L}_{\Box, \Box_1}$ where $\phi = \Box p \rightarrow \Box_1 q$ and $\phi \in \Sigma$. Then $\Sigma = \{ \phi, \neg\Box p, \Box_1 q, \Box p, p, q\}$ is closed under
+    subformulas.
+\end{definition}
+
+\begin{definition}
+    Let $M = (W,R_1,...,R_n,V)$ be a model and suppose $\Sigma$ is a set of formulas. We define a relation $\equiv$ on W as follows : \newline 
+    $$w \equiv v \mbox{ iff } \forall \phi \in \Sigma : M,w \Vdash \phi \Leftrightarrow M,v \Vdash \phi$$ 
+    It is well known that the $\equiv$-relation is an equivalence relation. We denote the equivalence class of a state $w\in W$ as $[w]_\Sigma = \{v \mid v \equiv w\}$. Furthermore $W_\Sigma$ is the set of all equivalence classes, i.e
+    $W_\Sigma = \{[w]_\Sigma \mid w \in W\}$.    
+\end{definition}
+
+\begin{definition}
+    Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$.
+    A model $M^f_\Sigma = (W^f, R_1^f,...,R_n^f, V^f)$ is called filtration of M through $\Sigma$ if the following holds : \newline \newline
+    1. $W^f = W_\Sigma$ \newline
+    2. If $(w,v) \in R_i$ then $([w],[v]) \in R^f_i$ \newline
+    3. If $([w], [v]) \in R^f_i$ then for any $\Box_i \phi \in \Sigma$ : if $M,w \Vdash \Box_i \phi$ then $M,v \Vdash \phi$  \newline 
+    4. $V^f = \{[w] \mid M,w \Vdash p\}$, for all propositional variables $p \in \Sigma$      
+\end{definition}
+
+\begin{theorem}
+    Consider $L_{\Box_1...\Box_n}$. Let $M^f =(W_\Sigma, R^f_1,...,R^f_n, V)$ be a filtration of M through a subformula closed set $\Sigma$.
+    Then for all formulas $\phi \in \Sigma$, and all nodes $w \in M$, we have $$M,w \Vdash \phi \mbox{ iff } M^f,[w] \Vdash \phi$$
+    
+    \begin{proof}
+        By induction on $\phi$. We will only show non-trivial and, for our purposes, necessary cases. \newline
+        
+        Case $\phi = p$: Left to right follows immediately from filtration defintion. Conversely, suppose
+        $M^f, [w] \Vdash p$. This means $ [w] \in V^f(p)$. But this means V(p) can not be empty. Pick any $v\in V(p)$. Obviously, $w\equiv v$ and
+        $M,v\Vdash p$. Hence, $M,w \Vdash p$. \newline
+        
+        Case $\phi = \neg \psi$: Suppose $\psi$ holds. Then we have : $M,w \Vdash \phi \mbox{ iff } M,w \nvDash \psi$. Applying 
+        induction hypothesis, we get : $M^f, [w] \nvDash \psi$. But then, we have $M^f, [w] \Vdash \phi$. Right to left is the same. \newline
+        
+        Case $\phi = \phi_1 \land \phi_2$: Suppose $\phi_1, \phi_2$ holds. Let $M,w \Vdash \phi$. That means $M,w \Vdash \phi_1$ and $M,w \Vdash \phi_2$. Applying
+        induction hypothesis, we get $M^f,[w] \Vdash \phi_1$ and $M^f,[w] \Vdash \phi_2$. But then, $M^f,[w] \Vdash \phi_1 \land \phi_2 = \phi$. Right to left is similar. \newline
+        
+        Case $\phi = \Box_i\psi$ : Left to right. Suppose $\psi$ holds and  $M,w \Vdash \Box_i \psi$. 
+        We need to show $M^f,[w] \Vdash \Box_i \psi$, this means $\forall [v] \in W_\Sigma : [w]R_i[v] \rightarrow M^f,[v] \Vdash \Box_i \psi$. Pick any $[v] \in W_\Sigma$ s.t 
+        $[w]R_i[v]$. By condition 3, w.r.t to the modal operator, we have $M,v \Vdash \psi$. By induction hypothesis, we get $M^f,[v] \Vdash \psi$. Because [v] was arbitrary it follows that $M^f,[w] \Vdash \Box_i \psi$. \newline \newline
+        Right to left. Suppose $\psi$ holds and $M^f,[w] \Vdash \Box_i \psi$. Pick $v \in W$ s.t $wR_iv$. By condition 2, w.r.t to the modal operator, we have
+        $[w]R^f_i[v]$. So, $M^f, [v] \Vdash \psi$. By induction hypothesis, we get $M,v \Vdash \psi$. Because v was arbitrary, we have $M,w \Vdash \Box_i \psi$.
+
+    
+    \end{proof}     
+\end{theorem}
+
+\begin{definition}
+    Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
+    $$R^s = \{[w],[v] \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$ 
+\end{definition}
+
+\begin{lemma}
+    Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformlas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$ and $V^f$ the standard valuation on $W_\Sigma$. Then $(W_\Sigma, R_1^s,...,R_n^s,V^f)$ is 
+    a filtration of M through $\Sigma$.
+    \begin{proof}
+    
+    It suffices to show $R^s_i$ fullfills the condition 2 and 3 w.r.t to the corresponding modal operator $\Box_i$. But $R^s_i$ already satisfies condition 2.
+    Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$. Because of $[w]R^s_i[v]$ we pick a $w' \in [w]$
+    and $v' \in [v]$. By defintion, we have $w'R_i v'$. Because $w' \equiv w$, we get $M,w' \Vdash \Box_i \phi$. Hence, $M,v' \Vdash \phi$ and by $v' \equiv v$, we get $M,v \Vdash \phi$.
+    
+    \end{proof}    
+\end{lemma}
+
+\begin{proposition}
+    Let $\Sigma$ be a finite subformula closed set of $L_{\Box_1,...,\Box_n}$. For any model M, if $M^f$ is a filtration through $\Sigma$, then $M^f$ contains at most $2^n$ nodes (where n denotes the size of $\Sigma$).
+
+    \begin{proof}
+    The states of $M^f$ are the equivalence classes in $W_\Sigma$. Let $g : W_\Sigma \rightarrow P(\Sigma)$ defined by $g([w]) = \{ \phi \in \Sigma \mid M,w \Vdash \phi\}$.
+    g is well defined. Pick any u and v s.t $u\equiv v$. But then by defintion of $\equiv$, they fullfill the same subformulas. This means g([v]) = g([u]). \newline
+    g is also injective. Pick any $[u],[v] \in W_\Sigma$ s.t g([u]) = g([v]). We show $[u]\subseteq[v]$. The other inclusion is similar.
+    By assumption we have $u \equiv v$. Pick any $u' \in [u]$. Then we have $u' \equiv u \equiv v$. Hence, $u' \in [v]$. At the end, this means $M^f$ contains at most $2^n$ nodes.
+
+    \end{proof}     
+\end{proposition}
+
+
+\begin{theorem}
+    Let $\phi$ be a formula of $L_{\Box_1,...,\Box_n}$. If $\phi$ is satisfiable, then it is satisfiable on a finite model containing at most $2^v$ nodes, where $v$ is the number of subformulas of $\phi$.
+
+    \begin{proof}
+    Assume that $\phi$ is satisfiable on a model on M. Take any filtration of M through the set of subformulas of $\phi$. 
+    By Filtration Theorem, we get that $\phi$ is satisfied in the filtration model $M^f$. Furthermore, it is bounded by $2^v$.
+    
+    \end{proof}
+        
+\end{theorem}
+    Now we define special kind of formulas called Sahlqvist formulas.
+    Sahlqvist formulas possess important properties, which are guaranteed by the Sahlqvist Theorem. It says that, when given a normal modal logic K and a set of Sahlqvist formulas, the resulting logic is complete w.r.t 
+    to the class of frames, which satisfies the corresponding first-order formula of the Sahlqvist formulas. This also holds for multimodal logic. We will not prove it here, but we will use it later in this work.
+
+\begin{definition}
+    A modal formula $\phi$ is positive if all variables occurs in the scope of an even number of negations. In the other hand, a formula is negative, if all variables occurs in the scope of an odd number of negations.
+    A boxed atom is a modal formula of the form $\Box^n p$ for some $n \in \mathbb{N}$, where p is a propositional variable and $\Box^n p$ is defined as follows :
+    $\Box^0 p = p$, $\Box^1 p = \Box p$, $\Box^{n+1} p = \Box(\Box^n p)$. \newline \newline
+    Furthermore, a Sahlqvist antecedent is built from $\bot, \top$, negative formulas and boxed atoms by applying $\Diamond$ and $\land$. A Sahlqvist implication is a modal formula of the form
+    $\phi \rightarrow \psi$, where $\phi$ is a Sahlqvist antecedent and $\psi$ a positive formula. \newline
+    Now, a Sahlqvist formula is built from Sahlqvist implications by applying $\Box$ and $\lor$. \newline
+    
+    Examples for Sahlqvist formulas: 
+    $$\Box \Box p \rightarrow \Box p$$
+    $$ \Diamond \neg p\rightarrow p$$
+    $$ \Diamond \Box \Box \Box \Box \Box p\rightarrow \Box \Diamond \Box \Diamond p$$
+    $$ \Box\Box\Box\Box(\Diamond \Box p\rightarrow p) \lor \Box \Box p \rightarrow \Box p $$
+    
+    Non Sahlqvist Formulas :
+    $$\Box \Diamond p \rightarrow \Diamond \Box p$$
+    $$\Diamond \Box p \rightarrow \Box \neg p$$ \newline
+    We can extend this defintion for multimodal logics. We say a boxed atom can be $\Box^n_i p$. A Sahlqvist antecedent
+    can also be build by applying $\Diamond_i$. A Sahlqvist formula can be build by
+    Sahlqvist implications by applying additionally $\Box_i$.
+\end{definition}
+
+In this work, we deal with products of frames and multimodal logics of product of frames. The study of products of Kripke frames 
+and their modal logics was first initiated by Segerberg [] and Shehtman []. In the following, we will define neccessary notions for such logics.
+
+\begin{definition}
+    Let $F = (W, R_1)$ and $G = (W,R_2)$. Then we define the Kripke product on $W \times V$ as follows : 
+    $$(w,v)R_1'(w',v') \mbox{ iff } wR_1w' \mbox{ and } v = v'$$
+    $$(w,v)R_2  '(w',v') \mbox{ iff } w = w' \mbox{ and } vR_2v'$$
+    $R'_1$ is also called horizontal relation and $R'_2$ is called vertical relation.
 \end{definition}
 
 \begin{definition}
@@ -83,6 +226,19 @@ $$T = K + \Box p \rightarrow p$$
 $$D4 = D + \Box p \rightarrow \Box \Box p$$
 $$S4 = T + \Box p \rightarrow \Box \Box p$$   
 \end{definition}
+
+
+
+\subsection{Kripke }
+
+\begin{definition}
+Let prop be a set of variables. Then a formula $\phi$ is defined as follows:
+$$\phi ::= p \mid \bot \mid \neg \phi \mid \phi \lor \phi \mid \Box_i \phi$$
+where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expressed through $\bot$ and $\rightarrow$ and 
+dual modal operators $\diamond_i$ as $\diamond_i \phi = \neg \Box_i \neg \phi$
+\end{definition}
+
+
 
 Now we introduce some special kind of frames, which we will use through this work.
 \begin{definition}
