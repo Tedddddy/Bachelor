@@ -22,11 +22,13 @@
 
 \begin{document}
 \section{Introduction}
-The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [?]. The idea was to generalize Kripke frames using tools from topology.
- Neighbourhood semantics [?] as a generalization of Kripke semantics for modal logic were invented independently by Dana Scott [?] and Richard Montague [?].
+Modal logic extends classical propositional logic by introducing modal operators, most notably $\Box$ ("necessarily") and $\Diamond$ ("possibly"). In the standard Kripke semantics, 
+these operators are interpreted over a set of possible worlds connected by an accessibility relation. An idea to generalize Kripke semantics was topology.
+The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [?]. It is well known, that $S4$ is fully captured. Despite its rich expressiveness,
+it can not fully capture Kripke semantics. That is why Neighbourhood semantics [?] as a generalization of Kripke semantics for modal logic was introduced independently by Dana Scott [?] and Richard Montague [?].
 Neighborhood semantics is more general than Kripke semantics and in the case of normal reflexive and transitive logics coincides with topological semantics.
-The original motivation for introducing was to provide a semantics for non-normal modal logics. But in
-recent years, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. \newline
+The original motivation for introducing these general models was to provide a semantics for non-normal modal logics. 
+Beyond their theoretical motivation, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. \newline
 Oftentimes, it is necessary to combine frames for different modal logics into a complex
 frame. The natural way of doing that is a product construction. For Kripke frames,
 the resulting product is the Cartesian product of the two frames with two accessibility
@@ -227,6 +229,44 @@ $$D4 = D + \Box p \rightarrow \Box \Box p$$
 $$S4 = T + \Box p \rightarrow \Box \Box p$$   
 \end{definition}
 
+\clearpage
+
+\subsection{Topological semantics}
+
+\begin{definition}
+    A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
+    \newline
+    \newline
+    1. the empty set $\emptyset $ and X are open
+    \newline
+    2. the union of an arbitrary collection of open sets is open
+    \newline
+    3. the intersection of finite collection of open sets is open
+    \newline
+    \newline
+    The space is called Alexandroff, if we allow the intersection of infinite collection of open sets.
+    A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
+    and v is a valuation assigining subsets of X to propositional variables. 
+        
+\end{definition}
+
+
+\begin{definition}
+Let \( M = (X,\tau,v) \) be a topological model and \( x \in X \).  
+The satisfaction of a formula at the point \( x \) in \( M \) is defined inductively as follows:
+\[
+\begin{aligned}
+    M, x &\vDash p &&\text{iff } x \in v(p) \\
+    M, x &\vDash \bot &&\text{never} \\
+    M, x &\vDash \neg \phi &&\text{iff } M, x \nvDash \phi \\
+    M, x &\vDash \phi \lor \psi &&\text{iff } M, x \vDash \phi \text{ or } M, x \vDash \psi \\
+    M, x &\vDash \Box \phi &&\text{iff there exists } U \in \tau \text{ such that } x \in U \text{ and } \forall u \in U,\; M, u \vDash \phi
+\end{aligned}
+\]
+\end{definition}
+
+\clearpage
+
 
 
 \subsection{Kripke }
@@ -289,44 +329,7 @@ Now we introduce some special kind of frames, which we will use through this wor
 
 \subsection{Topological Space}
 
-\begin{definition}
-    A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
-    \newline
-    \newline
-    1. the empty set $\emptyset $ and X are open
-    \newline
-    2. the union of an arbitrary collection of open sets is open
-    \newline
-    3. the intersection of finite collection of open sets is open
-    \newline
-    \newline
-    The space is called Alexandroff, if we allow the intersection of infinite collection of open sets.
-    A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
-    and v is a valuation assigining subsets of X to propositional variables. 
-        
-\end{definition}
 
-\begin{definition}
-    Let $p \in Prop$. We build formulas as follows :
-    $$\phi :: = p \mid \bot \mid \neg \phi \mid \phi \lor \phi \mid \Box \phi$$
-\end{definition}
-
-
-\begin{definition}
-    Let $M = (X,\tau,v)$ a topological model and $x \in X$. The satisfaction of a formula
-    at the point $x$ in $M$ is defined inductively as follows :
-        
-    %$$
-    %\newline
-    %$M,x \models \Diamond \phi$ iff $\, \forall U \in \tau$ s.t $x \in U$ and $\exists u \in U : M,u \models \phi$
-\begin{align*}
-    M, x &\vDash p &&\text{iff } x \in V(p) \\
-    M, x &\vDash \bot &&\text{never} \\
-    M, x &\vDash \neg \phi &&\text{iff } M, x \nvDash \phi \\
-    M, x &\vDash \phi \lor \psi &&\text{iff } M, x \vDash \phi \text{ or } M, x \vDash \psi \\
-    M, x &\vDash \Box \phi &&\text{iff there exists } U \in \tau \text{ such that } x \in U \text{ and } \forall u \in U: M, u \vDash \phi
-\end{align*}
-\end{definition}
 
 \begin{definition}
     Let $A = (X, \chi)$ and $B =(Y, \upsilon)$ be topological spaces and $N \subseteq X \times Y $. \newline \newline
