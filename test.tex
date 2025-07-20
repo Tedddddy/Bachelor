@@ -36,13 +36,21 @@ relations. For topological semantics, the product of topogical spaces as bi-topo
 spaces with so-called horizontal and vertical topologies have been considered. In a similar
 fashion, the product of neighborhood frames was introduced by Sano in [?]. \newline
 For our main question, we consider the neighborhood product additionally with the standard topology. We will answer whether 
-the logic with three copies of $T$ with the interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$ can be fully characterized as the logic a product of neighbourhood frames with standard topology, where each frame validates T.
+the logic with three copies of $T$ with the interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$ can be fully characterized as the logic a product of neighbourhood frames with standard topology, where each frame validates $T$.
+The question was originally motivated by two papers where the authors showed in topological semantics a similar version of the question but for $S4$. In the other, it was proven that for any $L_1, L_2$ $\in \{D,D4,T,S4\}$, that their logic together 
+can be characterized as the logic of a product of neighbourhood frames but without standard topology. In this work, we start with a brief recap of necessary notations and theorems in Kripke semantics and then introduce toplogical spaces and neighborhood frames. 
+We will reprove the theorems from the authors in a more detailed way and then use similar techniques to answer our main question.
+Finally, we conclude with a discussion of potential directions for future research related to the topic. 
+This thesis primarily builds upon the works "Multimodal Logics of Products of Topologies" and "Modal Logic of Products of Neighborhood Frames."
 
  \clearpage
 
 
 
 \section{Preliminaries}
+This chapter is primarily devoted to the semantics of Kripke, topological spaces, and neighborhood frames. 
+In addition, we define the notions of product frames and multimodal logic. We also present fundamental results in modal logic, 
+such as Filtration Theorem and Sahlqvist Theorem which plays a role in our later chapters.
 
 \begin{definition}
 Let prop be a set of variables. Then a formula $\phi$ is defined as follows:
@@ -224,7 +232,8 @@ $$S4 = T + \Box p \rightarrow \Box \Box p$$
 
 \clearpage
 
-\subsection{Topological semantics}
+\subsection{Topological semantics, product of topological spaces}
+Topological space opens a new area of expressiveness. It is well known that such logic is $S4$. It has some crucial applications for example in spatial reasoning or epistemic logic.
 
 \begin{definition}
     A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
@@ -243,6 +252,14 @@ $$S4 = T + \Box p \rightarrow \Box \Box p$$
         
 \end{definition}
 
+\begin{remark}
+
+    There is an equivalent defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
+    U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
+    the union of open sets is an open set.
+    
+\end{remark}
+
 
 \begin{definition}
 Let \( M = (X,\tau,v) \) be a topological model and \( x \in X \).  
@@ -258,9 +275,145 @@ The satisfaction of a formula at the point \( x \) in \( M \) is defined inducti
 \]
 \end{definition}
 
+
+
+
+\begin{definition}
+    Let $A = (X, \chi)$ and $B =(Y, \upsilon)$ be topological spaces and $N \subseteq X \times Y $. \newline \newline
+    $N$ is horizontally open iff  $\forall (x,y) \in N $ $\exists U \in \chi : x \in U $ and $ U \times \{ y \} \subseteq N$. \newline
+    $N$ vertically open iff $\forall (x,y) \in N$ $\exists V \in \upsilon : y \in V$ and  $ \{ x \} \times V \subseteq N$. \newline \newline
+    If $N$ is H-open and V-open, then we call it HV-open. \newline
+    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the standard product of subsets $X \times Y$ s.t. $X \in \chi$ and $Y \in \upsilon$.
+        
+\end{definition}
+
+\begin{definition}
+    Let $A = (X, \chi)$ and $B =(Y, \upsilon)$ be topological spaces and $(x,y) \in X \times Y$. The truth in $M = (X\times Y, \tau_1,\tau_2,\tau, \upsilon)$ is similar as in Definition 2.1.3.
+    For $\Box$, $\Box_1$ and $\Box_2$ we interpret this as follows : 
+    
+    \begin{align*}
+        M,(x,y) &\vDash \Box_1 \phi \mbox{ iff } \exists U \in \tau_1 : (x,y) \in U \mbox{ and } \forall(x',y') \in U : (x',y') \vDash \phi \\
+        M,(x,y) &\vDash \Box_2 \phi \mbox{ iff } \exists V \in \tau_2 : (x,y) \in V \mbox{ and } \forall(x',y') \in V : (x',y') \vDash \phi \\
+        M,(x,y) &\vDash \Box \phi \mbox{ iff } \exists U \in \chi \, \exists V \in \upsilon: (x,y) \in U \times V \mbox{ and } \forall(x',y') \in U \times V : (x',y') \vDash \phi
+    \end{align*}
+
+\end{definition}
+
+\begin{definition}
+    A topo-bisimulation between two topological models $M = (X,\tau, \upsilon)$ and $M' = (X', \tau', \upsilon')$ is a nonempty relation $\leftrightarroweq \subseteq X \times X'$ s.t. if $x \leftrightarroweq x'$ then \newline 
+    \newline
+    1. Base: $x \in V(p) \mbox{ iff } x' \in v'(p)$ for any propositional variable p \newline
+    2. Forth: $x \in U \in \tau$ implies that there exists $U' \in \tau'$ s.t. $x' \in U'$ and for every $y' \in U'$ there is $y \in U$ with $y \leftrightarroweq y'$ \newline
+    3. Back: $x' \in U' \in \tau'$ implies that there exists $U \in \tau$ s.t. $x' \in U'$ and for every $y' \in U'$ there is $y \in U$ with $y \leftrightarroweq y'$
+
+\end{definition}
+
+\begin{proposition}
+    Let $M = (X,\tau, \upsilon)$ and $M' = (X', \tau', \upsilon')$. Assume $w \in M'$ and $w' \in M'$ are topo-bisimilar points.
+    Then for each formula $\phi$ we have 
+    $$M,w \vDash \phi \mbox{ iff } M', w' \vDash \phi$$
+    The proof is by induction.
+
+\end{proposition}
+
+
+\begin{definition}
+    Let X and Y be topological spaces and $f : X \rightarrow Y$ a function.
+    We call f continuous if for each open set $U \subseteq Y$ the set $f^{-1}(U)$ is open in X. We say f 
+    is open if for each open set $V \subseteq X$ the set f[V] is open in Y.
+        
+\end{definition}
+
+\subsection{Product and semantics of neighborhood frames}
+Neighborhood frames are more flexible than topological space. Its logic is not $S4$ in general. 
+It is well known, that neighborhood frames fully captures the semantics of Kripke. Moreover, neighborhood frames are expressive enough to characterize non-normal modal logics, which makes them a powerful tool.
+
+
+\begin{definition}
+    Let $X$ be a non-empty set. A function  $\tau : X \rightarrow 2^{2^X}$ is called a neighbourhood function. A pair 
+    F = (X,$\tau$) is called a neighbourhood frame (or n-frame). A model based on F is a tuple (X,$\tau$,v), where v assigns a subset of X to a variable
+        
+\end{definition}
+
+\begin{definition}
+    Let $M$ = ($X$,$\tau$,v) be a neighourhood model and $x$ $\in$ $X$. The truth of a formula is defined inductively as follows :
+    \begin{align*}
+        M,x &\Vdash p \mbox{ iff } x \in V(p)\\
+        M,x &\Vdash \bot \mbox{ never } \\
+        M,x &\Vdash \neg \phi \mbox{ iff } M,x \nVdash \phi\\
+        M,x &\Vdash \phi \lor \psi \mbox{ iff } M,x \vDash \phi \lor M,x \vDash \psi\\
+        M,x &\Vdash \Box \phi \mbox{ iff } \exists V \in N(x) \forall y \in V : M,y \models \phi
+    \end{align*}
+    A formula is valid in a n-model $M$ if it is valid at all points of $M$ ($M \vDash \phi$). Formula is valid in a n-frame $F$ if it is valid in
+    all models based on $F$ (notation $F \vDash \phi$). We write $F \vDash L$ if for any $\phi \in L, F \vDash \phi$. Logic of a class of n-frames $C$ as $Log(C) = \{\phi \mid F \vDash \phi \mbox{ for some } F \in C\}$
+    $\mbox{We define nV(L) =  } \{ F \mid F \mbox{ is an n-frame and } F \models \phi \}$.
+\end{definition}
+
+\begin{definition}
+    Let $X$ be a non-empty set and $\tau$ neighborhood function. We call $\tau$ is a filter if for each $x\in X$ the collection $\tau(x)$
+    satisfies the following conditions : \newline \newline
+    1. $\emptyset \notin \tau(x)$ \newline
+    2. $\mbox{If }U \in \tau(x)$ and $U \subseteq V$ then $V \in \tau(x)$ (upward closed) \newline
+    3. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$
+\end{definition}
+
+
+\begin{definition}
+    Let $F = (W,R)$ be a Kripke frame. We define an n-frame $N(F) = (W, \tau)$ as follows.
+    For any $w\in W$ we have :
+    $$\tau(w) = \{ U \mid R(w) \subseteq U \subseteq W \}$$
+        
+\end{definition}
+
+\vspace{0.5cm}
+\begin{lemma}
+
+    Let $F = (W,R)$ be a Kripke frame. Then $$Log(F) = Log(N(F))$$ 
+    The proof is by structural induction.
+\end{lemma}
+
+\vspace{0.5cm}
+
+\begin{definition}
+    Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames. Then the function $f$:
+    $X \rightarrow Y$ is called bounded morphism if \newline \newline
+    1. $f$ is surjective \newline
+    2. $\forall x\in X \, \forall U \in \tau_i(x) : f(U) \in \sigma_i (f(x))$ \newline
+    3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$        
+\end{definition}
+
+\begin{corollary}
+     Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames and $f : X \rightarrow Y$ a bounded morphism. Then 
+     $$Log(X) \subseteq Log(Y)$$. \newline
+     The proof is by structural induction.
+\end{corollary}
+
+\vspace{0.5cm}
+
+\begin{definition}
+    Let $X$ = (X, $\tau_1$) and $Y$ = (Y, $\tau_2$) be two n-frames. Then the product of these two frames
+    is an n-2-frame and is defined as follows : \newline
+    
+    $$ X \times_n Y = (\mbox{X} \times \mbox{Y}, \tau_1', \tau_2')$$   
+    $$ \tau_1'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \tau_1(x) : V \times  \{ y \} \subseteq U \}$$
+    $$ \tau_2'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \tau_2(y) : \{ x \} \times V \subseteq U \}$$
+    Additionally, we say the full product of n-frames $X \times^+_n Y$ is :
+    $$ X \times^+_n Y = (X \times Y, \tau'_1, \tau'_2, \tau)\mbox{ where }$$
+    $$ \tau(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists W \in \tau_1(x) \, \exists V \in \tau_2(y) : W \times V \subseteq U \}$$        
+\end{definition}
+
+\begin{definition}
+    For two unimodal logics $L_1$ and $L_2$ we define the n-product of them as follows :
+    $$ L_1 \times_n L_2 = Log(\{ X \times Y \mid X \in nV(L_1) \mbox{ and } Y \in nV(L_2) \})$$   
+    In similar way, we can define $L_1 \times^+_n L_2$ with three topologies.     
+\end{definition}
+
+\begin{proposition}(\cite{?}).
+    For two unimodal logics $L_1$ and $L_2$ it holds : 
+    $$L_1 \otimes L_2 \subseteq L_1 \times_n L_2$$
+\end{proposition}
+
 \clearpage
-
-
 
 \subsection{Kripke }
 
@@ -324,59 +477,6 @@ Now we introduce some special kind of frames, which we will use through this wor
 
 
 
-\begin{definition}
-    Let $A = (X, \chi)$ and $B =(Y, \upsilon)$ be topological spaces and $N \subseteq X \times Y $. \newline \newline
-    $N$ is horizontally open iff  $\forall (x,y) \in N $ $\exists U \in \chi : x \in U $ and $ U \times \{ y \} \subseteq N$. \newline
-    $N$ vertically open iff $\forall (x,y) \in N$ $\exists V \in \upsilon : y \in V$ and  $ \{ x \} \times V \subseteq N$. \newline \newline
-    If $N$ is H-open and V-open, then we call it HV-open. \newline
-    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the standard product of subsets $X \times Y$ s.t. $X \in \chi$ and $Y \in \upsilon$.
-        
-\end{definition}
-
-\begin{definition}
-    Let $A = (X, \chi)$ and $B =(Y, \upsilon)$ be topological spaces and $(x,y) \in X \times Y$. The truth in $M = (X\times Y, \tau_1,\tau_2,\tau, \upsilon)$ is similar as in Definition 2.2.3.
-    For $\Box$, $\Box_1$ and $\Box_2$ we interpret this as follows : 
-    
-    \begin{align*}
-        M,(x,y) &\vDash \Box_1 \phi \mbox{ iff } \exists U \in \tau_1 : (x,y) \in U \mbox{ and } \forall(x',y') \in U : (x',y') \vDash \phi \\
-        M,(x,y) &\vDash \Box_2 \phi \mbox{ iff } \exists V \in \tau_2 : (x,y) \in V \mbox{ and } \forall(x',y') \in V : (x',y') \vDash \phi \\
-        M,(x,y) &\vDash \Box \phi \mbox{ iff } \exists U \in \chi \, \exists V \in \upsilon: (x,y) \in U \times V \mbox{ and } \forall(x',y') \in U \times V : (x',y') \vDash \phi
-    \end{align*}
-
-\end{definition}
-
-\begin{definition}
-    A topo-bisimulation between two topological models $M = (X,\tau, \upsilon)$ and $M' = (X', \tau', \upsilon')$ is a nonempty relation $\leftrightarroweq \subseteq X \times X'$ s.t. if $x \leftrightarroweq x'$ then \newline 
-    \newline
-    1. Base: $x \in V(p) \mbox{ iff } x' \in v'(p)$ for any propositional variable p \newline
-    2. Forth: $x \in U \in \tau$ implies that there exists $U' \in \tau'$ s.t. $x' \in U'$ and for every $y' \in U'$ there is $y \in U$ with $y \leftrightarroweq y'$ \newline
-    3. Back: $x' \in U' \in \tau'$ implies that there exists $U \in \tau$ s.t. $x' \in U'$ and for every $y' \in U'$ there is $y \in U$ with $y \leftrightarroweq y'$
-
-\end{definition}
-
-\begin{proposition}
-    Let $M = (X,\tau, \upsilon)$ and $M' = (X', \tau', \upsilon')$. Assume $w \in M'$ and $w' \in M'$ are topo-bisimilar points.
-    Then for each formula $\phi$ we have 
-    $$M,w \vDash \phi \mbox{ iff } M', w' \vDash \phi$$
-    The proof is by induction.
-
-\end{proposition}
-
-
-\begin{definition}
-    Let X and Y be topological spaces and $f : X \rightarrow Y$ a function.
-    We call f continuous if for each open set $U \subseteq Y$ the set $f^{-1}(U)$ is open in X. We say f 
-    is open if for each open set $V \subseteq X$ the set f[V] is open in Y.
-        
-\end{definition}
-
-\begin{remark}
-
-    There is an alternative defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
-    U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
-    the union of open sets is an open set.
-    
-\end{remark}
 
 
 \section{Completeness result for $\mathit{TNL}$}
@@ -1082,92 +1182,6 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
 
 
 \section{Neighborhood}
-\subsection{Neighborhood frames}
-
-\begin{definition}
-    Let $X$ be a non-empty set. A function  $\tau : X \rightarrow 2^{2^X}$ is called a neighbourhood function. A pair 
-    F = (X,$\tau$) is called a neighbourhood frame (or n-frame). A model based on F is a tuple (X,$\tau$,v), where v assigns a subset of X to a variable
-        
-\end{definition}
-
-\vspace{0.5cm}
-
-\begin{definition}
-    Let $M$ =($X$,$\tau$,v) be a neighourhood model and $x$ $\in$ $X$. The truth of a formula is defined inductively as follows :
-    \begin{align*}
-        M,x &\Vdash p \mbox{ iff } x \in V(p)\\
-        M,x &\Vdash \neg \phi \mbox{ iff } M,x \nVdash \phi\\
-        M,x &\Vdash \phi \lor \psi \mbox{ iff } M,x \vDash \phi \lor M,x \vDash \psi\\
-        M,x &\Vdash \Box \phi \mbox{ iff } \exists V \in N(x) \forall y \in V : M,y \models \phi
-    \end{align*}
-    A formula is valid in a n-model $M$ if it is valid at all points of $M$ ($M \vDash \phi$). Formula is valid in a n-frame $F$ if it is valid in
-    all models based on $F$ (notation $F \vDash \phi$). We write $F \vDash L$ if for any $\phi \in L, F \vDash \phi$. Logic of a class of n-frames $C$ as $Log(C) = \{\phi \mid F \vDash \phi \mbox{ for some } F \in C\}$
-    $\mbox{We define nV(L) =  } \{ F \mid F \mbox{ is an n-frame and } F \models \phi \}$.
-\end{definition}
-
-\begin{definition}
-    Let $X$ be a non-empty set and $\tau$ neighborhood function. We call $\tau$ is a filter if for each $x\in X$ the collection $\tau(x)$
-    satisfies the following conditions : \newline \newline
-    1. $\emptyset \notin \tau(x)$ \newline
-    2. $\mbox{If }U \in \tau(x)$ and $U \subseteq V$ then $V \in \tau(x)$ (upward closed) \newline
-    3. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$
-\end{definition}
-
-
-\begin{definition}
-    Let $F = (W,R)$ be a Kripke frame. We define an n-frame $N(F) = (W, \tau)$ as follows.
-    For any $w\in W$ we have :
-    $$\tau(w) = \{ U \mid R(w) \subseteq U \subseteq W \}$$
-        
-\end{definition}
-
-\vspace{0.5cm}
-\begin{lemma}
-
-    Let $F = (W,R)$ be a Kripke frame. Then $$Log(F) = Log(N(F))$$ 
-    The proof is by structural induction.
-\end{lemma}
-
-\vspace{0.5cm}
-
-\begin{definition}
-    Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames. Then the function $f$:
-    $X \rightarrow Y$ is called bounded morphism if \newline \newline
-    1. $f$ is surjective \newline
-    2. $\forall x\in X \, \forall U \in \tau_i(x) : f(U) \in \sigma_i (f(x))$ \newline
-    3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$        
-\end{definition}
-
-\begin{corollary}
-     Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames and $f : X \rightarrow Y$ a bounded morphism. Then 
-     $$Log(X) \subseteq Log(Y)$$. \newline
-     The proof is by structural induction.
-\end{corollary}
-
-\vspace{0.5cm}
-
-\begin{definition}
-    Let $X$ = (X, $\tau_1$) and $Y$ = (Y, $\tau_2$) be two n-frames. Then the product of these two frames
-    is an n-2-frame and is defined as follows : \newline
-    
-    $$ X \times_n Y = (\mbox{X} \times \mbox{Y}, \tau_1', \tau_2')$$   
-    $$ \tau_1'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \tau_1(x) : V \times  \{ y \} \subseteq U \}$$
-    $$ \tau_2'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \tau_2(y) : \{ x \} \times V \subseteq U \}$$
-    Additionally, we say the full product of n-frames $X \times^+_n Y$ is :
-    $$ X \times^+_n Y = (X \times Y, \tau'_1, \tau'_2, \tau)\mbox{ where }$$
-    $$ \tau(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists W \in \tau_1(x) \, \exists V \in \tau_2(y) : W \times V \subseteq U \}$$        
-\end{definition}
-
-\begin{definition}
-    For two unimodal logics $L_1$ and $L_2$ we define the n-product of them as follows :
-    $$ L_1 \times_n L_2 = Log(\{ X \times Y \mid X \in nV(L_1) \mbox{ and } Y \in nV(L_2) \})$$        
-\end{definition}
-
-\begin{proposition}(\cite{?}).
-    For two unimodal logics $L_1$ and $L_2$ it holds : 
-    $$L_1 \otimes L_2 \subseteq L_1 \times_n L_2$$
-\end{proposition}
-
 
 
 \subsection{Main Construction}
