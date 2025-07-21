@@ -217,6 +217,7 @@ dual modal operators $\diamond_i$ as $\diamond_i \phi = \neg \Box_i \neg \phi$
     If $F'$ is a bounded morphic image of $F$, then we have $Log(F) \subseteq Log(F')$
     \begin{proof}
         The proof is by structural induction.
+        
     \end{proof}
     
 \end{corollary}
@@ -390,22 +391,6 @@ It is well known, that neighborhood frames fully captures the semantics of Kripk
     3. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$
 \end{definition}
 
-
-\begin{definition}
-    Let $F = (W,R)$ be a Kripke frame. We define an n-frame $N(F) = (W, \tau)$ as follows.
-    For any $w\in W$ we have :
-    $$\tau(w) = \{ U \mid R(w) \subseteq U \subseteq W \}$$
-        
-\end{definition}
-
-\begin{lemma}
-
-    Let $F = (W,R)$ be a Kripke frame. Then $$Log(F) = Log(N(F))$$ 
-    \begin{proof}
-        The proof is by structural induction.
-    \end{proof}
-\end{lemma}
-
 \begin{definition}
     Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames. Then the function $f$:
     $X \rightarrow Y$ is called bounded morphism if \newline \newline
@@ -538,7 +523,7 @@ In the end, we will use an unravelling technique to show completeness.
 \clearpage
 
 \section{Logic of product of topological spaces with three topologies}
-In this section, we will prove the logic of the product of two topological spaces with horizontal, vertical and classic product topology is 
+In this section, we will reprove the logic of the product of two topological spaces with horizontal, vertical and classic product topology is 
 $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$ (we abbreviate the logic $S4 \otimes S4 \otimes ...$ as TPL). First we will show a version for one modality
 because it is easier to understand and the proof idea is based on this version.
 
@@ -989,9 +974,13 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
 \end{theorem}
 
 
-\section{Neighborhood}
+\section{Products of neighbourhood frames, completeness results}
+We now turn our focus to neighbourhood semantics, and in particular, we revisit the main theorem from the paper "Modal Logic of Products of Neighbourhood Frames". This work established that, for any $L_1, L_2 \in \{D,D4,T,S4\}$ we have
+$L_1 \otimes L_2 = L_1 \times_n L_2$.
+Our goal is to reprove this theorem within our framework and then adapt its key ideas to prove our theorem.
 
-\subsection{Kripke }
+\subsection{Kripke tree frames, natural neighborhood version and their logic}
+We introduce some trees as Kripke frames which are essential for the proof.
 
 \begin{definition}
     Let A be a nonempty set.
@@ -1039,10 +1028,27 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
 
 \end{proposition}
 
+\begin{definition}
+    Let $F = (W,R)$ be a Kripke frame. We define an n-frame $N(F) = (W, \tau)$ as follows.
+    For any $w\in W$ we have :
+    $$\tau(w) = \{ U \mid R(w) \subseteq U \subseteq W \}$$
+        
+\end{definition}
+
+\begin{lemma}
+
+    Let $F = (W,R)$ be a Kripke frame. Then $$Log(F) = Log(N(F))$$ 
+    \begin{proof}
+        The proof is by structural induction.
+    \end{proof}
+\end{lemma}
+
 
 \subsection{Main Construction}
-In the following, we will construct a useful neighborhood frame called $N_\omega[F]$ based on a frame $F$.
-We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_2 \in \{D,S4,D4,T\}$
+In the following, we construct a useful neighborhood frame called $N_\omega[F]$ based on a frame $F$ where $F$ is a tree frame.
+We will show that the construction has the same logic as the orignal frame. 
+At the end, we construct a bounded morphism from the product of $N_\omega[F]$ frames to the fusion of frames $F$.
+
 
 \begin{definition}
     Let $F = (A^*, R) = F_{\xi \eta}[A]$ and $0 \notin A$. We define "pseudo-infinite" sequences 
@@ -1146,14 +1152,6 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \end{proof}
 \end{proposition}
 
-\begin{lemma}
-    Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.2.1. Then 
-    $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$ \newline
-    The proof is by structural induction.
-
-    
-\end{lemma}
-
     Assume $F_1 = (A^*,R_1) = F_{\eta_1 \xi_1}[A]$ and $F_2 = (B^*,R_2) = F_{\eta_2 \xi_2}[B]$ 
     with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$. 
     Consider the product of n-frames $F'_1 = (X_1, \tau_1) = N_\omega(F_1)$ and $F'_2 = (X_2, \tau_2) = N_\omega(F_2)$ is 
@@ -1220,9 +1218,11 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     
 \end{lemma} 
 
+\subsection{Adapting the key ideas}
+
     Now we will show $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism. \newline 
     Let $(T_{\omega[rn]})_1 = (\mathbb{N}_{1}, R_1)$ and $(T_{\omega[rn]})_2 = (\mathbb{N}_{2}, R_2)$ as defined in Defintion 3.2.1.
-    Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline
+    Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline \newline
     Let's consider the full product of the n-frames :
     $$N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) = (X_1 \times X_2, \tau'_1, \tau'_2, \tau)$$
     \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Def.3.2.1\newline \newline
@@ -1303,6 +1303,14 @@ We will use it later, to show $L_1 \times_n L_2 = L_1 \otimes L_2$ where $L_1,L_
     \end{lemma}
 
     \subsection{Completeness Results}
+
+    \begin{lemma}
+    Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.2.1. Then 
+    $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$ \newline
+    The proof is by structural induction.
+
+    \end{lemma}
+
     \begin{corollary}
         Let $F_1 = (A^*,R_1) = F_{\xi_1, \eta_1}[A]$ and $F_2 = (B^*,R_2) = F_{\xi_2, \eta_2}[B]$. Then 
         $$Log(N_\omega(F_1) \times_n N_\omega(F_2))  \subseteq Log(F_1) \otimes Log(F_2)$$.
