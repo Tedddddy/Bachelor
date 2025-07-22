@@ -9,6 +9,8 @@
 \usepackage{tikz}
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
+\usepackage{subcaption}
+\usepackage{caption}
 
 \definecolor{darkbrown}{rgb}{0.36, 0.25, 0.20}
 \definecolor{mydarkgreen}{rgb}{0.0, 0.5, 0.0}
@@ -332,6 +334,41 @@ We define
     \forall (x, y) \in N,\; \exists V \in \upsilon \text{ such that } y \in V \text{ and } \{x\} \times V \subseteq N.
   \]
 \end{description}
+\begin{figure}[h]
+  \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \draw (0,0) rectangle (3,2);
+      \draw[red, thick] (1,1.5) -- (1,1);
+      \draw[red, thick] (1.2, 0.9) -- (1.2, 0.5);
+      \draw[red, thick] (1.4, 1.4) -- (1.4, 1.8);
+      \draw[red, thick] (1.9, 1.4) -- (1.9, 1.8);
+      \draw[red, thick] (1.9, 0.6) -- (1.9, 1);
+      \draw[red, thick] (0.5, 0.8) -- (0.5, 1.4);
+      \draw[red, thick] (2.3, 0.2) -- (2.3, 0.9 );
+      \draw[red, thick] (2.6, 1.1) -- (2.6, 1.8 );
+    \end{tikzpicture}
+    \caption{vertically}
+  \end{subfigure}
+  \hspace{1cm} % horizontal space between the figures
+  \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \draw (0,0) rectangle (3,2);
+      \draw[red, thick] (1.5, 1.1) -- (1, 1.1);
+      \draw[red, thick] (0.9, 1.2) -- (0.5, 1.2);
+      \draw[red, thick] (1.4, 1.4) -- (1.8, 1.4);
+      \draw[red, thick] (1.4, 1.8) -- (1.8, 1.8);
+      \draw[red, thick] (0.6, 1.8) -- (1, 1.8);
+      \draw[red, thick] (0.8, 0.5) -- (1.4, 0.5);
+      \draw[red, thick] (1.7, 1.1) -- (2.4, 1.1);
+      \draw[red, thick] (1.5, 0.7) -- (2.1, 0.7);
+    \end{tikzpicture}
+    \caption{horizontally}
+  \end{subfigure}
+  \caption{Each rectangle represents $N$ and the redlines are subsets of $N$}
+\end{figure}
 
     If $N$ is H-open and V-open, then we call it HV-open. \newline
     We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the standard product of subsets $X \times Y$ s.t. $X \in \chi$ and $Y \in \upsilon$.
