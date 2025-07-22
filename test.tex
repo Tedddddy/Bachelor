@@ -1379,5 +1379,20 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
         
     \end{theorem}
 
+    \begin{remark}
+        Let $L \in \{D, D4\}$. Then it is not guaranteed that $$L \times^+_n L = L \otimes L \otimes L + \Box p \rightarrow \Box_1 p \land \Box_2 p$$
+        This can be shown by a counterexample. We will only do it for $D$ because for $D4$ it's done similar. Assume $F_1 = N_\omega(T_{\omega[rn]})_1 = (X, \tau_1)$ and $F_2 = N_\omega(T_{\omega[rn]})_2 = (Y, \tau_2)$.
+        By Proposition 5.2.8, it follows $Log(F_1) = Log(F_2) = D$. Let's consider the full product $X = F_1 \times^+_n F_2 = (W \times V, \tau'_1, \tau'_2, \tau)$. Then we get $Log(X) \supseteq D \times^+_n D$. Now let $(x,y) \in X$
+        $X,(x,y) \vDash \Box p$ and $V(p) = U \times V$ where $U \in \tau_1(x)$ and $V \in \tau_2(y)$. By construction of $N_\omega(T_{\omega[rn]})$, $x \notin U$ and $ y \notin V$, because $f_F(x)$ and $f_F(y)$ don't have a relation to itelf in $T_{\omega[rn]}$.
+        In order to satisfy $\Box_1 p$ (similar for $\Box_2 p$), we have to find $U' \in \tau'_1(x,y)$ s.t. $U' \subseteq V(p)$. But this is not possible because any $U'$ contains only elements, where the second coordinate is $y$. It follows $X, (x,y) \nvDash \Box p \rightarrow \Box_1 p \land \Box_ 2 p$.
+        Hence, the extra axiom is not in $Log(X) \supseteq D \times^+_n D$. 
+
+
+
+    \end{remark}
+
+    \section{Conclusion}
+
+
 \end{document}
 
