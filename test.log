@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  22 JUL 2025 17:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.6.5)  22 JUL 2025 23:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,33 +536,37 @@ File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \tikz@expandcount=\count306
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-)))
+))) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks42
+\inpenc@posthook=\toks43
+)
 \c@definition=\count307
  (./test.aux)
 \openout1 = `test.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-Package scrbase Info: activating english \contentsname on input line 23.
-Package scrbase Info: activating english \listfigurename on input line 23.
-Package scrbase Info: activating english \listtablename on input line 23.
-Package hyperref Info: Link coloring OFF on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+Package scrbase Info: activating english \contentsname on input line 26.
+Package scrbase Info: activating english \listfigurename on input line 26.
+Package scrbase Info: activating english \listtablename on input line 26.
+Package hyperref Info: Link coloring OFF on input line 26.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -572,9 +576,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count308
 )
-LaTeX Info: Redefining \ref on input line 23.
-LaTeX Info: Redefining \pageref on input line 23.
-LaTeX Info: Redefining \nameref on input line 23.
+LaTeX Info: Redefining \ref on input line 26.
+LaTeX Info: Redefining \pageref on input line 26.
+LaTeX Info: Redefining \nameref on input line 26.
  (./test.out) (./test.out)
 \@outlinefile=\write4
 \openout4 = `test.out'.
@@ -586,7 +590,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 23.
+(scrartcl)           before \begin{document} on input line 26.
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -599,63 +603,58 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \scratchbox=\box67
 \nofMPsegments=\count311
 \nofMParguments=\count312
-\everyMPshowfont=\toks42
+\everyMPshowfont=\toks44
 \MPscratchCnt=\count313
 \MPscratchDim=\dimen262
 \MPnumerator=\count314
 \makeMPintoPDFobject=\count315
-\everyMPtoPDFconversion=\toks43
+\everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 25.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 75--86
+Underfull \hbox (badness 10000) in paragraph at lines 78--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 75--86
+Underfull \hbox (badness 10000) in paragraph at lines 78--89
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 96--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--105
 
  []
 
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 115--117
+Underfull \hbox (badness 10000) in paragraph at lines 114--117
 
  []
 
@@ -665,118 +664,122 @@ Underfull \hbox (badness 10000) in paragraph at lines 118--120
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--126
+Underfull \hbox (badness 10000) in paragraph at lines 121--123
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--129
 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 176--182
+Underfull \hbox (badness 10000) in paragraph at lines 178--184
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--182
+Underfull \hbox (badness 10000) in paragraph at lines 178--184
 
  []
 
-[4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 267--280
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 267--280
+[4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 266--279
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 310--315
+Underfull \hbox (badness 10000) in paragraph at lines 266--279
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 310--315
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 321--323
 
  []
 
-[7
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 325.
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 343--348
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 325.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 366--371
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 393--398
+Underfull \hbox (badness 10000) in paragraph at lines 416--421
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--406
+Underfull \hbox (badness 10000) in paragraph at lines 424--429
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--412
+Underfull \hbox (badness 10000) in paragraph at lines 433--435
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--420
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
 
  []
 
 [9]
 
-LaTeX Warning: Citation `?' on page 10 undefined on input line 435.
+LaTeX Warning: Citation `?' on page 10 undefined on input line 458.
 
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 448.
+(hyperref)                removing `math shift' on input line 471.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 448.
+(hyperref)                removing `math shift' on input line 471.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 463--473
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 463--473
+Underfull \hbox (badness 10000) in paragraph at lines 486--496
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--485
+Underfull \hbox (badness 10000) in paragraph at lines 486--496
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--485
+Underfull \hbox (badness 10000) in paragraph at lines 502--508
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--508
 
  []
 
 [11
 
 ] [12]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 541.
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 564.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 541.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 564.
  [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 584--587
+Underfull \hbox (badness 10000) in paragraph at lines 607--610
 
  []
 
 [14]
-Overfull \hbox (12.3967pt too wide) detected at line 670
+Overfull \hbox (12.3967pt too wide) detected at line 693
 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) = []
  []
 
@@ -1137,7 +1140,7 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--960
+Underfull \hbox (badness 10000) in paragraph at lines 693--983
 
  []
 
@@ -1145,99 +1148,102 @@ Underfull \hbox (badness 10000) in paragraph at lines 670--960
 
 ]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 963.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 986.
  [16] [17]
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1025
+Underfull \hbox (badness 10000) in paragraph at lines 1045--1048
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
+Underfull \hbox (badness 10000) in paragraph at lines 1059--1060
 
  []
 
 
-LaTeX Warning: Citation `ref6' on page 18 undefined on input line 1039.
+LaTeX Warning: Citation `ref6' on page 18 undefined on input line 1062.
 
 
-LaTeX Warning: Citation `ref4' on page 18 undefined on input line 1039.
+LaTeX Warning: Citation `ref4' on page 18 undefined on input line 1062.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1045--1046
+Underfull \hbox (badness 10000) in paragraph at lines 1068--1069
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 1077--1080
+Underfull \hbox (badness 10000) in paragraph at lines 1100--1103
 
  []
 
 
-Overfull \hbox (40.04713pt too wide) in paragraph at lines 1077--1080
+Overfull \hbox (40.04713pt too wide) in paragraph at lines 1100--1103
 \OT1/cmr/m/it/12 Example : Say $\OT1/cmr/m/n/12 12034002340[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X$ \OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 0[]$ \OT1/cmr/m/it/12 de-notes in-finitely many ze-ros). Then $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (12034002340[]) =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1116--1122
+Underfull \hbox (badness 10000) in paragraph at lines 1139--1145
 
  []
 
 [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 1182--1187
+Underfull \hbox (badness 10000) in paragraph at lines 1205--1210
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 1193--1205
+Underfull \hbox (badness 10000) in paragraph at lines 1216--1228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1193--1205
+Underfull \hbox (badness 10000) in paragraph at lines 1216--1228
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1228--1234
+Underfull \hbox (badness 10000) in paragraph at lines 1251--1257
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 1245--1249
+Underfull \hbox (badness 10000) in paragraph at lines 1268--1272
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1249--1253
+Underfull \hbox (badness 10000) in paragraph at lines 1272--1276
 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1301--1306
+Underfull \hbox (badness 10000) in paragraph at lines 1324--1329
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1314--1318
+Underfull \hbox (badness 10000) in paragraph at lines 1337--1341
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1347--1352
+Underfull \hbox (badness 10000) in paragraph at lines 1370--1375
 
  []
 
 
-Overfull \hbox (23.37872pt too wide) in paragraph at lines 1375--1379
+Overfull \hbox (23.37872pt too wide) in paragraph at lines 1398--1402
 \OT1/cmr/m/n/12 For left to right, as-sume $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ for some $\OML/cmm/m/it/12 F[]; F[] \OMS/cmsy/m/n/12 2 f\OML/cmm/m/it/12 F[]; F[]; F[]; F[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1417--1431
+Underfull \hbox (badness 10000) in paragraph at lines 1440--1454
 
  []
 
-[26] [27] (./test.aux)
+[26] [27] [28] (./test.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
 
 LaTeX Warning: There were undefined references.
 
@@ -1245,18 +1251,18 @@ Package rerunfilecheck Info: File `test.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 24313 strings out of 480247
- 465943 string characters out of 5896152
- 861856 words of memory out of 5000000
- 41749 multiletter control sequences out of 15000+600000
- 480115 words of font info for 69 fonts, out of 8000000 for 9000
+ 24382 strings out of 480247
+ 467288 string characters out of 5896152
+ 862387 words of memory out of 5000000
+ 41798 multiletter control sequences out of 15000+600000
+ 481170 words of font info for 72 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  110i,13n,106p,10651b,897s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
-Output written on test.pdf (27 pages, 299216 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb>
+Output written on test.pdf (28 pages, 321163 bytes).
 PDF statistics:
- 356 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 116 named destinations out of 1000 (max. 500000)
+ 387 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 130 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
