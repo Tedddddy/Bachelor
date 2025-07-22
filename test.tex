@@ -328,6 +328,12 @@ The satisfaction of a formula at the point \( x \) in \( M \) is defined inducti
 \end{definition}
 
 \begin{definition}
+    Let $X = (W, \tau_1)$ and $Y = (V, \tau_2)$ be two topological spaces. Then the full product of these spaces is defined as follows :
+    $$X \times^+_t Y = (W \times V, \tau_1', \tau_2', \tau)$$
+    with horizontal, vertical and standard topologies.
+\end{definition}
+
+\begin{definition}
     For two unimodal logics $L_1$ and $L_2$ we define the full $t$-product of them as follows :
     $$L_1 \times^+_t L_2 = Log(\{X \times Y \mid X \vDash L_1 \mbox{ and } Y \vDash L_2\})$$
     where $X,Y$ are topological spaces with horizontal, vertical and standard topology.
@@ -524,7 +530,7 @@ In the end, we will use an unravelling technique to show completeness.
 
 \section{Logic of product of topological spaces with three topologies}
 In this section, we will reprove the logic of the product of two topological spaces with horizontal, vertical and classic product topology is 
-$S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$ (we abbreviate the logic $S4 \otimes S4 \otimes ...$ as TPL). First we will show a version for one modality
+$S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$ (we abbreviate the logic $S4 \otimes S4 \otimes ...$ as $\mathit{TPL}$). First we will show a version for one modality
 because it is easier to understand and the proof idea is based on this version.
 
 \begin{definition}
@@ -967,11 +973,27 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
     $g((x- \frac{1}{3^{n_{(x,y)}}}, x+ \frac{1}{3^{n_{(x,y)}}}) \times (y- \frac{1}{3^{n_{(x,y)}}}, y+ \frac{1}{3^{n_{(x,y)}}})) = B_{g(x,y)} \subseteq B_t$. Thus, we found a $U \in \tau$ 
     s.t. $U = (x- \frac{1}{3^{n_{(x,y)}}}, x+ \frac{1}{3^{n_{(x,y)}}}) \times (y- \frac{1}{3^{n_{(x,y)}}}, y+ \frac{1}{3^{n_{(x,y)}}}) \subseteq g^{-1}(B_t)$.
 
-    
-
     \end{proof}
 
 \end{theorem}
+
+To complete the proof, if $\mathit{TPL} \nvdash \phi$, then by Theorem 4.0.8, there is a 
+valuation $\upsilon$ on $T_{6,2,2}$ such that $(T_{6,2,2}, \upsilon), r \nvDash \phi$. Now we define a valuation $\xi$
+on $X \times X$ by $\xi(p) = h^{-1}(v(p))$. Since $h$ is continuous and open w.r.t. all three topologies and $h(0,0) = r$,
+we have that $(0,0)$ and $r$ are 3-topo-bisimilar. Therefore, $(X \times X, \xi),(0,0) \nvDash \phi$. Similar as in Theorem 4.0.3, we argue
+that $X \times X$ is homeomorphic to $\mathbb{Q} \times \mathbb{Q}$ w.r.t. all three topologies, it follows that $\phi$ is refutable on $\mathbb{Q} \times \mathbb{Q}$.
+
+\begin{corollary}
+    In the language $L_{\Box, \Box_1, \Box_2}$, $\mathit{TPL}$ is the logic of products of arbitrary topologies.
+    \begin{proof}
+        Let $X$ and $Y$ be arbitrary topological spaces. By the interpretation of $\Box$, it follows
+        $Log(X), Log(Y) \supseteq S4$. Let's consider the full product of the spaces $X \times^+_t Y$.
+        Hence, with theorem 4.0.8, it is easy to see that $Log(X \times^+_t Y) \supseteq S4 \times^+_t S4 = \mathit{TPL}$.
+
+    \end{proof}
+
+\end{corollary}
+
 
 
 \section{Products of neighbourhood frames, completeness results}
