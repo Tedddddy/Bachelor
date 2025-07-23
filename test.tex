@@ -549,8 +549,8 @@ In the end, we will use an unravelling technique to show completeness.
     Let $T_{\omega [rn]}$ (r = reflexive, n = non-transitiv) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
     Formally the tree can be defined as : $T_{\omega [rn]} = (W, R)$ where $W = \mathbb{N}^*$ and sRt iff $\exists u \in \mathbb{N} \cup \{\epsilon\} : s \cdot u = t$ ("$\cdot$" is the concatenation operator) \newline \newline
     The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching and infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
-    $\mathbb{N}_{1}*$ is the set of finite number combinations which has a subscript $"1"$ to denote that these numbers relate to $R_1$  \newline 
-    (examples : $2_{1}, 4231123_{1}$, $32_{1} \epsilon 45_{1} \epsilon 9_{1} = 32459_{1}$). \newline \newline
+    $\mathbb{N}_{1}^*$ is the set of finite number combinations which has subscript $"1"$ to denote these numbers relate to $R_1$.  \newline 
+    (examples : $2_{1}, 4231123_{1}$, $32_{1} \epsilon 45_{1} \epsilon 9_{1} = 32459_{1}$). The similar holds for $\mathbb{N}_2^*$.\newline \newline
     Now let $T_{\omega,\omega,\omega [rn]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^*$, 
     $$sRt \mbox{ iff } \exists u \in \mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2} \cup \{\epsilon\} : s \cdot u = t$$
     $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{1} \cup \{\epsilon\} : s \cdot u = t$$
@@ -565,32 +565,39 @@ In the end, we will use an unravelling technique to show completeness.
     \node (B) at (-2,-2) [circle,draw,minimum size=17pt,inner sep=0pt] {1};
     \node (C) at (-1,-2) [circle,draw,minimum size = 17pt, inner sep = 1pt]  {2};
     \node (D) at (0,-2) [circle,draw,minimum size = 17pt, inner sep = 1pt] {3};
-    \node (E) at (-3.5,-3.5) [circle,draw,minimum size = 17pt, inner sep = 1pt] {11};
-    \node (F) at (-2.5,-3.5) [circle,draw,minimum size = 17pt, inner sep = 1pt] {12};
+    \node (E) at (-2.5, -3.5) [circle,draw,minimum size = 17pt, inner sep = 1pt] {11};
+    \node (F) at (-1.5,-3.5) [circle,draw,minimum size = 17pt, inner sep = 1pt] {12};
 
 
   \node (G) at (2,-2) [circle,draw,minimum size=5pt,inner sep=0pt] {$1_{\mathbb{N}_2}$};
   \node (H) at (3,-2) [circle,draw,minimum size=10pt,inner sep=0pt] {$2_{\mathbb{N}_2}$};
-  \node (I) at (1.5,-3.5) [circle,draw,minimum size=10pt,inner sep=0pt] {$11_{\mathbb{N}_2}$};
-  \node (J) at (2.5,-3.5) [circle,draw,minimum size=10pt,inner sep=0pt] {$12_{\mathbb{N}_2}$};
 
   \node (K) at (-4.5,-2 ) [circle,draw,minimum size=17pt,inner sep=0pt] {$2_{\mathbb{N}_1}$};
   \node (L) at (-5.5,-2) [circle,draw,minimum size=17pt,inner sep=0pt] {$1_{\mathbb{N}_1}$};
-  \node (M) at (-6,-3.5) [circle,draw,minimum size=17pt,inner sep=0pt] {$11_{\mathbb{N}_1}$};
+  \node (M) at (-8,-3.5) [circle,draw,minimum size=17pt,inner sep=0pt] {$11_{\mathbb{N}_1}$};
+
+  \node (N) at (-6.2,-3.5) [circle,draw,minimum size=17pt,inner sep=0pt] {$1_{\mathbb{N}_1}1$};
+  \node (O) at (-4.5,-3.5) [circle,draw,minimum size=17pt,inner sep=0pt] {$1_{\mathbb{N}_1}1_{\mathbb{N}_2}$};
 
 
 
   \draw (-0.07,-0.3) -- (-2,-1.7); % e - 1
   \draw (-0.07,-0.3) -- (-1,-1.7); % e- 2
   \draw (-0.03, -0.3) -- (0, -1.7); % e - 3
-  \draw (-2.2,-2.2) -- (-3.4,-3.15);
-  \draw (-2.2,-2.2) -- (-2.4, -3.15);
+  \draw [dashed] (-2.0,-2.3) -- (-0.8,-3.25);
+  \draw [dotted] (-2.0,-2.3) -- (-3.2,-3.25);
+  \draw (-2.0,-2.3) -- (-1.6,-3.25);
+  \draw (-2.0,-2.3) -- (-2.4, -3.25);
 
-  \draw [dotted] (-0.03, -0.3) -- (2, -1.7);
-  \draw[dotted] (-0.03, -0.3) -- (3, -1.7);
+  \draw [dashed] (-0.03, -0.3) -- (2, -1.7);
+  \draw[dashed] (-0.03, -0.3) -- (3, -1.7);
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \draw [dotted] (2, -2.3) -- (1.5, -3.1);
-  \draw [dotted] (2, -2.3) -- (2.5, -3.1);
+  \draw  [dotted] (2, -2.3) -- (1, -3.1);
+  \draw  [dotted] (2, -2.3) -- (0.5, -3.1);
+  \draw  (2, -2.3) -- (1.5, -3.1);
+  \draw  (2, -2.3) -- (2.5, -3.1);
+  \draw  [dashed] (2, -2.3) -- (3, -3.1);
+  \draw  [dashed] (2, -2.3) -- (3.5, -3.1);
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \fill (0.6,-2) circle (0.7pt); 
   \fill (0.8,-2) circle (0.7pt); 
@@ -600,43 +607,48 @@ In the end, we will use an unravelling technique to show completeness.
   \fill (-0.5,-2.8) circle (0.7pt); 
   \fill (-0.5,-3) circle (0.7pt); 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \fill (-1.9,-3.5) circle (0.7pt); 
-  \fill (-1.7,-3.5) circle (0.7pt); 
-  \fill (-1.5,-3.5) circle (0.7pt); 
+  %\fill (-1.9,-3.5) circle (0.7pt); 
+  %\fill (-1.7,-3.5) circle (0.7pt);   12
+  %\fill (-1.5,-3.5) circle (0.7pt); 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \fill (3.5,-2) circle (0.7pt); 
   \fill (3.7,-2) circle (0.7pt); 
   \fill (3.9,-2) circle (0.7pt); 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \fill (3.1,-3.5) circle (0.7pt); 
-  \fill (3.3,-3.5) circle (0.7pt); 
-  \fill (3.5,-3.5) circle (0.7pt); 
+  \fill (-2,-4) circle (0.7pt); 
+  \fill (-2,-4.2) circle (0.7pt); 
+  \fill (-2,-4.4) circle (0.7pt); 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \fill (-3.0,-4) circle (0.7pt); 
-  \fill (-3,-4.2) circle (0.7pt); 
-  \fill (-3,-4.4) circle (0.7pt); 
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \fill (2.0,-4) circle (0.7pt); 
+  \fill (2,-4) circle (0.7pt); 
   \fill (2,-4.2) circle (0.7pt); 
   \fill (2,-4.4) circle (0.7pt); 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \draw [dotted] (-0.03, -0.3) -- (-4.5, -1.75);
   \draw[dotted] (-0.03, -0.3) -- (-5.5, -1.75);
-  \draw[dotted] (-5.5, -2.3) -- (-6, -3.1);
+  \draw[dotted] (-5.5, -2.3) -- (-8, -3.1);
+  \draw (-5.5, -2.3) -- (-6, -3.1);
+  \draw[dashed] (-5.5,-2.3) -- (-4.5,-3);
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \fill (-3.8,-2) circle (0.7pt); 
   \fill (-3.6,-2) circle (0.7pt); 
   \fill (-3.4,-2) circle (0.7pt); 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \fill (-5.3,-3.5) circle (0.7pt); 
-  \fill (-5.1,-3.5) circle (0.7pt); 
-  \fill (-4.9,-3.5) circle (0.7pt); 
+  \fill (-7.4,-3.5) circle (0.7pt); 
+  \fill (-7.2,-3.5) circle (0.7pt); 
+  %\fill (-7.0,-3.5) circle (0.7pt); 
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \fill (-6,-4.05) circle (0.7pt); 
-  \fill (-6,-4.25) circle (0.7pt); 
-  \fill (-6,-4.45) circle (0.7pt); 
+  \fill (-6.2,-4.05) circle (0.7pt); 
+  \fill (-6.2,-4.25) circle (0.7pt); 
+  \fill (-6.2,-4.45) circle (0.7pt); 
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \fill (-5.5, -3.5) circle (0.7pt);
+  \fill (-5.7, -3.5) circle (0.7pt);
+
+  \fill (-3.5,-3.5) circle (0.7pt);
+  \fill (-3.7,-3.5) circle (0.7pt);
+
 \end{tikzpicture}
-\caption{This is $T_{\omega,\omega,\omega[rn]}$. The dotted lines on the left are from $R_1$ and in the right $R_2$. The whole tree is $R$.}
+\caption{This is $T_{\omega,\omega,\omega[rn]}$. The dotted lines on the left of each node are from $R_1$ and in the right $R_2$. The whole tree is $R$.}
 \end{figure}
 
         
@@ -659,6 +671,7 @@ In the end, we will use an unravelling technique to show completeness.
     \end{proof}
         
 \end{proposition}
+\clearpage
 
 \begin{proposition}
     $\mathit{TNL}$ is sound and complete w.r.t $T_{\omega,\omega,\omega[rn]}$.
@@ -688,7 +701,8 @@ because it is easier to understand and the proof idea is based on this version.
 
 \begin{definition}
     Let $T_2$ be the infinite binary tree with reflexive and transitive descendant relation. \newline Formally it is defined as follows :
-    $T_2 = (W,R)$ where $W = \{0,1\}^*$ and $sRt$ iff $\exists u\in W^* : s \cdot u = t$. \newline
+    $T_2 = (W,R)$ where $W = \{0,1\}^*$, 
+    $$ \mbox{sRt iff }  \exists u\in W^* : s \cdot u = t$$ 
     The $T_ {6,2,2}$ tree is the infinite six branching tree, where all nodes of $T_ {6,2,2}$ is $R$-related, the first two $R_1$-related 
     and the last two $R_2$-related. Formally we can define this tree as follows : $T_ {6,2,2} = (W,R,R_1,R_2)$,
     where $W = \{{0,1,2,3,4,5}\}^*$, $$sRt \mbox{ iff } \exists u \in \mbox{\{0,1,2,3,4,5\}*} : s \cdot t = u $$
@@ -703,7 +717,7 @@ because it is easier to understand and the proof idea is based on this version.
 
     \begin{proof}
     The idea is to use the fact S4 has finite model property. By that we can pick a finite rooted S4-frame and then show that this frame is the bounded morphic image of $T_2$.
-        For details see [Goldblatt].
+        For details see [12].
     \end{proof}
 \end{theorem}
 
@@ -1584,7 +1598,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     $$\Lambda \otimes \Lambda \otimes \Lambda + \Box p \rightarrow \Box_1 p \land \Box_2 p = \Lambda \times^+_n \Lambda$$
 
 
-
+\clearpage
 \section*{References}
 
 \begin{enumerate}[label={[{\arabic*}]}]
@@ -1621,6 +1635,9 @@ In \textit{Philosophical Problems in Logic: Some Recent Developments}, pages 143
 
 \item Eric Pacuit. \textit{Neighborhood Semantics for Modal Logic}.\\
 Short Textbooks in Logic. Springer Cham, 2017.
+
+\item R. Goldblatt. Diodorean modality in Minkowski spacetime.\\
+\textit{Studia Logica}, 39:219–237, 1980.
 
 \end{enumerate}
 
