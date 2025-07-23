@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1753226748 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1753226749
+["pdflatex"] 1753231180 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1753231181
   "/etc/texmf/web2c/texmf.cnf" 1749038783 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/maik/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1749077117 1405644 8beec9f80219283946f97b1e8cc91499 ""
-  "/home/maik/studiumtud/Bachelor/test.tex" 1753226747 94292 f1012c67bacc8dd98f6d1516c6a17341 ""
+  "/home/maik/studiumtud/Bachelor/test.tex" 1753231180 95206 57049587a80d5d8a87ad58e22804b257 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -12,7 +12,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
-  "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbxti10.tfm" 1136768653 1532 9162035f4e7176612125649e348e2195 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -36,7 +35,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary6.tfm" 1302307949 848 068dd119e13b75777e62821af7d4f2a6 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm" 1302307949 848 6125cdd3627e68d3db8013b98e587508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
-  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb" 1248133631 36554 b67dc2cfa451409e100b3fcf5f506509 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
@@ -198,9 +196,9 @@
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb" 1749038801 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750194027 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "test.aux" 1753226749 7908 62ca8c2419bd2e7133657b48e6946b14 "pdflatex"
-  "test.out" 1753226749 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "test.tex" 1753226747 94292 f1012c67bacc8dd98f6d1516c6a17341 ""
+  "test.aux" 1753231181 7895 15c01e8ffadc74e19d9a7a01a44b702c "pdflatex"
+  "test.out" 1753231181 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "test.tex" 1753231180 95206 57049587a80d5d8a87ad58e22804b257 ""
   (generated)
   "test.aux"
   "test.log"
