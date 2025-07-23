@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1753231180 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1753231181
+["pdflatex"] 1753286130 "/home/maik/studiumtud/Bachelor/test.tex" "test.pdf" "test" 1753286132
   "/etc/texmf/web2c/texmf.cnf" 1749038783 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/maik/.texlive2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1749077117 1405644 8beec9f80219283946f97b1e8cc91499 ""
-  "/home/maik/studiumtud/Bachelor/test.tex" 1753231180 95206 57049587a80d5d8a87ad58e22804b257 ""
+  "/home/maik/studiumtud/Bachelor/test.tex" 1753286128 98685 0b0a875c5f2020f6eddb53342c4ea0a2 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -196,9 +196,9 @@
   "/usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb" 1749038801 136101 f533469f523533d38317ab5729d00c8a ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1750194027 4379155 98693266ff65f58d9f98aff394de12d2 ""
-  "test.aux" 1753231181 7895 15c01e8ffadc74e19d9a7a01a44b702c "pdflatex"
-  "test.out" 1753231181 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "test.tex" 1753231180 95206 57049587a80d5d8a87ad58e22804b257 ""
+  "test.aux" 1753286132 8155 66f08be08a10098232859ddf177af559 "pdflatex"
+  "test.out" 1753286131 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "test.tex" 1753286128 98685 0b0a875c5f2020f6eddb53342c4ea0a2 ""
   (generated)
   "test.aux"
   "test.log"
