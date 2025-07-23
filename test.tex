@@ -648,7 +648,7 @@ In the end, we will use an unravelling technique to show completeness.
   \fill (-3.7,-3.5) circle (0.7pt);
 
 \end{tikzpicture}
-\caption{This is $T_{\omega,\omega,\omega[rn]}$. The dotted lines on the left of each node are from $R_1$ and in the right $R_2$. The whole tree is $R$.}
+\caption{This is $T_{\omega,\omega,\omega[rn]}$. The dotted lines on each node are from $R_1$ and the dashed lines represents $R_2$. The whole tree is $R$.}
 \end{figure}
 
         
@@ -679,7 +679,7 @@ In the end, we will use an unravelling technique to show completeness.
     \begin{proof}
     For soundness, we have that $T_{\omega,\omega,\omega[rn]} \Vdash \Box p \rightarrow \Box_1 p \land \Box_2p$, because by defintion we have $R_1,R_2 \subseteq R$. The rest is clear.
     For completeness, we use the fact $\mathit{TNL}$ has FMP. Let $F = (W',R', R'_1, R'_2)$ be a finite rooted frame with root w and $F \Vdash TNL$. We define inductively an
-    assignment similar to 2.17. We assign $w$ to the root of $T_{\omega,\omega,\omega[rn]}$. For induction step we start by only assigining points from $R_1$ to $R'_1$ and $R_2$ to $R'_2$. After that, the remaining points will be assigned to the points in $R'$.
+    assignment similar to Proposition 3.0.4. We assign $w$ to the root of $T_{\omega,\omega,\omega[rn]}$. For induction step we start by only assigining points from $R_1$ to $R'_1$ and $R_2$ to $R'_2$. After that, the remaining points will be assigned to the points in $R'$.
     The procedure works similar as described previously. \newline
     We will only check the conditions for $R$ and $R'$. For $R_1, R_1'$ and $R_2, R_2'$, we can argue as before. We pick any $xRy$ with $f(x) = s$. 
     If we also have $xR_1y$ or $xR_2y$, then it follows $f(x)R' f(y)$ because $R_1, R_2 \subseteq R$ and $R_1', R_2' \subseteq R'$. Else, the successor of s was assigned to y, so $f(x)R'f(y)$. \newline
@@ -725,7 +725,7 @@ because it is easier to understand and the proof idea is based on this version.
 
     (Cantor) Every countable dense linear ordering without endpoints is isomorphic to $\mathbb{Q}$.
     \begin{proof}
-        For a proof see e.g [?, Page 217, Theorem 2].   
+        For a proof see e.g [13, Page 217, Theorem 2].   
     \end{proof}
 
 \end{theorem}
@@ -1638,6 +1638,10 @@ Short Textbooks in Logic. Springer Cham, 2017.
 
 \item R. Goldblatt. Diodorean modality in Minkowski spacetime.\\
 \textit{Studia Logica}, 39:219–237, 1980.
+
+\item K. Kuratowski and A. Mostowski. \textit{Set Theory}.\\
+Studies in Logic and the Foundations of Mathematics, Vol. 86.\\
+North-Holland Publishing Co., Amsterdam–New York–Oxford; PWN—Polish Scientific Publishers, Warsaw, 1976.
 
 \end{enumerate}
 
