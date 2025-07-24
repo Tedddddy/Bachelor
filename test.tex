@@ -847,6 +847,7 @@ $$X_{n+1} = X_n \cup \{x - \frac{1}{3^n}, x + \frac{1}{3^n} \mid x \in X_n\}$$
         Some points are visualized as brackets to distinguish them from nearby points at the same level.}}
     \end{figure}
 
+
 In Figure 3, each colour represents a different level. The points in red are from $X_1$, blue points from $X_2$, green points from a part of $X_3$ and orange from a part of $X_4$. 
 We can observe that, the distance between a point and its source is getting exponentially smaller.
 
@@ -881,14 +882,13 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
         To show $f$ is continuous, it suffices to show that for each $t \in T_2$, the $f$-inverse image of $B_t$ is open. Let $x \in f^{-1}(B_t)$. Then $tRf(x)$. As argued before, we can find an open interval in $X$ s.t.
         $f (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}) = B_{f(x)}$.  By $tRf(x)$, we get $B_{f(x)} \subseteq B_t$. Hence, we found an open interval
         $I = (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$, s.t. $I = f^{-1}(B_{f(x)}) \subseteq f^{-1}(B_t)$. This holds because we can pick $y \in I$. By applying $f$, we get $f(y) \in B_{f(x)} \subseteq B_t$. But then $y \in f^{-1}(B_t)$.
-        By that fact, we can follow with Remark 2.2.8, that $f^{-1}(B_t)$ is open and hence $f$ is continuous.
+        By that fact, we can follow with Remark 2.1.3, that $f^{-1}(B_t)$ is open and hence $f$ is continuous.
 
     \end{proof}
 
 \end{proposition}
-\clearpage
 To complete the proof, if $S4 \nvdash \phi$, then by Theorem 4.0.2, there is a valuation $v$ on $T_2$ s.t. $(T_2, v), r \nVDash \phi$. We define a valuation $\xi$ on $X$ by $\xi(p) = f^{-1}(v(p))$. Since $f$ is continuous and open, $f(0) = r$ and by the choice 
-of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 2.2.7 it follows $(X, \xi), 0 \nVDash \phi$. Because $X$ is homeomorphic to $\mathbb{Q}$, we obtain $\phi$ refutable on $\mathbb{Q}$.
+of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 2.1.11 it follows $(X, \xi), 0 \nVDash \phi$. Because $X$ is homeomorphic to $\mathbb{Q}$, we obtain $\phi$ refutable on $\mathbb{Q}$.
 
 
 \begin{definition}
@@ -900,7 +900,7 @@ of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 2.
 \begin{theorem}
     $TPL$ is complete w.r.t. $T_{6,2,2}$.
     \begin{proof}
-        A generalization of Theorem 4.0.2 can be seen on [?].
+        A generalization of Theorem 4.0.2 can be seen on [6].
     \end{proof}
 \end{theorem}
 
@@ -908,7 +908,7 @@ Now we are ready to show $TPL$ is complete w.r.t. $\mathbb{Q} \times \mathbb{Q}$
 We view $T_{6,2,2}$ as equipped with three Alexandroff topologies defined from $R, R_1$ and $R_2$. It suffices to show 
 that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $X'$ where each $X$ is as defined in Theorem 4.0.3. 
 
-\begin{theorem}
+\begin{theorem}[\textnormal{[1]}]
     $TPL$ is complete w.r.t. $\mathbb{Q} \times \mathbb{Q}$.
 
     \begin{proof}
@@ -917,8 +917,8 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
         $n_{(x,y)}$ with $(x,y) \in X'_{n_{(x,y)}} - X'_{n_{(x,y)}-1}$ and that there exists a unique $(u,v) \in X'_{n_{(x,y)}-1}$ such that 
         $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v)$ or $(x,y) =  (u, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$
         or $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$. \newline 
-        As visiualized in the picture, we can see  as an example $X'_0,X'_1$ and an excerpt of $X'_2$. For clarity, we illustrated some points of $X'_1$ as a line. We cleary can see, 
-        that any point has his own "square", where the points within it can be only build from his center point. This is because, the square size gets exponentially smaller with each iteration, due to its construction.
+        As visiualized in Figure 4, we can see as an example $X'_0,X'_1$ and an excerpt of $X'_2$. For clarity, we illustrated some points of $X'_1$ as a line. We cleary can see, 
+        that any point has his own "square", where the points within it can be only build from its center point. This is because, the "square size" gets exponentially smaller with each level, due to its construction.
         That means, in each iteration they can not intersect.
 
         Now we define $h$ as 
@@ -937,7 +937,7 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
 
             \end{cases}
         \]
-    \begin{figure}[ht]        
+    \begin{figure}[h]        
     \begin{center}
             
         \begin{tikzpicture}[scale=0.73]
@@ -1221,7 +1221,7 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
             \draw [blue, line width=1.5pt](2, -2) -- (2.2, -2);
 
     \end{tikzpicture}
-    \caption{}
+    \caption{This is an excerpt of $X \times X$.}
 \end{center}
 \end{figure}    
     It is still left to prove, that $h$ is open and continuous w.r.t. all three topologies. We will show it for $\tau_1$ and $\tau$. For $\tau_2$ it is similar as for $\tau_1$.\newline \newline
@@ -1263,7 +1263,7 @@ that $X \times X$ is homeomorphic to $\mathbb{Q} \times \mathbb{Q}$ w.r.t. all t
 
 \end{corollary}
 
-
+\clearpage
 
 \section{Products of neighbourhood frames, completeness results}
 We now turn our focus to neighbourhood semantics, and in particular, we revisit the main theorem from the paper "Modal Logic of Products of Neighbourhood Frames". This work established that, for any $L_1, L_2 \in \{D,D4,T,S4\}$ we have
@@ -1293,10 +1293,6 @@ We introduce some trees as Kripke frames which are essential for the proof.
     For now, we will use the following notion to generalize : $F_{\xi \eta}$ where $\xi \in \{i,r\}$ and $\eta \in \{t,n\}$ \newline
 \end{definition}
 
-\begin{proposition}
-    Let $F =F_{\xi \eta}[A] = (A^*, R)$ then $$\vec{a}R(\vec{a} \cdot \vec{c}) \Leftrightarrow \Lambda R \vec{c}$$ 
-\end{proposition}
-
 \begin{definition}
     Let $F_1 = F_{\xi_1 \eta_1}[A] = (A^*,R_1)$ and $F_2 = F_{\xi_2 \eta_2}[B] = (B^*,R_2)$, where $\xi_1, \xi_2 \in \{i,r\}$ 
     and $\eta_1, \eta_2 \in \{t,n\}$. Furthermore, we assume $A = \{a_1, a_2,...\}$ and $B = \{b_1,b_2,...\}$ with $A \cap B = \emptyset$. Then we define the frame $F_1 \otimes F_2 = (W, R'_1, R'_2)$ as follows :
@@ -1305,7 +1301,7 @@ We introduce some trees as Kripke frames which are essential for the proof.
     $$\vec{x} R'_2 \vec{y} \Leftrightarrow \vec{y} = \vec{x} \cdot \vec{z} \mbox{ for some } \vec{z} \in B^* \mbox{such that }\Lambda R_2 \vec{z}$$ \newline
 \end{definition}
 
-\begin{proposition} [\cite{ref6}, \cite{ref4}]
+\begin{proposition} [\textnormal{[14], [15]}]
     Let $F_1$ and $F_2$ be as in Defintion 2.1.7. Then 
     $$Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2)$$
 \end{proposition}
@@ -1336,8 +1332,8 @@ We introduce some trees as Kripke frames which are essential for the proof.
 
 
 \subsection{Main Construction}
-In the following, we construct a useful neighborhood frame called $N_\omega[F]$ based on a frame $F$ where $F$ is a tree frame.
-We will show that the construction has the same logic as the orignal frame. 
+In the following, we construct a useful neighborhood frame called $N_\omega[F]$ based on a tree frame $F$.
+We will show, that the construction has the same logic as the orignal frame. 
 At the end, we construct a bounded morphism from the product of $N_\omega[F]$ frames to the fusion of frames $F$.
 
 
@@ -1384,7 +1380,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     \begin{proof}
             $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. By defintion of $U_m(x)$,
             we get $f_F(\alpha) \in R(f_F(x))$. \newline \newline
-            For the other direction, we pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexive and non-transitive.
+            $\supseteq :$ We pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexive and non-transitive.
             The other cases are similar. \newline
             Because $\vec{a} \in R(f_F(x))$, there must exists $c \in A$ such that $ \vec{a} = f_F(x) * c $.
             We construct $\beta = x \mid_m \cdot \, c\, 0^\omega$. Hence, $f(\beta) = f_F(x \mid_m) * f_F(c)$ and because $ 0 \notin A$ we get $f_F(x \mid_m) * c = \vec{a}$.
@@ -1744,6 +1740,12 @@ Short Textbooks in Logic. Springer Cham, 2017.
 \item K. Kuratowski and A. Mostowski. \textit{Set Theory}.\\
 Studies in Logic and the Foundations of Mathematics, Vol. 86.\\
 North-Holland Publishing Co., Amsterdam–New York–Oxford; PWN—Polish Scientific Publishers, Warsaw, 1976.
+
+\item M. Kracht and F. Wolter. Properties of independently axiomatizable bimodal logics.\\
+\textit{Journal of Symbolic Logic}, 56(4):1469–1485, 1991.
+
+\item K. Fine and G. Schurz. Transfer theorems for multimodal logics.\\
+In J. Copeland, editor, \textit{Logic and Reality: Proceedings of the Arthur Prior Memorial Conference}, pages 169–213. Oxford University Press, 1996.
 
 \end{enumerate}
 
