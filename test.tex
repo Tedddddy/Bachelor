@@ -11,7 +11,7 @@
 \usepackage{enumitem}
 \usepackage{subcaption}
 \usepackage{caption}
-
+\usepackage[font=small]{caption}
 \definecolor{darkbrown}{rgb}{0.36, 0.25, 0.20}
 \definecolor{mydarkgreen}{rgb}{0.0, 0.5, 0.0}
 \definecolor{strongyellow}{rgb}{1.0, 0.85, 0.1}
@@ -757,25 +757,98 @@ $$X_{n+1} = X_n \cup \{x - \frac{1}{3^n}, x + \frac{1}{3^n} \mid x \in X_n\}$$
 \begin{figure}[h]
     \centering
         \begin{tikzpicture}
-                \draw[->] (-12.5,0) -- (2.5,0);
+   
+
+            \draw[->] (-12.5,0) -- (2.5,0);
 
 
 
-                \draw[fill=black] (-5.5,0) circle (1pt) node[below] {0};;
-                \draw(-7.1,0.1) -- (-7.1,-0.1) node[below] {-$\frac{1}{3}$};
-                \draw(-8.8,0.1) -- (-8.8,-0.1) node[below] {-$\frac{2}{3}$};
-                \draw(-10.5,0.1) -- (-10.5,-0.1) node[below] {-1};
-                \draw(-12.3,0.1) -- (-12.3,-0.1) node[below] {-$\frac{4}{3}$};
+            \draw[fill=black] (-5.5,0) circle (1pt) node[below] {0};;
+            \draw(-7.1,0.1) -- (-7.1,-0.1) node[below] {-$\frac{1}{3}$};
+            \draw(-8.8,0.1) -- (-8.8,-0.1) node[below] {-$\frac{2}{3}$};
+            \draw(-10.5,0.1) -- (-10.5,-0.1) node[below] {-1};
+            \draw(-12.3,0.1) -- (-12.3,-0.1) node[below] {-$\frac{4}{3}$};
 
-                \draw(-3.7,0.1) -- (-3.7,-0.1) node[below] {$\frac{1}{3}$};
-                \draw(-1.8,0.1) -- (-1.8,-0.1) node[below] {$\frac{2}{3}$};
-                \draw(0.1,0.1) -- (0.1,-0.1) node[below] {-1};
-                \draw(2.2,0.1) -- (2.2,-0.1) node[below] {-$\frac{4}{3}$};
+            \draw(-3.7,0.1) -- (-3.7,-0.1) node[below] {$\frac{1}{3}$};
+            \draw(-1.8,0.1) -- (-1.8,-0.1) node[below] {$\frac{2}{3}$};
+            \draw(0.1,0.1) -- (0.1,-0.1) node[below] {1};
+            \draw(2.2,0.1) -- (2.2,-0.1) node[below] {$\frac{4}{3}$};
+
+            \draw [red] (-10.5,0.15) -- (-10.5,-0.15);
+            \draw [red] (0.1,0.15) -- (0.1,-0.15);
+
+            \draw[blue] (2.2,0.2) -- (2.2,-0.2);
+            \draw[blue] (2.2,0.2) -- (2.1,0.2);
+            \draw[blue] (2.2,-0.2) -- (2.1,-0.2);
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \draw [blue] (-1.8,0.2) -- (-1.8,-0.2);
+            \draw [blue](-1.8,0.2) -- (-1.7,0.2);
+            \draw [blue] (-1.8,-0.2) -- (-1.7,-0.2);
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \draw [blue] (-7.1,0.2) -- (-7.1,-0.2);
+            \draw [blue] (-3.7,0.2) -- (-3.7,-0.2);
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \draw [blue] (-12.3,0.2) -- (-12.3,-0.2);
+            \draw [blue] (-12.3,0.2) -- (-12.2,0.2);
+            \draw [blue] (-12.3,-0.2) -- (-12.2,-0.2);
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \draw [blue] (-8.8,0.2) -- (-8.8,-0.2);
+            \draw [blue] (-8.8,0.2) -- (-8.9,0.2);
+            \draw [blue] (-8.8,-0.2) -- (-8.9,-0.2);
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw[very thick, mydarkgreen] (-6.0,0.2) -- ( -6, -0.2); 
+            \draw[very thick, mydarkgreen] (-5.0,0.2) -- ( -5, -0.2); 
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw[very thick, mydarkgreen] (-6.6,0.2) -- ( -6.6, -0.2);
+            \draw[very thick, mydarkgreen] (-6.6,0.2) -- ( -6.7, 0.2); 
+            \draw[very thick, mydarkgreen] (-6.6,-0.2) -- ( -6.7, -0.2);
+            
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw[very thick, mydarkgreen] (-7.6,0.2) -- ( -7.6, -0.2);
+            \draw[very thick, mydarkgreen] (-7.6,0.2) -- ( -7.5, 0.2); 
+            \draw[very thick, mydarkgreen] (-7.6,-0.2) -- ( -7.5, -0.2);
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw[very thick, mydarkgreen] (-8.2,0.2) -- (-8.2,-0.2);
+            \draw[very thick, mydarkgreen] (-9.4,0.2) -- (-9.4,-0.2);
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+            \draw[very thick, mydarkgreen] (-11.1,0.2) -- (-11.1,-0.2);
+            \draw[very thick, mydarkgreen] (-11.1,0.2) -- (-11,0.2);
+            \draw[very thick, mydarkgreen] (-11.1,-0.2) -- (-11,-0.2);
+
+            \draw[very thick, mydarkgreen] (-9.9,0.2) -- (-9.9,-0.2);
+            \draw[very thick, mydarkgreen] (-9.9,0.2) -- (-10,0.2);
+            \draw[very thick, mydarkgreen] (-9.9,-0.2) -- (-10,-0.2);
+
+            %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+            \draw[orange] (-5.65,0.2) -- (-5.65, -0.2);
+            \draw[orange] (-5.65,0.2) -- (-5.55, 0.2);
+            \draw[orange] (-5.65,-0.2) -- (-5.55, -0.2);
+
+            \draw[orange] (-5.35,0.2) -- (-5.35, -0.2);
+            \draw[orange] (-5.35,0.2) -- (-5.45, 0.2);
+            \draw[orange] (-5.35,-0.2) -- (-5.45, -0.2);
+
+                \draw[orange] (-6.2,0.2) -- ( -6.2, -0.2);
+                \draw[orange] (-5.8,0.2) -- ( -5.8, -0.2);  
+                \draw[orange] (-4.8,0.2) -- ( -4.8, -0.2);
+                \draw[orange] (-5.2,0.2) -- ( -5.2, -0.2);
 
         \end{tikzpicture}
-        \caption{}
+        \caption{{\footnotesize This is an excerpt of $X$. 
+        Some points are visualized as brackets to distinguish them from nearby points at the same level.}}
     \end{figure}
 
+In Figure 3, each colour represents a different level. The points in red are from $X_1$, blue points from $X_2$, green points from a part of $X_3$ and orange from a part of $X_4$. 
+We can observe that, the distance between a point and its source is getting exponentially smaller.
 
 It follows from Lemma 4.0.4 that $(X, <)$ is a countable, dense, and linear ordered without endpoints. By Cantor's Theorem, X is homeomorphic to $\mathbb{Q}$.
 It also follows that for each $x \in X$ with $x \neq 0$ there exists an index $n_x$ with $x \in X_{n_x}$ but $x \notin X_{n_{x}-1}$. But also, we can find a unique $y \in X_{{n_x}-1}$ with $x = y - \frac{1}{3^{n_x -1}}$ or $x = y + \frac{1}{3^{n_x -1}}$.
