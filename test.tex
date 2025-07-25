@@ -1271,7 +1271,7 @@ $L_1 \otimes L_2 = L_1 \times_n L_2$.
 Our goal is to reprove this theorem within our framework and then adapt its key ideas to prove our theorem.
 
 \subsection{Kripke tree frames, natural neighborhood version and their logic}
-We introduce some trees as Kripke frames which are essential for the proof.
+We introduce some trees as Kripke frames, which are essential for the proof.
 
 \begin{definition}
     Let A be a nonempty set.
@@ -1302,11 +1302,11 @@ We introduce some trees as Kripke frames which are essential for the proof.
 \end{definition}
 
 \begin{proposition} [\textnormal{[14], [15]}]
-    Let $F_1$ and $F_2$ be as in Defintion 2.1.7. Then 
+    Let $F_1$ and $F_2$ be as in Definition 5.1.3 . Then 
     $$Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2)$$
 \end{proposition}
 
-\begin{proposition}
+\begin{proposition}[\textnormal{[17]}]
     Let $F_{in} = F_{in}[\mathbb{N}], F_{rn} = F_{rn}[\mathbb{N}], F_{it} = F_{it}[\mathbb{N}] \mbox{ and } F_{rt} = F_{rt}[\mathbb{N}]$. Then the following holds: \newline 
     $$ Log(F_{in}) = D$$
     $$ Log(F_{rn}) = T$$
@@ -1352,7 +1352,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     \begin{align*}
             st(a) &= min\{N \mid \forall k \geq N : a_k = 0\} \\
             a \mid_{k} &= a_1a_2...a_k \\
-            U_k(\alpha) &= \{ \beta \mid f_F(\alpha)Rf_F(\beta) \mbox{ and } \alpha \mid_m = \beta \mid_m,  \mbox{ where } m = max((k, st(\alpha))\} 
+            U_k(\alpha) &= \{ \beta \mid f_F(\alpha)Rf_F(\beta) \mbox{ and } \alpha \mid_m = \beta \mid_m,  \mbox{ where } m = max(k, st(\alpha))\} 
     \end{align*} 
     Remark : Let $\alpha \in X \mbox{ with } st(\alpha) = n$. Then we have that $U_n(\alpha) = U_j(\alpha)$ for any $j \leq n$
 
@@ -1382,9 +1382,8 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
             we get $f_F(\alpha) \in R(f_F(x))$. \newline \newline
             $\supseteq :$ We pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexive and non-transitive.
             The other cases are similar. \newline
-            Because $\vec{a} \in R(f_F(x))$, there must exists $c \in A$ such that $ \vec{a} = f_F(x) * c $.
-            We construct $\beta = x \mid_m \cdot \, c\, 0^\omega$. Hence, $f(\beta) = f_F(x \mid_m) * f_F(c)$ and because $ 0 \notin A$ we get $f_F(x \mid_m) * c = \vec{a}$.
-            
+            Because $\vec{a} \in R(f_F(x))$, there must exists $c \in A$ such that $ \vec{a} = f_F(x) \cdot c $.
+            We construct $\beta = x \mid_m \cdot \, c\, 0^\omega$. Hence, $f(\beta) = f_F(x \mid_m) \cdot f_F(c)$ and because $ 0 \notin A$ we get $f_F(x \mid_m) \cdot c = \vec{a}$.
             
     \end{proof}
 \end{lemma}
@@ -1400,7 +1399,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
         $$R(f(x)) = f(U_m(x)) \subseteq f(U)$$ 
         \newline
         Assume $x\in X$ and $V$ is a neighborhood of x, i.e $R(f(x)) \subseteq V$. We need to prove that there exists $U \in \tau(x)$, such that $f(U)\subseteq V$.
-        As $U$ we $U_m(x)$ for any $m \in \mathbb{N}$. By Lemma 5.2.5 we get $f(U_m(x)) = R(f(x))$. Hence, 
+        As $U$ we pick $U_m(x)$ for any $m \in \mathbb{N}$. By Lemma 5.2.5 we get $f(U_m(x)) = R(f(x))$. Hence, 
         $$f(U_m(x)) = R(f(x)) \subseteq V$$
 
     \end{proof} 
@@ -1409,7 +1408,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
 \begin{corollary}
     For frame $F = F_{\xi \eta}[A]$ we have $Log(N_\omega(F)) \subseteq Log(F)$.
     \begin{proof}
-        It follows from Lemma 5.1.5, Corollary 5.1.7 and Lemma 5.2.6 
+        It follows from Corollary 2.2.5, Lemma 5.1.7 and Lemma 5.2.6 
         $$Log(N_\omega(F)) \subseteq Log(N(F)) = Log(F)$$
     \end{proof}
 
@@ -1423,7 +1422,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     $$Log(N_\omega(F_{rt})) = S4$$
 
     \begin{proof}
-        In all these cases, the inclusion from left to right follows from Proposition 2.1.9 and Corollary 5.2.7.
+        In all these cases, the inclusion from left to right follows from Proposition 5.1.5 and Corollary 5.2.7.
         Now the converse direction. Assume $X =(X,\tau)$. \newline
         It is easy to check that $X \vDash D$ iff for each $x \in X : \emptyset \notin \tau(x)$. For $N_\omega(F_{in})$ and $N_\omega(F_{it})$ this holds. \newline
         It is easy to check that $X \vDash T$ iff we have $x\in U \in \tau(x)$ for any $x$ and $U$. For $N_\omega(F_{rn})$ and $N_\omega(F_{rt})$ this holds. \newline
@@ -1443,7 +1442,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$. 
     Consider the product of n-frames $F'_1 = (X_1, \tau_1) = N_\omega(F_1)$ and $F'_2 = (X_2, \tau_2) = N_\omega(F_2)$ is 
     $$X = (X_1 \times X_2, \tau'_1, \tau'_2) = N_\omega(F_1) \times_n N_\omega(F_2)$$ \newline
-    Furthermore, we have $F_1 \otimes F_2 = ((A \cup B)^*, R_1', R_2')$ as defined in Defintion 2.0.7.
+    Furthermore, we have $F_1 \otimes F_2 = ((A \cup B)^*, R_1', R_2')$ as defined in Definition 5.1.3.
     We consider the neighborhood version $$N(F_1 \otimes F_2) = ((A \cup B)^*, \sigma_1', \sigma_2')$$ \newline
     Now we define $g : X_1 \times X_2 \rightarrow (A \cup B)^*$ as follows. For $(\alpha, \beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$
     we define $g(\alpha,\beta)$ to be the finite sequence which we get after eliminating all zeros from the infinite sequence
@@ -1455,7 +1454,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\})$$.
 
     \begin{proof}
-        We will show both direction by assuming $F_1 = F_{in}[A]$. For $F_{it}[A],F_{rt}[A]$ and $F_{rn}[A]$ is it similar. \newline
+        We will show both direction by assuming $F_1 = F_{in}[A]$. For $F_{it}[A],F_{rt}[A]$ and $F_{rn}[A]$ it is similar. \newline
         $\subseteq$ : Let $\vec{w} \in R'_1(g(\alpha,\beta))$. By definition we get, there exists $\vec{c} \in A^*$ where $\vec{w} = g(\alpha,\beta) \cdot \vec{c}$ and $\Lambda R_1 \vec{c}$.
         Because $R_1$ is irreflexive and non-transitive, we get $\vec{c} \in A$. We construct $(\zeta,\beta)$ where $\zeta \in U_m(\alpha)$ and $g(\zeta,\beta) = \vec{w}$. For that, we can take $\zeta = \alpha \mid_m \cdot \vec{c}\, 0^\omega$. Obviously, $\zeta \in U_m(\alpha)$.
         Because $m \in max\{st(\alpha), st(\beta)\}$, we have $g(\alpha \mid_m, \beta \mid_m) = g(\alpha, \beta)$. Hence, $g(\zeta, \beta) = g(\alpha \mid_m, \beta \mid_m) \cdot g(\vec{c} \,0^\omega, 0^\omega) = g(\alpha \mid_m, \beta \mid_m) \cdot \vec{c} = \vec{w}$.
@@ -1508,11 +1507,12 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
 \subsection{Adapting the key ideas}
 
     Now we will show $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism. \newline 
-    Let $(T_{\omega[rn]})_1 = (\mathbb{N}_{1}, R_1)$ and $(T_{\omega[rn]})_2 = (\mathbb{N}_{2}, R_2)$ as defined in Defintion 3.2.1.
+    Let $(T_{\omega[rn]})_1 = (\mathbb{N}_{1}, R_1)$ and $(T_{\omega[rn]})_2 = (\mathbb{N}_{2}, R_2)$ as defined in Definition 3.0.3.
     Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline \newline
     Let's consider the full product of the n-frames :
     $$N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) = (X_1 \times X_2, \tau'_1, \tau'_2, \tau)$$
-    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Def.3.2.1\newline \newline
+    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Def.3.2.1 
+    \clearpage
     In order to define the bounded morphism, we have to fix a bijection first. Let $h : \mathbb{N}_1 \times \mathbb{N}_2 \rightarrow \mathbb{N}$ be a bijection. \newline
     Next, we define function $k :(\mathbb{N}_1 \cup \{0\}) \times (\mathbb{N}_2 \cup \{0\}) \rightarrow \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{0\}$ as follows :
     \[
