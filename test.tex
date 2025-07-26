@@ -27,7 +27,7 @@
 
 \begin{document}
 \section{Introduction}
-Modal logic extends classical propositional logic by introducing modal operators, most notably $\Box$ ("necessarily") and $\Diamond$ ("possibly"). In the standard Kripke semantics, 
+Modal logic extends classical propositional logic by introducing modal operators, most notably $\Box$ ("necessarily") and $\lozenge$ ("possibly"). In the standard Kripke semantics, 
 these operators are interpreted over a set of possible worlds connected by an accessibility relation. An idea to generalize Kripke semantics was topology.
 The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [3]. It is well known, that $S4$ is fully captured. Despite its rich expressiveness,
 it can not fully capture Kripke semantics. That is why Neighbourhood semantics (see [11] for an introduction) as a generalization of Kripke semantics for modal logic was introduced independently by Dana Scott [9] and Richard Montague [10].
@@ -61,7 +61,7 @@ such as Filtration Theorem and Sahlqvist Theorem which play a role in our later 
 Let prop be a set of variables. Then a formula $\phi$ is defined as follows:
 $$\phi ::= p \mid \bot \mid \neg \phi \mid \phi \lor \phi \mid \Box_i \phi$$
 where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expressed through $\bot$ and $\rightarrow$ and 
-dual modal operators $\diamond_i$ as $\diamond_i \phi = \neg \Box_i \neg \phi$
+dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
 \end{definition}
 
 \begin{definition}
@@ -180,21 +180,21 @@ dual modal operators $\diamond_i$ as $\diamond_i \phi = \neg \Box_i \neg \phi$
     A modal formula $\phi$ is positive if all variables occurs in the scope of an even number of negations. In the other hand, a formula is negative, if all variables occurs in the scope of an odd number of negations.
     A boxed atom is a modal formula of the form $\Box^n p$ for some $n \in \mathbb{N}$, where p is a propositional variable and $\Box^n p$ is defined as follows :
     $\Box^0 p = p$, $\Box^1 p = \Box p$, $\Box^{n+1} p = \Box(\Box^n p)$. \newline \newline
-    Furthermore, a Sahlqvist antecedent is built from $\bot, \top$, negative formulas and boxed atoms by applying $\Diamond$ and $\land$. A Sahlqvist implication is a modal formula of the form
+    Furthermore, a Sahlqvist antecedent is built from $\bot, \top$, negative formulas and boxed atoms by applying $\lozenge$ and $\land$. A Sahlqvist implication is a modal formula of the form
     $\phi \rightarrow \psi$, where $\phi$ is a Sahlqvist antecedent and $\psi$ a positive formula. \newline
     Now, a Sahlqvist formula is built from Sahlqvist implications by applying $\Box$ and $\lor$. \newline
     
     Examples for Sahlqvist formulas: 
     $$\Box \Box p \rightarrow \Box p$$
-    $$ \Diamond \neg p\rightarrow p$$
-    $$ \Diamond \Box \Box \Box \Box \Box p\rightarrow \Box \Diamond \Box \Diamond p$$
-    $$ \Box\Box\Box\Box(\Diamond \Box p\rightarrow p) \lor \Box \Box p \rightarrow \Box p $$
+    $$ \lozenge \neg p\rightarrow p$$
+    $$ \lozenge \Box \Box \Box \Box \Box p\rightarrow \Box \lozenge \Box \lozenge p$$
+    $$ \Box\Box\Box\Box(\lozenge \Box p\rightarrow p) \lor \Box \Box p \rightarrow \Box p $$
     
     Non Sahlqvist Formulas :
-    $$\Box \Diamond p \rightarrow \Diamond \Box p$$
-    $$\Diamond \Box p \rightarrow \Box \neg p$$ \newline
+    $$\Box \lozenge p \rightarrow \lozenge \Box p$$
+    $$\lozenge \Box p \rightarrow \Box \neg p$$ \newline
     We can extend this defintion for multimodal logics. We say a boxed atom can be $\Box^n_i p$. A Sahlqvist antecedent
-    can also be build by applying $\Diamond_i$. A Sahlqvist formula can be build by
+    can also be build by applying $\lozenge_i$. A Sahlqvist formula can be build by
     Sahlqvist implications by applying additionally $\Box_i$.
 \end{definition}
 
@@ -255,7 +255,7 @@ $$ L_1 \otimes L_2 = K_2 + L_{1(\Box \rightarrow \Box_1)} L_{2(\Box \rightarrow 
 
 The following logics may be important 
 
-$$D = K + \Box p \rightarrow \Diamond p$$
+$$D = K + \Box p \rightarrow \lozenge p$$
 $$T = K + \Box p \rightarrow p$$
 $$D4 = D + \Box p \rightarrow \Box \Box p$$
 $$S4 = T + \Box p \rightarrow \Box \Box p$$   
@@ -518,7 +518,9 @@ In topology, we defined horizontal and vertical topologies for products of topol
 After introducing the necessary notations, we can now formally state our main research question as follows:
 Does the following equivalence hold?
 $$\mathit{TNL} = T \times^+_n T$$
-We will answer this in the following chapters.
+The main idea is to introduce an infinite depth and branching tree called $T_{\omega,\omega,\omega[rn]}$ and show $Log(T_{\omega,\omega,\omega[rn]}) = \mathit{TNL}$.
+Then we use the idea in [2] to use the pseudo-infinite paths construction to build an n-frame called $N_\omega(T_{\omega[rn]})$ and construct a p-morphism-like map 
+from $N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]})$ to $T_{\omega,\omega,\omega[rn]}$. We will introduce the notations later.
 
 \clearpage
 
@@ -1268,7 +1270,7 @@ that $X \times X$ is homeomorphic to $\mathbb{Q} \times \mathbb{Q}$ w.r.t. all t
 \section{Products of neighbourhood frames, completeness results}
 We now turn our focus to neighbourhood semantics, and in particular, we revisit the main theorem from the paper "Modal Logic of Products of Neighbourhood Frames". This work established that, for any $L_1, L_2 \in \{D,D4,T,S4\}$ we have
 $L_1 \otimes L_2 = L_1 \times_n L_2$.
-Our goal is to reprove this theorem within our framework and then adapt its key ideas to prove our theorem.
+Our goal is to reprove this theorem within our framework and then adapt its key ideas to prove our theorem. 
 
 \subsection{Kripke tree frames, natural neighborhood version and their logic}
 We introduce some trees as Kripke frames, which are essential for the proof.
@@ -1666,7 +1668,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
             Because of the assumption, we must have $x \in V$ and $y \in W$. Hence, $(x,y) \in V(p)$. It follows $F_1 \times^+_n F_2,(x,y) \vDash p$. \newline
             Now we check the extra axiom.  Assume $F_1 \times^+_n F_2,(x,y) \Vdash \Box p$. By definition, there exists a $U \subseteq V(p)$, where $U \supseteq V \times W$ with $V \in \tau_1(x)$ and $W \in \tau_2(y)$. By assumption, we get $y \in W$. That means $U \in \tau_1'(x,y)$ 
             because $U \supseteq V \times \{y\}$. The same argument we can apply to $\tau_2'(x,y)$. Hence, $F_1 \times^+_n F_2,(x,y) \vDash \Box_1 p \land \Box_2 p$. The rest is clear. \newline
-            Now for the other direction, we apply Corollary 5.3.3 to get $T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$. By Proposition 3.2.6 we have
+            Now for the other direction, we apply Corollary 5.4.4 to get $T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$. By Proposition 3.0.5 we have
             $Log(T_{\omega,\omega,\omega[rn]}) = TNL$. Hence, 
             $$T \times^+_n T \subseteq T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$$.
             
