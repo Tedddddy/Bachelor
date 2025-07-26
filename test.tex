@@ -1511,7 +1511,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline \newline
     Let's consider the full product of the n-frames :
     $$N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) = (X_1 \times X_2, \tau'_1, \tau'_2, \tau)$$
-    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Def.3.2.1 
+    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Definition 3.0.3.
     \clearpage
     In order to define the bounded morphism, we have to fix a bijection first. Let $h : \mathbb{N}_1 \times \mathbb{N}_2 \rightarrow \mathbb{N}$ be a bijection. \newline
     Next, we define function $k :(\mathbb{N}_1 \cup \{0\}) \times (\mathbb{N}_2 \cup \{0\}) \rightarrow \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{0\}$ as follows :
@@ -1527,6 +1527,12 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     Let $(\alpha,\beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$. We define 
     $$g'(\alpha,\beta) = f(a_1,b_1)f(a_2,b_2)...$$
     At last, we define $g(\alpha,\beta)$ as $g'(\alpha,\beta)$ but removing all zeros.
+
+    \begin{example}
+        Assume $h$ is the Cantor pairing function $h(m,n) = \frac{(m+n)(m+n+1)}{2} + n$ and $(\alpha, \beta) = (12_{\mathbb{N}_1}021_{\mathbb{N}_1}0^\omega, 1_{\mathbb{N}_2}047_{\mathbb{N}_2} 0^\omega) \in X_1 \times X_2$. \newline \newline
+         Then $g'(\alpha, \beta) = f(1,1)f(2,0)f(0,4)f(2,7)f(1,0)f(0,0) ... = h(1,1)24 \, h(2,7)10^\omega = 424 \, 52 \, 10^\omega$.
+         Hence, $g(\alpha, \beta) = 424 \, 52 \, 1$. 
+    \end{example}
 
     \begin{lemma}
         Function $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism.
@@ -1550,12 +1556,13 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
         \] 
         \newline
         Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\alpha = y_1y_2...y_n \, 0^\omega$. But then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective.
-        For the next conditions we show it for $\tau$ and $\sigma$. For $\tau_1', \sigma_1$ and $\tau_2', \sigma_2$ we can argue similar as in Lemma 5.2.11 and 5.2.12.\newline
+        For the next conditions we show it for $\tau$ and $\sigma$. For $\tau_1', \sigma_1$ and $\tau_2', \sigma_2$ we can argue similar as in Lemma 5.2.9 and 5.2.10.\newline
         First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$.
-        The proof is similar as in Lemma 5.2.1. \newline
+         \newline
         $\supseteq$ : Pick $\zeta \in U_m(\alpha), \upsilon \in U_m(\beta)$. Show $g(\zeta, \upsilon) \in R(g(\alpha,\beta))$. By definition, we need to find a $\vec{c} \in \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{\epsilon\}$ s.t. $g(\alpha,\beta) \cdot \vec{c} = g(\zeta, \upsilon)$.
         By choosing $m> max\{st(\alpha),st(\beta)\}$, $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, we get $g(\alpha,\beta) = g(\zeta_m, \upsilon_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1 \cup \{\epsilon\}$ and $\exists \vec{e} \in \mathbb{N}_2 \cup \{\epsilon\}$ s.t.
-        $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$ and $f_F(\beta) \cdot \vec{e} = f_F(\upsilon)$. So, $\vec{d}$ must appear at a point after $\zeta \mid_m$. The same holds for $\vec{e}$ in $\upsilon$. But then we have $g(\zeta, \upsilon) = g(\alpha,\beta) * g(\vec{d}, \vec{e})$.  \newline Now there are four cases :
+        $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$ and $f_F(\beta) \cdot \vec{e} = f_F(\upsilon)$. So, $\vec{d}$ must appear at a point after $\zeta \mid_m$ and $\vec{e}$ in $\upsilon \mid_m$. But then we have $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e})$.  
+        \newline Now there are four cases :
         \[
             \begin{cases}
             g(\vec{d}, \vec{e}) \in \mathbb{N}_1, & \text{if } \vec{d} \in \mathbb{N}_1 \text{ \&\ } \vec{e} = \epsilon \\
@@ -1578,7 +1585,7 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
             \end{cases}
         \] 
         \newline
-        We have $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$. Furthermore, because of $g(\zeta \mid_m, \upsilon \mid_m) = g(\alpha,\beta)$ it holds that $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e}) = g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. \newline \newline 
+        We have $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$. Furthermore, because of $g(\zeta \mid_m, \upsilon \mid_m) = g(\alpha,\beta)$, it holds that $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e}) = g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. \newline \newline 
         Now to check the conditions, we assume $x \in X_1$ and $y \in X_2$ and $U \in \tau(x,y)$. We need to prove $g(U) \in \sigma(g(x,y))$ In other words, show $R(g(x,y)) \subseteq g(U)$. We pick a $m> max\{st(x),st(y)\}$ s.t. $U_m(x) \times U_m(y) \subseteq U$. But then we get 
         $$R(g(x,y)) = g(U_m(x) \times U_m(y)) \subseteq g(U)$$
         \newline
@@ -1592,16 +1599,18 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     \subsection{Completeness Results}
 
     \begin{lemma}
-    Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.2.1. Then 
-    $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$ \newline
-    The proof is by structural induction.
+    Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.0.3. Then 
+    $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$
+    \begin{proof}
+            The proof is by structural induction.
+    \end{proof}
 
     \end{lemma}
 
     \begin{corollary}
         Let $F_1 = (A^*,R_1) = F_{\xi_1, \eta_1}[A]$ and $F_2 = (B^*,R_2) = F_{\xi_2, \eta_2}[B]$. Then 
         $$Log(N_\omega(F_1) \times_n N_\omega(F_2))  \subseteq Log(F_1) \otimes Log(F_2)$$.
-        It follows from Proposition 2.1.8, Lemma 5.1.5, Corollary 5.1.7 and Lemma 5.1.12.
+        It follows from Corollary 2.2.5, Proposition 5.1.4 and Lemma 5.1.10.
     \end{corollary}
 
     \begin{corollary}
@@ -1609,9 +1618,9 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
         $$Log(N_\omega(F_1) \times_nN_\omega(F_2)) = Log(F_1) \otimes Log(F_2)$$
 
         \begin{proof}
-            The left to right inclusion follows from Corollary 5.3.1 \newline \newline
-            To prove right to left, we know due to Proposition 2.1.9 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
-            Due to Proposition 5.1.10 we get $Log(N_\omega(F_1)) \otimes Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2))$. 
+            The left to right inclusion follows from Corollary 5.4.3 \newline \newline
+            To prove right to left, due to Proposition 5.1.5 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
+            Due to Proposition 2.2.8 we get $Log(N_\omega(F_1)) \otimes Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2))$. 
             Because $N_\omega(F_1)\times_n N_\omega(F_2)$ is a frame in the n-product, we get
             $Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)\times_n N_\omega(F_2))$.
 
@@ -1622,11 +1631,11 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
     \begin{corollary}
         Let $N_\omega(T_{\omega[rn]})_1 = F_1$ and $N_\omega(T_{\omega[rn]})_2 = F_2$ as defined before. Then 
         $$T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$$
-        It follows from Corollary 5.1.7, Proposition 5.2.8, Lemma 5.2.9, Lemma 5.2.12
+        It follows from Corollary 2.2.5, Proposition 5.2.8, Lemma 5.3.2, Lemma 5.4.1.
 
         \begin{proof}
             First, it is the case that $Log(F_1) \times^+_n Log(F_2) \subseteq Log(F_1 \times^+_n F_2)$. We can argue as before.
-            By Lemma 5.2.12 it holds $Log(F_1) \times^+_n Log(F_2) \subseteq Log(N(T_{\omega,\omega,\omega[rn]})) = Log(T_{\omega,\omega,\omega[rn]})$.
+            By Lemma 5.3.2 and Lemma 5.4.1 it holds $Log(F_1 \times^+_n F_2) \subseteq Log(N(T_{\omega,\omega,\omega[rn]})) = Log(T_{\omega,\omega,\omega[rn]})$.
             But by Proposition 5.2.8 we have $Log(F_1) = Log(F_2) = T$. Hence, $Log(F_1) \times^+_n Log(F_2) = T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$.
         \end{proof}
 
@@ -1637,10 +1646,10 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
         $$L_1 \times_n L_2 = L_1 \otimes L_2$$
 
         \begin{proof}
-            Right to left is by Proposition 5.1.10. \newline
+            Right to left is by Proposition 2.2.8. \newline
             For left to right, assume $L_1 = Log(F_1)$ and $L_2 = Log(F_2)$ for some $F_1, F_2 \in \{F_{in}, F_{rn}, F_{it}, F_{rt}\}$.
-            It follows from Corollary 5.3.2 \newline
-            $L_1 \times_n L_2 = Log(N_\omega(F_1)) \times^+_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1) \times^+_n N_\omega(F_2)) = Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2) = L_1 \otimes L_2$
+            It follows from Lemma 5.2.9 : \newline
+            $L_1 \times_n L_2 = Log(N_\omega(F_1)) \times^+_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1) \times^+_n N_\omega(F_2)) \subseteq Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2) = L_1 \otimes L_2$
         \end{proof}
     \end{theorem}
 
