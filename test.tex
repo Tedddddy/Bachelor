@@ -55,12 +55,12 @@ This thesis primarily builds upon the works "Multimodal Logics of Products of To
 \section{Preliminaries}
 This chapter is primarily devoted to the semantics of Kripke, topological spaces, and neighborhood frames. 
 In addition, we define the notions of product frames and multimodal logic. We also present fundamental results in modal logic, 
-such as Filtration Theorem and Sahlqvist Theorem which play a role in our later chapters. The content is mainly based on the Modal Logic book [7].
+such as Filtration Theorem and Sahlqvist Theorem which play a role in our thesis. The content is mainly based on the Modal Logic book [7]. Remark: natural numbers $\mathbb{N}$ are without 0. 
 
 \begin{definition}
 Let prop be a set of variables. Then a formula $\phi$ is defined as follows:
 $$\phi ::= p \mid \bot \mid \neg \phi \mid \phi \lor \phi \mid \Box_i \phi$$
-where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expressed through $\bot$ and $\rightarrow$ and 
+where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expressed through $\neg$ and $\lor$ and 
 dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
 \end{definition}
 
@@ -111,7 +111,7 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
     Then for all formulas $\phi \in \Sigma$, and all nodes $w \in M$, we have $$M,w \Vdash \phi \mbox{ iff } M^f,[w] \Vdash \phi$$
     
     \begin{proof}
-        By induction on $\phi$. We will only show non-trivial and, for our purposes, necessary cases. \newline
+        By induction on $\phi$.\newline
         
         Case $\phi = p$: Left to right follows immediately from filtration defintion. Conversely, suppose
         $M^f, [w] \Vdash p$. This means $ [w] \in V^f(p)$. But this means V(p) can not be empty. Pick any $v\in V(p)$. Obviously, $w\equiv v$ and
@@ -120,8 +120,8 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
         Case $\phi = \neg \psi$: Suppose $\psi$ holds. Then we have : $M,w \Vdash \phi \mbox{ iff } M,w \nvDash \psi$. Applying 
         induction hypothesis, we get : $M^f, [w] \nvDash \psi$. But then, we have $M^f, [w] \Vdash \phi$. Right to left is the same. \newline
         
-        Case $\phi = \phi_1 \land \phi_2$: Suppose $\phi_1, \phi_2$ holds. Let $M,w \Vdash \phi$. That means $M,w \Vdash \phi_1$ and $M,w \Vdash \phi_2$. Applying
-        induction hypothesis, we get $M^f,[w] \Vdash \phi_1$ and $M^f,[w] \Vdash \phi_2$. But then, $M^f,[w] \Vdash \phi_1 \land \phi_2 = \phi$. Right to left is similar. \newline
+        Case $\phi = \phi_1 \lor \phi_2$: Suppose $\phi_1, \phi_2$ holds. Let $M,w \Vdash \phi$. That means $M,w \Vdash \phi_1$ or $M,w \Vdash \phi_2$. Applying
+        induction hypothesis, we get $M^f,[w] \Vdash \phi_1$ or $M^f,[w] \Vdash \phi_2$. But then, $M^f,[w] \Vdash \phi_1 \lor \phi_2 = \phi$. Right to left is similar. \newline
         
         Case $\phi = \Box_i\psi$ : Left to right. Suppose $\psi$ holds and  $M,w \Vdash \Box_i \psi$. 
         We need to show $M^f,[w] \Vdash \Box_i \psi$, this means $\forall [v] \in W_\Sigma : [w]R_i[v] \rightarrow M^f,[v] \Vdash \Box_i \psi$. Pick any $[v] \in W_\Sigma$ s.t 
@@ -275,12 +275,25 @@ Topological space opens a new area of expressiveness. It is well known that such
     3. the intersection of finite collection of open sets is open
     \newline
     \newline
-    The space is called Alexandroff, if we allow the intersection of infinite collection of open sets.
     A topological model is a structure M = (X,$\tau$,v) where (X,$\tau$) is a topological space
     and v is a valuation assigining subsets of X to propositional variables. 
         
 \end{definition}
 
+\begin{remark}
+
+    There is an equivalent defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
+    U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
+    the union of open sets is an open set.
+    
+\end{remark}
+
+\begin{definition}
+    Let $(X,\tau)$ be a topological space. Then the space is called Alexandroff, if arbitrary intersection of open sets are open.
+    An equivalent defintion is that every point has a smallest open set. That means for each $x \in X$ we have 
+    $U_x = \bigcap \{U \subseteq X \mid U \mbox{ is open  and } x \in U\} \in \tau$.
+\end{definition}
+\clearpage
 \begin{example}
 Let \( X = \{1, 2, 3\} \). We consider different topologies on \( X \):
 
@@ -291,16 +304,16 @@ Let \( X = \{1, 2, 3\} \). We consider different topologies on \( X \):
     
     \item If \( \tau = \{\emptyset, \{1\}, \{2\}, \{1,2\}, X\} \), then \( (X, \tau) \) is topological space.
 \end{itemize}
+
 \end{example}
+These spaces are Alexandroff. In the following we will see a non-Alexandroff space.
 
-\begin{remark}
+\begin{example}
+    Let $X = \mathbb{R}$ with the standard topology. That means the basis for open sets is $\mathcal{B} = \{(a,b) \subseteq \mathbb{R} \mid a < b\}$ with $a,b \in \mathbb{R}$.
+    Now, we consider a family of open sets $U_n = \{-\frac{1}{n}, \frac{1}{n}\}$ for $n \in \mathbb{N}$.
+    But, it is the case that $\bigcap_{n=1}^\infty U_n = \{0\}$ is not open.
 
-    There is an equivalent defintion for open sets. Let (X,$\tau$) be a topological space and U a set.
-    U is open iff $\forall x \in U$  $\exists V\subseteq U$ : V is open and $x \in V$. This is true because,
-    the union of open sets is an open set.
-    
-\end{remark}
-
+\end{example}
 
 \begin{definition}
 Let \( M = (X,\tau,v) \) be a topological model and \( x \in X \).  
@@ -544,7 +557,7 @@ In the end, we will use an unravelling technique to show completeness.
     We remember T = K + $\Box_i p \rightarrow p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
     By Sahlqvist, we have $\mathit{TNL}$ is complete w.r.t $\{F \mid F \Vdash \forall x \, R_i(x,x) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
     Now assume a formula $\phi$ is not derivable from $\mathit{TNL}$. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
-    Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By filtration Theorem, they preserve truth.
+    Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By Filtration theorem, they preserve truth.
     It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have an edge to itself in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for $R^s$ because the rest is similar.
     Pick $w' \in [w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, we have $w'Rw'$. By the defintion of smallest filtration, we have that $[w']R^s[w']$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
     Pick [w],[v] s.t $[w]R^s_1[v]$. By defintion of smallest filtration there are points $w' \in [w]$ and $v' \in [v]$ s.t $w'R_1v'$. Furthermore, it holds $R_1 \subseteq R$, so $w'Rv'$.
@@ -557,7 +570,7 @@ In the end, we will use an unravelling technique to show completeness.
 \begin{definition}
     Let $T_{\omega [rn]}$ (r = reflexive, n = non-transitiv) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
     Formally the tree can be defined as : $T_{\omega [rn]} = (W, R)$ where $W = \mathbb{N}^*$ and sRt iff $\exists u \in \mathbb{N} \cup \{\epsilon\} : s \cdot u = t$ ("$\cdot$" is the concatenation operator) \newline \newline
-    The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching and infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
+    The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching, infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
     $\mathbb{N}_{1}^*$ is the set of finite number combinations which has subscript $"1"$ to denote these numbers relate to $R_1$.  \newline 
     (examples : $2_{1}, 4231123_{1}$, $32_{1} \epsilon 45_{1} \epsilon 9_{1} = 32459_{1}$). The similar holds for $\mathbb{N}_2^*$.\newline \newline
     Now let $T_{\omega,\omega,\omega [rn]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^*$, 
@@ -884,7 +897,7 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
         To show $f$ is continuous, it suffices to show that for each $t \in T_2$, the $f$-inverse image of $B_t$ is open. Let $x \in f^{-1}(B_t)$. Then $tRf(x)$. As argued before, we can find an open interval in $X$ s.t.
         $f (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}) = B_{f(x)}$.  By $tRf(x)$, we get $B_{f(x)} \subseteq B_t$. Hence, we found an open interval
         $I = (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$, s.t. $I = f^{-1}(B_{f(x)}) \subseteq f^{-1}(B_t)$. This holds because we can pick $y \in I$. By applying $f$, we get $f(y) \in B_{f(x)} \subseteq B_t$. But then $y \in f^{-1}(B_t)$.
-        By that fact, we can follow with Remark 2.1.3, that $f^{-1}(B_t)$ is open and hence $f$ is continuous.
+        By that fact, we can follow with Remark 2.1.2, that $f^{-1}(B_t)$ is open and hence $f$ is continuous.
 
     \end{proof}
 
