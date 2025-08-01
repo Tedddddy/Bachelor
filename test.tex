@@ -28,12 +28,22 @@
 \begin{document}
 \section{Introduction}
 Modal logic extends classical propositional logic by introducing modal operators, most notably $\Box$ ("necessarily") and $\lozenge$ ("possibly"). In the standard Kripke semantics, 
-these operators are interpreted over a set of possible worlds connected by an accessibility relation. An idea to generalize Kripke semantics was topology.
-The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [3]. It is well known, that $S4$ is fully captured. Despite its rich expressiveness,
-it can not fully capture Kripke semantics. That is why Neighbourhood semantics (see [11] for an introduction) as a generalization of Kripke semantics for modal logic was introduced independently by Dana Scott [9] and Richard Montague [10].
+these operators are interpreted over a set of possible worlds connected by an accessibility relation. 
+\begin{example}
+    Let $\phi = \Box p$ and $M = (W,R,V)$ with $W = \{w_1,w_2,w_3,w_4,w_5\}$, $R = \{(w_1,w_2), (w_2,w_3), (w_2,w_4), (w_2,w_5)\}$ and $V(p) = \{w_3,w_4,w_5\}$.
+\end{example}
+However, the term 'modal logic' is often used more broadly for a family of related systems. This include for example
+temporal or epistemic logic. Due to its relational nature, modal logic is a powerful tool for analyzing structured systems, where the relationships between states or agents are essential. 
+It has wide-ranging applications—for instance, in formal verification. For example in model checking, temporal logic is used to describe the behavior of systems over time. In multi-agent systems, epistemic logic plays a key role in reasoning about knowledge and beliefs.
+\subsection{Topological semantics} An idea to generalize Kripke semantics was topology. 
+The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [3]. 
+It is well known, that the logic for any topological space is $S4$ where $S4$ is the logic with the transitivity ($\Box \Box p \rightarrow \Box p$) and reflexivity axiom ($\Box p \rightarrow p$). This is true, due to the topological semantics. We will discuss it later. Despite its rich expressiveness,
+it can not fully capture Kripke semantics. 
+\subsection{Neighborhood frames}That is why Neighbourhood semantics (see [11] for an introduction) as a generalization of Kripke semantics for modal logic was introduced independently by Dana Scott [9] and Richard Montague [10].
 Neighborhood semantics is more general than Kripke semantics and in the case of normal reflexive and transitive logics coincides with topological semantics.
 The original motivation for introducing these general models was to provide a semantics for non-normal modal logics. 
-Beyond their theoretical motivation, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. \newline
+Beyond their theoretical motivation, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. 
+\subsection{Content}
 Oftentimes, it is necessary to combine frames for different modal logics into a complex
 frame. The natural way of doing that is a product construction. For Kripke frames,
 the resulting product is the Cartesian product of the two frames with two accessibility
