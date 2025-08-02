@@ -28,18 +28,112 @@
 \begin{document}
 \section{Introduction}
 Modal logic extends classical propositional logic by introducing modal operators, most notably $\Box$ ("necessarily") and $\lozenge$ ("possibly"). In the standard Kripke semantics, 
-these operators are interpreted over a set of possible worlds connected by an accessibility relation. 
+these operators are interpreted over a set of possible worlds connected by an accessibility relation. In the following, we give an example for $\Box$.
 \begin{example}
-    Let $\phi = \Box p$ and $M = (W,R,V)$ with $W = \{w_1,w_2,w_3,w_4,w_5\}$, $R = \{(w_1,w_2), (w_2,w_3), (w_2,w_4), (w_2,w_5)\}$ and $V(p) = \{w_3,w_4,w_5\}$.
+    Let $\phi = \Box p$ and $M = (W,R,V)$ with $W = \{w_1,w_2,w_3,w_4,w_5\}$, $R = \{(w_1,w_2), (w_2,w_3), (w_2,w_4), (w_2,w_5)\}$ and $V(p) = \{w_3,w_4,w_5\}$. (See figure 1.)
+        \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \node [label=above:{$\{\neg p\}$}](A) at (0,0) [circle, draw, minimum height=17pt, inner sep=0pt] {$w_1$};
+
+            \node [label=above:{$\{\neg p\}$}](B) at (2,0) [circle, draw, minimum size=17pt, inner sep=0pt] {$w_2$};
+            \node [label=above:{$\{ p\}$}](C) at (4,2) [circle, draw, minimum size=17pt, inner sep=1pt] {$w_3$};
+            \node [label=above:{$\{ p\}$}](D) at (4,0)  [circle, draw, minimum size=17pt, inner sep=1pt] {$w_4$};
+
+            \node [label=above:{$\{ p\}$}](E) at (4,-2) [circle, draw, minimum size=17pt, inner sep=1pt] {$w_5$};
+
+            \draw [->] (0.3,0) -- (1.7,0);
+            \draw [->][blue] (2.3,0) -- (3.7,0);
+            \draw [->][blue] (2.3,0) -- (3.7,1.8);
+            \draw [->][blue] (2.3,0) -- (3.7,-1.8);
+
+        \end{tikzpicture}
+        \caption{Intuitively, $\Box p$ is interpreted as "In all accessible worlds, p is true".
+        Here we can see $\Box p$ is true at $w_2$, because all accessible worlds from $w_2$ (in blue lines), make $p$ true.}
+        \end{figure} 
 \end{example}
 However, the term 'modal logic' is often used more broadly for a family of related systems. This include for example
 temporal or epistemic logic. Due to its relational nature, modal logic is a powerful tool for analyzing structured systems, where the relationships between states or agents are essential. 
 It has wide-ranging applications—for instance, in formal verification. For example in model checking, temporal logic is used to describe the behavior of systems over time. In multi-agent systems, epistemic logic plays a key role in reasoning about knowledge and beliefs.
 \subsection{Topological semantics} An idea to generalize Kripke semantics was topology. 
-The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [3]. 
-It is well known, that the logic for any topological space is $S4$ where $S4$ is the logic with the transitivity ($\Box \Box p \rightarrow \Box p$) and reflexivity axiom ($\Box p \rightarrow p$). This is true, due to the topological semantics. We will discuss it later. Despite its rich expressiveness,
-it can not fully capture Kripke semantics. 
-\subsection{Neighborhood frames}That is why Neighbourhood semantics (see [11] for an introduction) as a generalization of Kripke semantics for modal logic was introduced independently by Dana Scott [9] and Richard Montague [10].
+The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [3]. To assign meaning to modal formulas, we use topological space, which is a pair consisting of a domain 
+$X$ and a collection of open sets, where each set describes which points in $X$ are considered "nearby" to each other. A topological model is a topological space with a valuation $V$, where we assign
+subsets of the domain to the variables. $\Box$ and $\lozenge$ are interpreted differently in topological context; they behave more like the interior and closure operators like in topology [16]. 
+
+\begin{example}
+    Let $ W = \{1,2,3\}, \tau = \{\emptyset, \{1\}, \{2\}, \{1,2\}, W\}$ (where $\tau$ is the collection of open sets) and $V(p) = W$. Furthermore, let $\phi = \Box p$.
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[scale=1]
+            \filldraw[black] (0,0) circle (2pt);
+            \node at (0,0.3) {1};
+            \filldraw[black] (-1.7,-1.6) circle (2pt);
+            \node at (-1.7,-1.3) {2};
+            \filldraw[black] (1,-1.6) circle (2pt);
+            \node at (1,-1.2) {3};
+            
+
+            \draw (0,0) circle (0.5cm);
+            \draw (-1.7,-1.6) circle (0.5cm);
+            \draw (-0.1,-1.3) circle (2.3cm);
+            \draw [blue](-0.7, -0.7) ellipse [x radius=0.7cm, y radius=2cm, rotate=-45];
+    
+  
+      
+
+        \end{tikzpicture}
+        \caption{Each ellipse represents an open set. Intuitively, $\Box p$ is satisfied at a point w, if we can find an open set $U$ s.t. 
+        $w \in U$ and $U \subseteq V(p)$. This is true for 1 and 2 because we can find $U = \{1,2\} \subseteq V(p)$ (where $V(p)$ is marked as the blue).}
+    \end{figure}
+\end{example}
+
+It is well known that the logic for any topological space is $S4$, where $S4$ is the modal logic with the transitivity ($\Box p \rightarrow \Box\Box p$) and reflexivity axiom ($\Box p \rightarrow p$). 
+This holds because, under topological semantics, the interpretation of $\Box$ naturally satisfies both reflexivity and transitivity. So, if we assume a topological space satisfies $\Box p$ at point $w$ with some valuation $V(p)$,
+then we can find an open set  $U$ around $w$ where $w\in U$. Therefore, $w \in V(p)$ which shows reflexivity. On the other hand, for any point in $U$, we can again find an open set ($U$ itself) witnessing that $\Box p$ holds there. Hence, transitivity is also satisfied. \newline
+Topological semantics provides a rich, and intuitive semantics for $S4$ and related logics. It has a variety of applications e.g. spatial reasioning or program verification. Despite its rich expressiveness, it can not fully capture Kripke semantics. 
+\subsection{Neighborhood frames}That is why Neighbourhood semantics (see [11] for an introduction) as a generalization of Kripke semantics for modal logic was introduced (independently) by Dana Scott [9] and Richard Montague [10].
+Neighborhood frames are similar to topological spaces. Instead of collection of open sets, we have a neighborhood function, which assigns to each point a set of subsets of the domain. These subsets are also called neighbourhoods.
+The Neighborhood semantics only differs slightly in $\Box$ and $\lozenge$. The following example demonstrates it.
+
+\begin{example}
+    Let $W = \{1,2,3\}$, 
+    \[
+            \tau(x) = 
+            \begin{cases}
+                1 \rightarrow \{\{1\}, \{3\}, W\} \\
+                2 \rightarrow \{\{2\}, \{1,2\}, W\} \\
+                3 \rightarrow \{\{3\}, \{1,3\}\}
+            \end{cases}
+    \] 
+    and $V(p) = \{1,2\}$. Assume $\phi = \Box p$.
+    
+    \begin{figure}[h]
+    \centering
+        \begin{tikzpicture}[scale=1]
+        \filldraw[black] (0,0) circle (2pt);
+        \node at (0,0.3) {1};
+        \filldraw[black] (-1.7,-1.6) circle (2pt);
+        \node at (-1.7,-1.3) {2};
+        \filldraw[black] (1,-1.6) circle (2pt);
+        \node at (1,-1.2) {3};
+        
+
+        \draw [mydarkgreen](0,0) circle (0.5cm);
+        \draw [blue](-1.7,-1.6) circle (0.5cm);
+        \draw [mydarkgreen](-0.1,-1.3) circle (2.3cm);
+        \draw [blue](-0.1,-1.3) circle (2.4cm);
+        \draw [red](1,-1.5) circle (0.5cm);
+        \draw [mydarkgreen](1,-1.5) circle (0.6cm);
+
+        \draw [blue](-0.7, -0.7) ellipse [x radius=0.7cm, y radius=2cm, rotate=-45];
+        \draw [red](0.6, -0.8) ellipse [x radius=0.7cm, y radius=2cm, rotate=30];
+        \end{tikzpicture}
+    \caption{The green ellipses represents neighbourhoods from 1, the blue ellipses those of 2 and red ellipses those of 3. $\Box p$ is satisfied at a point $w$,
+    if there exists a neighborhood U $\in \tau(w)$ s.t. $U \subseteq V(p)$. This is only true for 2.
+    \newline Remark : For truth, we don't require that $w$ has to be in $U$. Therefore, it is not necessary that all neighborhood frames validate reflexivity and hence S4.}
+    \end{figure}
+\end{example}  
+
 Neighborhood semantics is more general than Kripke semantics and in the case of normal reflexive and transitive logics coincides with topological semantics.
 The original motivation for introducing these general models was to provide a semantics for non-normal modal logics. 
 Beyond their theoretical motivation, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. 
@@ -50,7 +144,7 @@ the resulting product is the Cartesian product of the two frames with two access
 relations. For topological semantics, the product of topogical spaces as bi-topological
 spaces with so-called horizontal and vertical topologies have been considered. In a similar
 fashion, the product of neighborhood frames was introduced by Sano in [8]. \newline
-For our main question, we consider the neighborhood product additionally with the standard topology. We will answer whether 
+For our main question, we consider the neighborhood product additionally with the standard neighborhood product. We will answer whether 
 the logic with three copies of $T$ with the interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$ can be fully characterized as the logic a product of neighbourhood frames with standard topology, where each frame validates $T$.
 The question was originally motivated by two papers where the authors showed in topological semantics a similar version of the question but for $S4$. In the other, it was proven that for any $L_1, L_2$ $\in \{D,D4,T,S4\}$, that their logic together 
 can be characterized as the logic of a product of neighbourhood frames but without standard topology. In this work, we start with a brief recap of necessary notations and theorems in Kripke semantics and then introduce toplogical spaces and neighborhood frames. 
@@ -1779,6 +1873,9 @@ North-Holland Publishing Co., Amsterdam–New York–Oxford; PWN—Polish Scient
 
 \item K. Fine and G. Schurz. Transfer theorems for multimodal logics.\\
 In J. Copeland, editor, \textit{Logic and Reality: Proceedings of the Arthur Prior Memorial Conference}, pages 169–213. Oxford University Press, 1996.
+
+\item G. Bezhanishvili and J. van Benthem. Modal Logics of Space.\\
+In ILLC Prepublication Series PP‑2006‑08, Universiteit van Amsterdam, 2006.
 
 \end{enumerate}
 

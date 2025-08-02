@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.14)  1 AUG 2025 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.6.14)  2 AUG 2025 23:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -659,161 +659,141 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 30.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
 [1
 
 {C:/Users/Maik/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 90--101
 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 90--101
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 111--117
-
- []
-
-
-
-[3
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 126--129
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 130--132
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 133--135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--141
-
- []
-
-
+[3]
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 190--194
+Underfull \hbox (badness 10000) in paragraph at lines 184--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--196
+Underfull \hbox (badness 10000) in paragraph at lines 184--195
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 198--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--211
 
  []
 
 
 
-[5]
+[5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 218--219
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 220--223
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--226
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--229
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--235
+
+ []
+
+
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 276--288
+Underfull \hbox (badness 10000) in paragraph at lines 284--288
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--288
+Underfull \hbox (badness 10000) in paragraph at lines 288--290
 
  []
 
 
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 344--346
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 370--382
 
  []
 
-LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <12> not available
-(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 348.
 
-LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 348.
-
-
-
-[8
-
-]
-Overfull \hbox (1.54099pt too wide) detected at line 412
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 429--434
+Underfull \hbox (badness 10000) in paragraph at lines 370--382
 
  []
 
 
 
 [9]
-Underfull \hbox (badness 10000) in paragraph at lines 481--486
+Underfull \hbox (badness 10000) in paragraph at lines 438--440
+
+ []
+
+LaTeX Font Info:    Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 442.
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 442.
+
+
+
+[10
+
+]
+Overfull \hbox (1.54099pt too wide) detected at line 506
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 523--528
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 489--494
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 575--580
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 583--588
 
  []
 
 
 
-[10]
-Overfull \hbox (21.65256pt too wide) in paragraph at lines 532--536
+[12]
+Overfull \hbox (21.65256pt too wide) in paragraph at lines 626--630
 [][]\OT1/cmr/bx/n/12 Definition 2.2.9. []\OT1/cmr/m/it/12 Let $\OMS/cmsy/m/n/12 L[]$ \OT1/cmr/m/it/12 be a modal lan-guage with three modal op-er-a-tors $\U/msa/m/n/12 ^^C\OML/cmm/m/it/12 ; \U/msa/m/n/12 ^^C[][]^^C[]$\OT1/cmr/m/it/12 .
- []
-
-
-
-[11
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 548.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 548.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--573
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 563--573
-
- []
-
-
-
-[12
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 582--586
-
  []
 
 
@@ -822,38 +802,70 @@ Underfull \hbox (badness 10000) in paragraph at lines 582--586
 
 ]
 
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 642.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 642.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--667
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 657--667
+
+ []
+
+
+
 [14
 
 ]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 739.
- (D:\Miktex\tex/latex/base\omscmr.fd
-File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 739.
+Underfull \hbox (badness 10000) in paragraph at lines 676--680
+
+ []
+
 
 
 [15
 
 ]
+
+[16
+
+]
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 833.
+ (D:\Miktex\tex/latex/base\omscmr.fd
+File: omscmr.fd 2024/11/19 v2.5n Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 833.
+
+
+[17
+
+]
 Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 879--882
+Underfull \hbox (badness 10000) in paragraph at lines 973--976
 
  []
 
 
 
-[16
+[18
 
 ]
-Overfull \hbox (12.3967pt too wide) detected at line 964
+Overfull \hbox (12.3967pt too wide) detected at line 1058
 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x; y\OT1/cmr/m/n/12 ) = []
  []
 
 
 
-[17]
+[19]
 Missing character: There is no ( in font nullfont!
 Missing character: There is no - in font nullfont!
 Missing character: There is no 2 in font nullfont!
@@ -1211,142 +1223,142 @@ Missing character: There is no m in font nullfont!
 Missing character: There is no ) in font nullfont!
 Missing character: There is no ; in font nullfont!
 
-Underfull \hbox (badness 10000) in paragraph at lines 964--1254
+Underfull \hbox (badness 10000) in paragraph at lines 1058--1348
 
  []
 
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1257.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1351.
 
 
-[18]
+[20]
 
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 1316--1319
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1326--1327
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 1410--1413
 
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 1420--1421
 
-[20
+ []
+
+
+
+[22
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 1335--1336
+Underfull \hbox (badness 10000) in paragraph at lines 1429--1430
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1367--1370
+Underfull \hbox (badness 10000) in paragraph at lines 1461--1464
 
  []
 
 
-Overfull \hbox (40.04713pt too wide) in paragraph at lines 1367--1370
+Overfull \hbox (40.04713pt too wide) in paragraph at lines 1461--1464
 \OT1/cmr/m/it/12 Example : Say $\OT1/cmr/m/n/12 12034002340[] \OMS/cmsy/m/n/12 2 \OML/cmm/m/it/12 X$ \OT1/cmr/m/it/12 ($\OT1/cmr/m/n/12 0[]$ \OT1/cmr/m/it/12 de-notes in-finitely many ze-ros). Then $\OML/cmm/m/it/12 f[]\OT1/cmr/m/n/12 (12034002340[]) =
  []
 
 
 
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 1406--1412
-
- []
-
-
-
-[22]
-
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 1471--1476
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1483--1495
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1483--1495
+Underfull \hbox (badness 10000) in paragraph at lines 1500--1506
 
  []
 
 
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 1518--1524
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1535--1539
-
- []
-
-
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 1558--1561
+Underfull \hbox (badness 10000) in paragraph at lines 1565--1570
 
  []
 
 
-Overfull \hbox (28.14413pt too wide) in paragraph at lines 1558--1561
-\OT1/cmr/m/it/12 Then $\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ; ^^L\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 ::: \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1)24 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7)10[] = 424 52 10[]$\OT1/cmr/m/it/12 .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1599--1604
+Underfull \hbox (badness 10000) in paragraph at lines 1577--1589
 
  []
 
 
-
-[26
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 1612--1616
+Underfull \hbox (badness 10000) in paragraph at lines 1577--1589
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1647--1652
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 1612--1618
 
  []
 
 
-Overfull \hbox (12.69038pt too wide) in paragraph at lines 1647--1652
-\OT1/cmr/m/n/12 To prove right to left, due to Propo-si-tion 5.1.5 and Propo-si-tion 5.2.8 we have $\OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )) =
+Underfull \hbox (badness 10000) in paragraph at lines 1629--1633
+
  []
 
 
 
 [27]
-Overfull \hbox (23.37872pt too wide) in paragraph at lines 1675--1679
-\OT1/cmr/m/n/12 For left to right, as-sume $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ for some $\OML/cmm/m/it/12 F[]; F[] \OMS/cmsy/m/n/12 2 f\OML/cmm/m/it/12 F[]; F[]; F[]; F[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1655
+
+ []
+
+
+Overfull \hbox (28.14413pt too wide) in paragraph at lines 1652--1655
+\OT1/cmr/m/it/12 Then $\OML/cmm/m/it/12 g[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 ; ^^L\OT1/cmr/m/n/12 ) = \OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 4)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0)\OML/cmm/m/it/12 ::: \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1)24 \OML/cmm/m/it/12 h\OT1/cmr/m/n/12 (2\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 7)10[] = 424 52 10[]$\OT1/cmr/m/it/12 .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1693--1698
+
  []
 
 
 
-[28]
-Underfull \hbox (badness 10000) in paragraph at lines 1715--1729
+[28
 
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1706--1710
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1741--1746
+
+ []
+
+
+Overfull \hbox (12.69038pt too wide) in paragraph at lines 1741--1746
+\OT1/cmr/m/n/12 To prove right to left, due to Propo-si-tion 5.1.5 and Propo-si-tion 5.2.8 we have $\OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 N[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )) =
  []
 
 
 
 [29]
+Overfull \hbox (23.37872pt too wide) in paragraph at lines 1769--1773
+\OT1/cmr/m/n/12 For left to right, as-sume $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ and $\OML/cmm/m/it/12 L[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 Log\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 F[]\OT1/cmr/m/n/12 )$ for some $\OML/cmm/m/it/12 F[]; F[] \OMS/cmsy/m/n/12 2 f\OML/cmm/m/it/12 F[]; F[]; F[]; F[]\OMS/cmsy/m/n/12 g$\OT1/cmr/m/n/12 .
+ []
 
-[30
+
+
+[30]
+Underfull \hbox (badness 10000) in paragraph at lines 1809--1823
+
+ []
+
+
+
+[31]
+
+[32
 
 ]
 
-[31] (test.aux)
+[33] (test.aux)
  ***********
 LaTeX2e <2025-06-01>
 L3 programming layer <2020/03/25>
@@ -1357,17 +1369,17 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 26190 strings out of 468224
- 494142 string characters out of 5449790
- 1019661 words of memory out of 5000000
- 54171 multiletter control sequences out of 15000+600000
+ 26206 strings out of 468224
+ 494392 string characters out of 5449790
+ 1018661 words of memory out of 5000000
+ 54179 multiletter control sequences out of 15000+600000
  642872 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  110i,13n,107p,10943b,981s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\Maik\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk><D:/Miktex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmmi6.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmmi8.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmr12.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmr6.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmsy6.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Miktex/fonts/type1/public/amsfonts/cm/cmti12.pfb><D:/Miktex/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/Miktex/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/Miktex/fonts/type1/public/hoekwater/stmary10.pfb>
-Output written on test.pdf (31 pages, 383333 bytes).
+Output written on test.pdf (33 pages, 396519 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 148 named destinations out of 1000 (max. 500000)
+ 442 PDF objects out of 1000 (max. 8388607)
+ 156 named destinations out of 1000 (max. 500000)
  133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

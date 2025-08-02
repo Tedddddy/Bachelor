@@ -290,12 +290,6 @@ INPUT D:\Miktex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT D:\Miktex\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmti12.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmbx12.tfm
-INPUT D:\Miktex\fonts\tfm\public\cm\cmssbx10.tfm
-INPUT C:\Users\Maik\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT D:\Miktex\fonts\tfm\jknappen\ec\tcrm1200.tfm
-INPUT D:\Miktex\fonts\tfm\public\cm\cmti8.tfm
-INPUT D:\Miktex\fonts\tfm\public\cm\cmti7.tfm
-INPUT D:\Miktex\fonts\tfm\public\cm\cmssi12.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmr10.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmmi10.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmsy10.tfm
@@ -303,6 +297,12 @@ INPUT D:\Miktex\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Users\Maik\AppData\Local\MiKTeX\fonts\tfm\public\stmaryrd\stmary10.tfm
 INPUT D:\Miktex\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT D:\Miktex\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT D:\Miktex\fonts\tfm\public\cm\cmssbx10.tfm
+INPUT C:\Users\Maik\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT D:\Miktex\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT D:\Miktex\fonts\tfm\public\cm\cmti8.tfm
+INPUT D:\Miktex\fonts\tfm\public\cm\cmti7.tfm
+INPUT D:\Miktex\fonts\tfm\public\cm\cmssi12.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmr17.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmmi12.tfm
 INPUT D:\Miktex\fonts\tfm\public\cm\cmsy10.tfm
