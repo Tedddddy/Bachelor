@@ -147,7 +147,7 @@ fashion, the product of neighborhood frames was introduced by Sano in [8]. \newl
 For our main question, we consider the neighborhood product additionally with the standard neighborhood product. We will answer whether 
 the logic with three copies of $T$ with the interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$ can be fully characterized as the logic a product of neighbourhood frames with standard topology, where each frame validates $T$.
 The question was originally motivated by two papers where the authors showed in topological semantics a similar version of the question but for $S4$. In the other, it was proven that for any $L_1, L_2$ $\in \{D,D4,T,S4\}$, that their logic together 
-can be characterized as the logic of a product of neighbourhood frames but without standard topology. In this work, we start with a brief recap of necessary notations and theorems in Kripke semantics and then introduce toplogical spaces and neighborhood frames. 
+can be characterized as the logic of a product of neighbourhood frames but without standard neighborhood product. In this work, we start with a brief recap of necessary notation and theorems in Kripke semantics and then introduce toplogical spaces and neighborhood frames. 
 We will reprove the theorems from the authors in a more detailed way and then use similar techniques to answer our main question.
 Finally, we conclude with a discussion of potential directions for future research related to the topic. 
 This thesis primarily builds upon the works "Multimodal Logics of Products of Topologies" [1] and "Modal Logic of Products of Neighborhood Frames" [2].
@@ -157,7 +157,7 @@ This thesis primarily builds upon the works "Multimodal Logics of Products of To
 
 
 \section{Preliminaries}
-This chapter is primarily devoted to the semantics of Kripke, topological spaces, and neighborhood frames. 
+This chapter is primarily devoted to the semantics of Kripke.
 In addition, we define the notions of product frames and multimodal logic. We also present fundamental results in modal logic, 
 such as Filtration Theorem and Sahlqvist Theorem which play a role in our thesis. The content is mainly based on the Modal Logic book [7]. Remark: natural numbers $\mathbb{N}$ are without 0. 
 
@@ -171,14 +171,78 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
 \begin{definition}
     Let $M = (W,R_1...,R_n,V)$ be a model and $w \in W$ a state in $M$. The notion of a formula being true at $w$ is inductively defined as follows :
     \begin{align*}
-        M, w &\Vdash p \mbox{ iff } w \in V(p) \\
-        M, w &\Vdash \bot  \mbox{ never } \\
-        M, w &\Vdash \neg \phi \mbox{ iff not } M, w \Vdash \phi \\ 
-        M, w &\Vdash \phi \lor \psi \mbox{ iff } M,w \Vdash \phi \lor M,w \Vdash \psi \\
-        M, w &\Vdash \Box_i \phi \mbox{ iff } \forall v \in W : wRv \rightarrow M, v \Vdash \phi
+        M, w &\Vdash p &&\text{ iff } w \in V(p) \\
+        M, w &\Vdash \bot  &&\text{ never } \\
+        M, w &\Vdash \neg \phi &&\text{ iff not } M, w \Vdash \phi \\ 
+        M, w &\Vdash \phi \lor \psi &&\text{ iff } M,w \Vdash \phi \lor M,w \Vdash \psi \\
+        M, w &\Vdash \Box_i \phi &&\text{ iff } \forall v \in W : wRv \rightarrow M, v \Vdash \phi
     \end{align*}
 
 \end{definition}
+
+\begin{definition}
+    Let $F = (W,R_1, R_2, ...)$ and $F' = (W', R'_1, R'_2, ...)$ be two frames. A bounded morphism from $F \mbox{ to } F'$ is a function
+    $f : W \rightarrow W'$ satisfying the following conitions: 
+    $$ \mbox{ If } (u,v) \in R_i  \mbox{ then }(f(u), f(v)) \in R'_i $$
+    $$ \mbox{ If } (f(w), v') \in R'_i \mbox{ then } \exists v \in W \mbox{ s.t } (w,v) \in R'_i \mbox{ and } f(v) = v'$$
+    We say $F'$ is a bounded morphic image of F, if there is a surjective bounded morphism from $F \mbox{ to } F'$.
+        
+\end{definition}
+
+\begin{proposition}
+    Let $\phi$ be a formula in $L_{\Box_1,...,\Box_n}$ , $F = (W, R_1,...,R_n)$ and $F' = (W', R'_1,...,R'_n)$ be two frames and $F \mbox{ to } F'$ a surjective bounded morphism. Then the following holds :
+    $$ \mbox{ If }F \Vdash \phi \mbox{ then } F' \Vdash \phi$$
+    \begin{proof}
+            This can be shown by structural induction on the length of the formula.
+    \end{proof}
+        
+\end{proposition}
+
+\begin{corollary}
+    If $F'$ is a bounded morphic image of $F$, then we have $Log(F) \subseteq Log(F')$
+    \begin{proof}
+        The proof is by structural induction.
+        
+    \end{proof}
+\end{corollary}
+
+In this work, we deal with products of frames and multimodal logics of product of frames. The study of products of Kripke frames 
+and their modal logics was first initiated by Segerberg [4] and Shehtman [5]. In the following, we will define neccessary notions for such logics.
+
+\begin{definition}
+    Let $F = (W, R_1)$ and $G = (W,R_2)$. Then we define the Kripke product on $W \times V$ as follows : 
+    $$(w,v)R_1'(w',v') \mbox{ iff } wR_1w' \mbox{ and } v = v'$$
+    $$(w,v)R_2  '(w',v') \mbox{ iff } w = w' \mbox{ and } vR_2v'$$
+    $R'_1$ is also called horizontal and $R'_2$ vertical relation.
+\end{definition}
+
+\begin{definition}
+A normal modal logic is a set of modal formulas containing all propositional tautologies,
+closed under Substitution ($\frac{\phi(p_i)}{\phi(\psi)}$), Modus Ponens 
+$(\frac{\phi, \phi \rightarrow \psi}{\psi})$, Generalization rules $(\frac{\phi}{\Box_i \phi})$
+and the following axioms 
+$$ \Box_i (p \rightarrow q) \rightarrow (\Box_i p \rightarrow \Box_i q)$$
+
+$K_n$ denotes the minimal normal modal logic with n modalities and $K = K_1$.
+Let L be a logic and let $\Gamma$ be a set of formulas. Then L+$\Gamma$ denotes 
+the minimal logic containing L and $\Gamma$
+\end{definition}
+
+
+\begin{definition}
+Let $L_1$ and $L_2$ be two modal logic with one modality $\Box$. Then the fusion of these 
+logics are defined as follows :
+$$ L_1 \otimes L_2 = K_2 + L_{1(\Box \rightarrow \Box_1)} L_{2(\Box \rightarrow \Box_2)} $$
+
+The following logics may be important 
+
+$$D = K + \Box p \rightarrow \lozenge p$$
+$$T = K + \Box p \rightarrow p$$
+$$D4 = D + \Box p \rightarrow \Box \Box p$$
+$$S4 = T + \Box p \rightarrow \Box \Box p$$   
+\end{definition}
+
+We now introduce important notation to prove the multimodal version of the Filtration Theorem.
 
 \begin{definition}
     A set $\Sigma$ is closed under subformulas, if for all formulas $\phi$ and $\phi'$ the following holds :
@@ -201,6 +265,7 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
     $W_\Sigma = \{[w]_\Sigma \mid w \in W\}$.    
 \end{definition}
 
+In the following, we define what is known as a "filtration." The definition is similar to the one found in the Modal Logic book, but we consider a multimodal version.
 \begin{definition}
     Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes induced by $\equiv$.
     A model $M^f_\Sigma = (W^f, R_1^f,...,R_n^f, V^f)$ is called filtration of M through $\Sigma$ if the following holds : \newline \newline
@@ -236,6 +301,8 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
     
     \end{proof}     
 \end{theorem}
+
+After showing that filtration preserves truth, we now define a special relation known as the "smallest filtration."
 
 \begin{definition}
     Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
@@ -277,8 +344,6 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
         
 \end{theorem}
     Now we define special kind of formulas called Sahlqvist formulas.
-    Sahlqvist formulas possess important properties, which are guaranteed by the Sahlqvist Theorem. It says that, when given a normal modal logic K and a set of Sahlqvist formulas, the resulting logic is complete w.r.t 
-    to the class of frames, which satisfies the corresponding first-order formula of the Sahlqvist formulas. This also holds for multimodal logic. We will not prove it here, but we will use it later in this work.
 
 \begin{definition}
     A modal formula $\phi$ is positive if all variables occurs in the scope of an even number of negations. In the other hand, a formula is negative, if all variables occurs in the scope of an odd number of negations.
@@ -300,72 +365,34 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
     We can extend this defintion for multimodal logics. We say a boxed atom can be $\Box^n_i p$.
 \end{definition}
 
-\begin{definition}
-    Let $F = (W,R_1, R_2, ...)$ and $F' = (W', R'_1, R'_2, ...)$ be two frames. A bounded morphism from $F \mbox{ to } F'$ is a function
-    $f : W \rightarrow W'$ satisfying the following conitions: 
-    $$ \mbox{ If } (u,v) \in R_i  \mbox{ then }(f(u), f(v)) \in R'_i $$
-    $$ \mbox{ If } (f(w), v') \in R'_i \mbox{ then } \exists v \in W \mbox{ s.t } (w,v) \in R'_i \mbox{ and } f(v) = v'$$
-    We say $F'$ is a bounded morphic image of F, if there is a surjective bounded morphism from $F \mbox{ to } F'$.
-        
-\end{definition}
+Sahlqvist formulas possess important properties, which are guaranteed by the Sahlqvist Theorem. It says that, 
+when given a normal modal logic K and a set of Sahlqvist formulas, the resulting logic is complete w.r.t 
+to the class of frames, which satisfies the corresponding first-order formula of the Sahlqvist formulas. This also holds for multimodal logic. We will not prove it here, but we will use it later in this work.
+The main idea is to use Sahlqvist to show that our logic is sound and complete w.r.t. a certain class of frames. Using the smallest filtration and Filtration Theorem,
+we can gurantee the finite model property while preservering the relevant frame properties.
 
-\begin{proposition}
-    Let $\phi$ be a formula in $L_{\Box_1,...,\Box_n}$ , $F = (W, R_1,...,R_n)$ and $F' = (W', R'_1,...,R'_n)$ be two frames and $F \mbox{ to } F'$ a surjective bounded morphism. Then the following holds :
-    $$ \mbox{ If }F \Vdash \phi \mbox{ then } F' \Vdash \phi$$
-    \begin{proof}
-            This can be shown by structural induction on the length of the formula.
-    \end{proof}
-        
-\end{proposition}
+\clearpage
 
-\begin{corollary}
-    If $F'$ is a bounded morphic image of $F$, then we have $Log(F) \subseteq Log(F')$
-    \begin{proof}
-        The proof is by structural induction.
-        
-    \end{proof}
-    
-\end{corollary}
+\section{Product of Topological spaces and Neighborhood frames}
+Topology is a fundamental branch in mathmatics that explores the properties of space that remain invariant under continuous transformations. Unlike geometry,
+where we rely on precise measurements, topology focuses on the more flexible notions of closeness, boundary and countinuity without
+relying on specific distances. 
+\newline
+One particularly rich and fruitful area of study is the interaction between modal logic and topology. 
+Topological spaces provide an intuitive semantic framework for modal logic by interpreting modal operators in terms of spatial notions like interior, closure, and neighbourhoods. 
+It is also well known, that the modal logic of any topological space is $S4$.
+\newline
+Neighborhood frames generalizes the idea of topology by loosen the conditions that define open sets in topological space.
+Instead of relying on a global systems of open sets, there exists a neighborhood function, which assigns to each point a collection of sets — its neighbourhoods.
+This provides us a more flexible framework to work with.
+\newline
+Oftentimes, it is in theoretical and practical interest to combine topological spaces or neighborhood frames.  
+These product constructions become particularly relevant in the context of multimodal logic, where we aim to reason with multiple modal operators simultaneously.
+Each modality can be interpreted in its own topological or neighbourhood dimension, allowing us to model systems with distinct but interacting notions of necessity — such as time and space or knowledge and belief.
 
-In this work, we deal with products of frames and multimodal logics of product of frames. The study of products of Kripke frames 
-and their modal logics was first initiated by Segerberg [4] and Shehtman [5]. In the following, we will define neccessary notions for such logics.
+In this chapter, we introduce the notation for product of topological spaces and the semantics for multimodal logic in topology. We will also do it for neighborhood frames.
 
-\begin{definition}
-    Let $F = (W, R_1)$ and $G = (W,R_2)$. Then we define the Kripke product on $W \times V$ as follows : 
-    $$(w,v)R_1'(w',v') \mbox{ iff } wR_1w' \mbox{ and } v = v'$$
-    $$(w,v)R_2  '(w',v') \mbox{ iff } w = w' \mbox{ and } vR_2v'$$
-    $R'_1$ is also called horizontal and $R'_2$ vertical relation.
-\end{definition}
-
-\begin{definition}
-A normal modal logic is a set of modal formulas containing all propositional tautologies,
-closed under Substitution ($\frac{\phi(p_i)}{\phi(\psi)}$), Modus Ponens 
-$(\frac{\phi, \phi \rightarrow \psi}{\psi})$, Generalization rules $(\frac{\phi}{\Box_i \phi})$
-and the following axioms 
-$$ \Box_i (p \rightarrow q) \rightarrow (\Box_i p \rightarrow \Box_i q)$$
-
-$K_n$ denotes the minimal normal modal logic with n modalities and $K = K_1$.
-Let L be a logic and let $\Gamma$ be a set of formulas. Then L+$\Gamma$ denotes 
-the minimal logic containing L and $\Gamma$
-\end{definition}
-
-
-\begin{definition}
-Let $L_1$ and $L_2$ be two modal logic with one modality $\Box$. Then the fusion of these 
-logics are defined as follows :
-$$ L_1 \otimes L_2 = K_2 + L_{1(\Box \rightarrow \Box_1)} L_{2(\Box \rightarrow \Box_2)} $$
-
-The following logics may be important 
-
-$$D = K + \Box p \rightarrow \lozenge p$$
-$$T = K + \Box p \rightarrow p$$
-$$D4 = D + \Box p \rightarrow \Box \Box p$$
-$$S4 = T + \Box p \rightarrow \Box \Box p$$   
-\end{definition}
-
-\subsection{Topological semantics, product of topological spaces}
-Topological space opens a new area of expressiveness. It is well known that such logic is $S4$. It has some crucial applications for example in spatial reasoning or epistemic logic.
-
+\subsection{Topological semantics and product of topological spaces}
 \begin{definition}
     A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
     \newline
@@ -395,7 +422,7 @@ Topological space opens a new area of expressiveness. It is well known that such
     An equivalent defintion is that every point has a smallest open set. That means for each $x \in X$ we have 
     $U_x = \bigcap \{U \subseteq X \mid U \mbox{ is open  and } x \in U\} \in \tau$.
 \end{definition}
-\clearpage
+
 \begin{example}
 Let \( X = \{1, 2, 3\} \). We consider different topologies on \( X \):
 
@@ -630,12 +657,12 @@ In topology, we defined horizontal and vertical topologies for products of topol
 \end{definition}
 
 
-After introducing the necessary notations, we can now formally state our main research question as follows:
+After introducing the necessary notation, we can now formally state our main research question as follows:
 Does the following equivalence hold?
 $$\mathit{TNL} = T \times^+_n T$$
 The main idea is to introduce an infinite depth and branching tree called $T_{\omega,\omega,\omega[rn]}$ and show $Log(T_{\omega,\omega,\omega[rn]}) = \mathit{TNL}$.
 Then we use the idea in [2] to use the pseudo-infinite paths construction to build an n-frame called $N_\omega(T_{\omega[rn]})$ and construct a p-morphism-like map 
-from $N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]})$ to $T_{\omega,\omega,\omega[rn]}$. We will introduce the notations later.
+from $N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]})$ to $T_{\omega,\omega,\omega[rn]}$. We will introduce the notation later.
 
 \clearpage
 
