@@ -182,9 +182,11 @@ and an unravelling technique to show that our logic is sound and complete with r
 proof of his result. To make the main result more accessible, we also reprove a similar result but for modal logic with only one modal operator.
 We start by formally introducing $T_2$ and $T_{6,2,2}$ frames where $T_2$ is the infinite binary tree. Then we show $S4$ is complete w.r.t. $\mathbb{Q}$.
 The idea to show $S4$ is sound and complete w.r.t. $T_2$, construct a subset $X$ of $\mathbb{Q}$, which is isomorphic and in topological sense homeomorphic to $\mathbb{Q}$ and 
-then establish a bisimulation between $T_2$ and $X$. This method carries over naturally to the multimodal version.
+then establish a bisimulation between $T_2$ and $X$. This method carries over naturally to the multimodal version. \newline
 
-
+    \textbf{Chapter 6} is split into two parts. First, we present a more detailed proof of [2]. We begin by introducing the crucial trees as Kripke frames.
+Based on these, we construct their neighbourhood versions in order to build a p-morphism and demonstrate the desired result. In the second part, we adapt these ideas
+to show the second part of our result. At the end, we give some completeness results.
 
 
 
@@ -250,7 +252,7 @@ dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
 \end{corollary}
 
 In this work, we deal with products of frames and multimodal logics of product of frames. The study of products of Kripke frames 
-and their modal logics was first initiated by Segerberg [4] and Shehtman [5]. In the following, we will define neccessary notions for such logics.
+and their modal logics was first initiated by Segerberg [4] and Shehtman [5]. In the following, we will define necessary notions for such logics.
 
 \begin{definition}
     Let $F = (W, R_1)$ and $G = (W,R_2)$. Then we define the Kripke product on $W \times V$ as follows : 
@@ -317,6 +319,8 @@ In the following, we define what is known as a "filtration." The definition is s
     3. If $([w], [v]) \in R^f_i$ then for any $\Box_i \phi \in \Sigma$ : if $M,w \Vdash \Box_i \phi$ then $M,v \Vdash \phi$  \newline 
     4. $V^f = \{[w] \mid M,w \Vdash p\}$, for all propositional variables $p \in \Sigma$      
 \end{definition}
+
+
 
 \begin{theorem}
     Consider $L_{\Box_1...\Box_n}$. Let $M^f =(W_\Sigma, R^f_1,...,R^f_n, V)$ be a filtration of M through a subformula closed set $\Sigma$.
@@ -386,8 +390,8 @@ After showing that filtration preserves truth, we now define a special relation 
     \end{proof}
         
 \end{theorem}
-    Now we define special kind of formulas called Sahlqvist formulas.
-
+    The Filtration Theorem helps us to establish the Finite Model Property (FMP), 
+    which is essential for our result. We now define a special class of formulas called Sahlqvist formulas.
 \begin{definition}
     A modal formula $\phi$ is positive if all variables occurs in the scope of an even number of negations. In the other hand, a formula is negative, if all variables occurs in the scope of an odd number of negations.
     A boxed atom is a modal formula of the form $\Box^n p$ for some $n \in \mathbb{N}$, where p is a propositional variable and $\Box^n p$ is defined as follows :
@@ -467,6 +471,8 @@ We begin by formally introducing the concept of a topological space.
     $U_x = \bigcap \{U \subseteq X \mid U \mbox{ is open  and } x \in U\} \in \tau$.
 \end{definition}
 
+In the following, we present several topological spaces to build intuition. Some of them are Alexandroff spaces, but we also include an example of a non-Alexandroff space.
+
 \begin{example}
 Let \( X = \{1, 2, 3\} \). We consider different topologies on \( X \):
 
@@ -502,7 +508,9 @@ The satisfaction of a formula at the point \( x \) in \( M \) is defined inducti
 \]
 \end{definition}
 
-
+In the study of product spaces in topology, we work with horizontal and vertical topologies. 
+Such topologies allows us to reason across the coordinates of the product space. It allows us to define
+modalities that reflect reasoning in each dimension.
 
 
 \begin{definition}
@@ -584,6 +592,8 @@ We define
     with horizontal, vertical and standard topologies.
 \end{definition}
 
+
+
 \begin{definition}
     For two unimodal logics $L_1$ and $L_2$ we define the full $t$-product of them as follows :
     $$L_1 \times^+_t L_2 = Log(\{\mathcal{X} \times^+_t \mathcal{Y} \mid \mathcal{X} \vDash L_1 \mbox{ and } \mathcal{Y} \vDash L_2\})$$
@@ -620,6 +630,7 @@ We define
 \subsection{Product and semantics of neighborhood frames}
 Neighborhood frames are more flexible than topological space. Its logic is not $S4$ in general. 
 It is well known, that neighborhood frames fully captures the semantics of Kripke. Moreover, neighborhood frames are expressive enough to characterize non-normal modal logics, which makes them a powerful tool.
+We formally introduce neighbourhood frames.
 
 
 \begin{definition}
@@ -705,7 +716,7 @@ In topology, we defined horizontal and vertical topologies for products of topol
 
 \begin{definition}
     For two unimodal logics $L_1$ and $L_2$ we define the n-product of them as follows :
-    $$ L_1 \times_n L_2 = Log(\{ \mathcal{X} \times \mathcal{Y} \mid \mathcal{X} \in nV(L_1) \mbox{ and } \mathcal{Y} \in nV(L_2) \})$$   
+    $$ L_1 \times_n L_2 = Log(\{ \mathcal{X} \times_n \mathcal{Y} \mid \mathcal{X} \in nV(L_1) \mbox{ and } \mathcal{Y} \in nV(L_2) \})$$   
     In similar way, we can define $L_1 \times^+_n L_2$ with three topologies.     
 \end{definition}
 
@@ -718,7 +729,7 @@ In topology, we defined horizontal and vertical topologies for products of topol
     Let $\mathcal{L}_{\Box,\Box_1,\Box_2}$ be a modal language with three  modal operators $\Box, \Box_1 \mbox{ and } \Box_2$.
     We define the $T$-neighborhood product logic $\mathit{TNL}$ as the least set of formulas in $L_{\Box,\Box_1,\Box_2}$ 
     containing all axioms $T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$, and closed
-    under modus ponens, substitution and $\Box- , \Box_1- $ and $\Box_2-$ neccessitation. 
+    under modus ponens, substitution and $\Box- , \Box_1- $ and $\Box_2-$ necessitation. 
 \end{definition}
 
 
@@ -1105,7 +1116,7 @@ of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 2.
 \begin{definition}
     Let $\mathcal{L}_{\Box,\Box_1,\Box_2}$ be a modal language with three modal operators $\Box, \Box_1$ and $\Box_2$.
     We define the topological product logic $TPL$ as the least set of formulas in $\mathcal{L}_{\Box,\Box_1,\Box_2}$ containing all axioms
-    $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$, and closed under modus ponens, substitution and $\Box$-, $\Box_1$- and $\Box_2$-neccessitation.  
+    $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$, and closed under modus ponens, substitution and $\Box$-, $\Box_1$- and $\Box_2$-necessitation.  
 \end{definition}
 
 \begin{theorem}
