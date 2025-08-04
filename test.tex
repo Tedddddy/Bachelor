@@ -136,21 +136,55 @@ The Neighborhood semantics only differs slightly in $\Box$ and $\lozenge$. The f
 
 Neighborhood semantics is more general than Kripke semantics and in the case of normal reflexive and transitive logics coincides with topological semantics.
 The original motivation for introducing these general models was to provide a semantics for non-normal modal logics. 
-Beyond their theoretical motivation, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. 
-\subsection{Content}
+Beyond their theoretical motivation, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. \newline
 Oftentimes, it is necessary to combine frames for different modal logics into a complex
 frame. The natural way of doing that is a product construction. For Kripke frames,
 the resulting product is the Cartesian product of the two frames with two accessibility
 relations. For topological semantics, the product of topogical spaces as bi-topological
 spaces with so-called horizontal and vertical topologies have been considered. In a similar
-fashion, the product of neighborhood frames was introduced by Sano in [8]. \newline
-For our main question, we consider the neighborhood product additionally with the standard neighborhood product. We will answer whether 
-the logic with three copies of $T$ with the interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$ can be fully characterized as the logic a product of neighbourhood frames with standard topology, where each frame validates $T$.
-The question was originally motivated by two papers where the authors showed in topological semantics a similar version of the question but for $S4$. In the other, it was proven that for any $L_1, L_2$ $\in \{D,D4,T,S4\}$, that their logic together 
-can be characterized as the logic of a product of neighbourhood frames but without standard neighborhood product. In this work, we start with a brief recap of necessary notation and theorems in Kripke semantics and then introduce toplogical spaces and neighborhood frames. 
-We will reprove the theorems from the authors in a more detailed way and then use similar techniques to answer our main question.
-Finally, we conclude with a discussion of potential directions for future research related to the topic. 
-This thesis primarily builds upon the works "Multimodal Logics of Products of Topologies" [1] and "Modal Logic of Products of Neighborhood Frames" [2].
+fashion, the product of neighborhood frames was introduced by Sano in [8]. 
+\subsection{Our contributions and structure of the thesis}
+In this work, we study the multimodal logic of products of neighborhood frames. Specifically, the logic consisting of three copies of T along with interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$. 
+By "copies," we mean that we take the union of T with itself, but introduce new modal operators for each component. This is also called "fusion" (notation : $\otimes$).
+Formally, we define the fusion of $T$ with itself as $T \otimes T \otimes T = K_3 + T_{\Box} + T_{(\Box \rightarrow \Box_1)} + T_{(\Box \rightarrow \Box_2)}$, where $K_3$ 
+is the minimal normal modal logic with three modal operators.
+
+We focus on the logic of the product neighbourhood frames $F_1 \times^+_n F_2$ , where both $F_1$ and $F_2$ validates T.
+The product $\times^+_n$ combines three types of functions : horizontal,vertical and standard. We will introduce the horizontal and vertical modalities which correspond to reasoning over the first and second coordinate frames, respectively,
+while the standard modality reflects interactions in the combined frame. More specific definitions can be found in Chapter 3.2. \newline
+Our main contribution is to investigate whether the logic $T \otimes T \otimes T$ with interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$ 
+corresponds to the logic of such product frames  introduced above — and vice versa.
+
+The question addressed in this work was originally motivated by two earlier papers. In the first [1], the authors explored a similar result in topological semantics, but for the modal logic $S4$. 
+The core idea was to show that the logic is sound and complete w.r.t a specially constructed Kripke frame called "$T_{6,2,2}$", which is a six-branching tree with three accessibility relations. 
+The frame can be interpreted as a topological space which plays a crucial role in constructing a topo-bisimiulation between $T_{6,2,2}$ and a specific product topological space $\mathbb{Q} \times^+_n \mathbb{Q}$.   
+
+In the second work [2], it was shown that for any $L_1, L_2$ $\in \{D,D4,T,S4\}$ the fusion $L_1 \otimes L_2$
+agrees with the logic of product of neighbourhood frames but without using the standard neighborhood product.
+The main idea is similar to the previous case : the author again consider Kripke tree frames. Let's denote such frame as $F$. He then constructs two different neighbood interpretation on that frame, called $N(F)$ and $N_\omega(F)$.
+In $N(F)$, each world is assigned a neighourhood based on the standard successor relation — specifically, the set of all supersets of the image of the accessibility relation.
+In contrast, $N_\omega(F)$ is built using pseudo-infinite paths to generate neighborhoods that also reflect the successor structure of $F$. A specific definition can be found in chapter 
+6.2. By considering the product of these neighbourhood frames, the authors then construct a p-morphism to establish the desired result. 
+
+Our approach is similar. We construct a Kripke tree frame similar to $T_{6,2,2}$ but with infinitely many branches and infinite depth. We show that our logic is sound and complete w.r.t. this frame.
+Then, we consider its neighbourhood versions and take their product, constructing a p-morphism to establish the desired result. \newline
+
+We start our journey in Chapter 2, where we recall Kripke semantics as well as well-known results such as Filtration Theorem and the Sahlqvist Theorem.
+Furthermore, we give basic notation for multimodal logic. \newline
+
+Chapter 3 introduces topological semantics and neighbourhood frames. We formally define what topological space is as well as neighbood frames and their products notation.
+We also provide the corresponding semantics for multimodal logic.
+
+In Chapter 4, we prove the first part of our contribution. We formally introduce the infinitely branching and infinite depth tree.
+
+
+
+
+
+% In this work, we start with a brief recap of necessary notation and theorems in Kripke semantics and then introduce toplogical spaces and neighborhood frames. 
+%We will reprove the theorems from the authors in a more detailed way and then use similar techniques to answer our main question.
+%Finally, we conclude with a discussion of potential directions for future research related to the topic. 
+%This thesis primarily builds upon the works "Multimodal Logics of Products of Topologies" [1] and "Modal Logic of Products of Neighborhood Frames" [2].
 
  \clearpage
 
@@ -314,7 +348,7 @@ After showing that filtration preserves truth, we now define a special relation 
     a filtration of M through $\Sigma$.
     \begin{proof}
     
-    It suffices to show $R^s_i$ fullfills the condition 2 and 3 w.r.t to the corresponding modal operator $\Box_i$. But $R^s_i$ already satisfies condition 2.
+    It suffices to show $R^s_i$ fulfills the condition 2 and 3 w.r.t to the corresponding modal operator $\Box_i$. But $R^s_i$ already satisfies condition 2.
     Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$. Because of $[w]R^s_i[v]$ we pick a $w' \in [w]$
     and $v' \in [v]$. By defintion, we have $w'R_i v'$. Because $w' \equiv w$, we get $M,w' \Vdash \Box_i \phi$. Hence, $M,v' \Vdash \phi$ and by $v' \equiv v$, we get $M,v \Vdash \phi$.
     
@@ -326,7 +360,7 @@ After showing that filtration preserves truth, we now define a special relation 
 
     \begin{proof}
     The states of $M^f$ are the equivalence classes in $W_\Sigma$. Let $g : W_\Sigma \rightarrow P(\Sigma)$ defined by $g([w]) = \{ \phi \in \Sigma \mid M,w \Vdash \phi\}$.
-    g is well defined. Pick any u and v s.t $u\equiv v$. But then by defintion of $\equiv$, they fullfill the same subformulas. This means g([v]) = g([u]). \newline
+    g is well defined. Pick any u and v s.t $u\equiv v$. But then by defintion of $\equiv$, they fulfill the same subformulas. This means g([v]) = g([u]). \newline
     g is also injective. Pick any $[u],[v] \in W_\Sigma$ s.t g([u]) = g([v]). We show $[u]\subseteq[v]$. The other inclusion is similar.
     By assumption we have $u \equiv v$. Pick any $u' \in [u]$. Then we have $u' \equiv u \equiv v$. Hence, $u' \in [v]$. At the end, this means $M^f$ contains at most $2^n$ nodes.
 
@@ -386,15 +420,16 @@ Neighborhood frames generalizes the idea of topology by loosen the conditions th
 Instead of relying on a global systems of open sets, there exists a neighborhood function, which assigns to each point a collection of sets — its neighbourhoods.
 This provides us a more flexible framework to work with.
 \newline
-Oftentimes, it is in theoretical and practical interest to combine topological spaces or neighborhood frames.  
+It is often of both theoretical and practical interest to combine topological spaces or neighborhood frames.  
 These product constructions become particularly relevant in the context of multimodal logic, where we aim to reason with multiple modal operators simultaneously.
 Each modality can be interpreted in its own topological or neighbourhood dimension, allowing us to model systems with distinct but interacting notions of necessity — such as time and space or knowledge and belief.
-
-In this chapter, we introduce the notation for product of topological spaces and the semantics for multimodal logic in topology. We will also do it for neighborhood frames.
+\newline
+In this chapter, we introduce the notation for the product of topological spaces, define what is meant by "horizontal" and "vertical" topology and provide the semantics for multimodal logic in topological terms. We will proceed similarly for neighborhood frames.
 
 \subsection{Topological semantics and product of topological spaces}
+We begin by formally introducing the concept of a topological space.
 \begin{definition}
-    A topological space is a pair $(X, \tau)$ where $\tau$ is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
+    A topological space is a pair $(X, \tau)$ where $\tau$ (also called topology) is a collection of subsets of X (elements of $\tau$ are also called open sets) such that : 
     \newline
     \newline
     1. the empty set $\emptyset $ and X are open
@@ -622,7 +657,6 @@ It is well known, that neighborhood frames fully captures the semantics of Kripk
      \end{proof}
 \end{corollary}
 
-\clearpage
 In topology, we defined horizontal and vertical topologies for products of topological spaces.
  In the following, we will define a similar construction for neighborhood frames.
 
@@ -635,7 +669,29 @@ In topology, we defined horizontal and vertical topologies for products of topol
     $$ \tau_2'(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists V \in \tau_2(y) : \{ x \} \times V \subseteq U \}$$
     Additionally, we say the full product of n-frames $\mathcal{X} \times^+_n \mathcal{Y}$ is :
     $$ \mathcal{X} \times^+_n \mathcal{Y} = (X \times Y, \tau'_1, \tau'_2, \tau)\mbox{ where }$$
-    $$ \tau(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists W \in \tau_1(x) \, \exists V \in \tau_2(y) : W \times V \subseteq U \}$$        
+    $$ \tau(x,y) = \{ U \subseteq \mbox{X} \times \mbox{Y} \mid \exists W \in \tau_1(x) \, \exists V \in \tau_2(y) : W \times V \subseteq U \}$$    
+    
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}[scale=1]
+
+    \draw (0,0) rectangle (6,3);
+    \draw (-0.1,1.7) -- (0.1,1.7) node[midway, left] {$y$};
+    \draw [red] (0.5,1.7) -- (0.9,1.7);
+    \draw [red] (1.5,1.7) -- (2.1,1.7);
+    \draw [red] (2.5,1.7) -- (3.5,1.7);
+    \draw [red] (3.8,1.7) -- (4.2,1.7);
+    \draw [red] (4.8,1.7) -- (5.6,1.7);
+    \draw [blue] (1.4,1.3) -- (2.2,1.3) -- (2.2,2) -- (1.4,2) -- cycle;
+    \draw [blue] (1.2,1.1) -- (3.6,1.1) -- (3.6,2.3) -- (1.2,2.3) -- cycle;
+    \draw [blue] (4.4,1.1) -- (5.8,1.1) -- (5.8,2.3) -- (4.4,2.3) -- cycle;
+
+
+
+  \end{tikzpicture}
+  \caption{This is an illustration for $\tau_1'$ with a fix point $(x,y)$. The red lines represents the combinations of any neighbourhood of x with y.
+  The blue rectangles are the subsets of $X \times Y$ s.t. the condition is fulfilled.}
+\end{figure}
 \end{definition}
 
 \begin{definition}
