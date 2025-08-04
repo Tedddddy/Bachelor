@@ -161,7 +161,7 @@ The frame can be interpreted as a topological space which plays a crucial role i
 
 In the second work [2], it was shown that for any $L_1, L_2$ $\in \{D,D4,T,S4\}$ the fusion $L_1 \otimes L_2$
 agrees with the logic of product of neighbourhood frames but without using the standard neighborhood product.
-The main idea is similar to the previous case : the author again consider Kripke tree frames. Let's denote such frame as $F$. He then constructs two different neighbood interpretation on that frame, called $N(F)$ and $N_\omega(F)$.
+The main idea is similar to the previous case. The author again consider Kripke tree frames. Let's denote such frame as $F$. He then constructs two different neighbood interpretation on that frame, called $N(F)$ and $N_\omega(F)$.
 In $N(F)$, each world is assigned a neighourhood based on the standard successor relation — specifically, the set of all supersets of the image of the accessibility relation.
 In contrast, $N_\omega(F)$ is built using pseudo-infinite paths to generate neighborhoods that also reflect the successor structure of $F$. A specific definition can be found in chapter 
 6.2. By considering the product of these neighbourhood frames, the authors then construct a p-morphism to establish the desired result. 
@@ -169,13 +169,22 @@ In contrast, $N_\omega(F)$ is built using pseudo-infinite paths to generate neig
 Our approach is similar. We construct a Kripke tree frame similar to $T_{6,2,2}$ but with infinitely many branches and infinite depth. We show that our logic is sound and complete w.r.t. this frame.
 Then, we consider its neighbourhood versions and take their product, constructing a p-morphism to establish the desired result. \newline
 
-We start our journey in Chapter 2, where we recall Kripke semantics as well as well-known results such as Filtration Theorem and the Sahlqvist Theorem.
+We start our journey in \textbf{Chapter 2}, where we recall Kripke semantics as well as well-known results such as Filtration Theorem and the Sahlqvist Theorem.
 Furthermore, we give basic notation for multimodal logic. \newline
 
-Chapter 3 introduces topological semantics and neighbourhood frames. We formally define what topological space is as well as neighbood frames and their products notation.
-We also provide the corresponding semantics for multimodal logic.
+\textbf{Chapter 3   } introduces topological semantics and neighbourhood frames. We formally define what topological space is as well as neighbood frames and their products notation.
+We also provide the corresponding semantics for multimodal logic. \newline
 
-In Chapter 4, we prove the first part of our contribution. We formally introduce the infinitely branching and infinite depth tree.
+In \textbf{Chapter 4}, we begin the first part of our contribution. We formally introduce the infinitely branching and infinite depth tree. Then, using Filtration Theorem, the Sahlqvist Theorem 
+and an unravelling technique to show that our logic is sound and complete with respect to this tree. \newline
+
+\textbf{Chapter 5} is dedicated to the author's work presented in [1]. We provide a more detailed 
+proof of his result. To make the main result more accessible, we also reprove a similar result but for modal logic with only one modal operator.
+We start by formally introducing $T_2$ and $T_{6,2,2}$ frames where $T_2$ is the infinite binary tree. Then we show $S4$ is complete w.r.t. $\mathbb{Q}$.
+The idea to show $S4$ is sound and complete w.r.t. $T_2$, construct a subset $X$ of $\mathbb{Q}$, which is isomorphic and in topological sense homeomorphic to $\mathbb{Q}$ and 
+then establish a bisimulation between $T_2$ and $X$. This method carries over naturally to the multimodal version.
+
+
 
 
 
