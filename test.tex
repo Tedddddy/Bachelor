@@ -610,7 +610,8 @@ We define
   \caption{Each rectangle represents $N$ and the redlines are subsets of $N$} 
 \end{figure}
 
-    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the set of all standard product of subsets $X \times Y$ s.t. $X \in \chi$ and $Y \in \upsilon$.
+    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the set of all standard product of subsets $X \times Y$
+    with basis $\{X \times Y \mid X \in \chi \text{ and } Y \in \upsilon\}$.
         
 \end{definition}
 
@@ -832,7 +833,7 @@ In the end, we will use an unravelling technique to show completeness.
     Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By Filtration theorem, they preserve truth.
     It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have an edge to itself in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for $R^s$ because the rest is similar.
     Pick $w' \in [w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, we have $w'Rw'$. By the defintion of smallest filtration, we have that $[w']R^s[w']$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
-    Pick [w],[v] s.t $[w]R^s_1[v]$. By defintion of smallest filtration there are points $w' \in [w]$ and $v' \in [v]$ s.t $w'R_1v'$. Furthermore, it holds $R_1 \subseteq R$, so $w'Rv'$.
+    Pick [w],[v] s.t $[w]R^s_1[v]$. By defintiion of smallest filtration there are points $w' \in [w]$ and $v' \in [v]$ s.t $w'R_1v'$. Furthermore, it holds $R_1 \subseteq R$, so $w'Rv'$.
     By smallest filtration, we get $[w']R^s[v']$. Because $w' \equiv w \mbox{ and } v' \equiv v$, we have $[w'] = [w] \mbox{ and } [v'] = [v]$. It follows $[w]R^s[v]$.
     
     \end{proof}
@@ -1178,7 +1179,7 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
         Base case : If $k = 0$, then we have $t = f(x)$ and we can pick $y = x$. For induction step, assume it holds for $f(x)Rt'$ with length $n$, $f(y) = t'$ and $t'Rt$.
         For $y$, there must exists an index $n_y > n_x$ s.t. $y \in X_{n_y} - X_{n_y -1}$. 
         Now let $y' = y - \frac{1}{3^{n_y}}$ or $y' = y + \frac{1}{3^{n_y}}$. It holds that, $n_y' > n_y > n_x$, so $y' \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$.
-        By defintion of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open. \newline
+        By definition of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open. \newline
         To show $f$ is continuous, it suffices to show that for each $t \in T_2$, the $f$-inverse image of $B_t$ is open. Let $x \in f^{-1}(B_t)$. Then $tRf(x)$. As argued before, we can find an open interval in $X$ s.t.
         $f (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}) = B_{f(x)}$.  By $tRf(x)$, we get $B_{f(x)} \subseteq B_t$. Hence, we found an open interval
         $I = (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$, s.t. $I = f^{-1}(B_{f(x)}) \subseteq f^{-1}(B_t)$. This holds because we can pick $y \in I$. By applying $f$, we get $f(y) \in B_{f(x)} \subseteq B_t$. But then $y \in f^{-1}(B_t)$.
@@ -1683,11 +1684,11 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
 In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded morphism. We begin by proving a small lemma, which helps us to show it.
 
 \begin{lemma}
-    Let $F = (A^*, R) = F_{\xi \eta}[A]$. Based on that, let $N_\omega(F) = (X,\tau)$, $N(F) = (A^*, \sigma)$ and $f_F : N\omega(F) \rightarrow N(F)$.
+    Let $F = (A^*, R) = F_{\xi \eta}[A]$. Based on that, let $N_\omega(F) = (X,\tau)$, $N(F) = (A^*, \sigma)$ and $f_F : N_\omega(F) \rightarrow N(F)$.
     Then for any $m \in \mathbb{N}$ and $x\in X$ with $x = a_1a_2...$ \newline we have $$f_F(U_m(x)) = R(f_F(x))$$
     \begin{proof}
-            $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. By defintion of $U_m(x)$,
-            we get $f_F(\alpha) \in R(f_F(x))$. \newline \newline
+            $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. Because $\alpha \in U_m(x)$, we have by definition of $U_m(x)$: 
+            $x\mid_m = \alpha \mid_m$ and $f_F(x)R f_F(\alpha)$. Hence $f_F(\alpha) \in R(f_F(x))$.  \newline \newline
             $\supseteq :$ We pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexive and non-transitive.
             The other cases are similar. \newline
             Because $\vec{a} \in R(f_F(x))$, there must exists $c \in A$ such that $ \vec{a} = f_F(x) \cdot c $.
@@ -1702,7 +1703,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     \begin{proof}
         From now on this proof we will omit the subindex in $f_F$.
         Let $N_\omega(F) = (X, \tau)$ and $N(F) =(A^*, \sigma)$. \newline \newline For surjectivity, we pick any $\vec{x} \in A^*$. But then, $\vec{x}\,0^\omega \in X$. Hence, $f(\vec{x}\, 0^\omega) = \vec{x}$. \newline 
-        For the next condition, assume that $x \in X \mbox{ and } U \in \tau(x)$. We need to prove that $f(U) \in \sigma(f(x))$. That means $R(f(x)) \subseteq f(U)$. Because $U \in \tau(x)$, there is a $m$ such that
+        For the next condition, assume that $x \in X \mbox{ and } U \in \tau(x)$. We need to prove that $f(U) \in \sigma(f(x))$. That is equivalent to $R(f(x)) \subseteq f(U)$. Because $U \in \tau(x)$, there is a $m$ such that
         $U_m(x) \subseteq U$. By Lemma 6.2.5 we have $f(U_m(x)) = R(f(x))$. It follows, 
         $$R(f(x)) = f(U_m(x)) \subseteq f(U)$$ 
         \newline
@@ -1732,14 +1733,14 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     \begin{proof}
         In all these cases, the inclusion from left to right follows from Proposition 6.1.5 and Corollary 6.2.7.
         Now the converse direction. Assume $X =(X,\tau)$. \newline
-        It is easy to check that $X \vDash D$ iff for each $x \in X : \emptyset \notin \tau(x)$. For $N_\omega(F_{in})$ and $N_\omega(F_{it})$ this holds. \newline
-        It is easy to check that $X \vDash T$ iff we have $x\in U \in \tau(x)$ for any $x$ and $U$. For $N_\omega(F_{rn})$ and $N_\omega(F_{rt})$ this holds. \newline
+        It is easy to check that $X \vDash D$ iff for each $x \in X : \emptyset \notin \tau(x)$. In other words, if $\Box p \rightarrow \lozenge p$ is valid on $X$, then $\emptyset$ can not be a neighborhood for any point. For $N_\omega(F_{in})$ and $N_\omega(F_{it})$ this holds. \newline
+        It is easy to check that $X \vDash T$ iff we have $x\in U \in \tau(x)$ for any $x$ and $U$. If $\Box p \rightarrow p$ is valid on $X$, then any neighborhood of a point contains the point itself. For $N_\omega(F_{rn})$ and $N_\omega(F_{rt})$ this holds. \newline
         Now we check $X \vDash 4$ iff for each $U \in \tau(x) : \{y \mid U \in \tau(y)\} \in \tau(x)$. \newline
-        $\supseteq : $ Let $x \in X$ and assume $X,x \vDash \Box p$. That means there exists $U \in \tau(x)$ s.t $U\subseteq V(p)$.
+        $\Leftarrow : $ Let $x \in X$ and assume $X,x \vDash \Box p$. That means there exists $U \in \tau(x)$ s.t $U\subseteq V(p)$.
         By assumption we have $S = \{y \mid U \in \tau(y)\} \in \tau(x)$. But then $X,x \vDash \Box\Box p$ because we can just pick the set S. \newline
-        $\subseteq :$ By contradiction, assume there exists a $U$ s.t $\{y \mid U \in \tau(y)\} \notin \tau(x)$. Let $X,x \vDash \Box p$ where $V(p) = U$.
-        If $X,x \vDash \Box\Box p$ then it must be the case that  \newline 
-        $S =\{y \in X \mid X,y \vDash \Box p\} \in \tau(x)$. $X,y \vDash \Box p$ means $U \in \tau(y)$. That means $S = \{y \in X \mid U \in \tau(y)\}$. But by assumption $S \notin \tau(x)$. 
+        $\Rightarrow :$ This direction is by contradiction. Let's fix a valuation function $V$ s.t. $V(p) = U$. Furthermore, assume there exists a $U$ s.t $\{y \mid U \in \tau(y)\} \notin \tau(x)$ and let $X,x \vDash \Box p$.
+        If $X,x \vDash \Box\Box p$ then it must be the case that $S =\{y \in X \mid X,y \vDash \Box p\} \in \tau(x)$. 
+        \newline By $X,y \vDash \Box p$, it follows $U \in \tau(y)$. That means $S = \{y \in X \mid U \in \tau(y)\}$. But by assumption $S \notin \tau(x)$. 
         Hence, $X,x \not\vDash \Box\Box p$. But thats a contradiction. This also holds for $N_\omega(F_{it})$ and $N_\omega(F_{rt})$ because we have for any $y \in U_m(x)$ and 
         $k \geq m : U_k(y) \subseteq U_m(x)$.
             
@@ -1761,10 +1762,10 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\alpha, \beta) = 1a2b34e$. \newline
     \newline
     In order to show g is bounded morphism, we show a small lemma, which helps us to prove it.
-
 \begin{lemma}
     Let $X$ and $N(F_1 \otimes F_2)$ be as defined before and $(\alpha,\beta) \in X_1 \times X_2$. Then for any $m >$ max$\{st(\alpha), st(\beta)\}$ we have 
     $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\})$$.
+    where $g$ has arity of 2 and $g(U_m(\alpha) \times \{\beta\}) = \{g(\gamma, \beta) \mid \gamma \in U_m(\alpha)\}$
     \begin{proof}
         We will show both direction by assuming $F_1 = F_{in}[A]$. For $F_{it}[A],F_{rt}[A]$ and $F_{rn}[A]$ it is similar. \newline
         $\subseteq$ : Let $\vec{w} \in R'_1(g(\alpha,\beta))$. By definition we get, there exists $\vec{c} \in A^*$ where $\vec{w} = g(\alpha,\beta) \cdot \vec{c}$ and $\Lambda R_1 \vec{c}$.
@@ -1772,9 +1773,9 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         Because $m \in max\{st(\alpha), st(\beta)\}$, we have $g(\alpha \mid_m, \beta \mid_m) = g(\alpha, \beta)$. Hence, $g(\zeta, \beta) = g(\alpha \mid_m, \beta \mid_m) \cdot g(\vec{c} \,0^\omega, 0^\omega) = g(\alpha \mid_m, \beta \mid_m) \cdot \vec{c} = \vec{w}$.
         \newline \newline
         $\supseteq$ : Assume $\zeta \in U_m(\alpha)$. We have to show $g(\zeta, \beta) \in R_1'(g(\alpha, \beta))$. Because $R_1$ is irreflexive and non-transitive, it suffices to find a $\vec{d} \in A$ s.t. $g(\alpha,\beta) \cdot \vec{d} = g(\zeta, \beta)$.
-        By choosing $m$ is maximal and $\zeta \mid_m = \alpha \mid_m$, we have $g(\zeta_m, \beta_m) = g(\alpha,\beta)$. We also know $f_F(\alpha)R_1 f_F(\zeta)$, that means there exists a $\vec{d} \in A$ s.t. $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$. This $\vec{d}$ must appear at a point after $\zeta_m$.
+        By choosing $m > max \{st(\alpha), st(\beta)\}$  and $\zeta \mid_m = \alpha \mid_m$, we have $g(\zeta \mid_m, \beta \mid_m) = g(\alpha,\beta)$. We also know $f_F(\alpha)R_1 f_F(\zeta)$, that means there exists a $\vec{d} \in A$ s.t. $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$. This $\vec{d}$ must appear at a point after $\zeta_m$.
         We can follow $g(\zeta, \beta) = g(\alpha, \beta) \cdot \vec{d}$. Hence, $g(\zeta, \beta) \in R_1'(g(\alpha,\beta))$.
-        \newline \newline
+        \newline \newline \newline
         Remark : If $m \leq max\{st(\alpha), st(\beta)\}$, then we cannot gurantee the equality. Assume $R_1$ as before and $\alpha = 123000^\omega$ and $\beta = d0b0a0^\omega$.
         Lets pick $m = 3$ and $\zeta = 123100^\omega$. Then we have $g(\alpha, \beta) = 1d23ba$ and $g(\zeta, \beta) = 1d23b1a$. Obviously, we don't have $g(\zeta, \beta) \in R_1'(g(\alpha,\beta))$. \newline
         Furthermore, we can show $R'_2(g(\alpha,\beta)) = g(\alpha \times U_m(\beta))$ similar as above. 
@@ -1804,8 +1805,8 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         \] \newline
         Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\beta = y_1y_2...y_n \, 0^\omega$. Then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective. \newline \newline
         For the next conditions we check only for $\tau_1'$ and $\sigma_1$. The other case is similar.
-        Assume $(\alpha,\beta) \in X_1 \times X_2$ and $U \in \tau_1'(\alpha, \beta)$. We have to show $g(U) \in \sigma_1(g(\alpha,\beta))$. That means $R_1'(g(\alpha,\beta)) \subseteq g(U)$.
-        Pick a $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can pick such m, because $U \in \tau_1'(\alpha,\beta)$. So there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} = U$.
+        Assume $(\alpha,\beta) \in X_1 \times X_2$ and $U \in \tau_1'(\alpha, \beta)$. We have to show $g(U) \in \sigma_1(g(\alpha,\beta))$. That is equivalent to $R_1'(g(\alpha,\beta)) \subseteq g(U)$.
+        Pick a $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can pick such m, because $U \in \tau_1'(\alpha,\beta)$. So there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} =  \{(\gamma,\beta) \mid \gamma \in U_k(\alpha)\}= U$.
         If $k > max\{st(\alpha), st(\beta)\}$ then we are done. Else, by Lemma 6.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ til we reach $m$. Then we use Lemma 6.2.9 to get the following :
         $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\}) \subseteq g(U)$$
         \newline
