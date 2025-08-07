@@ -30,9 +30,7 @@
 Modal logic extends classical propositional logic by introducing modal operators, most notably $\Box$ ("necessarily") and $\lozenge$ ("possibly"). In the standard Kripke semantics, 
 these operators are interpreted over a set of possible worlds connected by an accessibility relation. In the following, we give an example for $\Box$.
 \begin{example}
-    Let $\phi = \Box p$ be a modal logic formula and $M = (W,R,V)$ a model with  a set worlds $W = \{w_1,w_2,w_3,w_4,w_5\}$, 
-    an accessibility relation $R = \{(w_1,w_2), (w_2,w_3), \newline
-     (w_2,w_4), (w_2,w_5)\}$ and a valuation $V(p) = \{w_3,w_4,w_5\}$. (See figure 1.)
+    Let $\phi = \Box p$ and $M = (W,R,V)$ with $W = \{w_1,w_2,w_3,w_4,w_5\}$, $R = \{(w_1,w_2), (w_2,w_3), (w_2,w_4), (w_2,w_5)\}$ and $V(p) = \{w_3,w_4,w_5\}$. (See figure 1.)
         \begin{figure}[h]
         \centering
         \begin{tikzpicture}[scale=1]
@@ -54,16 +52,16 @@ these operators are interpreted over a set of possible worlds connected by an ac
         Here we can see $\Box p$ is true at $w_2$, because all accessible worlds from $w_2$ (in blue lines), make $p$ true.}
         \end{figure} 
 \end{example}
-However, the term 'modal logic' is often used more broadly for a family of related systems. This includes, for example,
+However, the term 'modal logic' is often used more broadly for a family of related systems. This include for example
 temporal or epistemic logic. Due to its relational nature, modal logic is a powerful tool for analyzing structured systems, where the relationships between states or agents are essential. 
-It has wide-ranging applications—for instance, in formal verification. For example, in model checking, temporal logic is used to describe the behavior of systems over time. In multi-agent systems, epistemic logic plays a key role in reasoning about knowledge and beliefs.
-\subsection{Topological semantics} One approach to generalizing Kripke semantics is through the use of topological semantics.
-The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [3]. To assign meaning to modal formulas, we use a topological space, which is a pair consisting of a domain 
+It has wide-ranging applications—for instance, in formal verification. For example in model checking, temporal logic is used to describe the behavior of systems over time. In multi-agent systems, epistemic logic plays a key role in reasoning about knowledge and beliefs.
+\subsection{Topological semantics} An idea to generalize Kripke semantics was topology. 
+The study of topological semantics in modal logic was initiated by McKinsey and Tarski in 1944 [3]. To assign meaning to modal formulas, we use topological space, which is a pair consisting of a domain 
 $X$ and a collection of open sets, where each set describes which points in $X$ are considered "nearby" to each other. A topological model is a topological space with a valuation $V$, where we assign
 subsets of the domain to the variables. $\Box$ and $\lozenge$ are interpreted differently in topological context; they behave more like the interior and closure operators like in topology [16]. 
 
 \begin{example}
-    Let $ W = \{1,2,3\}, \tau = \{\emptyset, \{1\}, \{2\}, \{1,2\}, W\}$ (where $\tau$ is the collection of open sets) and $V(p) = \{1,2\}$. Furthermore, let $\phi = \Box p$.
+    Let $ W = \{1,2,3\}, \tau = \{\emptyset, \{1\}, \{2\}, \{1,2\}, W\}$ (where $\tau$ is the collection of open sets) and $V(p) = W$. Furthermore, let $\phi = \Box p$.
     \begin{figure}[h]
         \centering
         \begin{tikzpicture}[scale=1]
@@ -89,10 +87,10 @@ subsets of the domain to the variables. $\Box$ and $\lozenge$ are interpreted di
     \end{figure}
 \end{example}
 
-It is well known that for any topological space $X$ the following holds : $S4 \subseteq Log(X)$, where $S4$ is the modal logic with the transitivity ($\Box p \rightarrow \Box\Box p$) and reflexivity axiom ($\Box p \rightarrow p$). 
+It is well known that the logic for any topological space is $S4$, where $S4$ is the modal logic with the transitivity ($\Box p \rightarrow \Box\Box p$) and reflexivity axiom ($\Box p \rightarrow p$). 
 This holds because, under topological semantics, the interpretation of $\Box$ naturally satisfies both reflexivity and transitivity. So, if we assume a topological space satisfies $\Box p$ at point $w$ with some valuation $V(p)$,
 then we can find an open set  $U$ around $w$ where $w\in U$. Therefore, $w \in V(p)$ which shows reflexivity. On the other hand, for any point in $U$, we can again find an open set ($U$ itself) witnessing that $\Box p$ holds there. Hence, transitivity is also satisfied. \newline
-Topological semantics provides a rich, and intuitive semantics for $S4$ and related logics. It has a variety of applications e.g. spatial reasoning or program verification. Despite its rich expressiveness, it can not fully capture Kripke semantics. 
+Topological semantics provides a rich, and intuitive semantics for $S4$ and related logics. It has a variety of applications e.g. spatial reasioning or program verification. Despite its rich expressiveness, it can not fully capture Kripke semantics. 
 \subsection{Neighborhood frames}That is why Neighbourhood semantics (see [11] for an introduction) as a generalization of Kripke semantics for modal logic was introduced (independently) by Dana Scott [9] and Richard Montague [10].
 Neighborhood frames are similar to topological spaces. Instead of collection of open sets, we have a neighborhood function, which assigns to each point a set of subsets of the domain. These subsets are also called neighbourhoods.
 The Neighborhood semantics only differs slightly in $\Box$ and $\lozenge$. The following example demonstrates it.
@@ -120,15 +118,15 @@ The Neighborhood semantics only differs slightly in $\Box$ and $\lozenge$. The f
         \node at (1,-1.2) {3};
         
 
-        \draw [ultra thick, mydarkgreen](0,0) circle (0.5cm);
-        \draw [ultra thick, blue](-1.7,-1.6) circle (0.5cm);
-        \draw [ultra thick,mydarkgreen](-0.1,-1.3) circle (2.3cm);
-        \draw [ultra thick, blue](-0.1,-1.3) circle (2.4cm);
-        \draw [ultra thick, red](1,-1.5) circle (0.5cm);
-        \draw [ultra thick, mydarkgreen](1,-1.5) circle (0.6cm);
+        \draw [mydarkgreen](0,0) circle (0.5cm);
+        \draw [blue](-1.7,-1.6) circle (0.5cm);
+        \draw [mydarkgreen](-0.1,-1.3) circle (2.3cm);
+        \draw [blue](-0.1,-1.3) circle (2.4cm);
+        \draw [red](1,-1.5) circle (0.5cm);
+        \draw [mydarkgreen](1,-1.5) circle (0.6cm);
 
-        \draw [ultra thick, blue](-0.7, -0.7) ellipse [x radius=0.7cm, y radius=2cm, rotate=-45];
-        \draw [ultra thick, red](0.6, -0.8) ellipse [x radius=0.7cm, y radius=2cm, rotate=30];
+        \draw [blue](-0.7, -0.7) ellipse [x radius=0.7cm, y radius=2cm, rotate=-45];
+        \draw [red](0.6, -0.8) ellipse [x radius=0.7cm, y radius=2cm, rotate=30];
         \end{tikzpicture}
     \caption{The green ellipses represents neighbourhoods from 1, the blue ellipses those of 2 and red ellipses those of 3. $\Box p$ is satisfied at a point $w$,
     if there exists a neighborhood U $\in \tau(w)$ s.t. $U \subseteq V(p)$. This is only true for 2.
@@ -137,10 +135,8 @@ The Neighborhood semantics only differs slightly in $\Box$ and $\lozenge$. The f
 \end{example}  
 
 Neighborhood semantics is more general than Kripke semantics and in the case of normal reflexive and transitive logics coincides with topological semantics.
-The original motivation for introducing these general models was to provide a semantics for non-normal modal logics. In this work, we only consider neighborhood functions which are filters.
-That means, for each element $x$ in $W$ we have : $\emptyset \notin \tau(x)$, if $U \in \tau(x)$ and $U \subseteq V$ then $V \in \tau(x)$ (upward closed) and if $U,V \in \tau(x)$, then $U \cap V \in \tau(x)$ (closed under finite intersection).
-They impose constraints on neighbourhoods and provide us a new area to explore.
-\subsection{Product of frames}
+The original motivation for introducing these general models was to provide a semantics for non-normal modal logics. 
+Beyond their theoretical motivation, interest in topological semantics and neighborhood frames has grown considerably, partly due to its applications in artificial intelligence. \newline
 Oftentimes, it is necessary to combine frames for different modal logics into a complex
 frame. The natural way of doing that is a product construction. For Kripke frames,
 the resulting product is the Cartesian product of the two frames with two accessibility
@@ -151,29 +147,27 @@ fashion, the product of neighborhood frames was introduced by Sano in [8].
 In this work, we study the multimodal logic of products of neighborhood frames. Specifically, the logic consisting of three copies of T along with interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$. 
 By "copies," we mean that we take the union of T with itself, but introduce new modal operators for each component. This is also called "fusion" (notation : $\otimes$).
 Formally, we define the fusion of $T$ with itself as $T \otimes T \otimes T = K_3 + T_{\Box} + T_{(\Box \rightarrow \Box_1)} + T_{(\Box \rightarrow \Box_2)}$, where $K_3$ 
-is the minimal normal modal logic with three modal operators and $\Box \rightarrow \Box_i$ means, we replace any occurence of $\Box$ in the logic with the new modal operator $\Box_i$.  
+is the minimal normal modal logic with three modal operators.
 
-We focus on the logic of all product neighbourhood frames $F_1 \times^+_n F_2$ , where both $F_1$ and $F_2$ validates T.
-The product $\times^+_n$ combines three types of functions : horizontal,vertical and standard, and hence has three modalities. Formally, such logic can be written down as $T \times^+_n T = Log(\{F_1 \times^+_n F_2 \mid F_1 \vDash T \mbox{ and } F_2 \vDash T\})$.
-We will introduce the horizontal and vertical modalities which correspond to reasoning over the first and second coordinate frames, respectively,
-while the standard modality reflects interactions in the combined frame. \newline More specific definitions can be found in Chapter 3.2. \newline
+We focus on the logic of the product neighbourhood frames $F_1 \times^+_n F_2$ , where both $F_1$ and $F_2$ validates T.
+The product $\times^+_n$ combines three types of functions : horizontal,vertical and standard. We will introduce the horizontal and vertical modalities which correspond to reasoning over the first and second coordinate frames, respectively,
+while the standard modality reflects interactions in the combined frame. More specific definitions can be found in Chapter 3.2. \newline
 Our main contribution is to investigate whether the logic $T \otimes T \otimes T$ with interaction axiom $\Box p \rightarrow \Box_1 p \land \Box_2 p$ 
-corresponds to the logic of such product frames  introduced above — and vice versa. Formally, the main result we will show is that the following equality holds:
-$$T \times^+_n T = T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p $$
+corresponds to the logic of such product frames  introduced above — and vice versa.
 
 The question addressed in this work was originally motivated by two earlier papers. In the first [1], the authors explored a similar result in topological semantics, but for the modal logic $S4$. 
 The core idea was to show that the logic is sound and complete w.r.t a specially constructed Kripke frame called "$T_{6,2,2}$", which is a six-branching tree with three accessibility relations. 
-The frame can be interpreted as a topological space which plays a crucial role in constructing a topo-bisimiulation between $T_{6,2,2}$ and a specific product topological space $\mathbb{Q} \times^+_t \mathbb{Q}$ , where $x^+_t$ refers to the full product of two topological spaces.
+The frame can be interpreted as a topological space which plays a crucial role in constructing a topo-bisimiulation between $T_{6,2,2}$ and a specific product topological space $\mathbb{Q} \times^+_n \mathbb{Q}$.   
 
 In the second work [2], it was shown that for any $L_1, L_2$ $\in \{D,D4,T,S4\}$ the fusion $L_1 \otimes L_2$
-agrees with the logic of products of neighbourhood frames using horizontal and vertical neighborhood functions, but not the standard neighborhood function.
+agrees with the logic of product of neighbourhood frames but without using the standard neighborhood product.
 The main idea is similar to the previous case. The author again consider Kripke tree frames. Let's denote such frame as $F$. He then constructs two different neighbood interpretation on that frame, called $N(F)$ and $N_\omega(F)$.
 In $N(F)$, each world is assigned a neighourhood based on the standard successor relation — specifically, the set of all supersets of the image of the accessibility relation.
 In contrast, $N_\omega(F)$ is built using pseudo-infinite paths to generate neighborhoods that also reflect the successor structure of $F$. A specific definition can be found in chapter 
-6.2. By considering the product of these neighbourhood frames, the authors then construct a bounded morphism to establish the desired result. 
+6.2. By considering the product of these neighbourhood frames, the authors then construct a p-morphism to establish the desired result. 
 
 Our approach is similar. We construct a Kripke tree frame similar to $T_{6,2,2}$ but with infinitely many branches and infinite depth. We show that our logic is sound and complete w.r.t. this frame.
-Then, we consider its neighbourhood versions and take their product, constructing a bounded morphism to establish the desired result. \newline
+Then, we consider its neighbourhood versions and take their product, constructing a p-morphism to establish the desired result. \newline
 
 We start our journey in \textbf{Chapter 2}, where we recall Kripke semantics as well as well-known results such as Filtration Theorem and the Sahlqvist Theorem.
 Furthermore, we give basic notation for multimodal logic. \newline
@@ -181,18 +175,16 @@ Furthermore, we give basic notation for multimodal logic. \newline
 \textbf{Chapter 3   } introduces topological semantics and neighbourhood frames. We formally define what topological space is as well as neighbood frames and their products notation.
 We also provide the corresponding semantics for multimodal logic. \newline
 
-In \textbf{Chapter 4}, we begin the first part of our contribution. We formally introduce the infinitely branching and infinite depth tree. Then, using the Filtration Theorem, the Sahlqvist Theorem 
-and an unravelling technique, we show that our logic is sound and complete with respect to this tree. \newline
+In \textbf{Chapter 4}, we begin the first part of our contribution. We formally introduce the infinitely branching and infinite depth tree. Then, using Filtration Theorem, the Sahlqvist Theorem 
+and an unravelling technique to show that our logic is sound and complete with respect to this tree. \newline
 
-\textbf{Chapter 5} is dedicated to the work presented in [1]. We provide a more detailed 
+\textbf{Chapter 5} is dedicated to the author's work presented in [1]. We provide a more detailed 
 proof of his result. To make the main result more accessible, we also reprove a similar result but for modal logic with only one modal operator.
 We start by formally introducing $T_2$ and $T_{6,2,2}$ frames where $T_2$ is the infinite binary tree. Then we show $S4$ is complete w.r.t. $\mathbb{Q}$.
 The idea to show $S4$ is sound and complete w.r.t. $T_2$, construct a subset $X$ of $\mathbb{Q}$, which is isomorphic and in topological sense homeomorphic to $\mathbb{Q}$ and 
-then establish a bisimulation between $T_2$ and $X$. This method carries over naturally to the multimodal version. \newline
+then establish a bisimulation between $T_2$ and $X$. This method carries over naturally to the multimodal version.
 
-\textbf{Chapter 6} is split into two parts. First, we present a more detailed proof of [2]. We begin by introducing the crucial trees as Kripke frames.
-Based on these, we construct their neighbourhood versions in order to build a bounded morphism and demonstrate the desired result. In the second part, we adapt these ideas
-to show the second part of our result. At the end, we give some completeness results.
+
 
 
 
@@ -210,9 +202,7 @@ to show the second part of our result. At the end, we give some completeness res
 \section{Preliminaries}
 This chapter is primarily devoted to the semantics of Kripke.
 In addition, we define the notions of product frames and multimodal logic. We also present fundamental results in modal logic, 
-such as Filtration Theorem and Sahlqvist Theorem which play a role in our thesis. The content is mainly based on the Modal Logic book [7]. Remark: natural numbers $\mathbb{N}$ are without 0. \newline
-\newline
-We start by providing the syntax of multi-modal logic.
+such as Filtration Theorem and Sahlqvist Theorem which play a role in our thesis. The content is mainly based on the Modal Logic book [7]. Remark: natural numbers $\mathbb{N}$ are without 0. 
 
 \begin{definition}
 Let prop be a set of variables. Then a formula $\phi$ is defined as follows:
@@ -221,43 +211,16 @@ where $p \in Prop$ and $\Box_i$ is a modal operator. Other connectives are expre
 dual modal operators $\lozenge_i$ as $\lozenge_i \phi = \neg \Box_i \neg \phi$
 \end{definition}
 
-In order to provide Kripke semantics, we first consider Kripke frames and models.
-
-\begin{definition}
-    A frame for the multi-modal language is $F = (W,R_1,...,R_n)$ where 
-    \begin{itemize}
-        \item $W$ is a non-empty set of worlds
-        \item $R_i \subseteq W \times W$, is a binary accessibility relation
-    \end{itemize}
-
-    A model for the multi-modal language is a pair $M = (F,V)$ where 
-    \begin{itemize}
-        \item $F$ is a frame
-        \item $V$ is a function, called a valuation and is of the form :  $V : Prop \to 2^W$
-    \end{itemize}
-    Given a model $M = (F,V)$, we say $M$ is based on $F$.
-\end{definition}
-
 \begin{definition}
     Let $M = (W,R_1...,R_n,V)$ be a model and $w \in W$ a state in $M$. The notion of a formula being true at $w$ is inductively defined as follows :
     \begin{align*}
-        M, w &\vDash p &&\text{ iff } w \in V(p) \\
-        M, w &\vDash \bot  &&\text{ never } \\
-        M, w &\vDash \neg \phi &&\text{ iff not } M, w \vDash \phi \\ 
-        M, w &\vDash \phi \lor \psi &&\text{ iff } M,w \vDash \phi \lor M,w \vDash \psi \\
-        M, w &\vDash \Box_i \phi &&\text{ iff } \forall v \in W : wRv \rightarrow M, v \vDash \phi
+        M, w &\Vdash p &&\text{ iff } w \in V(p) \\
+        M, w &\Vdash \bot  &&\text{ never } \\
+        M, w &\Vdash \neg \phi &&\text{ iff not } M, w \Vdash \phi \\ 
+        M, w &\Vdash \phi \lor \psi &&\text{ iff } M,w \Vdash \phi \lor M,w \Vdash \psi \\
+        M, w &\Vdash \Box_i \phi &&\text{ iff } \forall v \in W : wRv \rightarrow M, v \Vdash \phi
     \end{align*}
 
-\end{definition}
-
-\begin{definition}
-    Let $F = (W,R_1,...,R_n)$ be a frame and $\phi$ a formula. Then,
-    \begin{itemize}
-        \item The formula $\phi$ is valid at a state $W$ in $F$, denoted as $F, w \vDash \phi$, if $M,w \vDash \phi$ for all models $M$ based on $F$.
-        \item $\phi$ is valid in $F$, denoted as $F \vDash \phi$, if it is valid at every state in $F$.
-        \item $\phi$ is valid in a class of frames $F$, if it is valid in every frame $F' \in F$.
-        \item $\phi$ is valid if it is valid in all frames $F'$.
-    \end{itemize}
 \end{definition}
 
 \begin{definition}
@@ -271,7 +234,7 @@ In order to provide Kripke semantics, we first consider Kripke frames and models
 
 \begin{proposition}
     Let $\phi$ be a formula in $L_{\Box_1,...,\Box_n}$ , $F = (W, R_1,...,R_n)$ and $F' = (W', R'_1,...,R'_n)$ be two frames and $F \mbox{ to } F'$ a surjective bounded morphism. Then the following holds :
-    $$ \mbox{ If }F \vDash \phi \mbox{ then } F' \vDash \phi$$
+    $$ \mbox{ If }F \Vdash \phi \mbox{ then } F' \Vdash \phi$$
     \begin{proof}
             This can be shown by structural induction on the length of the formula.
     \end{proof}
@@ -287,7 +250,7 @@ In order to provide Kripke semantics, we first consider Kripke frames and models
 \end{corollary}
 
 In this work, we deal with products of frames and multimodal logics of product of frames. The study of products of Kripke frames 
-and their modal logics was first initiated by Segerberg [4] and Shehtman [5]. In the following, we will define necessary notions for such logics.
+and their modal logics was first initiated by Segerberg [4] and Shehtman [5]. In the following, we will define neccessary notions for such logics.
 
 \begin{definition}
     Let $F = (W, R_1)$ and $G = (W,R_2)$. Then we define the Kripke product on $W \times V$ as follows : 
@@ -355,8 +318,6 @@ In the following, we define what is known as a "filtration." The definition is s
     4. $V^f = \{[w] \mid M,w \Vdash p\}$, for all propositional variables $p \in \Sigma$      
 \end{definition}
 
-
-
 \begin{theorem}
     Consider $L_{\Box_1...\Box_n}$. Let $M^f =(W_\Sigma, R^f_1,...,R^f_n, V)$ be a filtration of M through a subformula closed set $\Sigma$.
     Then for all formulas $\phi \in \Sigma$, and all nodes $w \in M$, we have $$M,w \Vdash \phi \mbox{ iff } M^f,[w] \Vdash \phi$$
@@ -364,20 +325,17 @@ In the following, we define what is known as a "filtration." The definition is s
     \begin{proof}
         By induction on $\phi$.\newline
         
-        Case $\phi = p$: Left to right follows immediately from filtration defintion. Conversely, suppose
-        $M^f, [w] \Vdash p$. This means $ [w] \in V^f(p)$. But this means V(p) can not be empty. Pick any $v\in V(p)$. Obviously, $w\equiv v$ and
-        $M,v\Vdash p$. Hence, $M,w \Vdash p$. \newline
+        Case $\phi = p$: Both direction follows immediately from filtration definition. \newline
         
-        Case $\phi = \neg \psi$: Suppose $\psi$ holds. Then we have : $M,w \Vdash \phi \mbox{ iff } M,w \nvDash \psi$. Applying 
-        induction hypothesis, we get : $M^f, [w] \nvDash \psi$. But then, we have $M^f, [w] \Vdash \phi$. Right to left is the same. \newline
+        Case $\phi = \neg \psi$: $M,w \vDash \phi \Leftrightarrow M,w \nvDash \psi \overset{\text{IH}}{\Leftrightarrow} M,[w] \nvDash \psi \Leftrightarrow M,[w] \vDash \phi$. \newline
         
-        Case $\phi = \phi_1 \lor \phi_2$: Suppose $\phi_1, \phi_2$ holds. Let $M,w \Vdash \phi$. That means $M,w \Vdash \phi_1$ or $M,w \Vdash \phi_2$. Applying
+        Case $\phi = \phi_1 \lor \phi_2$: Let $M,w \Vdash \phi$. That means $M,w \Vdash \phi_1$ or $M,w \Vdash \phi_2$. Applying
         induction hypothesis, we get $M^f,[w] \Vdash \phi_1$ or $M^f,[w] \Vdash \phi_2$. But then, $M^f,[w] \Vdash \phi_1 \lor \phi_2 = \phi$. Right to left is similar. \newline
         
-        Case $\phi = \Box_i\psi$ : Left to right. Suppose $\psi$ holds and  $M,w \Vdash \Box_i \psi$. 
+        Case $\phi = \Box_i\psi$ : Left to right. Suppose $M,w \Vdash \Box_i \psi$. 
         We need to show $M^f,[w] \Vdash \Box_i \psi$, this means $\forall [v] \in W_\Sigma : [w]R_i[v] \rightarrow M^f,[v] \Vdash \Box_i \psi$. Pick any $[v] \in W_\Sigma$ s.t 
         $[w]R_i[v]$. By condition 3, w.r.t to the modal operator, we have $M,v \Vdash \psi$. By induction hypothesis, we get $M^f,[v] \Vdash \psi$. Because [v] was arbitrary it follows that $M^f,[w] \Vdash \Box_i \psi$. \newline \newline
-        Right to left. Suppose $\psi$ holds and $M^f,[w] \Vdash \Box_i \psi$. Pick $v \in W$ s.t $wR_iv$. By condition 2, w.r.t to the modal operator, we have
+        Right to left. Suppose $M^f,[w] \Vdash \Box_i \psi$. Pick $v \in W$ s.t $wR_iv$. By condition 2, w.r.t to the modal operator, we have
         $[w]R^f_i[v]$. So, $M^f, [v] \Vdash \psi$. By induction hypothesis, we get $M,v \Vdash \psi$. Because v was arbitrary, we have $M,w \Vdash \Box_i \psi$.
 
     
@@ -388,7 +346,7 @@ After showing that filtration preserves truth, we now define a special relation 
 
 \begin{definition}
     Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
-    $$R^s_i = \{([w],[v]) \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$ 
+    $$R^s = \{[w],[v] \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$ 
 \end{definition}
 
 \begin{lemma}
@@ -396,9 +354,9 @@ After showing that filtration preserves truth, we now define a special relation 
     a filtration of M through $\Sigma$.
     \begin{proof}
     
-    It suffices to show $R^s_i$ fulfills the condition 2 and 3. But $R^s_i$ already satisfies condition 2.
-    Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$. By the Filtration Theorem, we get 
-    $M,[w] \vDash \Box_i \phi$. By assumption, it follows $M,[v] \vDash \phi$. Again, the Filtration Theorem yields $M,v \vDash \phi$.
+    It suffices to show $R^s_i$ fulfills the condition 2 and 3 w.r.t to the corresponding modal operator $\Box_i$. But $R^s_i$ already satisfies condition 2.
+    Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$. Because of $[w]R^s_i[v]$ we pick a $w' \in [w]$
+    and $v' \in [v]$. By defintion, we have $w'R_i v'$. Because $w' \equiv w$, we get $M,w' \Vdash \Box_i \phi$. Hence, $M,v' \Vdash \phi$ and by $v' \equiv v$, we get $M,v \Vdash \phi$.
     
     \end{proof}    
 \end{lemma}
@@ -407,10 +365,10 @@ After showing that filtration preserves truth, we now define a special relation 
     Let $\Sigma$ be a finite subformula closed set of $L_{\Box_1,...,\Box_n}$. For any model M, if $M^f$ is a filtration through $\Sigma$, then $M^f$ contains at most $2^n$ nodes (where n denotes the size of $\Sigma$).
 
     \begin{proof}
-    The states of $M^f$ are the equivalence classes in $W_\Sigma$. Let $g : W_\Sigma \rightarrow P(\Sigma)$ defined by $g([w]) = \{ \phi \in \Sigma \mid M,w \Vdash \phi\}$.
+    Let $g : W_\Sigma \rightarrow P(\Sigma)$ defined by $g([w]) = \{ \phi \in \Sigma \mid M,w \Vdash \phi\}$.
     g is well defined. Pick any u and v s.t $u\equiv v$. But then by defintion of $\equiv$, they fulfill the same subformulas. This means g([v]) = g([u]). \newline
     g is also injective. Pick any $[u],[v] \in W_\Sigma$ s.t g([u]) = g([v]). We show $[u]\subseteq[v]$. The other inclusion is similar.
-    By assumption we have $u \equiv v$. Pick any $u' \in [u]$. Then we have $u' \equiv u \equiv v$. Hence, $u' \in [v]$. At the end, this means $M^f$ contains at most $2^n$ nodes.
+    By assumption we have $u \equiv v$. Pick any $u' \in [u]$. Then we have $u' \equiv u \equiv v$. Hence, $u' \in [v]$. Therefore, $M^f$ contains at most $2^n$ nodes.
 
     \end{proof}     
 \end{proposition}
@@ -425,8 +383,8 @@ After showing that filtration preserves truth, we now define a special relation 
     \end{proof}
         
 \end{theorem}
-    The Filtration Theorem helps us to establish the Finite Model Property (FMP), 
-    which is essential for our result. We now define a special class of formulas called Sahlqvist formulas.
+    Now we define special kind of formulas called Sahlqvist formulas.
+
 \begin{definition}
     A modal formula $\phi$ is positive if all variables occurs in the scope of an even number of negations. In the other hand, a formula is negative, if all variables occurs in the scope of an odd number of negations.
     A boxed atom is a modal formula of the form $\Box^n p$ for some $n \in \mathbb{N}$, where p is a propositional variable and $\Box^n p$ is defined as follows :
@@ -436,8 +394,8 @@ After showing that filtration preserves truth, we now define a special relation 
     where $p$ is an atom, $d \geq 0$ and $\pi$ is a positive formula. \newline 
     
     Examples for Sahlqvist formulas: 
-    $$\neg \Box p \lor \Box\Box p \, \, \,\text{(transitivity)}$$
-    $$ \neg \Box p \lor p \, \, \, \text{(reflexivity)}$$
+    $$\neg \Box \Box p \lor \Box p$$
+    $$ \neg \Box p \lor p$$
     $$ \Box \neg \Box \Box \Box \Box p \lor \Box \lozenge \Box \lozenge p$$
     $$ \Box\Box\Box\Box(\Box \neg \Box p \lor p) \land \neg \Box \Box p \lor \Box p $$
     
@@ -449,18 +407,7 @@ After showing that filtration preserves truth, we now define a special relation 
 
 Sahlqvist formulas possess important properties, which are guaranteed by the Sahlqvist Theorem. It says that, 
 when given a normal modal logic K and a set of Sahlqvist formulas, the resulting logic is complete w.r.t 
-to the class of frames, which satisfies the corresponding first-order formula of the Sahlqvist formulas. In the following, we give the formal statement of the theorem.
-\begin{theorem}
-    Let $\phi$ be a Sahlqvist formula. Then:
-    \newline
-    \newline
-    1. $\phi$ canonical \newline
-    2. the class of Kripke frames validating $\phi$ can be characterized by a first order formula \newline
-    3. $\phi$ is complete with respect to its class of validating frames
-
-    
-\end{theorem}
-This also holds for multimodal logic. We will not prove it here, but we will use it later in this work.
+to the class of frames, which satisfies the corresponding first-order formula of the Sahlqvist formulas. This also holds for multimodal logic. We will not prove it here, but we will use it later in this work.
 The main idea is to use Sahlqvist to show that our logic is sound and complete w.r.t. a certain class of frames. Using the smallest filtration and Filtration Theorem,
 we can gurantee the finite model property while preservering the relevant frame properties.
 
@@ -473,9 +420,9 @@ relying on specific distances.
 \newline
 One particularly rich and fruitful area of study is the interaction between modal logic and topology. 
 Topological spaces provide an intuitive semantic framework for modal logic by interpreting modal operators in terms of spatial notions like interior, closure, and neighbourhoods. 
-It is also well known, that the modal logic of topological spaces contains $S4$.
+It is also well known, that the modal logic of any topological space is $S4$.
 \newline
-Neighborhood frames generalizes the idea of topology by loosening the conditions that define open sets in topological space.
+Neighborhood frames generalizes the idea of topology by loosen the conditions that define open sets in topological space.
 Instead of relying on a global systems of open sets, there exists a neighborhood function, which assigns to each point a collection of sets — its neighbourhoods.
 This provides us a more flexible framework to work with.
 \newline
@@ -512,12 +459,10 @@ We begin by formally introducing the concept of a topological space.
 \end{remark}
 
 \begin{definition}
-    Let $(X,\tau)$ be a topological space. Then the space is called Alexandroff, if arbitrary intersections of open sets are open.
-    An equivalent definition is that every point has a smallest open set. That means for each $x \in X$ we have 
+    Let $(X,\tau)$ be a topological space. Then the space is called Alexandroff, if arbitrary intersection of open sets are open.
+    An equivalent defintion is that every point has a smallest open set. That means for each $x \in X$ we have 
     $U_x = \bigcap \{U \subseteq X \mid U \mbox{ is open  and } x \in U\} \in \tau$.
 \end{definition}
-
-In the following, we present several topological spaces to build intuition. Some of them are Alexandroff spaces, but we also include an example of a non-Alexandroff space.
 
 \begin{example}
 Let \( X = \{1, 2, 3\} \). We consider different topologies on \( X \):
@@ -554,9 +499,7 @@ The satisfaction of a formula at the point \( x \) in \( M \) is defined inducti
 \]
 \end{definition}
 
-In the study of product spaces in topology, we work with horizontal and vertical topologies. 
-Such topologies allows us to reason across the coordinates of the product space. It allows us to define
-modalities that reflect reasoning in each dimension.
+
 
 
 \begin{definition}
@@ -610,8 +553,8 @@ We define
   \caption{Each rectangle represents $N$ and the redlines are subsets of $N$} 
 \end{figure}
 
-    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the set of all standard product of subsets $X \times Y$
-    with basis $\{X \times Y \mid X \in \chi \text{ and } Y \in \upsilon\}$.
+    If $N$ is H-open and V-open, then we call it HV-open. \newline
+    We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the standard product of subsets $X \times Y$ s.t. $X \in \chi$ and $Y \in \upsilon$.
         
 \end{definition}
 
@@ -638,12 +581,10 @@ We define
     with horizontal, vertical and standard topologies.
 \end{definition}
 
-
-
 \begin{definition}
     For two unimodal logics $L_1$ and $L_2$ we define the full $t$-product of them as follows :
     $$L_1 \times^+_t L_2 = Log(\{\mathcal{X} \times^+_t \mathcal{Y} \mid \mathcal{X} \vDash L_1 \mbox{ and } \mathcal{Y} \vDash L_2\})$$
-    where $\mathcal{X},\mathcal{Y}$ are topological spaces. This is the so called tri-modal logic with three modalities.
+    where $\mathcal{X},\mathcal{Y}$ are topological spaces.
 \end{definition}
 
 \begin{definition}
@@ -676,7 +617,6 @@ We define
 \subsection{Product and semantics of neighborhood frames}
 Neighborhood frames are more flexible than topological space. Its logic is not $S4$ in general. 
 It is well known, that neighborhood frames fully captures the semantics of Kripke. Moreover, neighborhood frames are expressive enough to characterize non-normal modal logics, which makes them a powerful tool.
-We formally introduce neighbourhood frames.
 
 
 \begin{definition}
@@ -688,42 +628,23 @@ We formally introduce neighbourhood frames.
 \begin{definition}
     Let $M$ = ($X$,$\tau$,v) be a neighourhood model and $x$ $\in$ $X$. The truth of a formula is defined inductively as follows :
     \begin{align*}
-        M,x &\vDash p &&\text{iff } x \in V(p)\\
-        M,x &\vDash \bot &&\text{never } \\
-        M,x &\vDash \neg \phi &&\text{iff } M,x \nVdash \phi\\
-        M,x &\vDash \phi \lor \psi &&\text{iff } M,x \vDash \phi \lor M,x \vDash \psi\\
-        M,x &\vDash \Box \phi &&\text{iff } \exists V \in N(x) \forall y \in V : M,y \models \phi
+        M,x &\Vdash p &&\text{iff } x \in V(p)\\
+        M,x &\Vdash \bot &&\text{never } \\
+        M,x &\Vdash \neg \phi &&\text{iff } M,x \nVdash \phi\\
+        M,x &\Vdash \phi \lor \psi &&\text{iff } M,x \vDash \phi \lor M,x \vDash \psi\\
+        M,x &\Vdash \Box \phi &&\text{iff } \exists V \in N(x) \forall y \in V : M,y \models \phi
     \end{align*}
     A formula is valid in a n-model $M$ if it is valid at all points of $M$ ($M \vDash \phi$). Formula is valid in a n-frame $F$ if it is valid in
     all models based on $F$ (notation $F \vDash \phi$). We write $F \vDash L$ if for any $\phi \in L, F \vDash \phi$. Logic of a class of n-frames $\mathcal{C}$ as $Log(\mathcal{C}) = \{\phi \mid F \vDash \phi \mbox{ for all } F \in \mathcal{C}\}$.
     $\mbox{We define nV(L) =  } \{ F \mid F \mbox{ is an n-frame and } F \models \phi \}$.
 \end{definition}
 
-\begin{example}
-    Suppose $W = \{1,2,3\}$, and define a neighborhood function $\tau : W \rightarrow 2^{2^W}$ as follows :
-    \begin{itemize}
-        \item $N(1) = \{\{2\}, \{1,2\}, \{2,3\}, W\}$
-        \item $N(2) = \{W\}$
-        \item $N(3) = \{\{3\}, \{1,3\}, \{2,3\}, W\}$
-    \end{itemize}
-    We define a valuation $V$ : $\{p,q\} \rightarrow 2^W$ by $V(p) = \{2,3\}$ and $V(q) = W$.
-    Let $\phi = \Box p \rightarrow p$ and $\psi = \Box p \land \Box\Box q$. Then the following holds :
-    \begin{itemize}
-        \item $(W,\tau),1 \vDash \psi$
-        \item $(W,\tau),3 \vDash \psi$
-        \item $(W,\tau),3 \vDash \phi$
-        \item $(W,\tau),2 \nvDash \psi$
-        \item $(W,\tau),1 \nvDash \phi$
-    \end{itemize}
-    The last example shows that the reflexive axiom is not valid, and hence S4 is not valid in general.
-\end{example}
-
 \begin{definition}
     Let $X$ be a non-empty set and $\tau$ neighborhood function. We call $\tau$ is a filter if for each $x\in X$ the collection $\tau(x)$
     satisfies the following conditions : \newline \newline
     1. $\emptyset \notin \tau(x)$ \newline
     2. $\mbox{If }U \in \tau(x)$ and $U \subseteq V$ then $V \in \tau(x)$ (upward closed) \newline
-    3. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$ (closed under finite intersection)
+    3. $\mbox{If }U, V \in \tau(x)$, then $U \cap V \in \tau(x)$
 \end{definition}
 
 \begin{definition}
@@ -731,9 +652,8 @@ We formally introduce neighbourhood frames.
     $X \rightarrow Y$ is called bounded morphism if \newline \newline
     1. $f$ is surjective \newline
     2. $\forall x\in X \, \forall U \in \tau_i(x) : f(U) \in \sigma_i (f(x))$ \newline
-    3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$ \newline 
+    3. $\forall x\in X \, \forall V \in \sigma_i (f(x)) \, \exists U \in \tau_i(x) \, : f(U) \subseteq V$        
 \end{definition}
-    The neighborhood frame in Example 3.2.3 is a filter.
 
 \begin{corollary}
      Let $X$ = (X, $\tau_1$,...) and $Y$ = (Y, $\sigma_1$,...) be n-frames and $f : X \rightarrow Y$ a bounded morphism. Then 
@@ -775,14 +695,14 @@ In topology, we defined horizontal and vertical topologies for products of topol
 
 
   \end{tikzpicture}
-  \caption{This is an illustration for $\tau_1'$ with a fix point $(x,y)$. The black box is $X \times Y$. The red lines represents the combinations of any neighbourhood of x with y.
+  \caption{This is an illustration for $\tau_1'$ with a fix point $(x,y)$. The red lines represents the combinations of any neighbourhood of x with y.
   The blue rectangles are the subsets of $X \times Y$ s.t. the condition is fulfilled.}
 \end{figure}
 \end{definition}
 
 \begin{definition}
     For two unimodal logics $L_1$ and $L_2$ we define the n-product of them as follows :
-    $$ L_1 \times_n L_2 = Log(\{ \mathcal{X} \times_n \mathcal{Y} \mid \mathcal{X} \in nV(L_1) \mbox{ and } \mathcal{Y} \in nV(L_2) \})$$   
+    $$ L_1 \times_n L_2 = Log(\{ \mathcal{X} \times \mathcal{Y} \mid \mathcal{X} \in nV(L_1) \mbox{ and } \mathcal{Y} \in nV(L_2) \})$$   
     In similar way, we can define $L_1 \times^+_n L_2$ with three topologies.     
 \end{definition}
 
@@ -795,7 +715,7 @@ In topology, we defined horizontal and vertical topologies for products of topol
     Let $\mathcal{L}_{\Box,\Box_1,\Box_2}$ be a modal language with three  modal operators $\Box, \Box_1 \mbox{ and } \Box_2$.
     We define the $T$-neighborhood product logic $\mathit{TNL}$ as the least set of formulas in $L_{\Box,\Box_1,\Box_2}$ 
     containing all axioms $T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$, and closed
-    under modus ponens, substitution and $\Box- , \Box_1- $ and $\Box_2-$ necessitation. 
+    under modus ponens, substitution and $\Box- , \Box_1- $ and $\Box_2-$ neccessitation. 
 \end{definition}
 
 
@@ -803,7 +723,7 @@ After introducing the necessary notation, we can now formally state our main res
 Does the following equivalence hold?
 $$\mathit{TNL} = T \times^+_n T$$
 The main idea is to introduce an infinite depth and branching tree called $T_{\omega,\omega,\omega[rn]}$ and show $Log(T_{\omega,\omega,\omega[rn]}) = \mathit{TNL}$.
-Then we use the idea in [2] to use the pseudo-infinite paths construction to build an n-frame called $N_\omega(T_{\omega[rn]})$ and construct a bounded morphism-like map 
+Then we use the idea in [2] to use the pseudo-infinite paths construction to build an n-frame called $N_\omega(T_{\omega[rn]})$ and construct a p-morphism-like map 
 from $N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]})$ to $T_{\omega,\omega,\omega[rn]}$. We will introduce the notation later.
 
 \clearpage
@@ -811,7 +731,7 @@ from $N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]})$ to $T_{\omeg
 \section{Completeness result for $\mathit{TNL}$}
 
 We introduce a frame called $T_{\omega, \omega, \omega[rn]}$. We will show $\mathit{TNL}$ is sound and complete w.r.t $T_{\omega, \omega, \omega[rn]}$.
-The idea is to pick a class of frame $\mathcal{C}$ s.t $Log(\mathcal{C}) = \mathit{TNL}$ and then show $\mathit{TNL}$ has the finite model property.
+The idea is to pick a class of frame $\mathcal{C}$ s.t $Log(\mathcal{C}) = Log(T_{\omega, \omega, \omega[rn]})$ and then show the class has FMP.
 In the end, we will use an unravelling technique to show completeness. 
 
 \begin{definition}
@@ -820,43 +740,36 @@ In the end, we will use an unravelling technique to show completeness.
         
 \end{definition}
 
-
-
 \begin{proposition}
     The logic $T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$ has FMP.
     \begin{proof}
-    The idea is to pick a class of frame $\mathcal{C}$, where $\mathit{TNL}$ is sound and complete with respect to and then show by filtration the FMP. \newline \newline
+    The idea is to pick a class of frame $\mathcal{F}$, where $\mathit{TNL}$ is sound and complete with respect to and then show by filtration the FMP. \newline \newline
     Let $\mathcal{C} = \{F \mid F \Vdash \mathit{TNL}\}$. Obviously,  $\mathit{TNL}$ is sound w.r.t $\mathcal{C}$. Completeness can be shown by using the Sahlqvist Theorem.
-    We recall T = K + $\Box_i p \rightarrow p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
+    We remember T = K + $\Box_i p \rightarrow p$ for $i \in \{1,2, \epsilon\}$. These axioms and $\Box p \rightarrow \Box_1 p \land \Box_2 p$ are Sahlqvist formulas. 
     By Sahlqvist, we have $\mathit{TNL}$ is complete w.r.t $\{F \mid F \Vdash \forall x \, R_i(x,x) \mbox{ and } F \Vdash \forall x \forall y (R_1(x,y) \lor R_2(x,y)) \rightarrow R(x,y)\}$. \newline \newline
     Now assume a formula $\phi$ is not derivable from $\mathit{TNL}$. By completeness we get $\phi$ is falsifiable in a model M and a world w. Hence, $M,w \Vdash \neg \phi$. Now we build the set subf($\neg \phi$) which denotes the closed subformulas set of $\neg \phi$.
     Let $M^s = (W_\Sigma, R^s, R^s_1, R^s_2, V^s)$ be the smallest filtration of M through subf($\neg \phi$) and $V^s$ is the standard valuation on $W_\Sigma$. By Filtration theorem, they preserve truth.
     It remains to show $F^s = (W_\Sigma, R^s, R^s_1, R^s_2)\in  \mathcal{C}$. For that, every point must have an edge to itself in every relation and it must hold that $R^s_1,R^s_2 \subseteq R^s$. For the first one, we show this for $R^s$ because the rest is similar.
     Pick $w' \in [w]\in W_\Sigma$. Because M is based on a frame $F \in \mathcal{C}$, we have $w'Rw'$. By the defintion of smallest filtration, we have that $[w']R^s[w']$. For the second one, we show only for $R^s_1$ because it is the same for $R^s_2$.
-    Pick [w],[v] s.t $[w]R^s_1[v]$. By defintiion of smallest filtration there are points $w' \in [w]$ and $v' \in [v]$ s.t $w'R_1v'$. Furthermore, it holds $R_1 \subseteq R$, so $w'Rv'$.
+    Pick [w],[v] s.t $[w]R^s_1[v]$. By defintion of smallest filtration there are points $w' \in [w]$ and $v' \in [v]$ s.t $w'R_1v'$. Furthermore, it holds $R_1 \subseteq R$, so $w'Rv'$.
     By smallest filtration, we get $[w']R^s[v']$. Because $w' \equiv w \mbox{ and } v' \equiv v$, we have $[w'] = [w] \mbox{ and } [v'] = [v]$. It follows $[w]R^s[v]$.
     
     \end{proof}
         
 \end{proposition}
 
-Now we define $T_{\omega,\omega,\omega[rn]}$ which is the infinitely branching and infinite-depth tree with three reflexive and non-transitive relations.
-We also introduce a simpler version of it called $T_{\omega[rn]}$, which is similar to the above but has only one relation.
-We introduce this simpler structure for two main reasons: We will use it later in our proof; and second, we will show that the logic $T$ is sound and complete w.r.t. $T_{\omega[rn]}$. The technique we use there
-can be generalized and will be used to prove the main result of this chapter.
-
-
 \begin{definition}
-    Let $T_{\omega [rn]}$ (r = reflexive, n = non-transitive) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
-    Formally the tree can be defined as : $T_{\omega [rn]} = (W, R)$ where $W = \mathbb{N}^*$,  $$sRt \text{ iff } \exists u \in \mathbb{N} \cup \{\epsilon\} : s \cdot u = t$$
+    Let $T_{\omega [rn]}$ (r = reflexive, n = non-transitiv) denote the infinite branching and infinite depth tree, which is reflexive and non-transitive.
+    Formally the tree can be defined as : $T_{\omega [rn]} = (W, R)$ where $W = \mathbb{N}^*$,  $$sRt \text{ iff } \exists u \in \mathbb{N} \cup \{\epsilon\} : s \cdot u = t$$ ("$\cdot$" is the concatenation operator) 
+    \clearpage
     The $T_{\omega,\omega,\omega [rn]}$ tree has three relations with infinite branching, infinite depth and we have $R_1,R_2 \subseteq R$. Before characterizing it, we say
-    $\mathbb{N}_{1}^*$ is the set of finite number combinations which has subscript $"1"$ to denote these numbers relate to $\mathbb{N}_1$.  \newline 
+    $\mathbb{N}_{1}^*$ is the set of finite number combinations which has subscript $"1"$ to denote these numbers relate to $R_1$.  \newline 
     (examples : $2_{1}, 4231123_{1}$, $32_{1} \epsilon 45_{1} \epsilon 9_{1} = 32459_{1}$). The similar holds for $\mathbb{N}_2^*$.\newline \newline
     Now let $T_{\omega,\omega,\omega [rn]} = (W, R, R_1, R_2 )$ where $W = (\mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2})^*$, 
     $$sRt \mbox{ iff } \exists u \in \mathbb{N} \cup \mathbb{N}_{1} \cup \mathbb{N}_{2} \cup \{\epsilon\} : s \cdot u = t$$
     $$sR_1t \mbox { iff } \exists u \in \mathbb{N}_{1} \cup \{\epsilon\} : s \cdot u = t$$
     $$sR_2t \mbox { iff } \exists u \in \mathbb{N}_{2} \cup \{\epsilon\} : s \cdot u = t$$
-    where $s,t \in W$. The "$\cdot$" operator acts here as a concatenation operator.
+    where $s,t \in W$. Again, the "$\cdot$" operator acts here as a concatenation operator.
 
     \begin{figure}[h]
 \centering
@@ -964,10 +877,10 @@ can be generalized and will be used to prove the main result of this chapter.
     Now, let $F = (W', R')$ be such a finite rooted frame with root $w$. We define 
     inductively an assignment of nodes of $F$ to the nodes of $T_\omega$. For the base case, we assign $w$ to the root of $T_\omega$. The induction step looks like the following : 
     Assume a point $x \in T_\omega$ has been assigned to a point $u \in F$ but the successors of $x$ has no assignment. 
-    Let $s_1, s_2, ..., s_k$ be successors of $u$ ($k$ denotes number of successors, with $k \geq 1$ ensured by reflexivity).
+    Let $s_1, s_2, ..., s_k$ be successors of $u$ ($k$ denotes amount of successors and $k\geq 1$ because reflexivity guarantees us at least one successor).
     For $n \geq 1, n \in \mathbb{N}, i \in\{1,...,k\}$ we assign $s_i$ to the ($n * i$)th-successor of $x$. This means we are assigining the successors alternatingly. \newline
     Now we check for $f$ the conditions of bounded morphism. First condition : Let $x,y \in T_\omega$ s.t $xRy$ and $f(x) = s$. But then, y will be assigned to a successor point of $s$. 
-    Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $t$ is the $i$-th successor. Then the points in $\{u \mid \text{u is} (n*i)\text{th-successor of }x \text{ for } n\geq 1, n\in \mathbb{N}\}$ gets the assignment $t$.
+    Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $f(x) = s$. Since $t$ is a successor of $s$ and $f(x) = s$, then a successor of $x$, say $y$, gets the assignment $t$. 
     
     \end{proof}
         
@@ -978,15 +891,14 @@ can be generalized and will be used to prove the main result of this chapter.
     $\mathit{TNL}$ is sound and complete w.r.t $T_{\omega,\omega,\omega[rn]}$.
 
     \begin{proof}
-    To establish soundness, we note that $T_{\omega,\omega,\omega[rn]} \vDash \Box p \rightarrow \Box_1 p \land \Box_2p$, as $R_1,R_2 \subseteq R$. The rest is clear.
+    For soundness, we have that $T_{\omega,\omega,\omega[rn]} \Vdash \Box p \rightarrow \Box_1 p \land \Box_2p$, because by defintion we have $R_1,R_2 \subseteq R$. The rest is clear.
     For completeness, we use the fact $\mathit{TNL}$ has FMP. Let $F = (W',R', R'_1, R'_2)$ be a finite rooted frame with root w and $F \Vdash TNL$. We define inductively an
-    assignment similar to Proposition 4.0.4. We assign $w$ to the root of $T_{\omega,\omega,\omega}$. For induction step, assume $x \in T_{\omega,\omega,\omega}$ has been assigned to a point $u \in F$ but all points in $R_1(x)$
-    have no successors. Let $s_1,s_2,..., s_k$ be successors of $u$. For $n \geq 1, n \in \mathbb{N}, i \in \{1,..,k\}$ we assign $s_i$ to the $(n * i)$th-successor of $x$ in $R_1$. We then do it for $R_2(x)$ and at last for $R(x)$.
-
+    assignment similar to Proposition 3.0.4. We assign $w$ to the root of $T_{\omega,\omega,\omega[rn]}$. For induction step we start by only assigining points from $R_1$ to $R'_1$ and $R_2$ to $R'_2$. After that, the remaining points will be assigned to the points in $R'$.
+    The procedure works similar as described previously. \newline
     We will only check the conditions for $R$ and $R'$. For $R_1, R_1'$ and $R_2, R_2'$, we can argue as before. We pick any $xRy$ with $f(x) = s$. 
     If we also have $xR_1y$ or $xR_2y$, then it follows $f(x)R' f(y)$ because $R_1, R_2 \subseteq R$ and $R_1', R_2' \subseteq R'$. Else, the successor of s was assigned to y, so $f(x)R'f(y)$. \newline
     Let $f(x)R't$ and $f(x) = s$. If we have $f(x) R'_1 t$ or $f(x) R'_2 t$, then the second condition follows because $R_1,R_2 \subseteq R$.
-    Else, suppose $f(x)R't$ and $t$ is the $i$-th successor. Then the points in $\{u \mid \text{u is} (n*i)\text{th-successor of }x \text{ in R for } n\geq 1, n\in \mathbb{N}\}$ gets the assignment $t$.
+    Else, we have that $t$ is a successor of $f(x) = s$, and a successor of $x$ was assigned to $t$.
     \end{proof}
         
 \end{proposition}
@@ -997,14 +909,9 @@ can be generalized and will be used to prove the main result of this chapter.
 \clearpage
 
 \section{Logic of product of topological spaces with three topologies}
-In this chapter, we will reprove the logic of the product of two topological spaces equipped horizontal, vertical and standard product topologies is 
-$S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$. To begin, we first present the single-modality version, as it is easier to understand and the core idea of the proof is based on this simpler case.
-We will define the binary tree $T_2$ and view it as an Alexandroff space.
-We use completeness of $S4$ w.r.t. $T_2$, it suffices to find a bisimulation between $T_2$ and the topological space $\mathbb{Q}$.
-A similar approach will then be applied to the multimodal case.
-
-
-
+In this section, we will reprove the logic of the product of two topological spaces with horizontal, vertical and classic product topology is 
+$S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$ [1]. First we will show a version for one modality
+because it is easier to understand and the proof idea is based on this version.
 
 \begin{definition}
     Let $T_2$ be the infinite binary tree with reflexive and transitive descendant relation. \newline Formally it is defined as follows :
@@ -1048,7 +955,7 @@ $$X_{n+1} = X_n \cup \{x - \frac{1}{3^n}, x + \frac{1}{3^n} \mid x \in X_n\}$$
     For $n>0$ and $x,y \in X_n, x \neq y$ we have : $\left| x - y \right| \geq \frac{1}{3^{n-1}}$
 
     \begin{proof}
-        The proof is by induction on $n$. For the base case, if $n=1$, then $X_1 = \{0,1,-1\}$. For induction step, assume $u,v \in X_{n-1}$ with $u \neq v$. By induction hypothesis, it holds 
+        The proof is by induction on $n$. For the base case, if $n=1$, then $X = {0,1,-1}$. For induction step, assume $u,v \in X_{n-1}$ with $u \neq v$. By induction hypothesis, it holds 
         $|u-v| \geq \frac{1}{3^{n-2}}$. Suppose we pick $x = u + \frac{1}{3^{n-1}}$ and $y = v - \frac{1}{3^{n-1}}$. Hence, $x,y \in X_n$. But then, $|x - y| = \left| (u + \frac{1}{3^{n-1}}) - (v - \frac{1}{3^{n-1}})\right| = \left| u - v + \frac{2}{3^{n-1}} \right| \geq \frac{1}{3^{n-1}}$. If $u-v$ is positive, 
         then the inequality follows immediately. Now assume $u-v$ is negative. By indcution hypothesis we get $u-v \leq -\frac{1}{3^{n-2}}$. So the worst case is, when $u-v$ gets $-\frac{1}{3^{n-2}}$.
         But then, $\left| -\frac{1}{3^{n-2}} + \frac{2}{3^{n-1}} \right| = \frac{1}{3^{n-1}}$.
@@ -1149,10 +1056,10 @@ $$X_{n+1} = X_n \cup \{x - \frac{1}{3^n}, x + \frac{1}{3^n} \mid x \in X_n\}$$
     \end{figure}
 
 
-In Figure 7, each colour represents a different level. The points in red are from $X_1$, blue points from $X_2$, green points from a part of $X_3$ and orange from a part of $X_4$. 
+In Figure 3, each colour represents a different level. The points in red are from $X_1$, blue points from $X_2$, green points from a part of $X_3$ and orange from a part of $X_4$. 
 We can observe that, the distance between a point and its source is getting exponentially smaller.
 
-It follows from Lemma 5.0.4 that $(X, <)$ is a countable, dense, and linear ordered without endpoints. By Cantor's Theorem, X is homeomorphic to $\mathbb{Q}$.
+It follows from Lemma 4.0.4 that $(X, <)$ is a countable, dense, and linear ordered without endpoints. By Cantor's Theorem, X is homeomorphic to $\mathbb{Q}$.
 It also follows that for each $x \in X$ with $x \neq 0$ there exists an index $n_x$ with $x \in X_{n_x}$ but $x \notin X_{n_{x}-1}$. But also, we can find a unique $y \in X_{{n_x}-1}$ with $x = y - \frac{1}{3^{n_x -1}}$ or $x = y + \frac{1}{3^{n_x -1}}$.
 Furthermore, the basis for the open intervals for any $x \in X$ will be $(x- \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$ where $n_x$ is the index where $x$ gets produced. \newline
 
@@ -1179,46 +1086,46 @@ $x \in X_{n_x} - X_{n_x -1}$ and we let
         Base case : If $k = 0$, then we have $t = f(x)$ and we can pick $y = x$. For induction step, assume it holds for $f(x)Rt'$ with length $n$, $f(y) = t'$ and $t'Rt$.
         For $y$, there must exists an index $n_y > n_x$ s.t. $y \in X_{n_y} - X_{n_y -1}$. 
         Now let $y' = y - \frac{1}{3^{n_y}}$ or $y' = y + \frac{1}{3^{n_y}}$. It holds that, $n_y' > n_y > n_x$, so $y' \in (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$.
-        By definition of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open. \newline
+        By defintion of $f$, $f(y')$ is either left or right successor of $f(y)$ and by $f(y)= t' R t$, we get $f(y') = t$. It follows $f$ is open. \newline
         To show $f$ is continuous, it suffices to show that for each $t \in T_2$, the $f$-inverse image of $B_t$ is open. Let $x \in f^{-1}(B_t)$. Then $tRf(x)$. As argued before, we can find an open interval in $X$ s.t.
         $f (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}}) = B_{f(x)}$.  By $tRf(x)$, we get $B_{f(x)} \subseteq B_t$. Hence, we found an open interval
         $I = (x - \frac{1}{3^{n_x}}, x + \frac{1}{3^{n_x}})$, s.t. $I = f^{-1}(B_{f(x)}) \subseteq f^{-1}(B_t)$. This holds because we can pick $y \in I$. By applying $f$, we get $f(y) \in B_{f(x)} \subseteq B_t$. But then $y \in f^{-1}(B_t)$.
-        By that fact, we can follow with Remark 3.1.2, that $f^{-1}(B_t)$ is open and hence $f$ is continuous.
+        By that fact, we can follow with Remark 2.1.2, that $f^{-1}(B_t)$ is open and hence $f$ is continuous.
 
     \end{proof}
 
 \end{proposition}
-To complete the proof, if $S4 \nvdash \phi$, then by Theorem 5.0.2, there is a valuation $v$ on $T_2$ s.t. $(T_2, v), r \nVDash \phi$. We define a valuation $\xi$ on $X$ by $\xi(p) = f^{-1}(v(p))$. Since $f$ is continuous and open, $f(0) = r$ and by the choice 
-of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 3.1.13 it follows $(X, \xi), 0 \nVDash \phi$. Because $X$ is homeomorphic to $\mathbb{Q}$, we obtain $\phi$ refutable on $\mathbb{Q}$.
+To complete the proof, if $S4 \nvdash \phi$, then by Theorem 4.0.2, there is a valuation $v$ on $T_2$ s.t. $(T_2, v), r \nVDash \phi$. We define a valuation $\xi$ on $X$ by $\xi(p) = f^{-1}(v(p))$. Since $f$ is continuous and open, $f(0) = r$ and by the choice 
+of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 2.1.11 it follows $(X, \xi), 0 \nVDash \phi$. Because $X$ is homeomorphic to $\mathbb{Q}$, we obtain $\phi$ refutable on $\mathbb{Q}$.
 
 
 \begin{definition}
     Let $\mathcal{L}_{\Box,\Box_1,\Box_2}$ be a modal language with three modal operators $\Box, \Box_1$ and $\Box_2$.
     We define the topological product logic $TPL$ as the least set of formulas in $\mathcal{L}_{\Box,\Box_1,\Box_2}$ containing all axioms
-    $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$, and closed under modus ponens, substitution and $\Box$-, $\Box_1$- and $\Box_2$-necessitation.  
+    $S4 \otimes S4 \otimes S4 + \Box p \rightarrow \Box_1 p \land \Box_2 p$, and closed under modus ponens, substitution and $\Box$-, $\Box_1$- and $\Box_2$-neccessitation.  
 \end{definition}
 
 \begin{theorem}
     $TPL$ is complete w.r.t. $T_{6,2,2}$.
     \begin{proof}
-        A generalization of Theorem 5.0.2 can be seen on [6].
+        A generalization of Theorem 4.0.2 can be seen on [6].
     \end{proof}
 \end{theorem}
 
-Now we are ready to show $TPL$ is complete w.r.t. $\mathbb{Q} \times^+_t \mathbb{Q}$ with three topologies. The idea is similar as previous shown.
+Now we are ready to show $TPL$ is complete w.r.t. $\mathbb{Q} \times \mathbb{Q}$ with three topologies. The idea is similar as previous shown.
 We view $T_{6,2,2}$ as equipped with three Alexandroff topologies defined from $R, R_1$ and $R_2$. It suffices to show 
-that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times^+_t X$ = $X'$ where each $X$ is as defined in Theorem 5.0.3. 
+that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $X'$ where each $X$ is as defined in Theorem 4.0.3. 
 
 \begin{theorem}[\textnormal{[1]}]
-    $TPL$ is complete w.r.t. $\mathbb{Q} \times^+_t \mathbb{Q}$.
+    $TPL$ is complete w.r.t. $\mathbb{Q} \times \mathbb{Q}$.
 
     \begin{proof}
-        We define $h$ from $X \times^+_t X$ onto $T_{6,2,2}$ by recursion following the inducitve definition of $X$.
-        If $(x,y) = (0,0)$, then $h(0,0)$ is the root $r$ of $T_{6,2,2}$. If $(x,y) \neq (0,0)$, then as argued in Lemma 5.0.4, there exists
-        $n_{(x,y)}$ with $(x,y) \in X'_{n_{(x,y)}} \setminus X'_{n_{(x,y)}-1}$ and that there exists a unique $(u,v) \in X'_{n_{(x,y)}-1}$ such that 
+        We define $h$ from $X \times X$ onto $T_{6,2,2}$ by recursion following the inducitve definition of $X$.
+        If $(x,y) = (0,0)$, then $h(0,0)$ is the root $r$ of $T_{6,2,2}$. If $(x,y) \neq (0,0)$, then as argued in Lemma 4.0.4, there exists
+        $n_{(x,y)}$ with $(x,y) \in X'_{n_{(x,y)}} - X'_{n_{(x,y)}-1}$ and that there exists a unique $(u,v) \in X'_{n_{(x,y)}-1}$ such that 
         $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v)$ or $(x,y) =  (u, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$
         or $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$. \newline 
-        As visiualized in Figure 8, we can see as an example $X'_0,X'_1$ and an excerpt of $X'_2$. For clarity, we illustrated some points of $X'_1$ as a line. We clearly can see, 
+        As visiualized in Figure 4, we can see as an example $X'_0,X'_1$ and an excerpt of $X'_2$. For clarity, we illustrated some points of $X'_1$ as a line. We cleary can see, 
         that any point has his own "square", where the points within it can be only build from its center point. This is because, the "square size" gets exponentially smaller with each level, due to its construction.
         That means, in each iteration they can not intersect.
 
@@ -1516,7 +1423,7 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times^+_t X$
             \draw [blue, line width=1.5pt](2, -4) -- (2.2, -4);
             \draw [blue, line width=1.5pt](2, -4) -- (2, -3.8);
 
-            \draw [blue, line width=1.5pt](2, -3.2) -- (2, -2.8);   
+            \draw [blue, line width=1.5pt](2, -3.2) -- (2, -2.8);
 
             \draw [blue, line width=1.5pt](2, -2.2) -- (2, -2);
             \draw [blue, line width=1.5pt](2, -2) -- (2.2, -2);
@@ -1531,13 +1438,13 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times^+_t X$
     and for $\tau$ is 
     $$\{(x - \frac{1}{3^{n_{(x,y)}}}, x +\frac{1}{3^{n_{(x,y)}}}) \times (y - \frac{1}{3^{n_{(x,y)}}}, y +\frac{1}{3^{n_{(x,y)}}}) \mid (x,y) \in X \times X\}$$
     We also observe that a basis for the topology on $T_{6,2,2}$ from $R_1$ is \{$B^1_t\}_{t \in T_{6,2,2}}$ where $B^1_t = \{s \in T_{6,2,2} \mid t R_1 s\}$ 
-    and from $R$ is $\{B_t\}_{t \in T_{6,2,2}}$ where $B_t = \{s \in T_{6,2,2} \mid t R s\}$. The following arguments are carried over from Proposition 5.0.5. \newline
+    and from $R$ is $\{B_t\}_{t \in T_{6,2,2}}$ where $B_t = \{s \in T_{6,2,2} \mid t R s\}$. The following arguments are carried over from Proposition 4.0.5. \newline
     Now, to see that $g$ is open w.r.t. $\tau_1$, we pick an open set $(x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\} \in \tau_1$. 
     In similar way, we can show $g((x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\}) = B^1_{g(x,y)}$. Thus $g$ is open.
     To show $g$ is continuous, it suffices to show that for each $t \in T_{6,2,2}$, the $g$-inverse image of $B^1_t$ belongs to $\tau_1$. Let $(x,y) \in g^{-1}(B^1_t)$. 
     Then $tR_1g(x,y)$. Hence, it holds for $(x,y)$ that $g((x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\}) = B^1_{g(x,y)}$. By $t R_1g(x,y)$, we get
     $B^1_{g(x,y)} \subseteq B^1_t$. Thus, we found a neighborhood U of $(x,y)$ s.t. $U = ((x - \frac{1}{3^{n_{(x,y)}}}, x + \frac{1}{3^{n_{(x,y)}}}) \times \{y\}) \subseteq g^{-1}(B^1_t)$, implying $g$ is continuous.  \newline
-    To see $g$ is open w.r.t. $\tau$, we pick pick an open set ($x- \frac{1}{3^{n_{(x,y)}}}, x+ \frac{1}{3^{n_{(x,y)}}}) \times (y- \frac{1}{3^{n_{(x,y)}}}, y+ \frac{1}{3^{n_{(x,y)}}})$. A similar argument as in Proposition 5.0.5, yields 
+    To see $g$ is open w.r.t. $\tau$, we pick pick an open set ($x- \frac{1}{3^{n_{(x,y)}}}, x+ \frac{1}{3^{n_{(x,y)}}}) \times (y- \frac{1}{3^{n_{(x,y)}}}, y+ \frac{1}{3^{n_{(x,y)}}})$. A similar argument as in Proposition 4.0.5, yields 
     us $g((x- \frac{1}{3^{n_{(x,y)}}}, x+ \frac{1}{3^{n_{(x,y)}}}) \times (y- \frac{1}{3^{n_{(x,y)}}}, y+ \frac{1}{3^{n_{(x,y)}}})) = B_{g(x,y)}$. \newline
     To show g is continuous, it suffices to show for each $t \in T_{6,2,2}$ that $g^{-1}(B_t) \in \tau$. Let $(x,y) \in g^{-1}(B_t)$. Then $tRg(x,y)$. But then, it holds that :
     $g((x- \frac{1}{3^{n_{(x,y)}}}, x+ \frac{1}{3^{n_{(x,y)}}}) \times (y- \frac{1}{3^{n_{(x,y)}}}, y+ \frac{1}{3^{n_{(x,y)}}})) = B_{g(x,y)} \subseteq B_t$. Thus, we found a $U \in \tau$ 
@@ -1547,18 +1454,18 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times^+_t X$
 
 \end{theorem}
 
-To complete the proof, if $\mathit{TPL} \nvdash \phi$, then by Theorem 5.0.8, there is a 
+To complete the proof, if $\mathit{TPL} \nvdash \phi$, then by Theorem 4.0.8, there is a 
 valuation $\upsilon$ on $T_{6,2,2}$ such that $(T_{6,2,2}, \upsilon), r \nvDash \phi$. Now we define a valuation $\xi$
-on $X \times^+_t X$ by $\xi(p) = h^{-1}(v(p))$. Since $h$ is continuous and open w.r.t. all three topologies and $h(0,0) = r$,
-we have that $(0,0)$ and $r$ are 3-topo-bisimilar. Therefore, $(X \times^+_t X, \xi),(0,0) \nvDash \phi$. Similar as in Theorem 5.0.3, we argue
-that $X \times^+_t X$ is homeomorphic to $\mathbb{Q} \times^+_t \mathbb{Q}$ w.r.t. all three topologies, it follows that $\phi$ is refutable on $\mathbb{Q} \times^+_t \mathbb{Q}$.
-        
+on $X \times X$ by $\xi(p) = h^{-1}(v(p))$. Since $h$ is continuous and open w.r.t. all three topologies and $h(0,0) = r$,
+we have that $(0,0)$ and $r$ are 3-topo-bisimilar. Therefore, $(X \times X, \xi),(0,0) \nvDash \phi$. Similar as in Theorem 4.0.3, we argue
+that $X \times X$ is homeomorphic to $\mathbb{Q} \times \mathbb{Q}$ w.r.t. all three topologies, it follows that $\phi$ is refutable on $\mathbb{Q} \times \mathbb{Q}$.
+
 \begin{corollary}
     In the language $L_{\Box, \Box_1, \Box_2}$, $\mathit{TPL}$ is the logic of products of arbitrary topologies.
     \begin{proof}
         Let $X$ and $Y$ be arbitrary topological spaces. By the interpretation of $\Box$, it follows
         $Log(X), Log(Y) \supseteq S4$. Let's consider the full product of the spaces $X \times^+_t Y$.
-        Hence, with theorem 5.0.8, it is easy to see that $Log(X \times^+_t Y) \supseteq S4 \times^+_t S4 = \mathit{TPL}$.
+        Hence, with theorem 4.0.8, it is easy to see that $Log(X \times^+_t Y) \supseteq S4 \times^+_t S4 = \mathit{TPL}$.
 
     \end{proof}
 
@@ -1569,17 +1476,10 @@ that $X \times^+_t X$ is homeomorphic to $\mathbb{Q} \times^+_t \mathbb{Q}$ w.r.
 \section{Products of neighbourhood frames, completeness results}
 We now turn our focus to neighbourhood semantics, and in particular, we revisit the main theorem from the paper "Modal Logic of Products of Neighbourhood Frames" [2]. This work established that, for any $L_1, L_2 \in \{D,D4,T,S4\}$ we have
 $L_1 \otimes L_2 = L_1 \times_n L_2$.
-Our goal is to reprove this theorem within our framework. We then adapt the key ideas to prove the second part of our result.
-We recall, that 
-in Chapter 4 we showed: $\mathit{TNL} = Log(T_{\omega,\omega,\omega[rn]})$. Using the techniques in this chapter, we can
-establish the following : $\mathit{TNL} = T \times^+_n T$ which is the desired outcome of our contribution.
-\newline
-We start by introducing the necessary trees as Kripke frame. We begin by introducing the necessary trees as Kripke frames. Then, we define the constructions 
-$N(F)$ and $N_\omega(F)$ which form the foundation of our proofs. 
-Using these, we construct bounded morphisms to derive the main results. The chapter ends with the corresponding completeness theorems.
-
+Our goal is to reprove this theorem within our framework and then adapt its key ideas to prove our theorem. 
 
 \subsection{Kripke tree frames, natural neighborhood version and their logic}
+We introduce some trees as Kripke frames, which are essential for the proof.
 
 \begin{definition}
     Let A be a nonempty set.
@@ -1606,11 +1506,11 @@ Using these, we construct bounded morphisms to derive the main results. The chap
     and $\eta_1, \eta_2 \in \{t,n\}$. Furthermore, we assume $A = \{a_1, a_2,...\}$ and $B = \{b_1,b_2,...\}$ with $A \cap B = \emptyset$. Then we define the frame $F_1 \otimes F_2 = (W, R'_1, R'_2)$ as follows :
     $$W = (A \cup B)^*$$
     $$\vec{x} R'_1 \vec{y} \Leftrightarrow \vec{y} = \vec{x} \cdot \vec{z} \mbox{ for some } \vec{z} \in A^* \mbox{such that }\Lambda R_1 \vec{z}$$
-    $$\vec{x} R'_2 \vec{y} \Leftrightarrow \vec{y} = \vec{x} \cdot \vec{z} \mbox{ for some } \vec{z} \in B^* \mbox{such that }\Lambda R_2 \vec{z}$$
+    $$\vec{x} R'_2 \vec{y} \Leftrightarrow \vec{y} = \vec{x} \cdot \vec{z} \mbox{ for some } \vec{z} \in B^* \mbox{such that }\Lambda R_2 \vec{z}$$ \newline
 \end{definition}
 
 \begin{proposition} [\textnormal{[14], [15]}]
-    Let $F_1$ and $F_2$ be as in Definition 6.1.3 . Then 
+    Let $F_1$ and $F_2$ be as in Definition 5.1.3 . Then 
     $$Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2)$$
 \end{proposition}
 
@@ -1675,20 +1575,19 @@ At the end, we construct a bounded morphism from the product of $N_\omega[F]$ fr
 \end{lemma}
 
 \begin{definition}
-    Due to Lemma 6.2.3 the sets $U_n(\alpha)$ forms a filter base. So we can define :
+    Due to Lemma 5.2.3 the sets $U_n(\alpha)$ forms a filter base. So we can define :
     $$\tau(\alpha) \mbox{ is a filter with base } \{U_n(\alpha) \mid n \in \mathbb{N} \}$$
     $$N_\omega = (X, \tau) \mbox{ is the n-frame based on } F$$
 
 \end{definition}
 
-In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded morphism. We begin by proving a small lemma, which helps us to show it.
-
 \begin{lemma}
-    Let $F = (A^*, R) = F_{\xi \eta}[A]$. Based on that, let $N_\omega(F) = (X,\tau)$, $N(F) = (A^*, \sigma)$ and $f_F : N_\omega(F) \rightarrow N(F)$.
+    Let $F = (A^*, R) = F_{\xi \eta}[A]$. Based on that, let $N_\omega(F) = (X,\tau)$, $N(F) = (A^*, \sigma)$ and $f_F : N\omega(F) \rightarrow N(F)$.
     Then for any $m \in \mathbb{N}$ and $x\in X$ with $x = a_1a_2...$ \newline we have $$f_F(U_m(x)) = R(f_F(x))$$
+    \vspace{0.01cm}
     \begin{proof}
-            $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. Because $\alpha \in U_m(x)$, we have by definition of $U_m(x)$: 
-            $x\mid_m = \alpha \mid_m$ and $f_F(x)R f_F(\alpha)$. Hence $f_F(\alpha) \in R(f_F(x))$.  \newline \newline
+            $\subseteq$ : Let $f_F(\alpha) \in f_F(U_m(x))$ with $\alpha \in U_m(x)$. By defintion of $U_m(x)$,
+            we get $f_F(\alpha) \in R(f_F(x))$. \newline \newline
             $\supseteq :$ We pick $\vec{a} \in R(f_F(x))$. We have to find $\beta \in U_m(x)$ s.t $f_F(\beta) = \vec{a}$. We assume R is irreflexive and non-transitive.
             The other cases are similar. \newline
             Because $\vec{a} \in R(f_F(x))$, there must exists $c \in A$ such that $ \vec{a} = f_F(x) \cdot c $.
@@ -1702,13 +1601,13 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
 
     \begin{proof}
         From now on this proof we will omit the subindex in $f_F$.
-        Let $N_\omega(F) = (X, \tau)$ and $N(F) =(A^*, \sigma)$. \newline \newline For surjectivity, we pick any $\vec{x} \in A^*$. But then, $\vec{x}\,0^\omega \in X$. Hence, $f(\vec{x}\, 0^\omega) = \vec{x}$. \newline 
-        For the next condition, assume that $x \in X \mbox{ and } U \in \tau(x)$. We need to prove that $f(U) \in \sigma(f(x))$. That is equivalent to $R(f(x)) \subseteq f(U)$. Because $U \in \tau(x)$, there is a $m$ such that
-        $U_m(x) \subseteq U$. By Lemma 6.2.5 we have $f(U_m(x)) = R(f(x))$. It follows, 
+        Let $N_\omega(F) = (X, \tau)$ and $N(F) =(A^*, \sigma)$. \newline For surjectivity, we pick any $\vec{x} \in A^*$. But then, $\vec{x}\,0^\omega \in X$. Hence, $f(\vec{x}\, 0^\omega) = \vec{x}$. \newline 
+        For the next condition, assume that $x \in X \mbox{ and } U \in \tau(x)$. We need to prove that $f(U) \in \sigma(f(x))$. That means $R(f(x)) \subseteq f(U)$. Because $U \in \tau(x)$, there is a $m$ such that
+        $U_m(x) \subseteq U$. By Lemma 5.2.5 we have $f(U_m(x)) = R(f(x))$. It follows, 
         $$R(f(x)) = f(U_m(x)) \subseteq f(U)$$ 
         \newline
         Assume $x\in X$ and $V$ is a neighborhood of x, i.e $R(f(x)) \subseteq V$. We need to prove that there exists $U \in \tau(x)$, such that $f(U)\subseteq V$.
-        As $U$ we pick $U_m(x)$ for any $m \in \mathbb{N}$. By Lemma 6.2.5 we get $f(U_m(x)) = R(f(x))$. Hence, 
+        As $U$ we pick $U_m(x)$ for any $m \in \mathbb{N}$. By Lemma 5.2.5 we get $f(U_m(x)) = R(f(x))$. Hence, 
         $$f(U_m(x)) = R(f(x)) \subseteq V$$
 
     \end{proof} 
@@ -1717,7 +1616,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
 \begin{corollary}
     For frame $F = F_{\xi \eta}[A]$ we have $Log(N_\omega(F)) \subseteq Log(F)$.
     \begin{proof}
-        It follows from Corollary 3.2.5, Lemma 6.1.7 and Lemma 6.2.6 
+        It follows from Corollary 2.2.5, Lemma 5.1.7 and Lemma 5.2.6 
         $$Log(N_\omega(F)) \subseteq Log(N(F)) = Log(F)$$
     \end{proof}
 
@@ -1731,41 +1630,38 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     $$Log(N_\omega(F_{rt})) = S4$$
 
     \begin{proof}
-        In all these cases, the inclusion from left to right follows from Proposition 6.1.5 and Corollary 6.2.7.
+        In all these cases, the inclusion from left to right follows from Proposition 5.1.5 and Corollary 5.2.7.
         Now the converse direction. Assume $X =(X,\tau)$. \newline
-        It is easy to check that $X \vDash D$ iff for each $x \in X : \emptyset \notin \tau(x)$. In other words, if $\Box p \rightarrow \lozenge p$ is valid on $X$, then $\emptyset$ can not be a neighborhood for any point. For $N_\omega(F_{in})$ and $N_\omega(F_{it})$ this holds. \newline
-        It is easy to check that $X \vDash T$ iff we have $x\in U \in \tau(x)$ for any $x$ and $U$. If $\Box p \rightarrow p$ is valid on $X$, then any neighborhood of a point contains the point itself. For $N_\omega(F_{rn})$ and $N_\omega(F_{rt})$ this holds. \newline
+        It is easy to check that $X \vDash D$ iff for each $x \in X : \emptyset \notin \tau(x)$. For $N_\omega(F_{in})$ and $N_\omega(F_{it})$ this holds. \newline
+        It is easy to check that $X \vDash T$ iff we have $x\in U \in \tau(x)$ for any $x$ and $U$. For $N_\omega(F_{rn})$ and $N_\omega(F_{rt})$ this holds. \newline
         Now we check $X \vDash 4$ iff for each $U \in \tau(x) : \{y \mid U \in \tau(y)\} \in \tau(x)$. \newline
-        $\Leftarrow : $ Let $x \in X$ and assume $X,x \vDash \Box p$. That means there exists $U \in \tau(x)$ s.t $U\subseteq V(p)$.
+        $\supseteq : $ Let $x \in X$ and assume $X,x \vDash \Box p$. That means there exists $U \in \tau(x)$ s.t $U\subseteq V(p)$.
         By assumption we have $S = \{y \mid U \in \tau(y)\} \in \tau(x)$. But then $X,x \vDash \Box\Box p$ because we can just pick the set S. \newline
-        $\Rightarrow :$ This direction is by contradiction. Let's fix a valuation function $V$ s.t. $V(p) = U$. Furthermore, assume there exists a $U$ s.t $\{y \mid U \in \tau(y)\} \notin \tau(x)$ and let $X,x \vDash \Box p$.
-        If $X,x \vDash \Box\Box p$ then it must be the case that $S =\{y \in X \mid X,y \vDash \Box p\} \in \tau(x)$. 
-        \newline By $X,y \vDash \Box p$, it follows $U \in \tau(y)$. That means $S = \{y \in X \mid U \in \tau(y)\}$. But by assumption $S \notin \tau(x)$. 
+        $\subseteq :$ By contradiction, assume there exists a $U$ s.t $\{y \mid U \in \tau(y)\} \notin \tau(x)$. Let $X,x \vDash \Box p$ where $V(p) = U$.
+        If $X,x \vDash \Box\Box p$ then it must be the case that  \newline 
+        $S =\{y \in X \mid X,y \vDash \Box p\} \in \tau(x)$. $X,y \vDash \Box p$ means $U \in \tau(y)$. That means $S = \{y \in X \mid U \in \tau(y)\}$. But by assumption $S \notin \tau(x)$. 
         Hence, $X,x \not\vDash \Box\Box p$. But thats a contradiction. This also holds for $N_\omega(F_{it})$ and $N_\omega(F_{rt})$ because we have for any $y \in U_m(x)$ and 
         $k \geq m : U_k(y) \subseteq U_m(x)$.
             
     \end{proof}
 \end{proposition}
 
-    Now we construct the product neighborhood frames $N_\omega(F_1) \times_n N_\omega(F_2)$ and construct a bounded morphism to $N(F_1 \otimes F_2)$. 
-    The idea is inspired by the monomodal version. \newline
-
     Assume $F_1 = (A^*,R_1) = F_{\eta_1 \xi_1}[A]$ and $F_2 = (B^*,R_2) = F_{\eta_2 \xi_2}[B]$ 
     with $A \cap B = \emptyset$, $A = \{a_1,a_2,a_3,...\}$ and $B = \{b_1,b_2,b_3,...\}$. 
     Consider the product of n-frames $F'_1 = (X_1, \tau_1) = N_\omega(F_1)$ and $F'_2 = (X_2, \tau_2) = N_\omega(F_2)$ is 
-    $$X = (X_1 \times X_2, \tau'_1, \tau'_2) = N_\omega(F_1) \times_n N_\omega(F_2)$$ 
-    Furthermore, we have $F_1 \otimes F_2 = ((A \cup B)^*, R_1', R_2')$ as defined in Definition 6.1.3.
-    We consider the neighborhood version $$N(F_1 \otimes F_2) = ((A \cup B)^*, \sigma_1', \sigma_2')$$ 
+    $$X = (X_1 \times X_2, \tau'_1, \tau'_2) = N_\omega(F_1) \times_n N_\omega(F_2)$$ \newline
+    Furthermore, we have $F_1 \otimes F_2 = ((A \cup B)^*, R_1', R_2')$ as defined in Definition 5.1.3.
+    We consider the neighborhood version $$N(F_1 \otimes F_2) = ((A \cup B)^*, \sigma_1', \sigma_2')$$ \newline
     Now we define $g : X_1 \times X_2 \rightarrow (A \cup B)^*$ as follows. For $(\alpha, \beta) \in X_1 \times X_2$ with $\alpha = a_1a_2...$ and $\beta = b_1b_2...$
     we define $g(\alpha,\beta)$ to be the finite sequence which we get after eliminating all zeros from the infinite sequence
     $a_1b_1a_2b_2...$ \newline \newline
-    Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\alpha, \beta) = 1a2b34e$. \newline
-    \newline
-    In order to show g is bounded morphism, we show a small lemma, which helps us to prove it.
+    Example : Let $\alpha = 012340^\omega$  and $\beta = 0ab00e0^\omega$. Then $g(\alpha, \beta) = 1a2b34e$.
+
 \begin{lemma}
     Let $X$ and $N(F_1 \otimes F_2)$ be as defined before and $(\alpha,\beta) \in X_1 \times X_2$. Then for any $m >$ max$\{st(\alpha), st(\beta)\}$ we have 
     $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\})$$.
-    where $g$ has arity of 2 and $g(U_m(\alpha) \times \{\beta\}) = \{g(\gamma, \beta) \mid \gamma \in U_m(\alpha)\}$
+    
+
     \begin{proof}
         We will show both direction by assuming $F_1 = F_{in}[A]$. For $F_{it}[A],F_{rt}[A]$ and $F_{rn}[A]$ it is similar. \newline
         $\subseteq$ : Let $\vec{w} \in R'_1(g(\alpha,\beta))$. By definition we get, there exists $\vec{c} \in A^*$ where $\vec{w} = g(\alpha,\beta) \cdot \vec{c}$ and $\Lambda R_1 \vec{c}$.
@@ -1773,9 +1669,9 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         Because $m \in max\{st(\alpha), st(\beta)\}$, we have $g(\alpha \mid_m, \beta \mid_m) = g(\alpha, \beta)$. Hence, $g(\zeta, \beta) = g(\alpha \mid_m, \beta \mid_m) \cdot g(\vec{c} \,0^\omega, 0^\omega) = g(\alpha \mid_m, \beta \mid_m) \cdot \vec{c} = \vec{w}$.
         \newline \newline
         $\supseteq$ : Assume $\zeta \in U_m(\alpha)$. We have to show $g(\zeta, \beta) \in R_1'(g(\alpha, \beta))$. Because $R_1$ is irreflexive and non-transitive, it suffices to find a $\vec{d} \in A$ s.t. $g(\alpha,\beta) \cdot \vec{d} = g(\zeta, \beta)$.
-        By choosing $m > max \{st(\alpha), st(\beta)\}$  and $\zeta \mid_m = \alpha \mid_m$, we have $g(\zeta \mid_m, \beta \mid_m) = g(\alpha,\beta)$. We also know $f_F(\alpha)R_1 f_F(\zeta)$, that means there exists a $\vec{d} \in A$ s.t. $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$. This $\vec{d}$ must appear at a point after $\zeta_m$.
+        By choosing $m$ is maximal and $\zeta \mid_m = \alpha \mid_m$, we have $g(\zeta_m, \beta_m) = g(\alpha,\beta)$. We also know $f_F(\alpha)R_1 f_F(\zeta)$, that means there exists a $\vec{d} \in A$ s.t. $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$. This $\vec{d}$ must appear at a point after $\zeta_m$.
         We can follow $g(\zeta, \beta) = g(\alpha, \beta) \cdot \vec{d}$. Hence, $g(\zeta, \beta) \in R_1'(g(\alpha,\beta))$.
-        \newline \newline \newline
+        \newline \newline
         Remark : If $m \leq max\{st(\alpha), st(\beta)\}$, then we cannot gurantee the equality. Assume $R_1$ as before and $\alpha = 123000^\omega$ and $\beta = d0b0a0^\omega$.
         Lets pick $m = 3$ and $\zeta = 123100^\omega$. Then we have $g(\alpha, \beta) = 1d23ba$ and $g(\zeta, \beta) = 1d23b1a$. Obviously, we don't have $g(\zeta, \beta) \in R_1'(g(\alpha,\beta))$. \newline
         Furthermore, we can show $R'_2(g(\alpha,\beta)) = g(\alpha \times U_m(\beta))$ similar as above. 
@@ -1805,13 +1701,13 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         \] \newline
         Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\beta = y_1y_2...y_n \, 0^\omega$. Then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective. \newline \newline
         For the next conditions we check only for $\tau_1'$ and $\sigma_1$. The other case is similar.
-        Assume $(\alpha,\beta) \in X_1 \times X_2$ and $U \in \tau_1'(\alpha, \beta)$. We have to show $g(U) \in \sigma_1(g(\alpha,\beta))$. That is equivalent to $R_1'(g(\alpha,\beta)) \subseteq g(U)$.
-        The idea is to pick any $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can do it, because $U \in \tau_1'(\alpha,\beta)$, so there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} =  \{(\gamma,\beta) \mid \gamma \in U_k(\alpha)\}= U$.
-        If $k > max\{st(\alpha), st(\beta)\}$ then can just pick it. Else, by Lemma 6.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ until $k$ is greater than $max\{st(\alpha), st(\beta)\}$. Then we use Lemma 6.2.9 to get the following :
+        Assume $(\alpha,\beta) \in X_1 \times X_2$ and $U \in \tau_1'(\alpha, \beta)$. We have to show $g(U) \in \sigma_1(g(\alpha,\beta))$. That means $R_1'(g(\alpha,\beta)) \subseteq g(U)$.
+        Pick a $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can pick such m, because $U \in \tau_1'(\alpha,\beta)$. So there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} = U$.
+        If $k > max\{st(\alpha), st(\beta)\}$ then we are done. Else, by Lemma 5.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ til we reach $m$. Then we use Lemma 5.2.9 to get the following :
         $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\}) \subseteq g(U)$$
         \newline
         For the last condition we assume $(\alpha, \beta) \in X_1 \times X_2$ and $V \in \sigma_1(g(\alpha,\beta))$ (or rather $R_1'(g(\alpha,\beta)) \subseteq V$).
-        We need to prove there exists $U \in \tau_1'(\alpha,\beta)$, such that $g(U) \subseteq V$. As $U$ we take $U_m(\alpha) \times \{\beta\}$ for some $m > max\{st(\alpha), st(\beta)\}$. Hence, by Lemma 6.2.9 we get :
+        We need to prove there exists $U \in \tau_1'(\alpha,\beta)$, such that $g(U) \subseteq V$. As $U$ we take $U_m(\alpha) \times \{\beta\}$ for some $m > max\{st(\alpha), st(\beta)\}$. Hence, by Lemma 5.2.9 we get :
         $$g(U_m(\alpha) \times \{\beta\}) = R_1'(g(\alpha,\beta)) \subseteq V$$ 
     \end{proof}
     
@@ -1820,11 +1716,11 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
 \subsection{Adapting the key ideas}
 
     Now we will show $g : N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) \rightarrow N(T_{\omega,\omega,\omega[rn]})$ is a bounded morphism. \newline 
-    Let $(T_{\omega[rn]})_1 = (\mathbb{N}_{1}, R_1)$ and $(T_{\omega[rn]})_2 = (\mathbb{N}_{2}, R_2)$ as defined in Definition 4.0.3.
+    Let $(T_{\omega[rn]})_1 = (\mathbb{N}_{1}, R_1)$ and $(T_{\omega[rn]})_2 = (\mathbb{N}_{2}, R_2)$ as defined in Definition 3.0.3.
     Then we take the n-frames $N_\omega(T_{\omega[rn]})_1 = (X_1, \tau_1)$ and $N_\omega(T_{\omega[rn]})_2 = (X_2, \tau_2)$. For the proof, we will omit the subscripts after the frame. \newline \newline
     Let's consider the full product of the n-frames :
     $$N_\omega(T_{\omega[rn]}) \times^+_n N_\omega(T_{\omega[rn]}) = (X_1 \times X_2, \tau'_1, \tau'_2, \tau)$$
-    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Definition 4.0.3.
+    \newline We say $N(T_{\omega,\omega,\omega[rn]}) = ((\mathbb{N}_1 \cup \mathbb{N}_2\cup \mathbb{N})^*, \sigma_1, \sigma_2, \sigma)$ where the tree $T_{\omega,\omega,\omega[rn]} = ((\mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N})^*R_1',R_2',R)$ is as defined in Definition 3.0.3.
     \clearpage
     In order to define the bounded morphism, we have to fix a bijection first. Let $h : \mathbb{N}_1 \times \mathbb{N}_2 \rightarrow \mathbb{N}$ be a bijection. \newline
     Next, we define function $k :(\mathbb{N}_1 \cup \{0\}) \times (\mathbb{N}_2 \cup \{0\}) \rightarrow \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{0\}$ as follows :
@@ -1870,11 +1766,10 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         \newline
         Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\alpha = y_1y_2...y_n \, 0^\omega$. But then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective.
         For the next conditions we show it for $\tau$ and $\sigma$. For $\tau_1', \sigma_1$ and $\tau_2', \sigma_2$ we can argue similar as in Lemma 5.2.9 and 5.2.10.\newline
-        First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$. \newline
-        We recall, $g(U_m(\alpha) \times U_m(\beta)) = \{(\zeta,\upsilon) \mid \zeta \in U_m(\alpha), \upsilon \in U_m(\beta)\}$. 
+        First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$.
          \newline
         $\supseteq$ : Pick $\zeta \in U_m(\alpha), \upsilon \in U_m(\beta)$. Show $g(\zeta, \upsilon) \in R(g(\alpha,\beta))$. By definition, we need to find a $\vec{c} \in \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{\epsilon\}$ s.t. $g(\alpha,\beta) \cdot \vec{c} = g(\zeta, \upsilon)$.
-        By choosing $m> max\{st(\alpha),st(\beta)\}$ we get $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, and hence $g(\alpha,\beta) = g(\zeta \mid_m, \upsilon \mid_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1 \cup \{\epsilon\}$ and $\exists \vec{e} \in \mathbb{N}_2 \cup \{\epsilon\}$ s.t.
+        By choosing $m> max\{st(\alpha),st(\beta)\}$, $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, we get $g(\alpha,\beta) = g(\zeta_m, \upsilon_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1 \cup \{\epsilon\}$ and $\exists \vec{e} \in \mathbb{N}_2 \cup \{\epsilon\}$ s.t.
         $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$ and $f_F(\beta) \cdot \vec{e} = f_F(\upsilon)$. So, $\vec{d}$ must appear at a point after $\zeta \mid_m$ and $\vec{e}$ in $\upsilon \mid_m$. But then we have $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e})$.  
         \newline Now there are four cases :
         \[
@@ -1900,7 +1795,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         \] 
         \newline
         We have $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$. Furthermore, because of $g(\zeta \mid_m, \upsilon \mid_m) = g(\alpha,\beta)$, it holds that $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e}) = g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. \newline \newline 
-        Now to check the conditions, we assume $x \in X_1$ and $y \in X_2$ and $U \in \tau(x,y)$. We need to prove $g(U) \in \sigma(g(x,y))$. In other words, show $R(g(x,y)) \subseteq g(U)$. We pick a $m> max\{st(x),st(y)\}$ s.t. $U_m(x) \times U_m(y) \subseteq U$. But then we get 
+        Now to check the conditions, we assume $x \in X_1$ and $y \in X_2$ and $U \in \tau(x,y)$. We need to prove $g(U) \in \sigma(g(x,y))$ In other words, show $R(g(x,y)) \subseteq g(U)$. We pick a $m> max\{st(x),st(y)\}$ s.t. $U_m(x) \times U_m(y) \subseteq U$. But then we get 
         $$R(g(x,y)) = g(U_m(x) \times U_m(y)) \subseteq g(U)$$
         \newline
         Assume  $x \in X_1$ and $x \in X_2$ and $R(g(x,y)) \subseteq V$. We need to find a $U \in \tau(x,y)$, s.t. $f(U) \subseteq V$.
@@ -1913,7 +1808,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     \subsection{Completeness Results}
 
     \begin{lemma}
-    Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 4.0.3. Then 
+    Let $T_{\omega,\omega,\omega[rn]}$ be as in Definition 3.0.3. Then 
     $$Log(T_{\omega,\omega,\omega[rn]}) = Log(N(T_{\omega,\omega,\omega[rn]}))$$
     \begin{proof}
             The proof is by structural induction.
@@ -1924,7 +1819,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     \begin{corollary}
         Let $F_1 = (A^*,R_1) = F_{\xi_1, \eta_1}[A]$ and $F_2 = (B^*,R_2) = F_{\xi_2, \eta_2}[B]$. Then 
         $$Log(N_\omega(F_1) \times_n N_\omega(F_2))  \subseteq Log(F_1) \otimes Log(F_2)$$.
-        It follows from Corollary 3.2.5, Proposition 6.1.4 and Lemma 6.2.10.
+        It follows from Corollary 2.2.5, Proposition 5.1.4 and Lemma 5.1.10.
     \end{corollary}
 
     \begin{corollary}
@@ -1932,9 +1827,9 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         $$Log(N_\omega(F_1) \times_nN_\omega(F_2)) = Log(F_1) \otimes Log(F_2)$$
 
         \begin{proof}
-            The left to right inclusion follows from Corollary 6.4.2 \newline \newline
-            To prove right to left, due to Proposition 6.1.5 and Proposition 6.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
-            Due to Proposition 3.2.8 we get $Log(N_\omega(F_1)) \otimes Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2))$. 
+            The left to right inclusion follows from Corollary 5.4.3 \newline \newline
+            To prove right to left, due to Proposition 5.1.5 and Proposition 5.2.8 we have $Log(N_\omega(F_i)) = Log(F_i) \, (i \in \{1,2\})$.
+            Due to Proposition 2.2.8 we get $Log(N_\omega(F_1)) \otimes Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2))$. 
             Because $N_\omega(F_1)\times_n N_\omega(F_2)$ is a frame in the n-product, we get
             $Log(N_\omega(F_1)) \times_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1)\times_n N_\omega(F_2))$.
 
@@ -1945,24 +1840,24 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     \begin{corollary}
         Let $N_\omega(T_{\omega[rn]})_1 = F_1$ and $N_\omega(T_{\omega[rn]})_2 = F_2$ as defined before. Then 
         $$T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$$
-        It follows from Corollary 3.2.5, Proposition 6.2.8, Lemma 6.3.2, Lemma 6.4.1.
+        It follows from Corollary 2.2.5, Proposition 5.2.8, Lemma 5.3.2, Lemma 5.4.1.
 
         \begin{proof}
             First, it is the case that $Log(F_1) \times^+_n Log(F_2) \subseteq Log(F_1 \times^+_n F_2)$. We can argue as before.
-            By Lemma 6.3.2 and Lemma 6.4.1 it holds $Log(F_1 \times^+_n F_2) \subseteq Log(N(T_{\omega,\omega,\omega[rn]})) = Log(T_{\omega,\omega,\omega[rn]})$.
-            But by Proposition 6.2.8 we have $Log(F_1) = Log(F_2) = T$. Hence, $Log(F_1) \times^+_n Log(F_2) = T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$.
+            By Lemma 5.3.2 and Lemma 5.4.1 it holds $Log(F_1 \times^+_n F_2) \subseteq Log(N(T_{\omega,\omega,\omega[rn]})) = Log(T_{\omega,\omega,\omega[rn]})$.
+            But by Proposition 5.2.8 we have $Log(F_1) = Log(F_2) = T$. Hence, $Log(F_1) \times^+_n Log(F_2) = T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$.
         \end{proof}
 
     \end{corollary}
 
-    \begin{theorem}[\textnormal{[2]}]
+    \begin{theorem}
         Let $L_1, L_2 \in \{S4, D4, D, T\}$. Then 
         $$L_1 \times_n L_2 = L_1 \otimes L_2$$
 
         \begin{proof}
-            Right to left is by Proposition 3.2.8. \newline
-            For left to right, assume $L_1 = Log(F_1)$ and $L_2 = Log(F_2)$ for some $F_1, F_2 \in \{F_{in}, F_{rn}, F_{it}, F_{rt}\}$. \newline \newline
-            It follows from Corollary 3.2.5 Lemma 6.2.10 : \newline 
+            Right to left is by Proposition 2.2.8. \newline
+            For left to right, assume $L_1 = Log(F_1)$ and $L_2 = Log(F_2)$ for some $F_1, F_2 \in \{F_{in}, F_{rn}, F_{it}, F_{rt}\}$.
+            It follows from Lemma 5.2.9 : \newline
             $L_1 \times_n L_2 = Log(N_\omega(F_1)) \times^+_n Log(N_\omega(F_2)) \subseteq Log(N_\omega(F_1) \times^+_n N_\omega(F_2)) \subseteq Log(F_1 \otimes F_2) = Log(F_1) \otimes Log(F_2) = L_1 \otimes L_2$
         \end{proof}
     \end{theorem}
@@ -1980,7 +1875,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
             Because of the assumption, we must have $x \in V$ and $y \in W$. Hence, $(x,y) \in V(p)$. It follows $F_1 \times^+_n F_2,(x,y) \vDash p$. \newline
             Now we check the extra axiom.  Assume $F_1 \times^+_n F_2,(x,y) \Vdash \Box p$. By definition, there exists a $U \subseteq V(p)$, where $U \supseteq V \times W$ with $V \in \tau_1(x)$ and $W \in \tau_2(y)$. By assumption, we get $y \in W$. That means $U \in \tau_1'(x,y)$ 
             because $U \supseteq V \times \{y\}$. The same argument we can apply to $\tau_2'(x,y)$. Hence, $F_1 \times^+_n F_2,(x,y) \vDash \Box_1 p \land \Box_2 p$. The rest is clear. \newline
-            Now for the other direction, we apply Corollary 6.4.4 to get $T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$. By Proposition 4.0.5 we have
+            Now for the other direction, we apply Corollary 5.4.4 to get $T \times^+_n T \subseteq Log(T_{\omega,\omega,\omega[rn]})$. By Proposition 3.0.5 we have
             $Log(T_{\omega,\omega,\omega[rn]}) = TNL$. Hence, 
             $$T \times^+_n T \subseteq T \otimes T \otimes T + \Box p \rightarrow \Box_1 p \land \Box_2 p$$.
             
@@ -1992,7 +1887,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
     \begin{remark}
         Let $L \in \{D, D4\}$. Then it is not guaranteed that $$L \times^+_n L = L \otimes L \otimes L + \Box p \rightarrow \Box_1 p \land \Box_2 p$$
         This can be shown by a counterexample. We will only do it for $D$ because for $D4$ it's done similar. Assume $F_1 = N_\omega(T_{\omega[in]})_1 = (X, \tau_1)$ and $F_2 = N_\omega(T_{\omega[in]})_2 = (Y, \tau_2)$.
-        By Proposition 6.2.8, it follows $Log(F_1) = Log(F_2) = D$. Let's consider the full product $X = F_1 \times^+_n F_2 = (W \times V, \tau'_1, \tau'_2, \tau)$. Then we get $Log(X) \supseteq D \times^+_n D$. Now let $(x,y) \in X$
+        By Proposition 5.2.8, it follows $Log(F_1) = Log(F_2) = D$. Let's consider the full product $X = F_1 \times^+_n F_2 = (W \times V, \tau'_1, \tau'_2, \tau)$. Then we get $Log(X) \supseteq D \times^+_n D$. Now let $(x,y) \in X$
         $X,(x,y) \vDash \Box p$ and $V(p) = U \times V$ where $U \in \tau_1(x)$ and $V \in \tau_2(y)$. By construction of $N_\omega(T_{\omega[rn]})$, $x \notin U$ and $ y \notin V$, because $f_F(x)$ and $f_F(y)$ don't have a relation to itself in $T_{\omega[rn]}$.
         In order to satisfy $\Box_1 p$ (similar for $\Box_2 p$), we have to find $U' \in \tau'_1(x,y)$ s.t. $U' \subseteq V(p)$. But this is not possible because any $U'$ contains only elements, where the second coordinate is $y$. It follows $X, (x,y) \nvDash \Box p \rightarrow \Box_1 p \land \Box_ 2 p$.
         Hence, the extra axiom is not in $Log(X) \supseteq D \times^+_n D$. 
