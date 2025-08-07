@@ -1806,8 +1806,8 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\beta = y_1y_2...y_n \, 0^\omega$. Then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective. \newline \newline
         For the next conditions we check only for $\tau_1'$ and $\sigma_1$. The other case is similar.
         Assume $(\alpha,\beta) \in X_1 \times X_2$ and $U \in \tau_1'(\alpha, \beta)$. We have to show $g(U) \in \sigma_1(g(\alpha,\beta))$. That is equivalent to $R_1'(g(\alpha,\beta)) \subseteq g(U)$.
-        Pick a $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can pick such m, because $U \in \tau_1'(\alpha,\beta)$. So there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} =  \{(\gamma,\beta) \mid \gamma \in U_k(\alpha)\}= U$.
-        If $k > max\{st(\alpha), st(\beta)\}$ then we are done. Else, by Lemma 6.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ til we reach $m$. Then we use Lemma 6.2.9 to get the following :
+        The idea is to pick any $m > max\{st(\alpha), st(\beta)\}$ s.t. $U_m(\alpha) \times \{\beta\} \subseteq U$. We can do it, because $U \in \tau_1'(\alpha,\beta)$, so there exists $U_k(\alpha) \in \tau(\alpha)$ s.t. $U_k(\alpha) \times \{\beta\} =  \{(\gamma,\beta) \mid \gamma \in U_k(\alpha)\}= U$.
+        If $k > max\{st(\alpha), st(\beta)\}$ then can just pick it. Else, by Lemma 6.2.3, we have for any $n \geq k : U_n(\alpha) \subseteq U_k(\alpha)$. So we can lift the $k$ until $k$ is greater than $max\{st(\alpha), st(\beta)\}$. Then we use Lemma 6.2.9 to get the following :
         $$R_1'(g(\alpha,\beta)) = g(U_m(\alpha) \times \{\beta\}) \subseteq g(U)$$
         \newline
         For the last condition we assume $(\alpha, \beta) \in X_1 \times X_2$ and $V \in \sigma_1(g(\alpha,\beta))$ (or rather $R_1'(g(\alpha,\beta)) \subseteq V$).
@@ -1870,10 +1870,11 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         \newline
         Let $\alpha = x_1x_2...x_n \, 0^\omega$ and $\alpha = y_1y_2...y_n \, 0^\omega$. But then $g(\alpha,\beta) = \vec{z}$. Hence, g is surjective.
         For the next conditions we show it for $\tau$ and $\sigma$. For $\tau_1', \sigma_1$ and $\tau_2', \sigma_2$ we can argue similar as in Lemma 5.2.9 and 5.2.10.\newline
-        First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$.
+        First we need to show, $R(g(\alpha,\beta)) = g(U_m(\alpha) \times U_m(\beta))$ for $m > max\{st(\alpha), st(\beta)\}$. \newline
+        We recall, $g(U_m(\alpha) \times U_m(\beta)) = \{(\zeta,\upsilon) \mid \zeta \in U_m(\alpha), \upsilon \in U_m(\beta)\}$. 
          \newline
         $\supseteq$ : Pick $\zeta \in U_m(\alpha), \upsilon \in U_m(\beta)$. Show $g(\zeta, \upsilon) \in R(g(\alpha,\beta))$. By definition, we need to find a $\vec{c} \in \mathbb{N}_1 \cup \mathbb{N}_2 \cup \mathbb{N} \cup \{\epsilon\}$ s.t. $g(\alpha,\beta) \cdot \vec{c} = g(\zeta, \upsilon)$.
-        By choosing $m> max\{st(\alpha),st(\beta)\}$, $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, we get $g(\alpha,\beta) = g(\zeta_m, \upsilon_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1 \cup \{\epsilon\}$ and $\exists \vec{e} \in \mathbb{N}_2 \cup \{\epsilon\}$ s.t.
+        By choosing $m> max\{st(\alpha),st(\beta)\}$ we get $\alpha \mid_m = \zeta \mid_m$ and $\beta \mid_m = \upsilon \mid_m$, and hence $g(\alpha,\beta) = g(\zeta \mid_m, \upsilon \mid_m)$. Furthermore, we have $f_F(\alpha)R_1f_F(\zeta)$ and $f_F(\beta)R_2f_F(\upsilon)$, that means $\exists \vec{d} \in \mathbb{N}_1 \cup \{\epsilon\}$ and $\exists \vec{e} \in \mathbb{N}_2 \cup \{\epsilon\}$ s.t.
         $f_F(\alpha) \cdot \vec{d} = f_F(\zeta)$ and $f_F(\beta) \cdot \vec{e} = f_F(\upsilon)$. So, $\vec{d}$ must appear at a point after $\zeta \mid_m$ and $\vec{e}$ in $\upsilon \mid_m$. But then we have $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e})$.  
         \newline Now there are four cases :
         \[
