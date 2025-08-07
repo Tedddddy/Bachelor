@@ -1210,7 +1210,7 @@ We view $T_{6,2,2}$ as equipped with three Alexandroff topologies defined from $
 that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times^+_t X$ = $X'$ where each $X$ is as defined in Theorem 5.0.3. 
 
 \begin{theorem}[\textnormal{[1]}]
-    $TPL$ is complete w.r.t. $\mathbb{Q} \times \mathbb{Q}$.
+    $TPL$ is complete w.r.t. $\mathbb{Q} \times^+_t \mathbb{Q}$.
 
     \begin{proof}
         We define $h$ from $X \times^+_t X$ onto $T_{6,2,2}$ by recursion following the inducitve definition of $X$.
@@ -1549,10 +1549,10 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times^+_t X$
 
 To complete the proof, if $\mathit{TPL} \nvdash \phi$, then by Theorem 5.0.8, there is a 
 valuation $\upsilon$ on $T_{6,2,2}$ such that $(T_{6,2,2}, \upsilon), r \nvDash \phi$. Now we define a valuation $\xi$
-on $X \times X$ by $\xi(p) = h^{-1}(v(p))$. Since $h$ is continuous and open w.r.t. all three topologies and $h(0,0) = r$,
-we have that $(0,0)$ and $r$ are 3-topo-bisimilar. Therefore, $(X \times X, \xi),(0,0) \nvDash \phi$. Similar as in Theorem 5.0.3, we argue
-that $X \times X$ is homeomorphic to $\mathbb{Q} \times \mathbb{Q}$ w.r.t. all three topologies, it follows that $\phi$ is refutable on $\mathbb{Q} \times \mathbb{Q}$.
-
+on $X \times^+_t X$ by $\xi(p) = h^{-1}(v(p))$. Since $h$ is continuous and open w.r.t. all three topologies and $h(0,0) = r$,
+we have that $(0,0)$ and $r$ are 3-topo-bisimilar. Therefore, $(X \times^+_t X, \xi),(0,0) \nvDash \phi$. Similar as in Theorem 5.0.3, we argue
+that $X \times^+_t X$ is homeomorphic to $\mathbb{Q} \times^+_t \mathbb{Q}$ w.r.t. all three topologies, it follows that $\phi$ is refutable on $\mathbb{Q} \times^+_t \mathbb{Q}$.
+        
 \begin{corollary}
     In the language $L_{\Box, \Box_1, \Box_2}$, $\mathit{TPL}$ is the logic of products of arbitrary topologies.
     \begin{proof}
@@ -1900,7 +1900,7 @@ In the following, we will show $f_F : N\omega(F) \rightarrow N(F)$ is a bounded 
         \] 
         \newline
         We have $\zeta \in U_m(\alpha)$ and $\upsilon \in U_m(\beta)$. Furthermore, because of $g(\zeta \mid_m, \upsilon \mid_m) = g(\alpha,\beta)$, it holds that $g(\zeta, \upsilon) = g(\alpha,\beta) \cdot g(\vec{d}, \vec{e}) = g(\alpha,\beta) \cdot \vec{c} = \vec{w}$. \newline \newline 
-        Now to check the conditions, we assume $x \in X_1$ and $y \in X_2$ and $U \in \tau(x,y)$. We need to prove $g(U) \in \sigma(g(x,y))$ In other words, show $R(g(x,y)) \subseteq g(U)$. We pick a $m> max\{st(x),st(y)\}$ s.t. $U_m(x) \times U_m(y) \subseteq U$. But then we get 
+        Now to check the conditions, we assume $x \in X_1$ and $y \in X_2$ and $U \in \tau(x,y)$. We need to prove $g(U) \in \sigma(g(x,y))$. In other words, show $R(g(x,y)) \subseteq g(U)$. We pick a $m> max\{st(x),st(y)\}$ s.t. $U_m(x) \times U_m(y) \subseteq U$. But then we get 
         $$R(g(x,y)) = g(U_m(x) \times U_m(y)) \subseteq g(U)$$
         \newline
         Assume  $x \in X_1$ and $x \in X_2$ and $R(g(x,y)) \subseteq V$. We need to find a $U \in \tau(x,y)$, s.t. $f(U) \subseteq V$.
