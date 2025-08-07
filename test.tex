@@ -388,7 +388,7 @@ After showing that filtration preserves truth, we now define a special relation 
 
 \begin{definition}
     Let $M = (W,R_1,...,R_n,V)$ be a model, $\Sigma$ is closed under subformulas and $W_\Sigma$ the set of equivalence classes. We define :
-    $$R^s = \{[w],[v] \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$ 
+    $$R^s_i = \{([w],[v]) \mid \exists w' \in [w], \exists v' \in [v] : w'R_i v'\}$$ 
 \end{definition}
 
 \begin{lemma}
@@ -397,8 +397,8 @@ After showing that filtration preserves truth, we now define a special relation 
     \begin{proof}
     
     It suffices to show $R^s_i$ fulfills the condition 2 and 3. But $R^s_i$ already satisfies condition 2.
-    Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$. Because of $[w]R^s_i[v]$ we pick a $w' \in [w]$
-    and $v' \in [v]$. By defintion, we have $w'R_i v'$. Because $w' \equiv w$, we get $M,w' \Vdash \Box_i \phi$. Hence, $M,v' \Vdash \phi$ and by $v' \equiv v$, we get $M,v \Vdash \phi$.
+    Let's check the other condition. Let $\Box_i \phi \in \Sigma$ , $[w]R^s_i[v]$ and $M,w \Vdash \Box_i \phi$. By the Filtration Theorem, we get 
+    $M,[w] \vDash \Box_i \phi$. By assumption, it follows $M,[v] \vDash \phi$. Again, the Filtration Theorem yields $M,v \vDash \phi$.
     
     \end{proof}    
 \end{lemma}
@@ -610,7 +610,6 @@ We define
   \caption{Each rectangle represents $N$ and the redlines are subsets of $N$} 
 \end{figure}
 
-    If $N$ is H-open and V-open, then we call it HV-open. \newline
     We denote $\tau_1$ is the set of all H-open subsets of $X \times Y$ and $\tau_2$ is the set of all V-open subsets of $X\times Y$. We say $\tau$ is the set of all standard product of subsets $X \times Y$ s.t. $X \in \chi$ and $Y \in \upsilon$.
         
 \end{definition}
@@ -967,7 +966,7 @@ can be generalized and will be used to prove the main result of this chapter.
     Let $s_1, s_2, ..., s_k$ be successors of $u$ ($k$ denotes number of successors, with $k \geq 1$ ensured by reflexivity).
     For $n \geq 1, n \in \mathbb{N}, i \in\{1,...,k\}$ we assign $s_i$ to the ($n * i$)th-successor of $x$. This means we are assigining the successors alternatingly. \newline
     Now we check for $f$ the conditions of bounded morphism. First condition : Let $x,y \in T_\omega$ s.t $xRy$ and $f(x) = s$. But then, y will be assigned to a successor point of $s$. 
-    Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $f(x) = s$. Since $t$ is a successor of $s$ and $f(x) = s$, then a successor of $x$, say $y$, gets the assignment $t$. 
+    Hence, $f(x) R'f(y)$. Second condition : Suppose $f(x)R't$ and $t$ is the $i$-th successor. Then the points in $\{u \mid \text{u is} (n*i)\text{th-successor of }x \text{ for } n\geq 1, n\in \mathbb{N}\}$ gets the assignment $t$.
     
     \end{proof}
         
@@ -986,7 +985,7 @@ can be generalized and will be used to prove the main result of this chapter.
     We will only check the conditions for $R$ and $R'$. For $R_1, R_1'$ and $R_2, R_2'$, we can argue as before. We pick any $xRy$ with $f(x) = s$. 
     If we also have $xR_1y$ or $xR_2y$, then it follows $f(x)R' f(y)$ because $R_1, R_2 \subseteq R$ and $R_1', R_2' \subseteq R'$. Else, the successor of s was assigned to y, so $f(x)R'f(y)$. \newline
     Let $f(x)R't$ and $f(x) = s$. If we have $f(x) R'_1 t$ or $f(x) R'_2 t$, then the second condition follows because $R_1,R_2 \subseteq R$.
-    Else, we have that $t$ is a successor of $f(x) = s$, and a successor of $x$ was assigned to $t$.
+    Else, suppose $f(x)R't$ and $t$ is the $i$-th successor. Then the points in $\{u \mid \text{u is} (n*i)\text{th-successor of }x \text{ in R for } n\geq 1, n\in \mathbb{N}\}$ gets the assignment $t$.
     \end{proof}
         
 \end{proposition}
@@ -1048,7 +1047,7 @@ $$X_{n+1} = X_n \cup \{x - \frac{1}{3^n}, x + \frac{1}{3^n} \mid x \in X_n\}$$
     For $n>0$ and $x,y \in X_n, x \neq y$ we have : $\left| x - y \right| \geq \frac{1}{3^{n-1}}$
 
     \begin{proof}
-        The proof is by induction on $n$. For the base case, if $n=1$, then $X = {0,1,-1}$. For induction step, assume $u,v \in X_{n-1}$ with $u \neq v$. By induction hypothesis, it holds 
+        The proof is by induction on $n$. For the base case, if $n=1$, then $X_1 = \{0,1,-1\}$. For induction step, assume $u,v \in X_{n-1}$ with $u \neq v$. By induction hypothesis, it holds 
         $|u-v| \geq \frac{1}{3^{n-2}}$. Suppose we pick $x = u + \frac{1}{3^{n-1}}$ and $y = v - \frac{1}{3^{n-1}}$. Hence, $x,y \in X_n$. But then, $|x - y| = \left| (u + \frac{1}{3^{n-1}}) - (v - \frac{1}{3^{n-1}})\right| = \left| u - v + \frac{2}{3^{n-1}} \right| \geq \frac{1}{3^{n-1}}$. If $u-v$ is positive, 
         then the inequality follows immediately. Now assume $u-v$ is negative. By indcution hypothesis we get $u-v \leq -\frac{1}{3^{n-2}}$. So the worst case is, when $u-v$ gets $-\frac{1}{3^{n-2}}$.
         But then, $\left| -\frac{1}{3^{n-2}} + \frac{2}{3^{n-1}} \right| = \frac{1}{3^{n-1}}$.
@@ -1205,17 +1204,17 @@ of the valuation, we have that $0$ and $r$ are topo-bisimilar. By Proposition 3.
     \end{proof}
 \end{theorem}
 
-Now we are ready to show $TPL$ is complete w.r.t. $\mathbb{Q} \times \mathbb{Q}$ with three topologies. The idea is similar as previous shown.
+Now we are ready to show $TPL$ is complete w.r.t. $\mathbb{Q} \times^+_t \mathbb{Q}$ with three topologies. The idea is similar as previous shown.
 We view $T_{6,2,2}$ as equipped with three Alexandroff topologies defined from $R, R_1$ and $R_2$. It suffices to show 
-that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $X'$ where each $X$ is as defined in Theorem 5.0.3. 
+that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times^+_t X$ = $X'$ where each $X$ is as defined in Theorem 5.0.3. 
 
 \begin{theorem}[\textnormal{[1]}]
     $TPL$ is complete w.r.t. $\mathbb{Q} \times \mathbb{Q}$.
 
     \begin{proof}
-        We define $h$ from $X \times X$ onto $T_{6,2,2}$ by recursion following the inducitve definition of $X$.
+        We define $h$ from $X \times^+_t X$ onto $T_{6,2,2}$ by recursion following the inducitve definition of $X$.
         If $(x,y) = (0,0)$, then $h(0,0)$ is the root $r$ of $T_{6,2,2}$. If $(x,y) \neq (0,0)$, then as argued in Lemma 5.0.4, there exists
-        $n_{(x,y)}$ with $(x,y) \in X'_{n_{(x,y)}} - X'_{n_{(x,y)}-1}$ and that there exists a unique $(u,v) \in X'_{n_{(x,y)}-1}$ such that 
+        $n_{(x,y)}$ with $(x,y) \in X'_{n_{(x,y)}} \setminus X'_{n_{(x,y)}-1}$ and that there exists a unique $(u,v) \in X'_{n_{(x,y)}-1}$ such that 
         $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v)$ or $(x,y) =  (u, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$
         or $(x,y) =  (u \, \pm \frac{1}{3^{n_{(x,y)}-1}}, v \, \pm \frac{1}{3^{n_{(x,y)}-1}})$. \newline 
         As visiualized in Figure 8, we can see as an example $X'_0,X'_1$ and an excerpt of $X'_2$. For clarity, we illustrated some points of $X'_1$ as a line. We clearly can see, 
@@ -1516,7 +1515,7 @@ that there exists a 3-topo-bisimulation between $T_{6,2,2}$ and $X \times X$ = $
             \draw [blue, line width=1.5pt](2, -4) -- (2.2, -4);
             \draw [blue, line width=1.5pt](2, -4) -- (2, -3.8);
 
-            \draw [blue, line width=1.5pt](2, -3.2) -- (2, -2.8);
+            \draw [blue, line width=1.5pt](2, -3.2) -- (2, -2.8);   
 
             \draw [blue, line width=1.5pt](2, -2.2) -- (2, -2);
             \draw [blue, line width=1.5pt](2, -2) -- (2.2, -2);
